@@ -1,4 +1,5 @@
 {
      "board": "tangnano20k",
-     "testBenches": "all"
+     "testBenches": "all",
+     "top": "uart"
 }

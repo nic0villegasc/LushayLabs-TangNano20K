@@ -1,0 +1,4654 @@
+{
+  "creator": "Next Generation Place and Route (Version nextpnr-0.9-43-gc46f2bbd)",
+  "modules": {
+    "top": {
+      "settings": {
+        "route": "00000000000000000000000000000001",
+        "router/tmg_ripup": "0 ",
+        "router1/useEstimate": "1 ",
+        "router1/fullCleanupReroute": "1 ",
+        "router1/cleanupReroute": "1 ",
+        "router1/maxIterCnt": "200",
+        "place": "00000000000000000000000000000001",
+        "placer1/startTemp": "1.000000",
+        "placer1/minBelsForGridPick": "64",
+        "placer1/netShareWeight": "0.000000",
+        "placer1/constraintWeight": "10.000000",
+        "placerHeap/cellPlacementTimeout": "8",
+        "placerHeap/netShareWeight": "0.000000",
+        "placerHeap/parallelRefine": "0 ",
+        "pack": "00000000000000000000000000000001",
+        "synth": "00000000000000000000000000000001",
+        "placerHeap/timingWeight": "10 ",
+        "placerHeap/criticalityExponent": "2",
+        "placerHeap/beta": "0.900000",
+        "placerHeap/alpha": "0.100000",
+        "seed": "0011000101000001010110010010011001010011010110001001011110010011",
+        "arch.type": " ",
+        "arch.name": "ARCHNAME",
+        "router": "router1",
+        "placer": "heap",
+        "auto_freq": "00000000000000000000000000000000",
+        "slack_redist_iter": "00000000000000000000000000000000",
+        "timing_driven": "00000000000000000000000000000001",
+        "target_freq": "27000000.000000",
+        "cst.filename": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/tangnano20k.cst",
+        "packer.partno": "GW2AR-LV18QN88C8/I7",
+        "packer.chipdb": "GW2A-18C",
+        "packer.arch": "himbaechel/gowin"
+      },
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:3.1-78.10"
+      },
+      "ports": {
+        "uart_tx": {
+          "direction": "output",
+          "bits": [ 9398 ]
+        },
+        "uart_rx": {
+          "direction": "input",
+          "bits": [ 9397 ]
+        },
+        "led": {
+          "direction": "output",
+          "bits": [ 9489, 9487, 9485, 9483, 9481, 9479 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 9395 ]
+        },
+        "btn1": {
+          "direction": "input",
+          "bits": [ 9394 ]
+        }
+      },
+      "cells": {
+        "dataIn_DFFE_Q_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y44/LUT2"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9743 ],
+            "I3": [ 9468 ]
+          }
+        },
+        "dataIn_DFFE_Q_1_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y44/LUT4"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9741 ],
+            "I3": [ 9469 ]
+          }
+        },
+        "dataIn_DFFE_Q_2_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y44/LUT5"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9739 ],
+            "I3": [ 9471 ]
+          }
+        },
+        "dataIn_DFFE_Q_3_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y49/LUT3"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9737 ],
+            "I3": [ 9436 ]
+          }
+        },
+        "dataIn_DFFE_Q_4_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X2Y49/LUT4"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9735 ],
+            "I3": [ 9414 ]
+          }
+        },
+        "dataIn_DFFE_Q_5_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X2Y49/LUT5"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9733 ],
+            "I3": [ 9419 ]
+          }
+        },
+        "dataIn_DFFE_Q_6_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X1Y49/LUT5"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9731 ],
+            "I3": [ 9424 ]
+          }
+        },
+        "dataIn_DFFE_Q_7_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X1Y49/LUT4"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9729 ],
+            "I3": [ 9429 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X1Y48/LUT4"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9727 ],
+            "I3": [ 9531 ]
+          }
+        },
+        "rxCounter_DFFE_Q_5_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X2Y46/LUT5"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9725 ],
+            "I3": [ 9613 ]
+          }
+        },
+        "rxCounter_DFFE_Q_6_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y47/LUT2"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9723 ],
+            "I3": [ 9620 ]
+          }
+        },
+        "rxCounter_DFFE_Q_7_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X1Y48/LUT5"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9721 ],
+            "I3": [ 9627 ]
+          }
+        },
+        "rxCounter_DFFE_Q_9_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X2Y46/LUT4"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9719 ],
+            "I3": [ 9637 ]
+          }
+        },
+        "clk_IBUF_I_O_BUFG": {
+          "hide_name": 0,
+          "type": "BUFG",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y27/BUFG0"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [  ],
+            "I": [ 9707 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "C2L"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/ALU0"
+          },
+          "port_directions": {
+            "I2": "input",
+            "COUT": "output"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "COUT": [ 9705 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "C2L"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU0"
+          },
+          "port_directions": {
+            "I2": "input",
+            "COUT": "output"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "COUT": [ 9704 ]
+          }
+        },
+        "GSR": {
+          "hide_name": 0,
+          "type": "GSR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X50Y27/GSR"
+          },
+          "port_directions": {
+            "GSRI": "input"
+          },
+          "connections": {
+            "GSRI": [ 9699 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_I1_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000000001000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9570 ],
+            "I2": [ 9574 ],
+            "I1": [ 9578 ],
+            "I0": [ 9565 ],
+            "F": [ 9675 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_I0_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "00"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [  ],
+            "F": [ 9674 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_1_I1_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000010000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9553 ],
+            "I2": [ 9557 ],
+            "I1": [ 9560 ],
+            "I0": [ 9526 ],
+            "F": [ 9678 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_1_I0_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "00"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [  ],
+            "F": [ 9677 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_1": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/MUX0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9594 ],
+            "O": [ 9464 ],
+            "I1": [ 9678 ],
+            "I0": [ 9677 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/MUX6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9591 ],
+            "O": [ 9462 ],
+            "I1": [ 9675 ],
+            "I0": [ 9674 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "11011011"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/LUT5",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9525 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0011111100110001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9457 ],
+            "I2": [ 9451 ],
+            "I1": [ 9447 ],
+            "I0": [ 9468 ],
+            "F": [ 9513 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT3_I0_I2_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "0001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 9457 ],
+            "I0": [ 9447 ],
+            "F": [ 9538 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT3_I0_F_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "01000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9467 ]
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT3_I0": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "00010000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/LUT4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9538 ],
+            "I1": [ 9451 ],
+            "I0": [ 9468 ],
+            "F": [ 9441 ]
+          }
+        },
+        "uart_rx_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X43Y0/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:9.11-9.18",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9468 ],
+            "I": [ 9397 ]
+          }
+        },
+        "$PACKER_VCC_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_VCC",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/VCC"
+          },
+          "port_directions": {
+            "V": "output"
+          },
+          "connections": {
+            "V": [ 9699 ]
+          }
+        },
+        "rxState_DFFE_Q_D_LUT2_F_I1_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "10000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9503 ],
+            "I1": [ 9496 ],
+            "I0": [ 9493 ],
+            "F": [ 9655 ]
+          }
+        },
+        "rxState_DFFE_Q_D_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "1000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y44/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 9655 ],
+            "I0": [ 9467 ],
+            "F": [ 9651 ]
+          }
+        },
+        "rxState_DFFE_Q_CE_MUX2_LUT5_O_I1_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000010101000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9528 ],
+            "I2": [ 9464 ],
+            "I1": [ 9525 ],
+            "I0": [ 9513 ],
+            "F": [ 9661 ]
+          }
+        },
+        "rxState_DFFE_Q_CE_MUX2_LUT5_O_I0_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "00001000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9528 ],
+            "I1": [ 9525 ],
+            "I0": [ 9513 ],
+            "F": [ 9660 ]
+          }
+        },
+        "rxState_DFFE_Q_CE_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/MUX0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9462 ],
+            "O": [ 9650 ],
+            "I1": [ 9661 ],
+            "I0": [ 9660 ]
+          }
+        },
+        "rxState_DFFE_Q_2_D_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "1100111110001111"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9655 ],
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9657 ]
+          }
+        },
+        "rxState_DFFE_Q_2": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9457 ],
+            "D": [ 9657 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9650 ]
+          }
+        },
+        "rxState_DFFE_Q_1_D_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0001010001010100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT3",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9655 ],
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9653 ]
+          }
+        },
+        "rxState_DFFE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9451 ],
+            "D": [ 9653 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9650 ]
+          }
+        },
+        "rxState_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y44/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9447 ],
+            "D": [ 9651 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9650 ]
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0_LUT4_F_1_I3_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9563 ],
+            "I2": [ 9576 ],
+            "I1": [ 9573 ],
+            "I0": [ 9569 ],
+            "F": [ 9647 ]
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0_LUT4_F_1": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/LUT5",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9647 ],
+            "I2": [ 9582 ],
+            "I1": [ 9520 ],
+            "I0": [ 9516 ],
+            "F": [ 9598 ]
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000100000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT3",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9523 ],
+            "I2": [ 9559 ],
+            "I1": [ 9556 ],
+            "I0": [ 9552 ],
+            "F": [ 9597 ]
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "00010000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9596 ]
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "10110000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9587 ],
+            "I1": [ 9525 ],
+            "I0": [ 9596 ],
+            "F": [ 9514 ]
+          }
+        },
+        "rxCounter_DFFE_Q_9_D_MUX2_LUT5_O_I1_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "10"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/LUT3",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9560 ],
+            "F": [ 9640 ]
+          }
+        },
+        "rxCounter_DFFE_Q_9_D_MUX2_LUT5_O_I0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0001010000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9560 ],
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9639 ]
+          }
+        },
+        "rxCounter_DFFE_Q_9_D_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/MUX2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9443 ],
+            "O": [ 9637 ],
+            "I1": [ 9640 ],
+            "I0": [ 9639 ]
+          }
+        },
+        "rxCounter_DFFE_Q_9": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9559 ],
+            "D": [ 9719 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_8_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "11000100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9528 ],
+            "I1": [ 9557 ],
+            "I0": [ 9525 ],
+            "F": [ 9634 ]
+          }
+        },
+        "rxCounter_DFFE_Q_8": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/DFF1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9556 ],
+            "D": [ 9634 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_7_D_MUX2_LUT5_O_I1_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "10"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9553 ],
+            "F": [ 9630 ]
+          }
+        },
+        "rxCounter_DFFE_Q_7_D_MUX2_LUT5_O_I0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "1111000010000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9528 ],
+            "I2": [ 9553 ],
+            "I1": [ 9538 ],
+            "I0": [ 9451 ],
+            "F": [ 9629 ]
+          }
+        },
+        "rxCounter_DFFE_Q_7_D_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/MUX6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9443 ],
+            "O": [ 9627 ],
+            "I1": [ 9630 ],
+            "I0": [ 9629 ]
+          }
+        },
+        "rxCounter_DFFE_Q_7": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9552 ],
+            "D": [ 9721 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_6_D_MUX2_LUT5_O_I1_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "10"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/LUT5",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9565 ],
+            "F": [ 9623 ]
+          }
+        },
+        "rxCounter_DFFE_Q_6_D_MUX2_LUT5_O_I0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "1111000010000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/LUT4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9528 ],
+            "I2": [ 9565 ],
+            "I1": [ 9538 ],
+            "I0": [ 9451 ],
+            "F": [ 9622 ]
+          }
+        },
+        "rxCounter_DFFE_Q_6_D_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/MUX4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9443 ],
+            "O": [ 9620 ],
+            "I1": [ 9623 ],
+            "I0": [ 9622 ]
+          }
+        },
+        "rxCounter_DFFE_Q_6": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9563 ],
+            "D": [ 9723 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_5_D_MUX2_LUT5_O_I1_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "10"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT3",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9578 ],
+            "F": [ 9616 ]
+          }
+        },
+        "rxCounter_DFFE_Q_5_D_MUX2_LUT5_O_I0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0001010000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9578 ],
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9615 ]
+          }
+        },
+        "rxCounter_DFFE_Q_5_D_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/MUX2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9443 ],
+            "O": [ 9613 ],
+            "I1": [ 9616 ],
+            "I0": [ 9615 ]
+          }
+        },
+        "rxCounter_DFFE_Q_5": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9576 ],
+            "D": [ 9725 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_4_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "10110000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9574 ],
+            "I1": [ 9525 ],
+            "I0": [ 9596 ],
+            "F": [ 9610 ]
+          }
+        },
+        "rxCounter_DFFE_Q_4": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9573 ],
+            "D": [ 9610 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_3_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "10110000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9570 ],
+            "I1": [ 9525 ],
+            "I0": [ 9596 ],
+            "F": [ 9607 ]
+          }
+        },
+        "rxCounter_DFFE_Q_3": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9569 ],
+            "D": [ 9607 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_2_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "10110000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y49/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9583 ],
+            "I1": [ 9525 ],
+            "I0": [ 9596 ],
+            "F": [ 9604 ]
+          }
+        },
+        "rxCounter_DFFE_Q_2": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y49/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9582 ],
+            "D": [ 9604 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_1_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "10110000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/LUT3",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9589 ],
+            "I1": [ 9525 ],
+            "I0": [ 9596 ],
+            "F": [ 9518 ]
+          }
+        },
+        "rxCounter_DFFE_Q_12_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "01110011"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9525 ],
+            "I1": [ 9545 ],
+            "I0": [ 9528 ],
+            "F": [ 9600 ]
+          }
+        },
+        "rxCounter_DFFE_Q_12": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9545 ],
+            "D": [ 9600 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_LUT4_I3": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0010101010101010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/LUT4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9594 ],
+            "I2": [ 9598 ],
+            "I1": [ 9597 ],
+            "I0": [ 9596 ],
+            "F": [ 9528 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "1000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 9539 ],
+            "I0": [ 9545 ],
+            "F": [ 9594 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "00000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9587 ],
+            "I1": [ 9589 ],
+            "I0": [ 9583 ],
+            "F": [ 9591 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_1": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/ALU0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9589 ],
+            "I3": [ 9699 ],
+            "I1": [ 9520 ],
+            "I0": [  ],
+            "COUT": [ 9585 ],
+            "CIN": [ 9580 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9587 ],
+            "I3": [ 9699 ],
+            "I1": [ 9516 ],
+            "I0": [  ],
+            "COUT": [ 9586 ],
+            "CIN": [ 9585 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU5",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9583 ],
+            "I3": [ 9699 ],
+            "I1": [ 9582 ],
+            "I0": [  ],
+            "COUT": [ 9580 ],
+            "CIN": [ 9568 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_2": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9578 ],
+            "I3": [ 9699 ],
+            "I1": [ 9576 ],
+            "I0": [  ],
+            "COUT": [ 9572 ],
+            "CIN": [ 9562 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_1": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9574 ],
+            "I3": [ 9699 ],
+            "I1": [ 9573 ],
+            "I0": [  ],
+            "COUT": [ 9567 ],
+            "CIN": [ 9572 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9570 ],
+            "I3": [ 9699 ],
+            "I1": [ 9569 ],
+            "I0": [  ],
+            "COUT": [ 9568 ],
+            "CIN": [ 9567 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9565 ],
+            "I3": [ 9699 ],
+            "I1": [ 9563 ],
+            "I0": [  ],
+            "COUT": [ 9562 ],
+            "CIN": [ 9551 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_2": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9560 ],
+            "I3": [ 9699 ],
+            "I1": [ 9559 ],
+            "I0": [  ],
+            "COUT": [ 9555 ],
+            "CIN": [ 9548 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_1": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU5",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9557 ],
+            "I3": [ 9699 ],
+            "I1": [ 9556 ],
+            "I0": [  ],
+            "COUT": [ 9550 ],
+            "CIN": [ 9555 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9553 ],
+            "I3": [ 9699 ],
+            "I1": [ 9552 ],
+            "I0": [  ],
+            "COUT": [ 9551 ],
+            "CIN": [ 9550 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9526 ],
+            "I3": [ 9699 ],
+            "I1": [ 9523 ],
+            "I0": [  ],
+            "COUT": [ 9548 ],
+            "CIN": [ 9543 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_CIN_ALU_COUT": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000011000011001111",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9546 ],
+            "I3": [ 9699 ],
+            "I1": [ 9545 ],
+            "I0": [  ],
+            "COUT": [ 9542 ],
+            "CIN": [ 9704 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9539 ],
+            "I3": [ 9699 ],
+            "I1": [ 9532 ],
+            "I0": [  ],
+            "COUT": [ 9543 ],
+            "CIN": [ 9542 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "10"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT5",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9539 ],
+            "F": [ 9535 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "1111000010000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9528 ],
+            "I2": [ 9539 ],
+            "I1": [ 9538 ],
+            "I0": [ 9451 ],
+            "F": [ 9534 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/MUX4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9443 ],
+            "O": [ 9531 ],
+            "I1": [ 9535 ],
+            "I0": [ 9534 ]
+          }
+        },
+        "rxCounter_DFFE_Q_11": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9532 ],
+            "D": [ 9727 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_10_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "11000100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9528 ],
+            "I1": [ 9526 ],
+            "I0": [ 9525 ],
+            "F": [ 9522 ]
+          }
+        },
+        "rxCounter_DFFE_Q_10": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/DFF1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9523 ],
+            "D": [ 9522 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y48/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9520 ],
+            "D": [ 9518 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "rxCounter_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9516 ],
+            "D": [ 9514 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9513 ]
+          }
+        },
+        "$PACKER_GND_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_GND",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000010",
+            "NEXTPNR_BEL": "X0Y0/GND"
+          },
+          "port_directions": {
+            "G": "output"
+          },
+          "connections": {
+            "G": [ 9700 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:55.32-55.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9492 ],
+            "I3": [ 9699 ],
+            "I1": [ 9493 ],
+            "I0": [  ],
+            "COUT": [ 9510 ],
+            "CIN": [ 9499 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_CE_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "1110"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 9441 ],
+            "I0": [ 9467 ],
+            "F": [ 9491 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_2_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/LUT4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9503 ],
+            "F": [ 9506 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_2": {
+          "hide_name": 0,
+          "type": "DFFRE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:43.8-43.68",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "RESET": [ 9441 ],
+            "Q": [ 9503 ],
+            "D": [ 9506 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9491 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D_ALU_SUM_CIN_ALU_COUT": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000011000011001111",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:55.32-55.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9504 ],
+            "I3": [ 9699 ],
+            "I1": [ 9503 ],
+            "I0": [  ],
+            "COUT": [ 9498 ],
+            "CIN": [ 9705 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:55.32-55.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9699 ],
+            "SUM": [ 9495 ],
+            "I3": [ 9699 ],
+            "I1": [ 9496 ],
+            "I0": [  ],
+            "COUT": [ 9499 ],
+            "CIN": [ 9498 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFRE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:43.8-43.68",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "RESET": [ 9441 ],
+            "Q": [ 9496 ],
+            "D": [ 9495 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9491 ]
+          }
+        },
+        "rxBitNumber_DFFRE_Q": {
+          "hide_name": 0,
+          "type": "DFFRE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y44/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:43.8-43.68",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "RESET": [ 9441 ],
+            "Q": [ 9493 ],
+            "D": [ 9492 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9491 ]
+          }
+        },
+        "led_OBUF_O_5": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y50/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9489 ],
+            "I": [ 9432 ]
+          }
+        },
+        "led_OBUF_O_4": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y50/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9487 ],
+            "I": [ 9427 ]
+          }
+        },
+        "led_OBUF_O_3": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y48/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9485 ],
+            "I": [ 9422 ]
+          }
+        },
+        "led_OBUF_O_2": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y48/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9483 ],
+            "I": [ 9417 ]
+          }
+        },
+        "led_OBUF_O_1": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y46/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9481 ],
+            "I": [ 9412 ]
+          }
+        },
+        "led_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y46/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9479 ],
+            "I": [ 9408 ]
+          }
+        },
+        "dataIn_DFFE_Q_7": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9434 ],
+            "D": [ 9729 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "dataIn_DFFE_Q_6": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9429 ],
+            "D": [ 9731 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "dataIn_DFFE_Q_5": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y49/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9424 ],
+            "D": [ 9733 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "dataIn_DFFE_Q_4": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y49/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9419 ],
+            "D": [ 9735 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "dataIn_DFFE_Q_3": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y49/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9414 ],
+            "D": [ 9737 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "dataIn_DFFE_Q_2": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y44/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9436 ],
+            "D": [ 9739 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "dataIn_DFFE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y44/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9471 ],
+            "D": [ 9741 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "dataIn_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y44/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9469 ],
+            "D": [ 9743 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9467 ]
+          }
+        },
+        "clk_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y6/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:8.11-8.14",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9406 ],
+            "I": [ 9395 ]
+          }
+        },
+        "byteReady_DFFE_Q_D_LUT3_I1": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "01001100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9464 ],
+            "I1": [ 9439 ],
+            "I0": [ 9462 ],
+            "F": [ 9443 ]
+          }
+        },
+        "byteReady_DFFE_Q_D_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "00100000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9457 ],
+            "I1": [ 9451 ],
+            "I0": [ 9447 ],
+            "F": [ 9439 ]
+          }
+        },
+        "byteReady_DFFE_Q_CE_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "00001110"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 9443 ],
+            "I1": [ 9441 ],
+            "I0": [ 9439 ],
+            "F": [ 9438 ]
+          }
+        },
+        "byteReady_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:29.5-70.8|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9405 ],
+            "D": [ 9439 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9438 ]
+          }
+        },
+        "byteReady_DFFE_CE_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/LUT4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9436 ],
+            "F": [ 9407 ]
+          }
+        },
+        "byteReady_DFFE_CE_5_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9434 ],
+            "F": [ 9431 ]
+          }
+        },
+        "byteReady_DFFE_CE_5": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:72.1-76.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9432 ],
+            "D": [ 9431 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9405 ]
+          }
+        },
+        "byteReady_DFFE_CE_4_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9429 ],
+            "F": [ 9426 ]
+          }
+        },
+        "byteReady_DFFE_CE_4": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/DFF1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:72.1-76.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9427 ],
+            "D": [ 9426 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9405 ]
+          }
+        },
+        "byteReady_DFFE_CE_3_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9424 ],
+            "F": [ 9421 ]
+          }
+        },
+        "byteReady_DFFE_CE_3": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:72.1-76.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9422 ],
+            "D": [ 9421 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9405 ]
+          }
+        },
+        "byteReady_DFFE_CE_2_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9419 ],
+            "F": [ 9416 ]
+          }
+        },
+        "byteReady_DFFE_CE_2": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:72.1-76.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9417 ],
+            "D": [ 9416 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9405 ]
+          }
+        },
+        "byteReady_DFFE_CE_1_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/LUT3",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9414 ],
+            "F": [ 9411 ]
+          }
+        },
+        "byteReady_DFFE_CE_1": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:72.1-76.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9412 ],
+            "D": [ 9411 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9405 ]
+          }
+        },
+        "byteReady_DFFE_CE": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y48/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:72.1-76.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9408 ],
+            "D": [ 9407 ],
+            "CLK": [ 9406 ],
+            "CE": [ 9405 ]
+          }
+        },
+        "btn1_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y29/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:12.11-12.15",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9402 ],
+            "I": [ 9394 ]
+          }
+        }
+      },
+      "netnames": {
+        "dataIn_DFFE_Q$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9743 ] ,
+          "attributes": {
+            "ROUTING": "X3Y44/F2;;1;X3Y44/XD2;X3Y44/XD2/F2;1"
+          }
+        },
+        "dataIn_DFFE_Q_1$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9741 ] ,
+          "attributes": {
+            "ROUTING": "X3Y44/F4;;1;X3Y44/XD4;X3Y44/XD4/F4;1"
+          }
+        },
+        "dataIn_DFFE_Q_2$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9739 ] ,
+          "attributes": {
+            "ROUTING": "X3Y44/F5;;1;X3Y44/XD5;X3Y44/XD5/F5;1"
+          }
+        },
+        "dataIn_DFFE_Q_3$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9737 ] ,
+          "attributes": {
+            "ROUTING": "X3Y49/F3;;1;X3Y49/XD3;X3Y49/XD3/F3;1"
+          }
+        },
+        "dataIn_DFFE_Q_4$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9735 ] ,
+          "attributes": {
+            "ROUTING": "X2Y49/F4;;1;X2Y49/XD4;X2Y49/XD4/F4;1"
+          }
+        },
+        "dataIn_DFFE_Q_5$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9733 ] ,
+          "attributes": {
+            "ROUTING": "X2Y49/F5;;1;X2Y49/XD5;X2Y49/XD5/F5;1"
+          }
+        },
+        "dataIn_DFFE_Q_6$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9731 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/F5;;1;X1Y49/XD5;X1Y49/XD5/F5;1"
+          }
+        },
+        "dataIn_DFFE_Q_7$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9729 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/F4;;1;X1Y49/XD4;X1Y49/XD4/F4;1"
+          }
+        },
+        "rxCounter_DFFE_Q_11$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9727 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F4;;1;X1Y48/XD4;X1Y48/XD4/F4;1"
+          }
+        },
+        "rxCounter_DFFE_Q_5$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9725 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F5;;1;X2Y46/XD5;X2Y46/XD5/F5;1"
+          }
+        },
+        "rxCounter_DFFE_Q_6$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9723 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F2;;1;X3Y47/XD2;X3Y47/XD2/F2;1"
+          }
+        },
+        "rxCounter_DFFE_Q_7$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9721 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F5;;1;X1Y48/XD5;X1Y48/XD5/F5;1"
+          }
+        },
+        "rxCounter_DFFE_Q_9$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9719 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F4;;1;X2Y46/XD4;X2Y46/XD4/F4;1"
+          }
+        },
+        "clk_IBUF_I_O_BUFG$conn$I": {
+          "hide_name": 0,
+          "bits": [ 9707 ] ,
+          "attributes": {
+            "ROUTING": " "
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "bits": [ 9705 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/COUT0;;1"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "bits": [ 9704 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT0;;1"
+          }
+        },
+        "uart_tx": {
+          "hide_name": 0,
+          "bits": [ 9398 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:10.12-10.19"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_1_I1": {
+          "hide_name": 0,
+          "bits": [ 9678 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F1;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_1_I0": {
+          "hide_name": 0,
+          "bits": [ 9677 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F0;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9675 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/F7;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9674 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/F6;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "uart_rx": {
+          "hide_name": 0,
+          "bits": [ 9397 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:9.11-9.18"
+          }
+        },
+        "rxState_DFFE_Q_CE_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9661 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F1;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "rxState_DFFE_Q_CE_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9660 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F0;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "rxState_DFFE_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 9657 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F2;;1;X2Y46/XD2;X2Y46/XD2/F2;1"
+          }
+        },
+        "rxState_DFFE_Q_D_LUT2_F_I1[3]": {
+          "hide_name": 0,
+          "bits": [ 9655 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/D2;X2Y46/D2/S222;1;X1Y44/EW20;X1Y44/EW20/F6;1;X2Y44/S220;X2Y44/S220/E121;1;X2Y46/D3;X2Y46/D3/S222;1;X1Y44/F6;;1;X1Y44/E130;X1Y44/E130/F6;1;X2Y44/B0;X2Y44/B0/E131;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxState_DFFE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 9653 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F3;;1;X2Y46/XD3;X2Y46/XD3/F3;1"
+          }
+        },
+        "rxState_DFFE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 9651 ] ,
+          "attributes": {
+            "ROUTING": "X2Y44/F0;;1;X2Y44/XD0;X2Y44/XD0/F0;1"
+          }
+        },
+        "rxState_DFFE_Q_CE": {
+          "hide_name": 0,
+          "bits": [ 9650 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/W100;X2Y46/W100/OF0;1;X1Y46/W200;X1Y46/W200/W101;1;X0Y46/E210;X0Y46/E210/E202;1;X2Y46/CE1;X2Y46/CE1/E212;1;X2Y46/OF0;;1;X2Y46/N200;X2Y46/N200/OF0;1;X2Y44/X07;X2Y44/X07/N202;1;X2Y44/CE0;X2Y44/CE0/X07;1"
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0_LUT4_F_1_I3[3]": {
+          "hide_name": 0,
+          "bits": [ 9647 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/F7;;1;X2Y48/X04;X2Y48/X04/F7;1;X2Y48/D5;X2Y48/D5/X04;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_9_D_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9640 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F3;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "rxCounter_DFFE_Q_9_D_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9639 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F2;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "rxCounter_DFFE_Q_9_D": {
+          "hide_name": 0,
+          "bits": [ 9637 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/OF2;;1;X3Y46/W220;X3Y46/W220/OF2;1;X2Y46/D4;X2Y46/D4/W221;1"
+          }
+        },
+        "rxCounter_DFFE_Q_8_D": {
+          "hide_name": 0,
+          "bits": [ 9634 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/F1;;1;X2Y48/XD1;X2Y48/XD1/F1;1"
+          }
+        },
+        "rxCounter_DFFE_Q_7_D_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9630 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F7;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "rxCounter_DFFE_Q_7_D_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9629 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F6;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "rxCounter_DFFE_Q_7_D": {
+          "hide_name": 0,
+          "bits": [ 9627 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/OF6;;1;X1Y48/N260;X1Y48/N260/OF6;1;X1Y48/D5;X1Y48/D5/N260;1"
+          }
+        },
+        "rxCounter_DFFE_Q_6_D_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9623 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F5;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "rxCounter_DFFE_Q_6_D_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9622 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F4;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "rxCounter_DFFE_Q_6_D": {
+          "hide_name": 0,
+          "bits": [ 9620 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/OF4;;1;X3Y47/EW20;X3Y47/EW20/OF4;1;X4Y47/W820;X4Y47/W820/E121;1;X3Y47/S270;X3Y47/S270/E828;1;X3Y47/D2;X3Y47/D2/S270;1"
+          }
+        },
+        "rxCounter_DFFE_Q_5_D_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9616 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F3;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "rxCounter_DFFE_Q_5_D_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9615 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F2;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "rxCounter_DFFE_Q_5_D": {
+          "hide_name": 0,
+          "bits": [ 9613 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/OF2;;1;X1Y46/E220;X1Y46/E220/OF2;1;X2Y46/D5;X2Y46/D5/E221;1"
+          }
+        },
+        "rxCounter_DFFE_Q_4_D": {
+          "hide_name": 0,
+          "bits": [ 9610 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/F0;;1;X2Y48/XD0;X2Y48/XD0/F0;1"
+          }
+        },
+        "rxCounter_DFFE_Q_3_D": {
+          "hide_name": 0,
+          "bits": [ 9607 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/F2;;1;X2Y48/XD2;X2Y48/XD2/F2;1"
+          }
+        },
+        "rxCounter_DFFE_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 9604 ] ,
+          "attributes": {
+            "ROUTING": "X2Y49/F0;;1;X2Y49/XD0;X2Y49/XD0/F0;1"
+          }
+        },
+        "rxCounter_DFFE_Q_12_D": {
+          "hide_name": 0,
+          "bits": [ 9600 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F0;;1;X1Y48/XD0;X1Y48/XD0/F0;1"
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0[2]": {
+          "hide_name": 0,
+          "bits": [ 9598 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/F5;;1;X2Y48/X08;X2Y48/X08/F5;1;X2Y48/C4;X2Y48/C4/X08;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0[1]": {
+          "hide_name": 0,
+          "bits": [ 9597 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F3;;1;X1Y48/E130;X1Y48/E130/F3;1;X2Y48/B4;X2Y48/B4/E131;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_D_LUT3_F_I0[0]": {
+          "hide_name": 0,
+          "bits": [ 9596 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/A2;X2Y48/A2/X02;1;X3Y49/W270;X3Y49/W270/S131;1;X2Y49/A0;X2Y49/A0/W271;1;X2Y48/X06;X2Y48/X06/W211;1;X2Y48/A4;X2Y48/A4/X06;1;X2Y48/A0;X2Y48/A0/X02;1;X3Y48/X02;X3Y48/X02/F1;1;X3Y48/A0;X3Y48/A0/X02;1;X3Y48/W210;X3Y48/W210/F1;1;X2Y48/X02;X2Y48/X02/W211;1;X2Y48/A3;X2Y48/A3/X02;1;X3Y48/F1;;1;X3Y48/S130;X3Y48/S130/F1;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM[4]": {
+          "hide_name": 0,
+          "bits": [ 9594 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/N260;X1Y47/N260/F6;1;X1Y46/X05;X1Y46/X05/N261;1;X1Y46/SEL0;X1Y46/SEL0/X05;1;X1Y47/F6;;1;X1Y47/EW20;X1Y47/EW20/F6;1;X2Y47/S260;X2Y47/S260/E121;1;X2Y48/D4;X2Y48/D4/S261;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM[4]": {
+          "hide_name": 0,
+          "bits": [ 9591 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F6;;1;X2Y46/S260;X2Y46/S260/F6;1;X2Y47/X05;X2Y47/X05/S261;1;X2Y47/SEL6;X2Y47/SEL6/X05;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM[1]": {
+          "hide_name": 0,
+          "bits": [ 9589 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/S100;X3Y47/S100/F0;1;X3Y48/W240;X3Y48/W240/S101;1;X2Y48/C3;X2Y48/C3/W241;1;X3Y47/F0;;1;X3Y47/N130;X3Y47/N130/F0;1;X3Y46/W230;X3Y46/W230/N131;1;X2Y46/B6;X2Y46/B6/W231;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM[2]": {
+          "hide_name": 0,
+          "bits": [ 9587 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/S130;X3Y47/S130/F1;1;X3Y48/W230;X3Y48/W230/S131;1;X3Y48/C0;X3Y48/C0/W230;1;X2Y46/C6;X2Y46/C6/W261;1;X3Y47/F1;;1;X3Y47/SN20;X3Y47/SN20/F1;1;X3Y46/W260;X3Y46/W260/N121;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9586 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_1_COUT": {
+          "hide_name": 0,
+          "bits": [ 9585 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/COUT0;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM[0]": {
+          "hide_name": 0,
+          "bits": [ 9583 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/N250;X2Y47/N250/F5;1;X2Y46/X06;X2Y46/X06/N251;1;X2Y46/A6;X2Y46/A6/X06;1;X2Y47/F5;;1;X2Y47/S250;X2Y47/S250/F5;1;X2Y49/X04;X2Y49/X04/S252;1;X2Y49/C0;X2Y49/C0/X04;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[10]": {
+          "hide_name": 0,
+          "bits": [ 9582 ] ,
+          "attributes": {
+            "ROUTING": "X2Y49/N200;X2Y49/N200/Q0;1;X2Y47/X03;X2Y47/X03/N202;1;X2Y47/B5;X2Y47/B5/X03;1;X2Y49/Q0;;1;X2Y49/SN10;X2Y49/SN10/Q0;1;X2Y48/C5;X2Y48/C5/N111;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_COUT": {
+          "hide_name": 0,
+          "bits": [ 9580 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/CIN0;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_D_LUT3_I1_F[3]": {
+          "hide_name": 0,
+          "bits": [ 9578 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/N100;X2Y47/N100/F2;1;X2Y46/W200;X2Y46/W200/N101;1;X1Y46/D2;X1Y46/D2/W201;1;X1Y47/N270;X1Y47/N270/W131;1;X1Y46/A3;X1Y46/A3/N271;1;X2Y47/F2;;1;X2Y47/W130;X2Y47/W130/F2;1;X2Y47/B7;X2Y47/B7/W130;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[7]": {
+          "hide_name": 0,
+          "bits": [ 9576 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/S100;X2Y46/S100/Q5;1;X2Y47/S200;X2Y47/S200/S101;1;X2Y48/C7;X2Y48/C7/S201;1;X2Y46/SN10;X2Y46/SN10/Q5;1;X2Y47/B2;X2Y47/B2/S111;1;X2Y46/Q5;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM[2]": {
+          "hide_name": 0,
+          "bits": [ 9574 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/S130;X2Y47/S130/F3;1;X2Y48/W230;X2Y48/W230/S131;1;X2Y48/C0;X2Y48/C0/W230;1;X2Y47/F3;;1;X2Y47/N130;X2Y47/N130/F3;1;X2Y47/C7;X2Y47/C7/N130;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[8]": {
+          "hide_name": 0,
+          "bits": [ 9573 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/X05;X2Y48/X05/Q0;1;X2Y48/B7;X2Y48/B7/X05;1;X2Y48/Q0;;1;X2Y48/N130;X2Y48/N130/Q0;1;X2Y47/B3;X2Y47/B3/N131;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_2_COUT": {
+          "hide_name": 0,
+          "bits": [ 9572 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM[3]": {
+          "hide_name": 0,
+          "bits": [ 9570 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/S100;X2Y47/S100/F4;1;X2Y48/C2;X2Y48/C2/S101;1;X2Y47/F4;;1;X2Y47/X07;X2Y47/X07/F4;1;X2Y47/D7;X2Y47/D7/X07;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[9]": {
+          "hide_name": 0,
+          "bits": [ 9569 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/X01;X2Y48/X01/Q2;1;X2Y48/A7;X2Y48/A7/X01;1;X2Y48/Q2;;1;X2Y48/N100;X2Y48/N100/Q2;1;X2Y47/B4;X2Y47/B4/N101;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9568 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/COUT4;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_1_COUT": {
+          "hide_name": 0,
+          "bits": [ 9567 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/COUT3;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_SUM[0]": {
+          "hide_name": 0,
+          "bits": [ 9565 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/EW20;X2Y47/EW20/F1;1;X3Y47/C4;X3Y47/C4/E121;1;X2Y47/EW10;X2Y47/EW10/F1;1;X3Y47/A5;X3Y47/A5/E111;1;X2Y47/F1;;1;X2Y47/S210;X2Y47/S210/F1;1;X2Y47/A7;X2Y47/A7/S210;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[6]": {
+          "hide_name": 0,
+          "bits": [ 9563 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/W100;X3Y47/W100/Q2;1;X2Y47/S240;X2Y47/S240/W101;1;X2Y48/D7;X2Y48/D7/S241;1;X3Y47/EW10;X3Y47/EW10/Q2;1;X2Y47/B1;X2Y47/B1/W111;1;X3Y47/Q2;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT_ALU_CIN_COUT": {
+          "hide_name": 0,
+          "bits": [ 9562 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM[1]": {
+          "hide_name": 0,
+          "bits": [ 9560 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/S270;X3Y46/S270/E272;1;X3Y46/D2;X3Y46/D2/S270;1;X1Y46/E270;X1Y46/E270/N131;1;X3Y46/A3;X3Y46/A3/E272;1;X1Y47/F4;;1;X1Y47/N130;X1Y47/N130/F4;1;X1Y46/B1;X1Y46/B1/N131;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[3]": {
+          "hide_name": 0,
+          "bits": [ 9559 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/W130;X2Y46/W130/Q4;1;X1Y46/S270;X1Y46/S270/W131;1;X1Y47/B4;X1Y47/B4/S271;1;X2Y46/Q4;;1;X2Y46/S240;X2Y46/S240/Q4;1;X2Y48/W240;X2Y48/W240/S242;1;X1Y48/C3;X1Y48/C3/W241;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM[2]": {
+          "hide_name": 0,
+          "bits": [ 9557 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/SN20;X1Y47/SN20/F5;1;X1Y46/C1;X1Y46/C1/N121;1;X2Y48/B1;X2Y48/B1/E231;1;X1Y47/F5;;1;X1Y47/S130;X1Y47/S130/F5;1;X1Y48/E230;X1Y48/E230/S131;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[4]": {
+          "hide_name": 0,
+          "bits": [ 9556 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/N250;X1Y48/N250/W111;1;X1Y47/B5;X1Y47/B5/N251;1;X2Y48/EW10;X2Y48/EW10/Q1;1;X1Y48/B3;X1Y48/B3/W111;1;X2Y48/Q1;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_2_COUT": {
+          "hide_name": 0,
+          "bits": [ 9555 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT4;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM[3]": {
+          "hide_name": 0,
+          "bits": [ 9553 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/SN10;X2Y47/SN10/F0;1;X2Y48/W250;X2Y48/W250/S111;1;X1Y48/A7;X1Y48/A7/W251;1;X1Y47/S200;X1Y47/S200/W101;1;X1Y48/C6;X1Y48/C6/S201;1;X2Y47/F0;;1;X2Y47/W100;X2Y47/W100/F0;1;X1Y47/N200;X1Y47/N200/W101;1;X1Y46/D1;X1Y46/D1/N201;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[5]": {
+          "hide_name": 0,
+          "bits": [ 9552 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/N100;X1Y48/N100/Q5;1;X1Y48/E200;X1Y48/E200/N100;1;X1Y48/A3;X1Y48/A3/E200;1;X1Y48/Q5;;1;X1Y48/EW10;X1Y48/EW10/Q5;1;X2Y48/N210;X2Y48/N210/E111;1;X2Y47/B0;X2Y47/B0/N211;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9551 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/COUT0;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM_ALU_SUM_1_COUT": {
+          "hide_name": 0,
+          "bits": [ 9550 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/CIN0;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_COUT": {
+          "hide_name": 0,
+          "bits": [ 9548 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT3;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_CIN_ALU_COUT_SUM": {
+          "hide_name": 0,
+          "bits": [ 9546 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "rxCounter[0]": {
+          "hide_name": 0,
+          "bits": [ 9545 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/SN20;X1Y48/SN20/Q0;1;X1Y47/A6;X1Y47/A6/N121;1;X1Y48/S100;X1Y48/S100/Q0;1;X1Y48/B0;X1Y48/B0/S100;1;X1Y48/Q0;;1;X1Y48/SN10;X1Y48/SN10/Q0;1;X1Y47/W250;X1Y47/W250/N111;1;X1Y47/B1;X1Y47/B1/W250;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9543 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_CIN": {
+          "hide_name": 0,
+          "bits": [ 9542 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:44.34-44.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0[2]": {
+          "hide_name": 0,
+          "bits": [ 9539 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/N220;X1Y47/N220/F2;1;X1Y46/C4;X1Y46/C4/N221;1;X1Y47/S100;X1Y47/S100/F2;1;X1Y47/N210;X1Y47/N210/S100;1;X1Y46/A5;X1Y46/A5/N211;1;X1Y47/F2;;1;X1Y47/X05;X1Y47/X05/F2;1;X1Y47/B6;X1Y47/B6/X05;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0[1]": {
+          "hide_name": 0,
+          "bits": [ 9538 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/S130;X3Y46/S130/F1;1;X3Y47/W270;X3Y47/W270/S131;1;X1Y47/S270;X1Y47/S270/W272;1;X1Y48/B6;X1Y48/B6/S271;1;X3Y46/SN20;X3Y46/SN20/F1;1;X3Y47/B4;X3Y47/B4/S121;1;X3Y46/X06;X3Y46/X06/F1;1;X3Y46/C4;X3Y46/C4/X06;1;X3Y46/F1;;1;X3Y46/W210;X3Y46/W210/F1;1;X1Y46/B4;X1Y46/B4/W212;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9535 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F5;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9534 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F4;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "rxCounter[1]": {
+          "hide_name": 0,
+          "bits": [ 9532 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/Q4;;1;X1Y48/N130;X1Y48/N130/Q4;1;X1Y47/B2;X1Y47/B2/N131;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D": {
+          "hide_name": 0,
+          "bits": [ 9531 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/OF4;;1;X1Y46/S240;X1Y46/S240/OF4;1;X1Y48/D4;X1Y48/D4/S242;1"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0[3]": {
+          "hide_name": 0,
+          "bits": [ 9528 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/C0;X2Y46/C0/N242;1;X2Y48/EW20;X2Y48/EW20/F4;1;X1Y48/D6;X1Y48/D6/W121;1;X1Y48/N230;X1Y48/N230/W131;1;X1Y46/X04;X1Y46/X04/N232;1;X1Y46/D4;X1Y46/D4/X04;1;X2Y48/C1;X2Y48/C1/F4;1;X1Y48/W230;X1Y48/W230/W131;1;X1Y48/C1;X1Y48/C1/W230;1;X2Y48/E100;X2Y48/E100/F4;1;X3Y48/N240;X3Y48/N240/E101;1;X3Y47/D4;X3Y47/D4/N241;1;X2Y48/W130;X2Y48/W130/F4;1;X1Y48/A0;X1Y48/A0/W131;1;X2Y48/F4;;1;X2Y48/N240;X2Y48/N240/F4;1;X2Y46/X03;X2Y46/X03/N242;1;X2Y46/D1;X2Y46/D1/X03;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter_DFFE_Q_11_D_MUX2_LUT5_O_I1_LUT1_F_I0_ALU_SUM_COUT_ALU_CIN_SUM[0]": {
+          "hide_name": 0,
+          "bits": [ 9526 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/B1;X1Y48/B1/S111;1;X1Y46/A1;X1Y46/A1/N111;1;X1Y47/SN10;X1Y47/SN10/F3;1;X1Y47/F3;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F[1]": {
+          "hide_name": 0,
+          "bits": [ 9525 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/A1;X1Y48/A1/W252;1;X1Y48/X04;X1Y48/X04/W252;1;X1Y48/C0;X1Y48/C0/X04;1;X3Y48/S100;X3Y48/S100/F5;1;X3Y48/B0;X3Y48/B0/S100;1;X2Y48/B2;X2Y48/B2/W111;1;X2Y46/B1;X2Y46/B1/X04;1;X2Y48/B3;X2Y48/B3/W111;1;X2Y48/N250;X2Y48/N250/W111;1;X2Y46/X04;X2Y46/X04/N252;1;X2Y46/B0;X2Y46/B0/X04;1;X2Y48/B0;X2Y48/B0/W111;1;X3Y48/W250;X3Y48/W250/F5;1;X2Y48/A1;X2Y48/A1/W251;1;X3Y48/F5;;1;X3Y48/EW10;X3Y48/EW10/F5;1;X2Y48/S210;X2Y48/S210/W111;1;X2Y49/B0;X2Y49/B0/S211;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxCounter[2]": {
+          "hide_name": 0,
+          "bits": [ 9523 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/X06;X1Y48/X06/Q1;1;X1Y48/D3;X1Y48/D3/X06;1;X1Y48/Q1;;1;X1Y48/N210;X1Y48/N210/Q1;1;X1Y47/B3;X1Y47/B3/N211;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:24.16-24.25"
+          }
+        },
+        "rxCounter_DFFE_Q_10_D": {
+          "hide_name": 0,
+          "bits": [ 9522 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F1;;1;X1Y48/XD1;X1Y48/XD1/F1;1"
+          }
+        },
+        "rxCounter[11]": {
+          "hide_name": 0,
+          "bits": [ 9520 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/E130;X2Y48/E130/Q3;1;X3Y48/N230;X3Y48/N230/E131;1;X3Y47/B0;X3Y47/B0/N231;1;X2Y48/Q3;;1;X2Y48/W100;X2Y48/W100/Q3;1;X2Y48/B5;X2Y48/B5/W100;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "rxCounter_DFFE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 9518 ] ,
+          "attributes": {
+            "ROUTING": "X2Y48/F3;;1;X2Y48/XD3;X2Y48/XD3/F3;1"
+          }
+        },
+        "rxCounter[12]": {
+          "hide_name": 0,
+          "bits": [ 9516 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/N130;X3Y48/N130/Q0;1;X3Y47/B1;X3Y47/B1/N131;1;X3Y48/Q0;;1;X3Y48/W130;X3Y48/W130/Q0;1;X2Y48/A5;X2Y48/A5/W131;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "rxCounter_DFFE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 9514 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/F0;;1;X3Y48/XD0;X3Y48/XD0/F0;1"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT4_I0_F[0]": {
+          "hide_name": 0,
+          "bits": [ 9513 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/A0;X2Y46/A0/W131;1;X3Y46/W270;X3Y46/W270/W130;1;X2Y46/X08;X2Y46/X08/W271;1;X2Y46/CE2;X2Y46/CE2/X08;1;X3Y46/S200;X3Y46/S200/F0;1;X3Y47/X07;X3Y47/X07/S201;1;X3Y47/CE1;X3Y47/CE1/X07;1;X3Y48/CE0;X3Y48/CE0/S211;1;X3Y46/W130;X3Y46/W130/F0;1;X2Y46/A1;X2Y46/A1/W131;1;X2Y48/CE1;X2Y48/CE1/S212;1;X3Y46/EW10;X3Y46/EW10/F0;1;X2Y46/S210;X2Y46/S210/W111;1;X2Y48/CE0;X2Y48/CE0/S212;1;X1Y48/CE0;X1Y48/CE0/X07;1;X3Y46/W200;X3Y46/W200/F0;1;X1Y46/S200;X1Y46/S200/W202;1;X1Y48/X07;X1Y48/X07/S202;1;X1Y48/CE2;X1Y48/CE2/X07;1;X3Y46/F0;;1;X3Y46/SN10;X3Y46/SN10/F0;1;X3Y47/S210;X3Y47/S210/S111;1;X3Y49/W210;X3Y49/W210/S212;1;X2Y49/CE0;X2Y49/CE0/W211;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9510 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:55.32-55.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 9506 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/F4;;1;X1Y44/XD4;X1Y44/XD4/F4;1"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D_ALU_SUM_CIN_ALU_COUT_SUM": {
+          "hide_name": 0,
+          "bits": [ 9504 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "rxBitNumber[0]": {
+          "hide_name": 0,
+          "bits": [ 9503 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/N130;X1Y44/N130/Q4;1;X1Y44/C6;X1Y44/C6/N130;1;X1Y44/X07;X1Y44/X07/Q4;1;X1Y44/A4;X1Y44/A4/X07;1;X1Y44/Q4;;1;X1Y44/S100;X1Y44/S100/Q4;1;X1Y44/B1;X1Y44/B1/S100;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:25.15-25.26"
+          }
+        },
+        "$PACKER_GND": {
+          "hide_name": 1,
+          "bits": [ 9700 ] ,
+          "attributes": {
+            "ROUTING": " "
+          }
+        },
+        "$PACKER_VCC": {
+          "hide_name": 1,
+          "bits": [ 9699 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/D2;X2Y47/D2/X08;1;X2Y47/X08;X2Y47/X08/VCC;1;X2Y47/D3;X2Y47/D3/X08;1;X1Y44/C0;X1Y44/C0/X04;1;X1Y44/C2;X1Y44/C2/X04;1;X1Y47/D4;X1Y47/D4/X04;1;X1Y47/C3;X1Y47/C3/X04;1;X3Y47/C0;X3Y47/C0/X04;1;X2Y47/D4;X2Y47/D4/X04;1;X3Y47/D1;X3Y47/D1/E270;1;X2Y47/C1;X2Y47/C1/X04;1;X1Y44/D3;X1Y44/D3/X03;1;X1Y47/D5;X1Y47/D5/X04;1;X1Y47/D1;X1Y47/D1/X08;1;X1Y47/C4;X1Y47/C4/X08;1;X1Y47/D2;X1Y47/D2/X08;1;X2Y47/C4;X2Y47/C4/S220;1;X3Y47/E270;X3Y47/E270/VCC;1;X3Y47/D0;X3Y47/D0/E270;1;X3Y47/X04;X3Y47/X04/VCC;1;X3Y47/C1;X3Y47/C1/X04;1;X2Y47/S220;X2Y47/S220/VCC;1;X2Y47/C5;X2Y47/C5/S220;1;X2Y47/D5;X2Y47/D5/X04;1;X1Y47/D3;X1Y47/D3/X08;1;X1Y44/X03;X1Y44/X03/VCC;1;X1Y44/D1;X1Y44/D1/X03;1;X2Y47/C2;X2Y47/C2/X04;1;X1Y44/C3;X1Y44/C3/X04;1;X1Y44/X04;X1Y44/X04/VCC;1;X1Y44/C1;X1Y44/C1/X04;1;X1Y47/C0;X1Y47/C0/X04;1;X2Y47/D1;X2Y47/D1/E270;1;X1Y47/X08;X1Y47/X08/VCC;1;X1Y47/C5;X1Y47/C5/X08;1;X2Y47/E270;X2Y47/E270/VCC;1;X2Y47/D0;X2Y47/D0/E270;1;X1Y47/C1;X1Y47/C1/X04;1;X2Y47/C0;X2Y47/C0/X04;1;X1Y47/X04;X1Y47/X04/VCC;1;X1Y47/C2;X1Y47/C2/X04;1;X2Y47/X04;X2Y47/X04/VCC;1;X2Y47/C3;X2Y47/C3/X04;1;X50Y27/S220;X50Y27/S220/VCC;1;X50Y27/C4;X50Y27/C4/S220;1;X0Y0/VCC;;1;X1Y44/S270;X1Y44/S270/VCC;1;X1Y44/D2;X1Y44/D2/S270;1"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9499 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:55.32-55.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D_ALU_SUM_CIN": {
+          "hide_name": 0,
+          "bits": [ 9498 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:55.32-55.47|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "rxBitNumber[1]": {
+          "hide_name": 0,
+          "bits": [ 9496 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/W130;X1Y44/W130/Q2;1;X1Y44/B6;X1Y44/B6/W130;1;X1Y44/Q2;;1;X1Y44/S130;X1Y44/S130/Q2;1;X1Y44/B2;X1Y44/B2/S130;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:25.15-25.26"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 9495 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/F2;;1;X1Y44/XD2;X1Y44/XD2/F2;1"
+          }
+        },
+        "rxBitNumber[2]": {
+          "hide_name": 0,
+          "bits": [ 9493 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/X06;X1Y44/X06/Q3;1;X1Y44/A6;X1Y44/A6/X06;1;X1Y44/Q3;;1;X1Y44/B3;X1Y44/B3/Q3;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:25.15-25.26"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 9492 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/F3;;1;X1Y44/XD3;X1Y44/XD3/F3;1"
+          }
+        },
+        "rxBitNumber_DFFRE_Q_CE": {
+          "hide_name": 0,
+          "bits": [ 9491 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/CE2;X1Y44/CE2/X08;1;X1Y44/F7;;1;X1Y44/X08;X1Y44/X08/F7;1;X1Y44/CE1;X1Y44/CE1/X08;1"
+          }
+        },
+        "led[0]": {
+          "hide_name": 0,
+          "bits": [ 9489 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25"
+          }
+        },
+        "led[1]": {
+          "hide_name": 0,
+          "bits": [ 9487 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25"
+          }
+        },
+        "led[2]": {
+          "hide_name": 0,
+          "bits": [ 9485 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25"
+          }
+        },
+        "led[3]": {
+          "hide_name": 0,
+          "bits": [ 9483 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25"
+          }
+        },
+        "led[4]": {
+          "hide_name": 0,
+          "bits": [ 9481 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25"
+          }
+        },
+        "led[5]": {
+          "hide_name": 0,
+          "bits": [ 9479 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:11.22-11.25"
+          }
+        },
+        "dataIn[6]": {
+          "hide_name": 0,
+          "bits": [ 9471 ] ,
+          "attributes": {
+            "ROUTING": "X3Y44/Q4;;1;X3Y44/X07;X3Y44/X07/Q4;1;X3Y44/D5;X3Y44/D5/X07;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "dataIn[7]": {
+          "hide_name": 0,
+          "bits": [ 9469 ] ,
+          "attributes": {
+            "ROUTING": "X3Y44/Q2;;1;X3Y44/S100;X3Y44/S100/Q2;1;X3Y44/D4;X3Y44/D4/S100;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "uart_rx_IBUF_I_O[0]": {
+          "hide_name": 0,
+          "bits": [ 9468 ] ,
+          "attributes": {
+            "ROUTING": "X3Y44/E260;X3Y44/E260/S834;1;X3Y44/D2;X3Y44/D2/E260;1;X3Y48/N260;X3Y48/N260/S838;1;X3Y46/X07;X3Y46/X07/N262;1;X3Y46/A4;X3Y46/A4/X07;1;X43Y0/Q6;;1;X43Y0/S830;X43Y0/S830/Q6;1;X43Y8/W830;X43Y8/W830/S838;1;X35Y8/W800;X35Y8/W800/W838;1;X27Y8/W800;X27Y8/W800/W808;1;X19Y8/W810;X19Y8/W810/W808;1;X11Y8/W820;X11Y8/W820/W818;1;X3Y8/S820;X3Y8/S820/W828;1;X3Y16/S820;X3Y16/S820/S828;1;X3Y24/S820;X3Y24/S820/S828;1;X3Y32/S830;X3Y32/S830/S828;1;X3Y40/S830;X3Y40/S830/S838;1;X3Y48/N250;X3Y48/N250/S838;1;X3Y46/A0;X3Y46/A0/N252;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT3_I0_F[0]": {
+          "hide_name": 0,
+          "bits": [ 9467 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/S270;X3Y48/S270/F7;1;X3Y49/X06;X3Y49/X06/S271;1;X3Y49/CE1;X3Y49/CE1/X06;1;X2Y44/A0;X2Y44/A0/W271;1;X3Y44/CE1;X3Y44/CE1/X05;1;X3Y48/N270;X3Y48/N270/F7;1;X3Y46/N220;X3Y46/N220/N272;1;X3Y44/X05;X3Y44/X05/N222;1;X3Y44/CE2;X3Y44/CE2/X05;1;X1Y44/A7;X1Y44/A7/W272;1;X3Y48/N820;X3Y48/N820/F7;1;X3Y44/W270;X3Y44/W270/N824;1;X3Y48/SN20;X3Y48/SN20/F7;1;X3Y49/W260;X3Y49/W260/S121;1;X1Y49/X07;X1Y49/X07/W262;1;X1Y49/CE2;X1Y49/CE2/X07;1;X3Y48/F7;;1;X3Y48/W100;X3Y48/W100/F7;1;X2Y48/S200;X2Y48/S200/W101;1;X2Y49/X07;X2Y49/X07/S201;1;X2Y49/CE2;X2Y49/CE2/X07;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 9395 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:8.11-8.14"
+          }
+        },
+        "byteReady_DFFE_Q_D[2]": {
+          "hide_name": 0,
+          "bits": [ 9464 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/W100;X1Y46/W100/OF0;1;X0Y46/W240;X0Y46/W240/W101;1;X1Y46/E240;X1Y46/E240/E242;1;X2Y46/C7;X2Y46/C7/E241;1;X1Y46/OF0;;1;X1Y46/E200;X1Y46/E200/OF0;1;X2Y46/X01;X2Y46/X01/E201;1;X2Y46/C1;X2Y46/C1/X01;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_D[0]": {
+          "hide_name": 0,
+          "bits": [ 9462 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/SN20;X2Y47/SN20/OF6;1;X2Y46/A7;X2Y46/A7/N121;1;X2Y47/OF6;;1;X2Y47/N260;X2Y47/N260/OF6;1;X2Y46/X05;X2Y46/X05/N261;1;X2Y46/SEL0;X2Y46/SEL0/X05;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_D_LUT3_I1_F[2]": {
+          "hide_name": 0,
+          "bits": [ 9457 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/C1;X3Y48/C1/S242;1;X3Y48/C5;X3Y48/C5/S222;1;X3Y46/S240;X3Y46/S240/E101;1;X3Y48/C2;X3Y48/C2/S242;1;X3Y46/X01;X3Y46/X01/E221;1;X3Y46/C2;X3Y46/C2/X01;1;X1Y46/X01;X1Y46/X01/W221;1;X1Y46/C2;X1Y46/C2/X01;1;X2Y46/E130;X2Y46/E130/Q2;1;X3Y46/B1;X3Y46/B1/E131;1;X2Y46/E220;X2Y46/E220/Q2;1;X3Y46/S220;X3Y46/S220/E221;1;X3Y48/C7;X3Y48/C7/S222;1;X2Y46/C2;X2Y46/C2/W220;1;X2Y46/W220;X2Y46/W220/Q2;1;X2Y46/C3;X2Y46/C3/W220;1;X2Y46/Q2;;1;X2Y46/E100;X2Y46/E100/Q2;1;X3Y46/D0;X3Y46/D0/E101;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_D_LUT3_I1_F[1]": {
+          "hide_name": 0,
+          "bits": [ 9451 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/B5;X3Y48/B5/E231;1;X3Y46/S230;X3Y46/S230/E231;1;X3Y47/A4;X3Y47/A4/S231;1;X1Y46/A4;X1Y46/A4/X06;1;X2Y46/EW20;X2Y46/EW20/Q3;1;X3Y46/C0;X3Y46/C0/E121;1;X1Y48/A6;X1Y48/A6/S232;1;X2Y46/W230;X2Y46/W230/Q3;1;X1Y46/B2;X1Y46/B2/W231;1;X3Y48/B2;X3Y48/B2/E231;1;X1Y46/X06;X1Y46/X06/W231;1;X1Y46/S230;X1Y46/S230/W231;1;X2Y46/S230;X2Y46/S230/Q3;1;X2Y48/E230;X2Y48/E230/S232;1;X3Y46/B4;X3Y46/B4/E231;1;X2Y46/E230;X2Y46/E230/Q3;1;X3Y46/B2;X3Y46/B2/E231;1;X2Y46/S130;X2Y46/S130/Q3;1;X2Y46/B2;X2Y46/B2/S130;1;X2Y46/B3;X2Y46/B3/Q3;1;X2Y46/Q3;;1;X3Y48/B7;X3Y48/B7/E231;1;X3Y48/B1;X3Y48/B1/E231;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_D_LUT3_I1_F[0]": {
+          "hide_name": 0,
+          "bits": [ 9447 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/A2;X3Y46/A2/X02;1;X3Y44/S200;X3Y44/S200/E101;1;X3Y46/S210;X3Y46/S210/S202;1;X3Y48/A5;X3Y48/A5/S212;1;X3Y48/A7;X3Y48/A7/X01;1;X2Y44/EW10;X2Y44/EW10/Q0;1;X1Y44/S250;X1Y44/S250/W111;1;X1Y46/A2;X1Y46/A2/S252;1;X3Y46/X02;X3Y46/X02/S232;1;X3Y46/A1;X3Y46/A1/X02;1;X2Y44/E100;X2Y44/E100/Q0;1;X3Y44/S800;X3Y44/S800/E101;1;X3Y48/E200;X3Y48/E200/S804;1;X3Y48/A2;X3Y48/A2/E200;1;X2Y44/S800;X2Y44/S800/Q0;1;X2Y48/E200;X2Y48/E200/S804;1;X3Y48/X01;X3Y48/X01/E201;1;X3Y48/A1;X3Y48/A1/X01;1;X2Y46/A2;X2Y46/A2/X07;1;X2Y44/S200;X2Y44/S200/Q0;1;X2Y46/X07;X2Y46/X07/S202;1;X2Y46/A3;X2Y46/A3/X07;1;X2Y44/Q0;;1;X2Y44/E130;X2Y44/E130/Q0;1;X3Y44/S230;X3Y44/S230/E131;1;X3Y46/B0;X3Y46/B0/S232;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_D_LUT3_I1_F[4]": {
+          "hide_name": 0,
+          "bits": [ 9443 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/SEL4;X1Y46/SEL4/X08;1;X2Y46/E270;X2Y46/E270/F7;1;X3Y46/X08;X3Y46/X08/E271;1;X3Y46/SEL2;X3Y46/SEL2/X08;1;X2Y46/W270;X2Y46/W270/F7;1;X1Y46/X08;X1Y46/X08/W271;1;X1Y46/SEL2;X1Y46/SEL2/X08;1;X3Y47/SEL4;X3Y47/SEL4/E261;1;X2Y46/SN20;X2Y46/SN20/F7;1;X2Y47/E260;X2Y47/E260/S121;1;X3Y47/C6;X3Y47/C6/E261;1;X2Y46/F7;;1;X2Y46/EW10;X2Y46/EW10/F7;1;X1Y46/S250;X1Y46/S250/W111;1;X1Y48/X08;X1Y48/X08/S252;1;X1Y48/SEL6;X1Y48/SEL6/X08;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "uart_rx_IBUF_I_O_LUT3_I0_F[1]": {
+          "hide_name": 0,
+          "bits": [ 9441 ] ,
+          "attributes": {
+            "ROUTING": "X1Y44/LSR2;X1Y44/LSR2/X05;1;X3Y46/S100;X3Y46/S100/F4;1;X3Y47/E240;X3Y47/E240/S101;1;X3Y47/B6;X3Y47/B6/E240;1;X1Y44/B7;X1Y44/B7/X05;1;X3Y46/F4;;1;X3Y46/W240;X3Y46/W240/F4;1;X1Y46/N240;X1Y46/N240/W242;1;X1Y44/X05;X1Y44/X05/N242;1;X1Y44/LSR1;X1Y44/LSR1/X05;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_D[1]": {
+          "hide_name": 0,
+          "bits": [ 9439 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/E130;X3Y48/E130/F2;1;X4Y48/N230;X4Y48/N230/E131;1;X4Y46/W230;X4Y46/W230/N232;1;X2Y46/B7;X2Y46/B7/W232;1;X3Y48/XD2;X3Y48/XD2/F2;1;X3Y48/F2;;1;X3Y48/N100;X3Y48/N100/F2;1;X3Y47/W200;X3Y47/W200/N101;1;X3Y47/A6;X3Y47/A6/W200;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "byteReady_DFFE_Q_CE": {
+          "hide_name": 0,
+          "bits": [ 9438 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F6;;1;X3Y47/N100;X3Y47/N100/F6;1;X3Y47/S200;X3Y47/S200/N100;1;X3Y48/X07;X3Y48/X07/S201;1;X3Y48/CE1;X3Y48/CE1/X07;1"
+          }
+        },
+        "dataIn[5]": {
+          "hide_name": 0,
+          "bits": [ 9436 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/S200;X3Y48/S200/S252;1;X3Y49/D3;X3Y49/D3/S201;1;X3Y44/Q5;;1;X3Y44/S250;X3Y44/S250/Q5;1;X3Y46/S250;X3Y46/S250/S252;1;X3Y48/X06;X3Y48/X06/S252;1;X3Y48/A4;X3Y48/A4/X06;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "dataIn[0]": {
+          "hide_name": 0,
+          "bits": [ 9434 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/Q4;;1;X1Y49/X03;X1Y49/X03/Q4;1;X1Y49/A0;X1Y49/A0/X03;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "byteReady_DFFE_CE_Q[0]": {
+          "hide_name": 0,
+          "bits": [ 9432 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/Q0;;1;X1Y49/W100;X1Y49/W100/Q0;1;X0Y49/S200;X0Y49/S200/W101;1;X0Y50/D1;X0Y50/D1/S201;1"
+          }
+        },
+        "byteReady_DFFE_CE_5_D": {
+          "hide_name": 0,
+          "bits": [ 9431 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/F0;;1;X1Y49/XD0;X1Y49/XD0/F0;1"
+          }
+        },
+        "dataIn[1]": {
+          "hide_name": 0,
+          "bits": [ 9429 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/N100;X1Y49/N100/Q5;1;X1Y49/A1;X1Y49/A1/N100;1;X1Y49/Q5;;1;X1Y49/X04;X1Y49/X04/Q5;1;X1Y49/D4;X1Y49/D4/X04;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "byteReady_DFFE_CE_Q[1]": {
+          "hide_name": 0,
+          "bits": [ 9427 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/Q1;;1;X1Y49/W130;X1Y49/W130/Q1;1;X0Y49/S270;X0Y49/S270/W131;1;X0Y50/A0;X0Y50/A0/S271;1"
+          }
+        },
+        "byteReady_DFFE_CE_4_D": {
+          "hide_name": 0,
+          "bits": [ 9426 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/F1;;1;X1Y49/XD1;X1Y49/XD1/F1;1"
+          }
+        },
+        "dataIn[2]": {
+          "hide_name": 0,
+          "bits": [ 9424 ] ,
+          "attributes": {
+            "ROUTING": "X2Y49/EW20;X2Y49/EW20/Q5;1;X1Y49/D5;X1Y49/D5/W121;1;X2Y49/Q5;;1;X2Y49/W130;X2Y49/W130/Q5;1;X1Y49/A2;X1Y49/A2/W131;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "byteReady_DFFE_CE_Q[2]": {
+          "hide_name": 0,
+          "bits": [ 9422 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/Q2;;1;X1Y49/SN20;X1Y49/SN20/Q2;1;X1Y48/W220;X1Y48/W220/N121;1;X0Y48/D1;X0Y48/D1/W221;1"
+          }
+        },
+        "byteReady_DFFE_CE_3_D": {
+          "hide_name": 0,
+          "bits": [ 9421 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/F2;;1;X1Y49/XD2;X1Y49/XD2/F2;1"
+          }
+        },
+        "dataIn[3]": {
+          "hide_name": 0,
+          "bits": [ 9419 ] ,
+          "attributes": {
+            "ROUTING": "X2Y49/S100;X2Y49/S100/Q4;1;X2Y49/D5;X2Y49/D5/S100;1;X2Y49/Q4;;1;X2Y49/N130;X2Y49/N130/Q4;1;X2Y48/W270;X2Y48/W270/N131;1;X1Y48/A2;X1Y48/A2/W271;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "byteReady_DFFE_CE_Q[3]": {
+          "hide_name": 0,
+          "bits": [ 9417 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/Q2;;1;X1Y48/W130;X1Y48/W130/Q2;1;X0Y48/A0;X0Y48/A0/W131;1"
+          }
+        },
+        "byteReady_DFFE_CE_2_D": {
+          "hide_name": 0,
+          "bits": [ 9416 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F2;;1;X1Y48/XD2;X1Y48/XD2/F2;1"
+          }
+        },
+        "dataIn[4]": {
+          "hide_name": 0,
+          "bits": [ 9414 ] ,
+          "attributes": {
+            "ROUTING": "X3Y49/EW20;X3Y49/EW20/Q3;1;X2Y49/D4;X2Y49/D4/W121;1;X3Y49/Q3;;1;X3Y49/W230;X3Y49/W230/Q3;1;X1Y49/X02;X1Y49/X02/W232;1;X1Y49/A3;X1Y49/A3/X02;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:26.15-26.21"
+          }
+        },
+        "byteReady_DFFE_CE_Q[4]": {
+          "hide_name": 0,
+          "bits": [ 9412 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/Q3;;1;X1Y49/EW20;X1Y49/EW20/Q3;1;X0Y49/N220;X0Y49/N220/W121;1;X0Y47/N220;X0Y47/N220/N222;1;X0Y46/D1;X0Y46/D1/N221;1"
+          }
+        },
+        "byteReady_DFFE_CE_1_D": {
+          "hide_name": 0,
+          "bits": [ 9411 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/F3;;1;X1Y49/XD3;X1Y49/XD3/F3;1"
+          }
+        },
+        "byteReady_DFFE_CE_Q[5]": {
+          "hide_name": 0,
+          "bits": [ 9408 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/Q4;;1;X3Y48/W820;X3Y48/W820/Q4;1;X0Y48/N270;X0Y48/N270/E824;1;X0Y46/A0;X0Y46/A0/N272;1"
+          }
+        },
+        "byteReady_DFFE_CE_D": {
+          "hide_name": 0,
+          "bits": [ 9407 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/F4;;1;X3Y48/XD4;X3Y48/XD4/F4;1"
+          }
+        },
+        "clk_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 9406 ] ,
+          "attributes": {
+            "ROUTING": "X0Y6/S830;X0Y6/S830/F6;5;X0Y14/S800;X0Y14/S800/S838;5;X0Y22/S810;X0Y22/S810/S808;5;X0Y30/N210;X0Y30/N210/S818;5;X0Y28/N240;X0Y28/N240/N212;5;X0Y27/CLK0;X0Y27/CLK0/N241;5;X0Y6/F6;;5;X2Y46/CLK1;X2Y46/CLK1/GB10;5;X2Y44/CLK0;X2Y44/CLK0/GB10;5;X2Y47/GBO0;X2Y47/GBO0/GT00;5;X3Y47/CLK1;X3Y47/CLK1/GB10;5;X4Y46/GB10;X2Y46/GBO0/GT00;5;X2Y46/CLK2;X2Y46/CLK2/GB10;5;X2Y48/CLK0;X2Y48/CLK0/GB10;5;X2Y49/CLK0;X2Y49/CLK0/GB10;5;X1Y48/CLK2;X1Y48/CLK2/GB10;5;X1Y48/CLK0;X1Y48/CLK0/GB10;5;X2Y48/CLK1;X2Y48/CLK1/GB10;5;X3Y48/CLK0;X3Y48/CLK0/GB10;5;X1Y44/CLK2;X1Y44/CLK2/GB10;5;X1Y44/CLK1;X1Y44/CLK1/GB10;5;X1Y49/CLK2;X1Y49/CLK2/GB10;5;X2Y49/CLK2;X2Y49/CLK2/GB10;5;X3Y49/CLK1;X3Y49/CLK1/GB10;5;X3Y44/CLK2;X3Y44/CLK2/GB10;5;X3Y44/GB10;X2Y44/GBO0/GT00;5;X3Y44/CLK1;X3Y44/CLK1/GB10;5;X3Y48/CLK1;X3Y48/CLK1/GB10;5;X1Y49/CLK0;X1Y49/CLK0/GB10;5;X1Y48/CLK1;X1Y48/CLK1/GB10;5;X2Y49/GBO0;X2Y49/GBO0/GT00;5;X1Y49/CLK1;X1Y49/CLK1/GB10;5;X18Y46/SPINE17;X27Y27/SPINE17/TLBDCLK2;5;X2Y37/GT00;X2Y46/GT00/SPINE17;5;X2Y48/GBO0;X2Y48/GBO0/GT00;5;X3Y48/CLK2;X3Y48/CLK2/GB10;5"
+          }
+        },
+        "byteReady": {
+          "hide_name": 0,
+          "bits": [ 9405 ] ,
+          "attributes": {
+            "ROUTING": "X3Y48/X05;X3Y48/X05/Q2;1;X3Y48/CE2;X3Y48/CE2/X05;1;X3Y48/W220;X3Y48/W220/Q2;1;X1Y48/X05;X1Y48/X05/W222;1;X1Y48/CE1;X1Y48/CE1/X05;1;X1Y49/CE0;X1Y49/CE0/X08;1;X3Y48/Q2;;1;X3Y48/SN10;X3Y48/SN10/Q2;1;X3Y49/W250;X3Y49/W250/S111;1;X1Y49/X08;X1Y49/X08/W252;1;X1Y49/CE1;X1Y49/CE1/X08;1",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:27.9-27.18"
+          }
+        },
+        "btn1_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 9402 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "btn1": {
+          "hide_name": 0,
+          "bits": [ 9394 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/uart/uart.v:12.11-12.15"
+          }
+        }
+      }
+    }
+  }
+}
