@@ -1,0 +1,3576 @@
+{
+  "creator": "Next Generation Place and Route (Version nextpnr-0.9-43-gc46f2bbd)",
+  "modules": {
+    "top": {
+      "settings": {
+        "route": "00000000000000000000000000000001",
+        "router/tmg_ripup": "0 ",
+        "router1/useEstimate": "1 ",
+        "router1/fullCleanupReroute": "1 ",
+        "router1/cleanupReroute": "1 ",
+        "router1/maxIterCnt": "200",
+        "place": "00000000000000000000000000000001",
+        "placer1/startTemp": "1.000000",
+        "placer1/minBelsForGridPick": "64",
+        "placer1/netShareWeight": "0.000000",
+        "placer1/constraintWeight": "10.000000",
+        "placerHeap/cellPlacementTimeout": "8",
+        "placerHeap/netShareWeight": "0.000000",
+        "placerHeap/parallelRefine": "0 ",
+        "pack": "00000000000000000000000000000001",
+        "synth": "00000000000000000000000000000001",
+        "placerHeap/timingWeight": "10 ",
+        "placerHeap/criticalityExponent": "2",
+        "placerHeap/beta": "0.900000",
+        "placerHeap/alpha": "0.100000",
+        "seed": "0011000101000001010110010010011001010011010110001001011110010011",
+        "arch.type": " ",
+        "arch.name": "ARCHNAME",
+        "router": "router1",
+        "placer": "heap",
+        "auto_freq": "00000000000000000000000000000000",
+        "slack_redist_iter": "00000000000000000000000000000000",
+        "timing_driven": "00000000000000000000000000000001",
+        "target_freq": "27000000.000000",
+        "cst.filename": "/Users/nico/Documents/LushayLabs/tangnano20k.cst",
+        "packer.partno": "GW2AR-LV18QN88C8/I7",
+        "packer.chipdb": "GW2A-18C",
+        "packer.arch": "himbaechel/gowin"
+      },
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/Users/nico/Documents/LushayLabs/counter.v:1.1-22.10"
+      },
+      "ports": {
+        "led": {
+          "direction": "output",
+          "bits": [ 9610, 9608, 9606, 9604, 9602, 9600 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 9394 ]
+        }
+      },
+      "cells": {
+        "clockCounter_DFFR_Q_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X5Y46/LUT2"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9656 ],
+            "I3": [ 9401 ]
+          }
+        },
+        "clockCounter_DFFR_Q_1_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X4Y47/LUT1"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9654 ],
+            "I3": [ 9406 ]
+          }
+        },
+        "clockCounter_DFFR_Q_10_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y47/LUT2"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9652 ],
+            "I3": [ 9409 ]
+          }
+        },
+        "clockCounter_DFFR_Q_12_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y47/LUT3"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9650 ],
+            "I3": [ 9424 ]
+          }
+        },
+        "ledCounter_DFFE_Q_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X2Y47/LUT2"
+          },
+          "port_directions": {
+            "F": "output",
+            "I3": "input"
+          },
+          "connections": {
+            "F": [ 9648 ],
+            "I3": [ 9535 ]
+          }
+        },
+        "clk_IBUF_I_O_BUFG": {
+          "hide_name": 0,
+          "type": "BUFG",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y27/BUFG1"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [  ],
+            "I": [ 9636 ]
+          }
+        },
+        "clockCounter_DFFR_Q_D_ALU_SUM_DUMMY_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "C2L"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X5Y46/ALU1"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "clockCounter_DFFR_Q_22_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "C2L"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/ALU0"
+          },
+          "port_directions": {
+            "I2": "input",
+            "COUT": "output"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "COUT": [ 9633 ]
+          }
+        },
+        "ledCounter_DFFE_Q_D_ALU_SUM_DUMMY_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "C2L"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU1"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "ledCounter_DFFE_Q_4_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "C2L"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU0"
+          },
+          "port_directions": {
+            "I2": "input",
+            "COUT": "output"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "COUT": [ 9631 ]
+          }
+        },
+        "GSR": {
+          "hide_name": 0,
+          "type": "GSR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X50Y27/GSR"
+          },
+          "port_directions": {
+            "GSRI": "input"
+          },
+          "connections": {
+            "GSRI": [ 9626 ]
+          }
+        },
+        "led_OBUF_O_5_I_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT2",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9559 ],
+            "F": [ 9563 ]
+          }
+        },
+        "led_OBUF_O_5": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y50/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9610 ],
+            "I": [ 9563 ]
+          }
+        },
+        "led_OBUF_O_4": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y50/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9608 ],
+            "I": [ 9594 ]
+          }
+        },
+        "led_OBUF_O_3": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y48/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9606 ],
+            "I": [ 9592 ]
+          }
+        },
+        "led_OBUF_O_2": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y48/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9604 ],
+            "I": [ 9590 ]
+          }
+        },
+        "led_OBUF_O_1": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y46/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9602 ],
+            "I": [ 9598 ]
+          }
+        },
+        "led_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y46/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21",
+            "&DRIVE=8": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9600 ],
+            "I": [ 9596 ]
+          }
+        },
+        "ledCounter_LUT1_I0_4": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/LUT5",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9539 ],
+            "F": [ 9598 ]
+          }
+        },
+        "ledCounter_LUT1_I0_3": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9536 ],
+            "F": [ 9596 ]
+          }
+        },
+        "ledCounter_LUT1_I0_2": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y49/LUT5",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9555 ],
+            "F": [ 9594 ]
+          }
+        },
+        "ledCounter_LUT1_I0_1": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9550 ],
+            "F": [ 9592 ]
+          }
+        },
+        "ledCounter_LUT1_I0": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9545 ],
+            "F": [ 9590 ]
+          }
+        },
+        "$PACKER_GND_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_GND",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000010",
+            "NEXTPNR_BEL": "X0Y0/GND"
+          },
+          "port_directions": {
+            "G": "output"
+          },
+          "connections": {
+            "G": [ 9627 ]
+          }
+        },
+        "$PACKER_VCC_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_VCC",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/VCC"
+          },
+          "port_directions": {
+            "V": "output"
+          },
+          "connections": {
+            "V": [ 9626 ]
+          }
+        },
+        "ledCounter_DFFE_Q_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/ALU0",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9535 ],
+            "I3": [ 9626 ],
+            "I1": [ 9536 ],
+            "I0": [  ],
+            "COUT": [ 9586 ],
+            "CIN": [ 9542 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_S0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000010000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9440 ],
+            "I2": [ 9435 ],
+            "I1": [ 9430 ],
+            "I0": [ 9425 ],
+            "F": [ 9574 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_I1_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "1000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/LUT1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9420 ],
+            "I2": [ 9411 ],
+            "I1": [ 9530 ],
+            "I0": [ 9524 ],
+            "F": [ 9573 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_I0_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "00"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/LUT0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [  ],
+            "F": [ 9572 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_1_S0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9489 ],
+            "I2": [ 9485 ],
+            "I1": [ 9480 ],
+            "I0": [ 9475 ],
+            "F": [ 9578 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_1_I1_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000001000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:153.41-153.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9464 ],
+            "I2": [ 9458 ],
+            "I1": [ 9452 ],
+            "I0": [ 9446 ],
+            "F": [ 9577 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_1_I0_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "00"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:152.41-152.66|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [  ],
+            "F": [ 9576 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_1": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/MUX6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9578 ],
+            "O": [ 9568 ],
+            "I1": [ 9577 ],
+            "I0": [ 9576 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/MUX0",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:154.14-154.54",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "S0": "input",
+            "O": "output",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "S0": [ 9574 ],
+            "O": [ 9567 ],
+            "I1": [ 9573 ],
+            "I0": [ 9572 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_LUT4_F_1": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000000000001000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9498 ],
+            "I2": [ 9472 ],
+            "I1": [ 9407 ],
+            "I0": [ 9402 ],
+            "F": [ 9566 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0000100000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/LUT6",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9518 ],
+            "I2": [ 9513 ],
+            "I1": [ 9508 ],
+            "I0": [ 9503 ],
+            "F": [ 9565 ]
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "1000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/LUT7",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 9568 ],
+            "I2": [ 9567 ],
+            "I1": [ 9566 ],
+            "I0": [ 9565 ],
+            "F": [ 9403 ]
+          }
+        },
+        "ledCounter_DFFE_Q_5": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y48/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9559 ],
+            "D": [ 9563 ],
+            "CLK": [ 9398 ],
+            "CE": [ 9403 ]
+          }
+        },
+        "ledCounter_DFFE_Q_4_D_ALU_SUM_CIN_ALU_COUT": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000011000011001111",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9560 ],
+            "I3": [ 9626 ],
+            "I1": [ 9559 ],
+            "I0": [  ],
+            "COUT": [ 9557 ],
+            "CIN": [ 9631 ]
+          }
+        },
+        "ledCounter_DFFE_Q_4_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9554 ],
+            "I3": [ 9626 ],
+            "I1": [ 9555 ],
+            "I0": [  ],
+            "COUT": [ 9552 ],
+            "CIN": [ 9557 ]
+          }
+        },
+        "ledCounter_DFFE_Q_4": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9555 ],
+            "D": [ 9554 ],
+            "CLK": [ 9398 ],
+            "CE": [ 9403 ]
+          }
+        },
+        "ledCounter_DFFE_Q_3_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9549 ],
+            "I3": [ 9626 ],
+            "I1": [ 9550 ],
+            "I0": [  ],
+            "COUT": [ 9547 ],
+            "CIN": [ 9552 ]
+          }
+        },
+        "ledCounter_DFFE_Q_3": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9550 ],
+            "D": [ 9549 ],
+            "CLK": [ 9398 ],
+            "CE": [ 9403 ]
+          }
+        },
+        "ledCounter_DFFE_Q_2_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9544 ],
+            "I3": [ 9626 ],
+            "I1": [ 9545 ],
+            "I0": [  ],
+            "COUT": [ 9541 ],
+            "CIN": [ 9547 ]
+          }
+        },
+        "ledCounter_DFFE_Q_2": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9545 ],
+            "D": [ 9544 ],
+            "CLK": [ 9398 ],
+            "CE": [ 9403 ]
+          }
+        },
+        "ledCounter_DFFE_Q_1_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/ALU5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9538 ],
+            "I3": [ 9626 ],
+            "I1": [ 9539 ],
+            "I0": [  ],
+            "COUT": [ 9542 ],
+            "CIN": [ 9541 ]
+          }
+        },
+        "ledCounter_DFFE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y47/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9539 ],
+            "D": [ 9538 ],
+            "CLK": [ 9398 ],
+            "CE": [ 9403 ]
+          }
+        },
+        "ledCounter_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 9536 ],
+            "D": [ 9648 ],
+            "CLK": [ 9398 ],
+            "CE": [ 9403 ]
+          }
+        },
+        "clockCounter_DFFR_Q_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X5Y46/ALU0",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9401 ],
+            "I3": [ 9626 ],
+            "I1": [ 9402 ],
+            "I0": [  ],
+            "COUT": [ 9533 ],
+            "CIN": [ 9469 ]
+          }
+        },
+        "clockCounter_DFFR_Q_9_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9528 ],
+            "I3": [ 9626 ],
+            "I1": [ 9530 ],
+            "I0": [  ],
+            "COUT": [ 9526 ],
+            "CIN": [ 9414 ]
+          }
+        },
+        "clockCounter_DFFR_Q_9": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9530 ],
+            "D": [ 9528 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_8_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/ALU4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9522 ],
+            "I3": [ 9626 ],
+            "I1": [ 9524 ],
+            "I0": [  ],
+            "COUT": [ 9520 ],
+            "CIN": [ 9526 ]
+          }
+        },
+        "clockCounter_DFFR_Q_8": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9524 ],
+            "D": [ 9522 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_7_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/ALU5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9517 ],
+            "I3": [ 9626 ],
+            "I1": [ 9518 ],
+            "I0": [  ],
+            "COUT": [ 9515 ],
+            "CIN": [ 9520 ]
+          }
+        },
+        "clockCounter_DFFR_Q_7": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9518 ],
+            "D": [ 9517 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_6_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/ALU0",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9512 ],
+            "I3": [ 9626 ],
+            "I1": [ 9513 ],
+            "I0": [  ],
+            "COUT": [ 9510 ],
+            "CIN": [ 9515 ]
+          }
+        },
+        "clockCounter_DFFR_Q_6": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9513 ],
+            "D": [ 9512 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_5_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9507 ],
+            "I3": [ 9626 ],
+            "I1": [ 9508 ],
+            "I0": [  ],
+            "COUT": [ 9505 ],
+            "CIN": [ 9510 ]
+          }
+        },
+        "clockCounter_DFFR_Q_5": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/DFF1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9508 ],
+            "D": [ 9507 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_4_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9502 ],
+            "I3": [ 9626 ],
+            "I1": [ 9503 ],
+            "I0": [  ],
+            "COUT": [ 9500 ],
+            "CIN": [ 9505 ]
+          }
+        },
+        "clockCounter_DFFR_Q_4": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9503 ],
+            "D": [ 9502 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_3_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9497 ],
+            "I3": [ 9626 ],
+            "I1": [ 9498 ],
+            "I0": [  ],
+            "COUT": [ 9495 ],
+            "CIN": [ 9500 ]
+          }
+        },
+        "clockCounter_DFFR_Q_3": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9498 ],
+            "D": [ 9497 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_2_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/ALU4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9471 ],
+            "I3": [ 9626 ],
+            "I1": [ 9472 ],
+            "I0": [  ],
+            "COUT": [ 9468 ],
+            "CIN": [ 9495 ]
+          }
+        },
+        "clockCounter_DFFR_Q_23_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/LUT4",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 9489 ],
+            "F": [ 9492 ]
+          }
+        },
+        "clockCounter_DFFR_Q_23": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y47/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9489 ],
+            "D": [ 9492 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_22_D_ALU_SUM_CIN_ALU_COUT": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000011000011001111",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9490 ],
+            "I3": [ 9626 ],
+            "I1": [ 9489 ],
+            "I0": [  ],
+            "COUT": [ 9487 ],
+            "CIN": [ 9633 ]
+          }
+        },
+        "clockCounter_DFFR_Q_22_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9484 ],
+            "I3": [ 9626 ],
+            "I1": [ 9485 ],
+            "I0": [  ],
+            "COUT": [ 9482 ],
+            "CIN": [ 9487 ]
+          }
+        },
+        "clockCounter_DFFR_Q_22": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9485 ],
+            "D": [ 9484 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_21_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9479 ],
+            "I3": [ 9626 ],
+            "I1": [ 9480 ],
+            "I0": [  ],
+            "COUT": [ 9477 ],
+            "CIN": [ 9482 ]
+          }
+        },
+        "clockCounter_DFFR_Q_21": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9480 ],
+            "D": [ 9479 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_20_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/ALU4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9474 ],
+            "I3": [ 9626 ],
+            "I1": [ 9475 ],
+            "I0": [  ],
+            "COUT": [ 9466 ],
+            "CIN": [ 9477 ]
+          }
+        },
+        "clockCounter_DFFR_Q_20": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9475 ],
+            "D": [ 9474 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_2": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9472 ],
+            "D": [ 9471 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_1_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y46/ALU5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9406 ],
+            "I3": [ 9626 ],
+            "I1": [ 9407 ],
+            "I0": [  ],
+            "COUT": [ 9469 ],
+            "CIN": [ 9468 ]
+          }
+        },
+        "clockCounter_DFFR_Q_19_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/ALU5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9462 ],
+            "I3": [ 9626 ],
+            "I1": [ 9464 ],
+            "I0": [  ],
+            "COUT": [ 9460 ],
+            "CIN": [ 9466 ]
+          }
+        },
+        "clockCounter_DFFR_Q_19": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X1Y46/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9464 ],
+            "D": [ 9462 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_18_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/ALU0",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9456 ],
+            "I3": [ 9626 ],
+            "I1": [ 9458 ],
+            "I0": [  ],
+            "COUT": [ 9454 ],
+            "CIN": [ 9460 ]
+          }
+        },
+        "clockCounter_DFFR_Q_18": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF0",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9458 ],
+            "D": [ 9456 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_17_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9450 ],
+            "I3": [ 9626 ],
+            "I1": [ 9452 ],
+            "I0": [  ],
+            "COUT": [ 9448 ],
+            "CIN": [ 9454 ]
+          }
+        },
+        "clockCounter_DFFR_Q_17": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9452 ],
+            "D": [ 9450 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_16_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9444 ],
+            "I3": [ 9626 ],
+            "I1": [ 9446 ],
+            "I0": [  ],
+            "COUT": [ 9442 ],
+            "CIN": [ 9448 ]
+          }
+        },
+        "clockCounter_DFFR_Q_16": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9446 ],
+            "D": [ 9444 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_15_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/ALU3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9439 ],
+            "I3": [ 9626 ],
+            "I1": [ 9440 ],
+            "I0": [  ],
+            "COUT": [ 9437 ],
+            "CIN": [ 9442 ]
+          }
+        },
+        "clockCounter_DFFR_Q_15": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9440 ],
+            "D": [ 9439 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_14_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/ALU4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9434 ],
+            "I3": [ 9626 ],
+            "I1": [ 9435 ],
+            "I0": [  ],
+            "COUT": [ 9432 ],
+            "CIN": [ 9437 ]
+          }
+        },
+        "clockCounter_DFFR_Q_14": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF4",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9435 ],
+            "D": [ 9434 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_13_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/ALU5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9429 ],
+            "I3": [ 9626 ],
+            "I1": [ 9430 ],
+            "I0": [  ],
+            "COUT": [ 9427 ],
+            "CIN": [ 9432 ]
+          }
+        },
+        "clockCounter_DFFR_Q_13": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X2Y46/DFF5",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9430 ],
+            "D": [ 9429 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_12_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/ALU0",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9424 ],
+            "I3": [ 9626 ],
+            "I1": [ 9425 ],
+            "I0": [  ],
+            "COUT": [ 9422 ],
+            "CIN": [ 9427 ]
+          }
+        },
+        "clockCounter_DFFR_Q_12": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/DFF3",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9425 ],
+            "D": [ 9650 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_11_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/ALU1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9418 ],
+            "I3": [ 9626 ],
+            "I1": [ 9420 ],
+            "I0": [  ],
+            "COUT": [ 9413 ],
+            "CIN": [ 9422 ]
+          }
+        },
+        "clockCounter_DFFR_Q_11": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/DFF1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9420 ],
+            "D": [ 9418 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_10_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000001100000000111100",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y46/ALU2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 9626 ],
+            "SUM": [ 9409 ],
+            "I3": [ 9626 ],
+            "I1": [ 9411 ],
+            "I0": [  ],
+            "COUT": [ 9414 ],
+            "CIN": [ 9413 ]
+          }
+        },
+        "clockCounter_DFFR_Q_10": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X3Y47/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9411 ],
+            "D": [ 9652 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q_1": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X4Y47/DFF1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9407 ],
+            "D": [ 9654 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clockCounter_DFFR_Q": {
+          "hide_name": 0,
+          "type": "DFFR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X5Y46/DFF2",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:11.1-18.4|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:31.7-31.59",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input"
+          },
+          "connections": {
+            "RESET": [ 9403 ],
+            "Q": [ 9402 ],
+            "D": [ 9656 ],
+            "CLK": [ 9398 ]
+          }
+        },
+        "clk_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y6/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:3.11-3.14",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9398 ],
+            "I": [ 9394 ]
+          }
+        }
+      },
+      "netnames": {
+        "clockCounter_DFFR_Q$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9656 ] ,
+          "attributes": {
+            "ROUTING": "X5Y46/F2;;1;X5Y46/XD2;X5Y46/XD2/F2;1"
+          }
+        },
+        "clockCounter_DFFR_Q_1$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9654 ] ,
+          "attributes": {
+            "ROUTING": "X4Y47/F1;;1;X4Y47/XD1;X4Y47/XD1/F1;1"
+          }
+        },
+        "clockCounter_DFFR_Q_10$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9652 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F2;;1;X3Y47/XD2;X3Y47/XD2/F2;1"
+          }
+        },
+        "clockCounter_DFFR_Q_12$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9650 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F3;;1;X3Y47/XD3;X3Y47/XD3/F3;1"
+          }
+        },
+        "ledCounter_DFFE_Q$conn$D": {
+          "hide_name": 0,
+          "bits": [ 9648 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/F2;;1;X2Y47/XD2;X2Y47/XD2/F2;1"
+          }
+        },
+        "clk_IBUF_I_O_BUFG$conn$I": {
+          "hide_name": 0,
+          "bits": [ 9636 ] ,
+          "attributes": {
+            "ROUTING": " "
+          }
+        },
+        "clockCounter_DFFR_Q_22_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "bits": [ 9633 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/COUT0;;1"
+          }
+        },
+        "ledCounter_DFFE_Q_4_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "bits": [ 9631 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT0;;1"
+          }
+        },
+        "led[0]": {
+          "hide_name": 0,
+          "bits": [ 9610 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21"
+          }
+        },
+        "led[1]": {
+          "hide_name": 0,
+          "bits": [ 9608 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21"
+          }
+        },
+        "led[2]": {
+          "hide_name": 0,
+          "bits": [ 9606 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21"
+          }
+        },
+        "led[3]": {
+          "hide_name": 0,
+          "bits": [ 9604 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21"
+          }
+        },
+        "led[4]": {
+          "hide_name": 0,
+          "bits": [ 9602 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21"
+          }
+        },
+        "led[5]": {
+          "hide_name": 0,
+          "bits": [ 9600 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:4.18-4.21"
+          }
+        },
+        "led_OBUF_O_I[4]": {
+          "hide_name": 0,
+          "bits": [ 9598 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F5;;1;X3Y47/W830;X3Y47/W830/F5;1;X0Y47/N250;X0Y47/N250/E834;1;X0Y46/X06;X0Y46/X06/N251;1;X0Y46/D1;X0Y46/D1/X06;1"
+          }
+        },
+        "led_OBUF_O_I[5]": {
+          "hide_name": 0,
+          "bits": [ 9596 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/F7;;1;X2Y47/SN10;X2Y47/SN10/F7;1;X2Y46/W250;X2Y46/W250/N111;1;X0Y46/A0;X0Y46/A0/W252;1"
+          }
+        },
+        "led_OBUF_O_I[1]": {
+          "hide_name": 0,
+          "bits": [ 9594 ] ,
+          "attributes": {
+            "ROUTING": "X1Y49/F5;;1;X1Y49/SN10;X1Y49/SN10/F5;1;X1Y50/W250;X1Y50/W250/S111;1;X0Y50/A0;X0Y50/A0/W251;1"
+          }
+        },
+        "led_OBUF_O_I[2]": {
+          "hide_name": 0,
+          "bits": [ 9592 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F6;;1;X1Y48/EW20;X1Y48/EW20/F6;1;X0Y48/D1;X0Y48/D1/W121;1"
+          }
+        },
+        "led_OBUF_O_I[3]": {
+          "hide_name": 0,
+          "bits": [ 9590 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/F0;;1;X1Y48/W130;X1Y48/W130/F0;1;X0Y48/A0;X0Y48/A0/W131;1"
+          }
+        },
+        "ledCounter_DFFE_Q_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9586 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_1_S0[4]": {
+          "hide_name": 0,
+          "bits": [ 9578 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F6;;1;X2Y46/W260;X2Y46/W260/F6;1;X1Y46/SEL6;X1Y46/SEL6/W261;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_1_I1": {
+          "hide_name": 0,
+          "bits": [ 9577 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F7;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_1_I0": {
+          "hide_name": 0,
+          "bits": [ 9576 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F6;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_S0[4]": {
+          "hide_name": 0,
+          "bits": [ 9574 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/F6;;1;X2Y47/E260;X2Y47/E260/F6;1;X3Y47/SEL0;X3Y47/SEL0/E261;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 9573 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F1;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 9572 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/F0;;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0[3]": {
+          "hide_name": 0,
+          "bits": [ 9568 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/OF6;;1;X1Y46/E260;X1Y46/E260/OF6;1;X2Y46/X07;X2Y46/X07/E261;1;X2Y46/D7;X2Y46/D7/X07;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0[2]": {
+          "hide_name": 0,
+          "bits": [ 9567 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/OF0;;1;X3Y47/W100;X3Y47/W100/OF0;1;X2Y47/N200;X2Y47/N200/W101;1;X2Y46/C7;X2Y46/C7/N201;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0[1]": {
+          "hide_name": 0,
+          "bits": [ 9566 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/F7;;1;X4Y46/S100;X4Y46/S100/F7;1;X4Y46/W210;X4Y46/W210/S100;1;X2Y46/B7;X2Y46/B7/W212;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter_DFFE_Q_CE_LUT4_F_I0[0]": {
+          "hide_name": 0,
+          "bits": [ 9565 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F6;;1;X3Y46/W130;X3Y46/W130/F6;1;X2Y46/A7;X2Y46/A7/W131;1",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "led_OBUF_O_5_I": {
+          "hide_name": 0,
+          "bits": [ 9563 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/S220;X1Y48/S220/F2;1;X1Y50/W220;X1Y50/W220/S222;1;X0Y50/D1;X0Y50/D1/W221;1;X1Y48/F2;;1;X1Y48/XD2;X1Y48/XD2/F2;1"
+          }
+        },
+        "ledCounter_DFFE_Q_4_D_ALU_SUM_CIN_ALU_COUT_SUM": {
+          "hide_name": 0,
+          "bits": [ 9560 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "ledCounter[0]": {
+          "hide_name": 0,
+          "bits": [ 9559 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/A2;X1Y48/A2/N130;1;X1Y48/Q2;;1;X1Y48/N130;X1Y48/N130/Q2;1;X1Y47/B1;X1Y47/B1/N131;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:8.11-8.21"
+          }
+        },
+        "ledCounter_DFFE_Q_4_D_ALU_SUM_CIN": {
+          "hide_name": 0,
+          "bits": [ 9557 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter[1]": {
+          "hide_name": 0,
+          "bits": [ 9555 ] ,
+          "attributes": {
+            "ROUTING": "X1Y48/S230;X1Y48/S230/S131;1;X1Y49/A5;X1Y49/A5/S231;1;X1Y47/Q2;;1;X1Y47/S130;X1Y47/S130/Q2;1;X1Y47/B2;X1Y47/B2/S130;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:8.11-8.21"
+          }
+        },
+        "ledCounter_DFFE_Q_4_D": {
+          "hide_name": 0,
+          "bits": [ 9554 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/F2;;1;X1Y47/XD2;X1Y47/XD2/F2;1"
+          }
+        },
+        "ledCounter_DFFE_Q_4_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9552 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter[2]": {
+          "hide_name": 0,
+          "bits": [ 9550 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/S230;X1Y47/S230/Q3;1;X1Y48/A6;X1Y48/A6/S231;1;X1Y47/Q3;;1;X1Y47/B3;X1Y47/B3/Q3;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:8.11-8.21"
+          }
+        },
+        "ledCounter_DFFE_Q_3_D": {
+          "hide_name": 0,
+          "bits": [ 9549 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/F3;;1;X1Y47/XD3;X1Y47/XD3/F3;1"
+          }
+        },
+        "ledCounter_DFFE_Q_3_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9547 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT3;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter[3]": {
+          "hide_name": 0,
+          "bits": [ 9545 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/SN10;X1Y47/SN10/Q4;1;X1Y48/E210;X1Y48/E210/S111;1;X1Y48/A0;X1Y48/A0/E210;1;X1Y47/Q4;;1;X1Y47/X03;X1Y47/X03/Q4;1;X1Y47/B4;X1Y47/B4/X03;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:8.11-8.21"
+          }
+        },
+        "ledCounter_DFFE_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 9544 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/F4;;1;X1Y47/XD4;X1Y47/XD4/F4;1"
+          }
+        },
+        "ledCounter_DFFE_Q_1_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9542 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/CIN0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter_DFFE_Q_2_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9541 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/COUT4;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:14.23-14.37|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "ledCounter[4]": {
+          "hide_name": 0,
+          "bits": [ 9539 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/E250;X1Y47/E250/Q5;1;X3Y47/A5;X3Y47/A5/E252;1;X1Y47/Q5;;1;X1Y47/X08;X1Y47/X08/Q5;1;X1Y47/B5;X1Y47/B5/X08;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:8.11-8.21"
+          }
+        },
+        "ledCounter_DFFE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 9538 ] ,
+          "attributes": {
+            "ROUTING": "X1Y47/F5;;1;X1Y47/XD5;X1Y47/XD5/F5;1"
+          }
+        },
+        "ledCounter[5]": {
+          "hide_name": 0,
+          "bits": [ 9536 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/S100;X2Y47/S100/Q2;1;X2Y47/B0;X2Y47/B0/S100;1;X2Y47/Q2;;1;X2Y47/X01;X2Y47/X01/Q2;1;X2Y47/A7;X2Y47/A7/X01;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:8.11-8.21"
+          }
+        },
+        "ledCounter_DFFE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 9535 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/F0;;1;X2Y47/D2;X2Y47/D2/F0;1"
+          }
+        },
+        "clockCounter_DFFR_Q_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9533 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[14]": {
+          "hide_name": 0,
+          "bits": [ 9530 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/B3;X3Y46/B3/Q3;1;X3Y46/Q3;;1;X3Y46/SN10;X3Y46/SN10/Q3;1;X3Y47/B1;X3Y47/B1/S111;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_9_D": {
+          "hide_name": 0,
+          "bits": [ 9528 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F3;;1;X3Y46/XD3;X3Y46/XD3/F3;1"
+          }
+        },
+        "clockCounter_DFFR_Q_9_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9526 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/COUT3;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[15]": {
+          "hide_name": 0,
+          "bits": [ 9524 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/W100;X3Y46/W100/Q4;1;X3Y46/B4;X3Y46/B4/W100;1;X3Y46/Q4;;1;X3Y46/S130;X3Y46/S130/Q4;1;X3Y47/A1;X3Y47/A1/S131;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_8_D": {
+          "hide_name": 0,
+          "bits": [ 9522 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F4;;1;X3Y46/XD4;X3Y46/XD4/F4;1"
+          }
+        },
+        "clockCounter_DFFR_Q_8_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9520 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/COUT4;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[16]": {
+          "hide_name": 0,
+          "bits": [ 9518 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/X08;X3Y46/X08/Q5;1;X3Y46/B5;X3Y46/B5/X08;1;X3Y46/Q5;;1;X3Y46/X04;X3Y46/X04/Q5;1;X3Y46/D6;X3Y46/D6/X04;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_7_D": {
+          "hide_name": 0,
+          "bits": [ 9517 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F5;;1;X3Y46/XD5;X3Y46/XD5/F5;1"
+          }
+        },
+        "clockCounter_DFFR_Q_7_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9515 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/CIN0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[17]": {
+          "hide_name": 0,
+          "bits": [ 9513 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/X05;X4Y46/X05/Q0;1;X4Y46/B0;X4Y46/B0/X05;1;X4Y46/Q0;;1;X4Y46/W100;X4Y46/W100/Q0;1;X3Y46/C6;X3Y46/C6/W101;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_6_D": {
+          "hide_name": 0,
+          "bits": [ 9512 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/F0;;1;X4Y46/XD0;X4Y46/XD0/F0;1"
+          }
+        },
+        "clockCounter_DFFR_Q_6_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9510 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/COUT0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[18]": {
+          "hide_name": 0,
+          "bits": [ 9508 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/B1;X4Y46/B1/Q1;1;X4Y46/Q1;;1;X4Y46/EW10;X4Y46/EW10/Q1;1;X3Y46/B6;X3Y46/B6/W111;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_5_D": {
+          "hide_name": 0,
+          "bits": [ 9507 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/F1;;1;X4Y46/XD1;X4Y46/XD1/F1;1"
+          }
+        },
+        "clockCounter_DFFR_Q_5_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9505 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[19]": {
+          "hide_name": 0,
+          "bits": [ 9503 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/X01;X4Y46/X01/Q2;1;X4Y46/B2;X4Y46/B2/X01;1;X4Y46/Q2;;1;X4Y46/W130;X4Y46/W130/Q2;1;X3Y46/A6;X3Y46/A6/W131;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_4_D": {
+          "hide_name": 0,
+          "bits": [ 9502 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/F2;;1;X4Y46/XD2;X4Y46/XD2/F2;1"
+          }
+        },
+        "clockCounter_DFFR_Q_4_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9500 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[20]": {
+          "hide_name": 0,
+          "bits": [ 9498 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/B3;X4Y46/B3/Q3;1;X4Y46/Q3;;1;X4Y46/X02;X4Y46/X02/Q3;1;X4Y46/D7;X4Y46/D7/X02;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_3_D": {
+          "hide_name": 0,
+          "bits": [ 9497 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/F3;;1;X4Y46/XD3;X4Y46/XD3/F3;1"
+          }
+        },
+        "clockCounter_DFFR_Q_3_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9495 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/COUT3;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter_DFFR_Q_23_D": {
+          "hide_name": 0,
+          "bits": [ 9492 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/F4;;1;X2Y47/XD4;X2Y47/XD4/F4;1"
+          }
+        },
+        "clockCounter_DFFR_Q_22_D_ALU_SUM_CIN_ALU_COUT_SUM": {
+          "hide_name": 0,
+          "bits": [ 9490 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "clockCounter[0]": {
+          "hide_name": 0,
+          "bits": [ 9489 ] ,
+          "attributes": {
+            "ROUTING": "X2Y47/X07;X2Y47/X07/Q4;1;X2Y47/A4;X2Y47/A4/X07;1;X2Y47/N130;X2Y47/N130/Q4;1;X2Y46/D6;X2Y46/D6/N131;1;X2Y47/Q4;;1;X2Y47/EW10;X2Y47/EW10/Q4;1;X1Y47/N210;X1Y47/N210/W111;1;X1Y46/B1;X1Y46/B1/N211;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_22_D_ALU_SUM_CIN": {
+          "hide_name": 0,
+          "bits": [ 9487 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[1]": {
+          "hide_name": 0,
+          "bits": [ 9485 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/X01;X1Y46/X01/Q2;1;X1Y46/B2;X1Y46/B2/X01;1;X1Y46/Q2;;1;X1Y46/EW20;X1Y46/EW20/Q2;1;X2Y46/C6;X2Y46/C6/E121;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_22_D": {
+          "hide_name": 0,
+          "bits": [ 9484 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F2;;1;X1Y46/XD2;X1Y46/XD2/F2;1"
+          }
+        },
+        "clockCounter_DFFR_Q_22_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9482 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[2]": {
+          "hide_name": 0,
+          "bits": [ 9480 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/B3;X1Y46/B3/Q3;1;X1Y46/Q3;;1;X1Y46/E130;X1Y46/E130/Q3;1;X2Y46/B6;X2Y46/B6/E131;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_21_D": {
+          "hide_name": 0,
+          "bits": [ 9479 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F3;;1;X1Y46/XD3;X1Y46/XD3/F3;1"
+          }
+        },
+        "clockCounter_DFFR_Q_21_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9477 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/COUT3;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[3]": {
+          "hide_name": 0,
+          "bits": [ 9475 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/X03;X1Y46/X03/Q4;1;X1Y46/B4;X1Y46/B4/X03;1;X1Y46/Q4;;1;X1Y46/EW10;X1Y46/EW10/Q4;1;X2Y46/A6;X2Y46/A6/E111;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_20_D": {
+          "hide_name": 0,
+          "bits": [ 9474 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F4;;1;X1Y46/XD4;X1Y46/XD4/F4;1"
+          }
+        },
+        "clockCounter[21]": {
+          "hide_name": 0,
+          "bits": [ 9472 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/X03;X4Y46/X03/Q4;1;X4Y46/B4;X4Y46/B4/X03;1;X4Y46/Q4;;1;X4Y46/N130;X4Y46/N130/Q4;1;X4Y46/C7;X4Y46/C7/N130;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 9471 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/F4;;1;X4Y46/XD4;X4Y46/XD4/F4;1"
+          }
+        },
+        "clockCounter_DFFR_Q_1_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9469 ] ,
+          "attributes": {
+            "ROUTING": "X5Y46/CIN0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter_DFFR_Q_2_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9468 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/COUT4;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter_DFFR_Q_20_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9466 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/COUT4;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[4]": {
+          "hide_name": 0,
+          "bits": [ 9464 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/X04;X1Y46/X04/Q5;1;X1Y46/D7;X1Y46/D7/X04;1;X1Y46/Q5;;1;X1Y46/W100;X1Y46/W100/Q5;1;X1Y46/B5;X1Y46/B5/W100;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_19_D": {
+          "hide_name": 0,
+          "bits": [ 9462 ] ,
+          "attributes": {
+            "ROUTING": "X1Y46/F5;;1;X1Y46/XD5;X1Y46/XD5/F5;1"
+          }
+        },
+        "clockCounter_DFFR_Q_19_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9460 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/CIN0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[5]": {
+          "hide_name": 0,
+          "bits": [ 9458 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/X05;X2Y46/X05/Q0;1;X2Y46/B0;X2Y46/B0/X05;1;X2Y46/Q0;;1;X2Y46/W100;X2Y46/W100/Q0;1;X1Y46/C7;X1Y46/C7/W101;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_18_D": {
+          "hide_name": 0,
+          "bits": [ 9456 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F0;;1;X2Y46/XD0;X2Y46/XD0/F0;1"
+          }
+        },
+        "clockCounter_DFFR_Q_18_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9454 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/COUT0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[6]": {
+          "hide_name": 0,
+          "bits": [ 9452 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/B1;X2Y46/B1/Q1;1;X2Y46/Q1;;1;X2Y46/W210;X2Y46/W210/Q1;1;X1Y46/B7;X1Y46/B7/W211;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_17_D": {
+          "hide_name": 0,
+          "bits": [ 9450 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F1;;1;X2Y46/XD1;X2Y46/XD1/F1;1"
+          }
+        },
+        "clockCounter_DFFR_Q_17_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9448 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[7]": {
+          "hide_name": 0,
+          "bits": [ 9446 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/X01;X2Y46/X01/Q2;1;X2Y46/B2;X2Y46/B2/X01;1;X2Y46/Q2;;1;X2Y46/W130;X2Y46/W130/Q2;1;X1Y46/A7;X1Y46/A7/W131;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_16_D": {
+          "hide_name": 0,
+          "bits": [ 9444 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F2;;1;X2Y46/XD2;X2Y46/XD2/F2;1"
+          }
+        },
+        "clockCounter_DFFR_Q_16_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9442 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[8]": {
+          "hide_name": 0,
+          "bits": [ 9440 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/B3;X2Y46/B3/Q3;1;X2Y46/Q3;;1;X2Y46/SN10;X2Y46/SN10/Q3;1;X2Y47/D6;X2Y47/D6/S111;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_15_D": {
+          "hide_name": 0,
+          "bits": [ 9439 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F3;;1;X2Y46/XD3;X2Y46/XD3/F3;1"
+          }
+        },
+        "clockCounter_DFFR_Q_15_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9437 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/COUT3;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[9]": {
+          "hide_name": 0,
+          "bits": [ 9435 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/X03;X2Y46/X03/Q4;1;X2Y46/B4;X2Y46/B4/X03;1;X2Y46/Q4;;1;X2Y46/S130;X2Y46/S130/Q4;1;X2Y47/C6;X2Y47/C6/S131;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_14_D": {
+          "hide_name": 0,
+          "bits": [ 9434 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F4;;1;X2Y46/XD4;X2Y46/XD4/F4;1"
+          }
+        },
+        "clockCounter_DFFR_Q_14_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9432 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/COUT4;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[10]": {
+          "hide_name": 0,
+          "bits": [ 9430 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/E250;X2Y46/E250/Q5;1;X2Y46/B5;X2Y46/B5/E250;1;X2Y46/Q5;;1;X2Y46/SN20;X2Y46/SN20/Q5;1;X2Y47/B6;X2Y47/B6/S121;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_13_D": {
+          "hide_name": 0,
+          "bits": [ 9429 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/F5;;1;X2Y46/XD5;X2Y46/XD5/F5;1"
+          }
+        },
+        "clockCounter_DFFR_Q_13_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9427 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/CIN0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[11]": {
+          "hide_name": 0,
+          "bits": [ 9425 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/N230;X3Y47/N230/Q3;1;X3Y46/B0;X3Y46/B0/N231;1;X3Y47/Q3;;1;X3Y47/W130;X3Y47/W130/Q3;1;X2Y47/A6;X2Y47/A6/W131;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_12_D": {
+          "hide_name": 0,
+          "bits": [ 9424 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F0;;1;X3Y46/S200;X3Y46/S200/F0;1;X3Y47/D3;X3Y47/D3/S201;1"
+          }
+        },
+        "clockCounter_DFFR_Q_12_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9422 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/COUT0;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[12]": {
+          "hide_name": 0,
+          "bits": [ 9420 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/B1;X3Y46/B1/Q1;1;X3Y46/Q1;;1;X3Y46/SN20;X3Y46/SN20/Q1;1;X3Y47/D1;X3Y47/D1/S121;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_11_D": {
+          "hide_name": 0,
+          "bits": [ 9418 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F1;;1;X3Y46/XD1;X3Y46/XD1/F1;1"
+          }
+        },
+        "$PACKER_GND": {
+          "hide_name": 1,
+          "bits": [ 9627 ] ,
+          "attributes": {
+            "ROUTING": " "
+          }
+        },
+        "$PACKER_VCC": {
+          "hide_name": 1,
+          "bits": [ 9626 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/D4;X4Y46/D4/X04;1;X1Y46/C0;X1Y46/C0/N220;1;X3Y46/D3;X3Y46/D3/E260;1;X1Y47/D3;X1Y47/D3/S270;1;X3Y46/D5;X3Y46/D5/N260;1;X1Y47/C0;X1Y47/C0/X04;1;X1Y47/C4;X1Y47/C4/S220;1;X4Y46/D3;X4Y46/D3/X08;1;X3Y46/C1;X3Y46/C1/N220;1;X1Y47/D4;X1Y47/D4/X04;1;X1Y46/C3;X1Y46/C3/W220;1;X3Y46/D0;X3Y46/D0/S260;1;X2Y46/C3;X2Y46/C3/X04;1;X5Y46/X08;X5Y46/X08/VCC;1;X5Y46/D0;X5Y46/D0/X08;1;X1Y47/S260;X1Y47/S260/VCC;1;X1Y47/D1;X1Y47/D1/S260;1;X1Y47/C2;X1Y47/C2/X04;1;X3Y46/C5;X3Y46/C5/E261;1;X2Y47/E270;X2Y47/E270/VCC;1;X2Y47/D0;X2Y47/D0/E270;1;X1Y46/C4;X1Y46/C4/S220;1;X3Y46/N220;X3Y46/N220/VCC;1;X3Y46/C0;X3Y46/C0/N220;1;X4Y46/C4;X4Y46/C4/X08;1;X1Y46/N220;X1Y46/N220/VCC;1;X1Y46/C1;X1Y46/C1/N220;1;X1Y46/D5;X1Y46/D5/X07;1;X1Y47/C1;X1Y47/C1/X04;1;X1Y47/C3;X1Y47/C3/X04;1;X1Y46/D3;X1Y46/D3/S270;1;X1Y46/S270;X1Y46/S270/VCC;1;X1Y46/D2;X1Y46/D2/S270;1;X4Y46/C1;X4Y46/C1/X04;1;X4Y46/D5;X4Y46/D5/X04;1;X2Y47/X04;X2Y47/X04/VCC;1;X2Y47/C0;X2Y47/C0/X04;1;X1Y46/W220;X1Y46/W220/VCC;1;X1Y46/C2;X1Y46/C2/W220;1;X3Y46/S260;X3Y46/S260/VCC;1;X3Y46/D1;X3Y46/D1/S260;1;X2Y46/C1;X2Y46/C1/X04;1;X3Y46/C2;X3Y46/C2/W220;1;X4Y46/D1;X4Y46/D1/X08;1;X2Y46/D3;X2Y46/D3/E260;1;X5Y46/X04;X5Y46/X04/VCC;1;X5Y46/C0;X5Y46/C0/X04;1;X2Y46/D1;X2Y46/D1/S260;1;X4Y46/C2;X4Y46/C2/X04;1;X3Y46/C4;X3Y46/C4/E261;1;X3Y46/W220;X3Y46/W220/VCC;1;X3Y46/C3;X3Y46/C3/W220;1;X1Y47/S270;X1Y47/S270/VCC;1;X1Y47/D2;X1Y47/D2/S270;1;X1Y47/S220;X1Y47/S220/VCC;1;X1Y47/C5;X1Y47/C5/S220;1;X4Y46/D0;X4Y46/D0/X08;1;X1Y47/X04;X1Y47/X04/VCC;1;X1Y47/D5;X1Y47/D5/X04;1;X3Y46/N260;X3Y46/N260/VCC;1;X3Y46/D4;X3Y46/D4/N260;1;X2Y46/D5;X2Y46/D5/X04;1;X2Y46/C2;X2Y46/C2/X04;1;X1Y46/X07;X1Y46/X07/VCC;1;X1Y46/D4;X1Y46/D4/X07;1;X2Y46/C5;X2Y46/C5/S220;1;X4Y46/C0;X4Y46/C0/X04;1;X2Y46/C0;X2Y46/C0/X04;1;X4Y46/D2;X4Y46/D2/X08;1;X4Y46/X08;X4Y46/X08/VCC;1;X4Y46/C5;X4Y46/C5/X08;1;X4Y46/X04;X4Y46/X04/VCC;1;X4Y46/C3;X4Y46/C3/X04;1;X1Y46/S260;X1Y46/S260/VCC;1;X1Y46/D1;X1Y46/D1/S260;1;X2Y46/E260;X2Y46/E260/VCC;1;X2Y46/D2;X2Y46/D2/E260;1;X1Y46/S220;X1Y46/S220/VCC;1;X1Y46/C5;X1Y46/C5/S220;1;X2Y46/X04;X2Y46/X04/VCC;1;X2Y46/D4;X2Y46/D4/X04;1;X50Y27/E230;X50Y27/E230/VCC;1;X50Y27/C4;X50Y27/C4/E230;1;X2Y46/S260;X2Y46/S260/VCC;1;X2Y46/D0;X2Y46/D0/S260;1;X2Y46/S220;X2Y46/S220/VCC;1;X2Y46/C4;X2Y46/C4/S220;1;X0Y0/VCC;;1;X3Y46/E260;X3Y46/E260/VCC;1;X3Y46/D2;X3Y46/D2/E260;1"
+          }
+        },
+        "clockCounter_DFFR_Q_10_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9414 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/COUT2;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter_DFFR_Q_11_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 9413 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/COUT1;;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:16.25-16.41|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/arith_map.v:57.7-63.5|/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "clockCounter[13]": {
+          "hide_name": 0,
+          "bits": [ 9411 ] ,
+          "attributes": {
+            "ROUTING": "X3Y47/X01;X3Y47/X01/Q2;1;X3Y47/C1;X3Y47/C1/X01;1;X3Y47/Q2;;1;X3Y47/N130;X3Y47/N130/Q2;1;X3Y46/B2;X3Y46/B2/N131;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/nico/oss-cad-suite/libexec/../share/yosys/gowin/cells_map.v:130.20-130.21"
+          }
+        },
+        "clockCounter_DFFR_Q_10_D": {
+          "hide_name": 0,
+          "bits": [ 9409 ] ,
+          "attributes": {
+            "ROUTING": "X3Y46/F2;;1;X3Y46/S220;X3Y46/S220/F2;1;X3Y47/D2;X3Y47/D2/S221;1"
+          }
+        },
+        "clockCounter[22]": {
+          "hide_name": 0,
+          "bits": [ 9407 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/B5;X4Y46/B5/N101;1;X4Y47/Q1;;1;X4Y47/N100;X4Y47/N100/Q1;1;X4Y46/B7;X4Y46/B7/N101;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 9406 ] ,
+          "attributes": {
+            "ROUTING": "X4Y46/F5;;1;X4Y46/SN20;X4Y46/SN20/F5;1;X4Y47/D1;X4Y47/D1/S121;1"
+          }
+        },
+        "ledCounter_DFFE_Q_CE": {
+          "hide_name": 0,
+          "bits": [ 9403 ] ,
+          "attributes": {
+            "ROUTING": "X2Y46/LSR0;X2Y46/LSR0/X08;1;X2Y46/LSR1;X2Y46/LSR1/X08;1;X2Y46/X08;X2Y46/X08/F7;1;X2Y46/LSR2;X2Y46/LSR2/X08;1;X3Y46/LSR0;X3Y46/LSR0/E271;1;X1Y46/LSR1;X1Y46/LSR1/X08;1;X2Y47/LSR2;X2Y47/LSR2/S271;1;X3Y46/LSR2;X3Y46/LSR2/E271;1;X2Y46/W270;X2Y46/W270/F7;1;X1Y46/X08;X1Y46/X08/W271;1;X1Y46/LSR2;X1Y46/LSR2/X08;1;X3Y46/LSR1;X3Y46/LSR1/E271;1;X2Y46/S270;X2Y46/S270/F7;1;X2Y47/X06;X2Y47/X06/S271;1;X2Y47/CE1;X2Y47/CE1/X06;1;X3Y46/S270;X3Y46/S270/E131;1;X3Y47/LSR1;X3Y47/LSR1/S271;1;X4Y46/LSR0;X4Y46/LSR0/E272;1;X4Y46/LSR2;X4Y46/LSR2/E272;1;X1Y47/CE1;X1Y47/CE1/S211;1;X1Y47/CE2;X1Y47/CE2/S211;1;X4Y46/LSR1;X4Y46/LSR1/E272;1;X2Y46/EW10;X2Y46/EW10/F7;1;X1Y46/S210;X1Y46/S210/W111;1;X1Y48/CE1;X1Y48/CE1/S212;1;X2Y46/E130;X2Y46/E130/F7;1;X3Y46/E270;X3Y46/E270/E131;1;X5Y46/LSR1;X5Y46/LSR1/E272;1;X2Y46/F7;;1;X2Y46/E270;X2Y46/E270/F7;1;X4Y46/S270;X4Y46/S270/E272;1;X4Y47/LSR0;X4Y47/LSR0/S271;1"
+          }
+        },
+        "clockCounter[23]": {
+          "hide_name": 0,
+          "bits": [ 9402 ] ,
+          "attributes": {
+            "ROUTING": "X5Y46/X05;X5Y46/X05/Q2;1;X5Y46/B0;X5Y46/B0/X05;1;X5Y46/Q2;;1;X5Y46/W130;X5Y46/W130/Q2;1;X4Y46/A7;X4Y46/A7/W131;1",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:9.12-9.24"
+          }
+        },
+        "clockCounter_DFFR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 9401 ] ,
+          "attributes": {
+            "ROUTING": "X5Y46/F0;;1;X5Y46/D2;X5Y46/D2/F0;1"
+          }
+        },
+        "clk_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 9398 ] ,
+          "attributes": {
+            "ROUTING": "X0Y6/S830;X0Y6/S830/F6;5;X0Y14/S800;X0Y14/S800/S838;5;X0Y22/S810;X0Y22/S810/S808;5;X0Y30/N210;X0Y30/N210/S818;5;X0Y28/N240;X0Y28/N240/N212;5;X0Y27/CLK1;X0Y27/CLK1/N241;5;X0Y6/F6;;5;X1Y48/GBO0;X1Y48/GBO0/GT00;5;X1Y48/CLK1;X1Y48/CLK1/GB20;5;X1Y47/CLK1;X1Y47/CLK1/GB20;5;X1Y47/CLK2;X1Y47/CLK2/GB20;5;X2Y47/CLK1;X2Y47/CLK1/GB20;5;X3Y46/CLK1;X3Y46/CLK1/GB20;5;X3Y46/CLK2;X3Y46/CLK2/GB20;5;X4Y46/CLK0;X4Y46/CLK0/GB20;5;X4Y46/CLK1;X4Y46/CLK1/GB20;5;X2Y47/CLK2;X2Y47/CLK2/GB20;5;X1Y46/CLK1;X1Y46/CLK1/GB20;5;X4Y46/CLK2;X4Y46/CLK2/GB20;5;X1Y46/CLK2;X1Y46/CLK2/GB20;5;X2Y46/CLK0;X2Y46/CLK0/GB20;5;X2Y46/CLK1;X2Y46/CLK1/GB20;5;X2Y46/CLK2;X2Y46/CLK2/GB20;5;X0Y46/GB20;X1Y46/GBO0/GT00;5;X3Y46/CLK0;X3Y46/CLK0/GB20;5;X1Y31/GT00;X1Y46/GT00/SPINE18;5;X1Y47/GBO0;X1Y47/GBO0/GT00;5;X3Y47/CLK1;X3Y47/CLK1/GB20;5;X6Y47/GB20;X5Y47/GBO0/GT00;5;X4Y47/CLK0;X4Y47/CLK0/GB20;5;X1Y46/SPINE18;X27Y27/SPINE18/TLBDCLK3;5;X5Y47/GT00;X5Y46/GT00/SPINE18;5;X5Y46/GBO0;X5Y46/GBO0/GT00;5;X5Y46/CLK1;X5Y46/CLK1/GB20;5"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 9394 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs/counter.v:3.11-3.14"
+          }
+        }
+      }
+    }
+  }
+}
