@@ -35,6 +35,9 @@ module oled
     reg [3:0] bitNumber = 0;  
     reg [9:0] pixelCounter = 0;
 
+    reg [7:0] screenBuffer [1023:0];
+    initial $readmemh("image.hex", screenBuffer);
+
     localparam SETUP_INSTRUCTIONS = 23;
     reg [(SETUP_INSTRUCTIONS*8)-1:0] startupCommands = {
         8'hAE,  // display off
@@ -128,12 +131,8 @@ module oled
                 dc <= 1;
                 bitNumber <= 3'd7;
                 state <= STATE_SEND;
-                if (pixelCounter < 136)
-                    dataToSend <= 8'b01010111;
-                else
-                    dataToSend <= 0;
+                dataToSend <= screenBuffer[pixelCounter];
             end
-            
         endcase
     end
 
