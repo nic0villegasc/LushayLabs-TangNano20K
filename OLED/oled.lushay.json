@@ -1,5 +1,5 @@
 {
      "board": "tangnano20k",
      "testBenches": "all",
-     "top": "oled"
+     "top": "top"
 }
