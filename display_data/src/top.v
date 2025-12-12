@@ -48,13 +48,53 @@ module top
         uartDataIn
     );
 
+    wire [7:0] charOut1;
+
+    uartTextRow row1(
+        clk,
+        uartByteReady,
+        uartDataIn,
+        charAddress[3:0],
+        charOut1
+    );
+
+    wire [7:0] counterValue;
+    wire [7:0] charOut2;
+
+    counterM c(clk, counterValue);
+
+    binaryRow row2(
+        clk,
+        counterValue,
+        charAddress[3:0],
+        charOut2
+    );
+
+    wire [7:0] charOut3;
+
+    hexDecRow row3(
+        clk,
+        counterValue,
+        charAddress[3:0],
+        charOut3
+    );
+
+    wire [7:0] progressPixelData;
+    progressRow row4(
+        clk,
+        counterValue,
+        pixelAddress,
+        progressPixelData
+    );
+
     always @(posedge clk) begin
         case (rowNumber)
-            0: charOutput <= "A";
-            1: charOutput <= "B";
-            2: charOutput <= "C";
+            0: charOutput <= charOut1;
+            1: charOutput <= charOut2;
+            2: charOutput <= charOut3;
             3: charOutput <= "D";
         endcase
     end
-    assign chosenPixelData = textPixelData;
+    assign chosenPixelData = (rowNumber == 3) ? progressPixelData : textPixelData;
+
 endmodule
