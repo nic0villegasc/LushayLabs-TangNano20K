@@ -1,7 +1,7 @@
 IO_LOC  "i2cScl" 31;
 IO_PORT "i2cScl" IO_TYPE=LVCMOS33;
 
-IO_LOC  "i2cSda" 30;
+IO_LOC  "i2cSda" 17;
 IO_PORT "i2cSda" IO_TYPE=LVCMOS33;
 
 IO_LOC  "ioSclk" 29;
