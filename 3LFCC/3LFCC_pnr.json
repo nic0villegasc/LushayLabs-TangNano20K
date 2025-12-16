@@ -1,0 +1,799 @@
+{
+  "creator": "Next Generation Place and Route (Version nextpnr-0.9-43-gc46f2bbd)",
+  "modules": {
+    "top": {
+      "settings": {
+        "route": "00000000000000000000000000000001",
+        "router/tmg_ripup": "0 ",
+        "router1/useEstimate": "1 ",
+        "router1/fullCleanupReroute": "1 ",
+        "router1/cleanupReroute": "1 ",
+        "router1/maxIterCnt": "200",
+        "place": "00000000000000000000000000000001",
+        "placer1/startTemp": "1.000000",
+        "placer1/minBelsForGridPick": "64",
+        "placer1/netShareWeight": "0.000000",
+        "placer1/constraintWeight": "10.000000",
+        "placerHeap/cellPlacementTimeout": "8",
+        "placerHeap/netShareWeight": "0.000000",
+        "placerHeap/parallelRefine": "0 ",
+        "pack": "00000000000000000000000000000001",
+        "synth": "00000000000000000000000000000001",
+        "placerHeap/timingWeight": "10 ",
+        "placerHeap/criticalityExponent": "2",
+        "placerHeap/beta": "0.900000",
+        "placerHeap/alpha": "0.100000",
+        "seed": "0011000101000001010110010010011001010011010110001001011110010011",
+        "arch.type": " ",
+        "arch.name": "ARCHNAME",
+        "router": "router1",
+        "placer": "heap",
+        "auto_freq": "00000000000000000000000000000000",
+        "slack_redist_iter": "00000000000000000000000000000000",
+        "timing_driven": "00000000000000000000000000000001",
+        "target_freq": "27000000.000000",
+        "cst.filename": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/tangnano20k.cst",
+        "packer.partno": "GW2AR-LV18QN88C8/I7",
+        "packer.chipdb": "GW2A-18C",
+        "packer.arch": "himbaechel/gowin"
+      },
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:23.1-359.10"
+      },
+      "ports": {
+        "vauxp7": {
+          "direction": "input",
+          "bits": [ 9402 ]
+        },
+        "vauxp15": {
+          "direction": "input",
+          "bits": [ 9401 ]
+        },
+        "vauxp14": {
+          "direction": "input",
+          "bits": [ 9400 ]
+        },
+        "vauxn7": {
+          "direction": "input",
+          "bits": [ 9399 ]
+        },
+        "vauxn15": {
+          "direction": "input",
+          "bits": [ 9398 ]
+        },
+        "vauxn14": {
+          "direction": "input",
+          "bits": [ 9397 ]
+        },
+        "SW3_RST": {
+          "direction": "input",
+          "bits": [ 9396 ]
+        },
+        "SW1": {
+          "direction": "input",
+          "bits": [ 9395 ]
+        },
+        "SW0": {
+          "direction": "input",
+          "bits": [ 9394 ]
+        },
+        "JE": {
+          "direction": "output",
+          "bits": [ 10461, 10459, 10457, 10455, 10453, 10451, 10362, 10360 ]
+        },
+        "CLK_125MHz": {
+          "direction": "input",
+          "bits": [ 9392 ]
+        }
+      },
+      "cells": {
+        "GSR": {
+          "hide_name": 0,
+          "type": "GSR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X50Y27/GSR"
+          },
+          "port_directions": {
+            "GSRI": "input"
+          },
+          "connections": {
+            "GSRI": [ 10499 ]
+          }
+        },
+        "vauxp7_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X5Y54/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:29.11-29.17",
+            "&IO_TYPE=SSTL25_I": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10485 ],
+            "I": [ 9402 ]
+          }
+        },
+        "vauxp15_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y48/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:31.11-31.18",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10483 ],
+            "I": [ 9401 ]
+          }
+        },
+        "vauxp14_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X13Y54/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:30.11-30.18",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10481 ],
+            "I": [ 9400 ]
+          }
+        },
+        "vauxn7_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X13Y54/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:29.19-29.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10479 ],
+            "I": [ 9399 ]
+          }
+        },
+        "vauxn15_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y50/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:31.20-31.27",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10477 ],
+            "I": [ 9398 ]
+          }
+        },
+        "vauxn14_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X17Y54/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:30.20-30.27",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10475 ],
+            "I": [ 9397 ]
+          }
+        },
+        "$PACKER_GND_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_GND",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/GND"
+          },
+          "port_directions": {
+            "G": "output"
+          },
+          "connections": {
+            "G": [ 10500 ]
+          }
+        },
+        "$PACKER_VCC_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_VCC",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/VCC"
+          },
+          "port_directions": {
+            "V": "output"
+          },
+          "connections": {
+            "V": [ 10499 ]
+          }
+        },
+        "Timer_Control_inst.rst_IBUF_O": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X7Y54/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.16-27.23",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10468 ],
+            "I": [ 9396 ]
+          }
+        },
+        "SW1_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X5Y54/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.30-27.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10465 ],
+            "I": [ 9395 ]
+          }
+        },
+        "SW0_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X7Y54/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.25-27.28",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10463 ],
+            "I": [ 9394 ]
+          }
+        },
+        "JE_OBUF_O_7": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "VCC",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y35/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10461 ],
+            "I": [ 10499 ]
+          }
+        },
+        "JE_OBUF_O_6": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "VCC",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y37/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10459 ],
+            "I": [ 10499 ]
+          }
+        },
+        "JE_OBUF_O_5": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "GND",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y44/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10457 ],
+            "I": [ 10500 ]
+          }
+        },
+        "JE_OBUF_O_4": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "GND",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y48/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10455 ],
+            "I": [ 10500 ]
+          }
+        },
+        "JE_OBUF_O_3": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "VCC",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y35/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10453 ],
+            "I": [ 10499 ]
+          }
+        },
+        "JE_OBUF_O_2": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "VCC",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X55Y48/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10451 ],
+            "I": [ 10499 ]
+          }
+        },
+        "JE_OBUF_O_1": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "GND",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X3Y0/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10362 ],
+            "I": [ 10500 ]
+          }
+        },
+        "JE_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "GND",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X26Y0/IOBB",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 10360 ],
+            "I": [ 10500 ]
+          }
+        },
+        "CLK_125MHz_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X0Y6/IOBA",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:25.16-25.26",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 9405 ],
+            "I": [ 9392 ]
+          }
+        }
+      },
+      "netnames": {
+        "vauxp7_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10485 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "vauxp7": {
+          "hide_name": 0,
+          "bits": [ 9402 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:29.11-29.17"
+          }
+        },
+        "vauxp15_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10483 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "vauxp15": {
+          "hide_name": 0,
+          "bits": [ 9401 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:31.11-31.18"
+          }
+        },
+        "vauxp14_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10481 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "vauxp14": {
+          "hide_name": 0,
+          "bits": [ 9400 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:30.11-30.18"
+          }
+        },
+        "vauxn7_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10479 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "vauxn7": {
+          "hide_name": 0,
+          "bits": [ 9399 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:29.19-29.25"
+          }
+        },
+        "vauxn15_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10477 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "vauxn15": {
+          "hide_name": 0,
+          "bits": [ 9398 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:31.20-31.27"
+          }
+        },
+        "vauxn14_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10475 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "vauxn14": {
+          "hide_name": 0,
+          "bits": [ 9397 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:30.20-30.27"
+          }
+        },
+        "Timer_Control_inst.rst": {
+          "hide_name": 0,
+          "bits": [ 10468 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/Signal_Generator_180phase.v:5.11-5.14",
+            "hdlname": "pwm_inst Signal_Generator_1_180phase_inst rst"
+          }
+        },
+        "SW3_RST": {
+          "hide_name": 0,
+          "bits": [ 9396 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.16-27.23"
+          }
+        },
+        "SW1_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10465 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "SW1": {
+          "hide_name": 0,
+          "bits": [ 9395 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.30-27.33"
+          }
+        },
+        "SW0_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 10463 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "SW0": {
+          "hide_name": 0,
+          "bits": [ 9394 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.25-27.28"
+          }
+        },
+        "JE[0]": {
+          "hide_name": 0,
+          "bits": [ 10461 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "JE[1]": {
+          "hide_name": 0,
+          "bits": [ 10459 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "JE[2]": {
+          "hide_name": 0,
+          "bits": [ 10457 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "JE[3]": {
+          "hide_name": 0,
+          "bits": [ 10455 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "JE[4]": {
+          "hide_name": 0,
+          "bits": [ 10453 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "JE[5]": {
+          "hide_name": 0,
+          "bits": [ 10451 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "$PACKER_GND": {
+          "hide_name": 1,
+          "bits": [ 10500 ] ,
+          "attributes": {
+            "ROUTING": "X3Y0/E210;X3Y0/E210/VSS;1;X3Y0/A0;X3Y0/A0/E210;1;X55Y48/S260;X55Y48/S260/VSS;1;X55Y48/D1;X55Y48/D1/S260;1;X26Y0/S260;X26Y0/S260/VSS;1;X26Y0/D1;X26Y0/D1/S260;1;X0Y0/VSS;;1;X55Y44/E210;X55Y44/E210/VSS;1;X55Y44/A0;X55Y44/A0/E210;1"
+          }
+        },
+        "JE[6]": {
+          "hide_name": 0,
+          "bits": [ 10362 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "JE[7]": {
+          "hide_name": 0,
+          "bits": [ 10360 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "$PACKER_VCC": {
+          "hide_name": 1,
+          "bits": [ 10499 ] ,
+          "attributes": {
+            "ROUTING": "X55Y35/D1;X55Y35/D1/E270;1;X55Y35/E270;X55Y35/E270/VCC;1;X55Y35/A0;X55Y35/A0/W271;1;X55Y37/N200;X55Y37/N200/VCC;1;X55Y37/A0;X55Y37/A0/N200;1;X55Y48/E270;X55Y48/E270/VCC;1;X55Y48/A0;X55Y48/A0/W271;1;X0Y0/VCC;;1;X50Y27/S220;X50Y27/S220/VCC;1;X50Y27/C4;X50Y27/C4/S220;1"
+          }
+        },
+        "CLK_125MHz_IBUF_I_O": {
+          "hide_name": 0,
+          "bits": [ 9405 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "CLK_125MHz": {
+          "hide_name": 0,
+          "bits": [ 9392 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:25.16-25.26"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2229 @@
+{
+  "creator": "Yosys 0.60+8 (git sha1 0e31e389f, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "top": {
+      "attributes": {
+        "cells_not_processed": 1,
+        "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:23.1-333.10"
+      },
+      "ports": {
+        "CLK_125MHz": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "SW3_RST": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "SW0": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "SW1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "vauxp7": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "vauxn7": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "vauxp14": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "vauxn14": {
+          "direction": "input",
+          "bits": [ 9 ]
+        },
+        "vauxp15": {
+          "direction": "input",
+          "bits": [ 10 ]
+        },
+        "vauxn15": {
+          "direction": "input",
+          "bits": [ 11 ]
+        },
+        "JE": {
+          "direction": "output",
+          "bits": [ 12, 13, 14, 15, "1", "1", "0", "0" ]
+        }
+      },
+      "cells": {
+        "$add$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124$6": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 32,
+            "Y_WIDTH": 32
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124.49-124.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ]
+          }
+        },
+        "$add$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:214$16": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 3
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:214.18-214.28"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 53, 54, 55 ]
+          }
+        },
+        "$add$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:226$19": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 21,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 21
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:226.15-226.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76 ],
+            "B": [ "1" ],
+            "Y": [ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97 ]
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124$5": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124.22-124.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "B": [ "0", "1" ],
+            "Y": [ 98 ]
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196$14": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 21,
+            "B_SIGNED": 0,
+            "B_WIDTH": 21,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.9-196.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76 ],
+            "B": [ "1", "1", "1", "1", "1", "1", "0", "0", "0", "1", "0", "0", "0", "0", "1", "0", "1", "1", "1", "1", "0" ],
+            "Y": [ 99 ]
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210$15": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210.13-210.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 100 ]
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217$17": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217.13-217.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "Y": [ 101 ]
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:67$2": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:67.19-67.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 102, 103 ],
+            "B": [ "0", "1" ],
+            "Y": [ 104 ]
+          }
+        },
+        "$ge$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:136$10": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 16,
+            "B_SIGNED": 0,
+            "B_WIDTH": 16,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:136.9-136.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+            "B": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "Y": [ 137 ]
+          }
+        },
+        "$procdff$101": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": 1,
+            "ARST_VALUE": 1,
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 138 ],
+            "D": [ 139 ],
+            "Q": [ 140 ]
+          }
+        },
+        "$procdff$104": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": 1,
+            "ARST_VALUE": 0,
+            "CLK_POLARITY": 1,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 138 ],
+            "D": [ 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156 ],
+            "Q": [ 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172 ]
+          }
+        },
+        "$procdff$105": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:159.5-164.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 173 ],
+            "Q": [ 174 ]
+          }
+        },
+        "$procdff$106": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:133.1-140.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190 ],
+            "Q": [ 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ]
+          }
+        },
+        "$procdff$107": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:133.1-140.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222 ],
+            "Q": [ 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238 ]
+          }
+        },
+        "$procdff$108": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254 ],
+            "Q": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ]
+          }
+        },
+        "$procdff$109": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270 ],
+            "Q": [ 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190 ]
+          }
+        },
+        "$procdff$110": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286 ],
+            "Q": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136 ]
+          }
+        },
+        "$procdff$111": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 2
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 287, 288 ],
+            "Q": [ 16, 17 ]
+          }
+        },
+        "$procdff$112": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 2
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:64.1-65.37"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 138 ],
+            "D": [ 289, 102 ],
+            "Q": [ 102, 103 ]
+          }
+        },
+        "$procdff$95": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": 1,
+            "ARST_VALUE": 0,
+            "CLK_POLARITY": 1,
+            "WIDTH": 21
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 138 ],
+            "D": [ 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310 ],
+            "Q": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76 ]
+          }
+        },
+        "$procdff$98": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": 1,
+            "ARST_VALUE": 0,
+            "CLK_POLARITY": 1,
+            "WIDTH": 3
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 138 ],
+            "D": [ 311, 312, 313 ],
+            "Q": [ 50, 51, 52 ]
+          }
+        },
+        "$procmux$32": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 21
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.9-196.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.5-227.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 99 ],
+            "Y": [ 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310 ]
+          }
+        },
+        "$procmux$36": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 3,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:203.35-203.35|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:200.7-206.14"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ "0", "1", "0", "1", "1", "1", "0", "0", "1", "1", "0", "0", "1", "1", "1", "0", "0", "1", "1", "1", "0", "0", "1", "1", "0", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0", "0", "1", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "0" ],
+            "S": [ 314, 315, 316 ],
+            "Y": [ 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332 ]
+          }
+        },
+        "$procmux$37_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:203.35-203.35|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:200.7-206.14"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 314 ]
+          }
+        },
+        "$procmux$38_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:202.35-202.35|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:200.7-206.14"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 315 ]
+          }
+        },
+        "$procmux$39_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:201.34-201.34|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:200.7-206.14"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 316 ]
+          }
+        },
+        "$procmux$40": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.9-196.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.5-227.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172 ],
+            "B": [ 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332 ],
+            "S": [ 99 ],
+            "Y": [ 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156 ]
+          }
+        },
+        "$procmux$44": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217.13-217.24|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217.9-222.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 140 ],
+            "B": [ "1" ],
+            "S": [ 101 ],
+            "Y": [ 333 ]
+          }
+        },
+        "$procmux$48": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210.13-210.24|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210.9-215.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 140 ],
+            "B": [ "0" ],
+            "S": [ 100 ],
+            "Y": [ 334 ]
+          }
+        },
+        "$procmux$50": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:209.11-209.18|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:209.7-223.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 333 ],
+            "B": [ 334 ],
+            "S": [ 140 ],
+            "Y": [ 335 ]
+          }
+        },
+        "$procmux$52": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.9-196.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.5-227.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 140 ],
+            "B": [ 335 ],
+            "S": [ 99 ],
+            "Y": [ 139 ]
+          }
+        },
+        "$procmux$56": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217.13-217.24|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217.9-222.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 336, 337, 338 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 101 ],
+            "Y": [ 339, 340, 341 ]
+          }
+        },
+        "$procmux$60": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210.13-210.24|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210.9-215.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 53, 54, 55 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 100 ],
+            "Y": [ 342, 343, 344 ]
+          }
+        },
+        "$procmux$62": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:209.11-209.18|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:209.7-223.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 339, 340, 341 ],
+            "B": [ 342, 343, 344 ],
+            "S": [ 140 ],
+            "Y": [ 345, 346, 347 ]
+          }
+        },
+        "$procmux$64": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.9-196.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.5-227.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "B": [ 345, 346, 347 ],
+            "S": [ 99 ],
+            "Y": [ 311, 312, 313 ]
+          }
+        },
+        "$procmux$67": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:160.13-160.20|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:160.9-163.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 348 ],
+            "B": [ "0" ],
+            "S": [ 3 ],
+            "Y": [ 173 ]
+          }
+        },
+        "$procmux$70": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:136.9-136.24|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:136.5-139.22"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364 ],
+            "S": [ 137 ],
+            "Y": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222 ]
+          }
+        },
+        "$procmux$72": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 2
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.9-118.18|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.5-125.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "B": [ 365, 366 ],
+            "S": [ 104 ],
+            "Y": [ 287, 288 ]
+          }
+        },
+        "$procmux$74": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:121.42-121.42|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.9-123.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382 ],
+            "S": [ 383 ],
+            "Y": [ 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399 ]
+          }
+        },
+        "$procmux$75_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:121.42-121.42|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.9-123.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "B": [ "0", "1" ],
+            "Y": [ 383 ]
+          }
+        },
+        "$procmux$76": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.9-118.18|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.5-125.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399 ],
+            "S": [ 104 ],
+            "Y": [ 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286 ]
+          }
+        },
+        "$procmux$79": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:120.42-120.42|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.9-123.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190 ],
+            "B": [ 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382 ],
+            "S": [ 400 ],
+            "Y": [ 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416 ]
+          }
+        },
+        "$procmux$80_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:120.42-120.42|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.9-123.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "B": [ "1", "0" ],
+            "Y": [ 400 ]
+          }
+        },
+        "$procmux$81": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.9-118.18|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.5-125.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190 ],
+            "B": [ 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416 ],
+            "S": [ 104 ],
+            "Y": [ 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270 ]
+          }
+        },
+        "$procmux$85": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.24-119.24|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.9-123.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+            "B": [ 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382 ],
+            "S": [ 417 ],
+            "Y": [ 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433 ]
+          }
+        },
+        "$procmux$86_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.24-119.24|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:119.9-123.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "Y": [ 417 ]
+          }
+        },
+        "$procmux$87": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.9-118.18|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:118.5-125.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+            "B": [ 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433 ],
+            "S": [ 104 ],
+            "Y": [ 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254 ]
+          }
+        },
+        "$procmux$90": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 2,
+            "WIDTH": 7
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:108.29-108.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:106.5-111.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "1", "0", "1", "0", "0" ],
+            "B": [ "1", "1", "1", "1", "1", "0", "0", "0", "1", "1", "1", "1", "0", "0" ],
+            "S": [ 434, 435 ],
+            "Y": [ 436, 437, 438, 439, 440, 441, 442 ]
+          }
+        },
+        "$procmux$91_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:108.29-108.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:106.5-111.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "B": [ "0", "1" ],
+            "Y": [ 434 ]
+          }
+        },
+        "$procmux$92_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 2,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:107.29-107.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:106.5-111.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16, 17 ],
+            "B": [ "1", "0" ],
+            "Y": [ 435 ]
+          }
+        },
+        "$sub$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:137$11": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 16,
+            "B_SIGNED": 0,
+            "B_WIDTH": 16,
+            "Y_WIDTH": 16
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:137.16-137.30"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+            "B": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "Y": [ 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364 ]
+          }
+        },
+        "$sub$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:221$18": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 3
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:221.18-221.28"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 336, 337, 338 ]
+          }
+        },
+        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124$8": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 32
+          },
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124.21-124.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 98 ],
+            "Y": [ 365, 366, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472 ]
+          }
+        },
+        "Timer_Control_inst": {
+          "hide_name": 0,
+          "type": "Timer_Control",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:145.19-150.6"
+          },
+          "connections": {
+            "clk": [ 138 ],
+            "eoc": [ 473 ],
+            "rst": [ 3 ],
+            "trigger": [ 348 ]
+          }
+        },
+        "fcc": {
+          "hide_name": 0,
+          "type": "fcc_fixpt",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:303.11-314.2"
+          },
+          "connections": {
+            "D1": [ 474, 475, 476, 477, 478, 479, 480 ],
+            "D2": [ 481, 482, 483, 484, 485, 486, 487 ],
+            "Vfc": [ 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238 ],
+            "Vfcref": [ "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0" ],
+            "Vout": [ 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ],
+            "Voutref": [ 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172 ],
+            "clk": [ 138 ],
+            "reset": [ 3 ],
+            "ui": [ ],
+            "uv": [ ]
+          }
+        },
+        "pwm_inst": {
+          "hide_name": 0,
+          "type": "PS_PWM",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:325.12-332.6"
+          },
+          "connections": {
+            "JE": [ 12, 13, 14, 15 ],
+            "RST": [ 3 ],
+            "XADC_Event": [ 488 ],
+            "clk": [ 138 ],
+            "d1": [ 474, 475, 476, 477, 478, 479, 480 ],
+            "d2": [ 481, 482, 483, 484, 485, 486, 487 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\Vfc[15:0]": {
+          "hide_name": 1,
+          "bits": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:133.1-140.4"
+          }
+        },
+        "$0\\Vfcref[15:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:168.17-168.34"
+          }
+        },
+        "$0\\Vout[15:0]": {
+          "hide_name": 1,
+          "bits": [ 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:133.1-140.4"
+          }
+        },
+        "$0\\Voutref[15:0]": {
+          "hide_name": 1,
+          "bits": [ 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          }
+        },
+        "$0\\ap_start_reg[0:0]": {
+          "hide_name": 1,
+          "bits": [ 173 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:159.5-164.8"
+          }
+        },
+        "$0\\ch_index[1:0]": {
+          "hide_name": 1,
+          "bits": [ 287, 288 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          }
+        },
+        "$0\\daddr[6:0]": {
+          "hide_name": 1,
+          "bits": [ 436, 437, 438, 439, 440, 441, 442 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:105.1-112.4"
+          }
+        },
+        "$0\\data14[15:0]": {
+          "hide_name": 1,
+          "bits": [ 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          }
+        },
+        "$0\\data15[15:0]": {
+          "hide_name": 1,
+          "bits": [ 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          }
+        },
+        "$0\\data7[15:0]": {
+          "hide_name": 1,
+          "bits": [ 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:117.1-126.4"
+          }
+        },
+        "$0\\drdy_d[1:0]": {
+          "hide_name": 1,
+          "bits": [ 289, 102 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:64.1-65.37"
+          }
+        },
+        "$0\\idx[2:0]": {
+          "hide_name": 1,
+          "bits": [ 311, 312, 313 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          }
+        },
+        "$0\\tick[20:0]": {
+          "hide_name": 1,
+          "bits": [ 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          }
+        },
+        "$0\\up_down[0:0]": {
+          "hide_name": 1,
+          "bits": [ 139 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:189.1-229.4"
+          }
+        },
+        "$1\\Voutref[15:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:184.12-184.29"
+          }
+        },
+        "$1\\ch_index[1:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:77.11-77.23"
+          }
+        },
+        "$1\\daddr[6:0]": {
+          "hide_name": 1,
+          "bits": [ 436, 437, 438, 439, 440, 441, 442 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:105.1-112.4"
+          }
+        },
+        "$1\\data14[15:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:73.12-73.26"
+          }
+        },
+        "$1\\data15[15:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:74.12-74.26"
+          }
+        },
+        "$1\\data7[15:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:72.12-72.26"
+          }
+        },
+        "$1\\drdy_d[1:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:63.11-63.25"
+          }
+        },
+        "$1\\idx[2:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:182.12-182.20"
+          }
+        },
+        "$1\\tick[20:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:181.12-181.20"
+          }
+        },
+        "$1\\up_down[0:0]": {
+          "hide_name": 1,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:183.12-183.26"
+          }
+        },
+        "$2\\daddr[6:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:60.11-60.20"
+          }
+        },
+        "$add$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124$6_Y": {
+          "hide_name": 1,
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124.49-124.61"
+          }
+        },
+        "$add$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:214$16_Y": {
+          "hide_name": 1,
+          "bits": [ 53, 54, 55 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:214.18-214.28"
+          }
+        },
+        "$add$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:226$19_Y": {
+          "hide_name": 1,
+          "bits": [ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:226.15-226.26"
+          }
+        },
+        "$auto$rtlil.cc:3326:ReduceOr$100": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3326:ReduceOr$103": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3326:ReduceOr$94": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3326:ReduceOr$97": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124$5_Y": {
+          "hide_name": 1,
+          "bits": [ 98 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124.22-124.38"
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196$14_Y": {
+          "hide_name": 1,
+          "bits": [ 99 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:196.9-196.32"
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210$15_Y": {
+          "hide_name": 1,
+          "bits": [ 100 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:210.13-210.24"
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217$17_Y": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:217.13-217.24"
+          }
+        },
+        "$eq$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:67$2_Y": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:67.19-67.34"
+          }
+        },
+        "$extend$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124$7_Y": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124.21-124.61"
+          }
+        },
+        "$ge$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:136$10_Y": {
+          "hide_name": 1,
+          "bits": [ 137 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:136.9-136.24"
+          }
+        },
+        "$procmux$32_Y": {
+          "hide_name": 1,
+          "bits": [ 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310 ],
+          "attributes": {
+          }
+        },
+        "$procmux$33_CMP": {
+          "hide_name": 1,
+          "bits": [ 99 ],
+          "attributes": {
+          }
+        },
+        "$procmux$36_Y": {
+          "hide_name": 1,
+          "bits": [ 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332 ],
+          "attributes": {
+          }
+        },
+        "$procmux$37_CMP": {
+          "hide_name": 1,
+          "bits": [ 314 ],
+          "attributes": {
+          }
+        },
+        "$procmux$38_CMP": {
+          "hide_name": 1,
+          "bits": [ 315 ],
+          "attributes": {
+          }
+        },
+        "$procmux$39_CMP": {
+          "hide_name": 1,
+          "bits": [ 316 ],
+          "attributes": {
+          }
+        },
+        "$procmux$40_Y": {
+          "hide_name": 1,
+          "bits": [ 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156 ],
+          "attributes": {
+          }
+        },
+        "$procmux$41_CMP": {
+          "hide_name": 1,
+          "bits": [ 99 ],
+          "attributes": {
+          }
+        },
+        "$procmux$44_Y": {
+          "hide_name": 1,
+          "bits": [ 333 ],
+          "attributes": {
+          }
+        },
+        "$procmux$45_CMP": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$procmux$48_Y": {
+          "hide_name": 1,
+          "bits": [ 334 ],
+          "attributes": {
+          }
+        },
+        "$procmux$49_CMP": {
+          "hide_name": 1,
+          "bits": [ 100 ],
+          "attributes": {
+          }
+        },
+        "$procmux$50_Y": {
+          "hide_name": 1,
+          "bits": [ 335 ],
+          "attributes": {
+          }
+        },
+        "$procmux$51_CMP": {
+          "hide_name": 1,
+          "bits": [ 140 ],
+          "attributes": {
+          }
+        },
+        "$procmux$52_Y": {
+          "hide_name": 1,
+          "bits": [ 139 ],
+          "attributes": {
+          }
+        },
+        "$procmux$53_CMP": {
+          "hide_name": 1,
+          "bits": [ 99 ],
+          "attributes": {
+          }
+        },
+        "$procmux$56_Y": {
+          "hide_name": 1,
+          "bits": [ 339, 340, 341 ],
+          "attributes": {
+          }
+        },
+        "$procmux$57_CMP": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$procmux$60_Y": {
+          "hide_name": 1,
+          "bits": [ 342, 343, 344 ],
+          "attributes": {
+          }
+        },
+        "$procmux$61_CMP": {
+          "hide_name": 1,
+          "bits": [ 100 ],
+          "attributes": {
+          }
+        },
+        "$procmux$62_Y": {
+          "hide_name": 1,
+          "bits": [ 345, 346, 347 ],
+          "attributes": {
+          }
+        },
+        "$procmux$63_CMP": {
+          "hide_name": 1,
+          "bits": [ 140 ],
+          "attributes": {
+          }
+        },
+        "$procmux$64_Y": {
+          "hide_name": 1,
+          "bits": [ 311, 312, 313 ],
+          "attributes": {
+          }
+        },
+        "$procmux$65_CMP": {
+          "hide_name": 1,
+          "bits": [ 99 ],
+          "attributes": {
+          }
+        },
+        "$procmux$67_Y": {
+          "hide_name": 1,
+          "bits": [ 173 ],
+          "attributes": {
+          }
+        },
+        "$procmux$68_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$70_Y": {
+          "hide_name": 1,
+          "bits": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222 ],
+          "attributes": {
+          }
+        },
+        "$procmux$71_CMP": {
+          "hide_name": 1,
+          "bits": [ 137 ],
+          "attributes": {
+          }
+        },
+        "$procmux$72_Y": {
+          "hide_name": 1,
+          "bits": [ 287, 288 ],
+          "attributes": {
+          }
+        },
+        "$procmux$73_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$procmux$74_Y": {
+          "hide_name": 1,
+          "bits": [ 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399 ],
+          "attributes": {
+          }
+        },
+        "$procmux$75_CMP": {
+          "hide_name": 1,
+          "bits": [ 383 ],
+          "attributes": {
+          }
+        },
+        "$procmux$76_Y": {
+          "hide_name": 1,
+          "bits": [ 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286 ],
+          "attributes": {
+          }
+        },
+        "$procmux$77_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$procmux$79_Y": {
+          "hide_name": 1,
+          "bits": [ 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416 ],
+          "attributes": {
+          }
+        },
+        "$procmux$80_CMP": {
+          "hide_name": 1,
+          "bits": [ 400 ],
+          "attributes": {
+          }
+        },
+        "$procmux$81_Y": {
+          "hide_name": 1,
+          "bits": [ 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270 ],
+          "attributes": {
+          }
+        },
+        "$procmux$82_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$procmux$85_Y": {
+          "hide_name": 1,
+          "bits": [ 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433 ],
+          "attributes": {
+          }
+        },
+        "$procmux$86_CMP": {
+          "hide_name": 1,
+          "bits": [ 417 ],
+          "attributes": {
+          }
+        },
+        "$procmux$87_Y": {
+          "hide_name": 1,
+          "bits": [ 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254 ],
+          "attributes": {
+          }
+        },
+        "$procmux$88_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$procmux$90_Y": {
+          "hide_name": 1,
+          "bits": [ 436, 437, 438, 439, 440, 441, 442 ],
+          "attributes": {
+          }
+        },
+        "$procmux$91_CMP": {
+          "hide_name": 1,
+          "bits": [ 434 ],
+          "attributes": {
+          }
+        },
+        "$procmux$92_CMP": {
+          "hide_name": 1,
+          "bits": [ 435 ],
+          "attributes": {
+          }
+        },
+        "$sub$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:137$11_Y": {
+          "hide_name": 1,
+          "bits": [ 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:137.16-137.30"
+          }
+        },
+        "$sub$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:221$18_Y": {
+          "hide_name": 1,
+          "bits": [ 336, 337, 338 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:221.18-221.28"
+          }
+        },
+        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124$8_Y": {
+          "hide_name": 1,
+          "bits": [ 365, 366, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:124.21-124.61"
+          }
+        },
+        "CLK_100MHz": {
+          "hide_name": 0,
+          "bits": [ 138 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:64.18-64.28"
+          }
+        },
+        "CLK_125MHz": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:25.16-25.26"
+          }
+        },
+        "D1": {
+          "hide_name": 0,
+          "bits": [ 474, 475, 476, 477, 478, 479, 480 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:294.16-294.18"
+          }
+        },
+        "D1_ap_vld": {
+          "hide_name": 0,
+          "bits": [ 489 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:295.10-295.19"
+          }
+        },
+        "D2": {
+          "hide_name": 0,
+          "bits": [ 481, 482, 483, 484, 485, 486, 487 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:296.16-296.18"
+          }
+        },
+        "D2_ap_vld": {
+          "hide_name": 0,
+          "bits": [ 490 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:297.10-297.19"
+          }
+        },
+        "JE": {
+          "hide_name": 0,
+          "bits": [ 12, 13, 14, 15, "1", "1", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:35.23-35.25"
+          }
+        },
+        "JE_pwm": {
+          "hide_name": 0,
+          "bits": [ 12, 13, 14, 15 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:318.16-318.22"
+          }
+        },
+        "SW0": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.25-27.28"
+          }
+        },
+        "SW1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.30-27.33"
+          }
+        },
+        "SW3_RST": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:27.16-27.23"
+          }
+        },
+        "Vfc": {
+          "hide_name": 0,
+          "bits": [ 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:132.12-132.15"
+          }
+        },
+        "Vfcref": {
+          "hide_name": 0,
+          "bits": [ "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:168.17-168.23"
+          }
+        },
+        "Vout": {
+          "hide_name": 0,
+          "bits": [ 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:131.12-131.16"
+          }
+        },
+        "Voutref": {
+          "hide_name": 0,
+          "bits": [ 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:184.12-184.19"
+          }
+        },
+        "ap_done": {
+          "hide_name": 0,
+          "bits": [ 491 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:154.10-154.17"
+          }
+        },
+        "ap_idle": {
+          "hide_name": 0,
+          "bits": [ 492 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:155.10-155.17"
+          }
+        },
+        "ap_ready": {
+          "hide_name": 0,
+          "bits": [ 493 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:156.10-156.18"
+          }
+        },
+        "ap_start": {
+          "hide_name": 0,
+          "bits": [ 174 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:153.10-153.18"
+          }
+        },
+        "ap_start_reg": {
+          "hide_name": 0,
+          "bits": [ 174 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:158.9-158.21"
+          }
+        },
+        "ch_index": {
+          "hide_name": 0,
+          "bits": [ 16, 17 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:77.11-77.19"
+          }
+        },
+        "channel_out": {
+          "hide_name": 0,
+          "bits": [ 494, 495, 496, 497, 498 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:57.12-57.23"
+          }
+        },
+        "convst_in": {
+          "hide_name": 0,
+          "bits": [ 488 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:75.6-75.15"
+          }
+        },
+        "daddr": {
+          "hide_name": 0,
+          "bits": [ 436, 437, 438, 439, 440, 441, 442 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:60.11-60.16"
+          }
+        },
+        "data14": {
+          "hide_name": 0,
+          "bits": [ 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:73.12-73.18"
+          }
+        },
+        "data15": {
+          "hide_name": 0,
+          "bits": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:74.12-74.18"
+          }
+        },
+        "data7": {
+          "hide_name": 0,
+          "bits": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:72.12-72.17"
+          }
+        },
+        "do_out": {
+          "hide_name": 0,
+          "bits": [ 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:56.13-56.19"
+          }
+        },
+        "drdy_d": {
+          "hide_name": 0,
+          "bits": [ 102, 103 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:63.11-63.17"
+          }
+        },
+        "drdy_fall": {
+          "hide_name": 0,
+          "bits": [ 104 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:67.6-67.15"
+          }
+        },
+        "drdy_out": {
+          "hide_name": 0,
+          "bits": [ 289 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.6-55.14"
+          }
+        },
+        "eoc_out": {
+          "hide_name": 0,
+          "bits": [ 473 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:54.6-54.13"
+          }
+        },
+        "idx": {
+          "hide_name": 0,
+          "bits": [ 50, 51, 52 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:182.12-182.15"
+          }
+        },
+        "tick": {
+          "hide_name": 0,
+          "bits": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:181.12-181.16"
+          }
+        },
+        "trigger_out": {
+          "hide_name": 0,
+          "bits": [ 348 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:53.6-53.17"
+          }
+        },
+        "ui": {
+          "hide_name": 0,
+          "bits": [ 499, 500, 501, 502, 503, 504, 505 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:298.16-298.18"
+          }
+        },
+        "ui_ap_vld": {
+          "hide_name": 0,
+          "bits": [ 506 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:299.10-299.19"
+          }
+        },
+        "up_down": {
+          "hide_name": 0,
+          "bits": [ 140 ],
+          "attributes": {
+            "init": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:183.12-183.19"
+          }
+        },
+        "uv": {
+          "hide_name": 0,
+          "bits": [ 507, 508, 509, 510, 511, 512, 513 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:300.16-300.18"
+          }
+        },
+        "uv_ap_vld": {
+          "hide_name": 0,
+          "bits": [ 514 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:301.10-301.19"
+          }
+        },
+        "vauxn14": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:30.20-30.27"
+          }
+        },
+        "vauxn15": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:31.20-31.27"
+          }
+        },
+        "vauxn7": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:29.19-29.25"
+          }
+        },
+        "vauxp14": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:30.11-30.18"
+          }
+        },
+        "vauxp15": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:31.11-31.18"
+          }
+        },
+        "vauxp7": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:29.11-29.17"
+          }
+        }
+      }
+    }
+  }
+}
