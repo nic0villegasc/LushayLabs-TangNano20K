@@ -163,9 +163,9 @@ module top
     always @(posedge clk) begin
         if (rowNumber == 2'd0) begin
             case (charAddress[3:0])
-                0: charOutput <= "C";
-                1: charOutput <= "h";
-                2: charOutput <= "1";
+                0: charOutput <= "D";
+                1: charOutput <= "i";
+                2: charOutput <= "f";
                 4: charOutput <= "r";
                 5: charOutput <= "a";
                 6: charOutput <= "w";
@@ -180,9 +180,9 @@ module top
         end
         else if (rowNumber == 2'd1) begin
             case (charAddress[3:0])
-                0: charOutput <= "C";
-                1: charOutput <= "h";
-                2: charOutput <= "1";
+                0: charOutput <= "D";
+                1: charOutput <= "i";
+                2: charOutput <= "f";
                 4: charOutput <= thousandsCh1;
                 5: charOutput <= ".";
                 6: charOutput <= hundredsCh1;
@@ -196,7 +196,7 @@ module top
                 default: charOutput <= " ";
             endcase
         end
-        else if (rowNumber == 2'd2) begin
+        /*else if (rowNumber == 2'd2) begin
             case (charAddress[3:0])
                 0: charOutput <= "C";
                 1: charOutput <= "h";
@@ -230,7 +230,7 @@ module top
                 14: charOutput <= "s";
                 default: charOutput <= " ";
             endcase
-        end
+        end*/
     end
 
 endmodule

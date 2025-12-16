@@ -27,7 +27,7 @@ module adc #(
         3'b100, // Channel 0 Single ended
         3'b001, // FSR +- 4.096v
         1'b1, // Single shot mode
-        3'b100, // 128 SPS
+        3'b111, // 128 SPS
         1'b0, // Traditional Comparator
         1'b0, // Active low alert
         1'b0, // Non latching
@@ -116,7 +116,7 @@ module adc #(
                         instructionI2C <= INST_WRITE_BYTE;
                         byteToSendI2C <= {
                             setupRegister[15] ? 1'b1 : 1'b0,
-                            1'b1, channel,
+                            3'b001, 
                             setupRegister[11:8]
                         };
                         enableI2C <= 1;
