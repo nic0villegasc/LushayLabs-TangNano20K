@@ -19,9 +19,9 @@ module signal_generator_180phase #(
     if (!rst_ni) begin
       // 180 phase shift: Start at the PEAK (Max Value)
       count_o     <= MaxVal;
-      // Initialize direction to UP (1) so that in the very next cycle, 
+      // Initialize direction to UP (1) so that in the very next cycle,
       // the "MaxVal" check catches it and flips it to DOWN.
-      direction_q <= 1'b1; 
+      direction_q <= 1'b1;
     end else begin
       if (direction_q) begin
         // ---------------------------------------------------------------------

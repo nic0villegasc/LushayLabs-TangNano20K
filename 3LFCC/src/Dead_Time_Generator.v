@@ -12,7 +12,7 @@
 // Description: El modulo recibe una senal digital de 1 bit, y entrega la misma
 //                      senal de entrada con un retardo en el canto de subida. Este
 //                      retardo llamado tiempo muerto, es configurable con una palabra
-//                      de 10 bits, que permite fijar tiempos en pasos de un periodo del 
+//                      de 10 bits, que permite fijar tiempos en pasos de un periodo del
 //                      reloj del reloj de 150MHz, que tambien debe recibir.
 //
 // Dependencies:    Depende de una senal de reloj, la configuracion del tiempo

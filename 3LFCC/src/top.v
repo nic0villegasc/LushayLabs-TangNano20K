@@ -30,7 +30,7 @@ module top (
   // FIXME: Temporary direct clock assignment for simulation/synthesis
   // In actual implementation, replace with PLL generating from 27MHz.
   // We have to consider that the TangNano 20K uses 27 MHz input clock.
-  assign clk_100m = clk_i; 
+  assign clk_100m = clk_i;
 
   /*
   // Placeholder for PLL
@@ -49,15 +49,15 @@ module top (
   wire        adc_drdy;
   wire [15:0] adc_data_out;
   reg  [6:0]  adc_channel_addr;
-  
+
   // Storage for ADC measurements
   reg  [15:0] v_meas_ch7_q;
   reg  [15:0] v_meas_ch14_q;
   reg  [15:0] v_meas_ch15_q;
-  
+
   // Channel Indexing State Machine
   reg  [1:0]  ch_idx_q;
-  
+
   // ADC Trigger (Start Conversion)
   wire        adc_start_conv;
 
@@ -67,7 +67,7 @@ module top (
   // Voltage References and Measurements
   reg  [15:0] v_fc_calc;    // Calculated Flying Cap Voltage
   reg  [15:0] v_out_meas;   // Measured Output Voltage
-  
+
   // Reference Sequencer Signals (Soft Start)
   reg  [15:0] v_out_ref_q;
   reg  [20:0] tick_cnt_q;
@@ -77,20 +77,20 @@ module top (
   // Controller Outputs
   wire [6:0]  duty_d1;
   wire [6:0]  duty_d2;
-  
+
   // Fixed-Point Controller Constants
   localparam [15:0] VREF_0V0 = 16'h0000;
   localparam [15:0] VREF_0V6 = 16'h2653; // ~0.6 V
   localparam [15:0] VREF_1V2 = 16'h4CCE; // ~1.2 V
   localparam [15:0] VREF_1V8 = 16'h733A; // ~1.8 V
-  localparam [15:0] V_FC_REF = 16'h6990; 
-  
+  localparam [15:0] V_FC_REF = 16'h6990;
+
   localparam integer STEP_CYCLES = 1000000;
 
   // ---------------------------------------------------------------------------
   // 4. ADC Data Acquisition Logic
   // ---------------------------------------------------------------------------
-  
+
   // Simple channel sequencer: 7 -> 14 -> 15 -> 7
   always @* begin
     case (ch_idx_q)
@@ -102,7 +102,7 @@ module top (
   end
 
   // Capture data on data ready (drdy)
-  // Note: Original code had edge detection on drdy. 
+  // Note: Original code had edge detection on drdy.
   // Assuming simple synchronous capture here for clarity.
   always @(posedge clk_100m or negedge rst_ni) begin
     if (!rst_ni) begin
@@ -117,7 +117,7 @@ module top (
           2'd1: v_meas_ch14_q <= adc_data_out;
           2'd2: v_meas_ch15_q <= adc_data_out;
         endcase
-        
+
         // Advance channel index
         if (ch_idx_q == 2'd2)
           ch_idx_q <= 2'd0;
@@ -134,7 +134,7 @@ module top (
       v_fc_calc  <= 16'd0;
     end else begin
       v_out_meas <= v_meas_ch14_q;
-      
+
       if (v_meas_ch7_q >= v_meas_ch15_q)
         v_fc_calc <= v_meas_ch7_q - v_meas_ch15_q;
       else
@@ -154,14 +154,14 @@ module top (
     end else begin
       if (tick_cnt_q == STEP_CYCLES - 1) begin
         tick_cnt_q <= 0;
-        
+
         // Update Voltage Reference based on Index
         case (seq_idx_q)
           3'd0:    v_out_ref_q <= VREF_0V0;
           3'd1:    v_out_ref_q <= VREF_0V6;
           3'd2:    v_out_ref_q <= VREF_1V2;
           3'd3:    v_out_ref_q <= VREF_1V8;
-          default: v_out_ref_q <= VREF_0V0;
+          // default: v_out_ref_q <= VREF_0V0;
         endcase
 
         // Update Index State
@@ -224,7 +224,7 @@ module top (
 
   // PS-PWM Modulator
   wire [3:0] pwm_signals;
-  
+
   ps_pwm u_modulator (
     .clk_i         (clk_100m),
     .rst_ni        (rst_ni),

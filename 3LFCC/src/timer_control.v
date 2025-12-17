@@ -2,7 +2,7 @@
 // TODO: Edit clock behavior to match Tang Nano 20K (27 MHz input)
 
 module timer_control #(
-  parameter integer CountMax = 750 // 7.5us @ 100MHz (or 6us @ 125MHz)
+  parameter [9:0] CountMax = 750 // 7.5us @ 100MHz (or 6us @ 125MHz)
 ) (
   input  wire clk_i,      // System Clock
   input  wire rst_ni,     // Active-Low Asynchronous Reset
