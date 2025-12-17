@@ -1,46 +1,53 @@
 `timescale 1ns / 1ps
 
-module Signal_Generator_0phase #(parameter WIDTH_TRIANG = 7)(
-    input clk,        // Reloj de entrada
-    input rst,        // Señal de reinicio
-    output reg XADC_Event,
-    output reg [WIDTH_TRIANG-1:0] count // Salida triangular de 12 bits
+module signal_generator_0phase #(
+  parameter integer Width = 7
+) (
+  input  wire             clk_i,      // Input Clock
+  input  wire             rst_ni,     // Active-Low Asynchronous Reset
+  output reg              trigger_o,  // Trigger Pulse (formerly XADC_Event)
+  output reg  [Width-1:0] count_o     // Triangular Wave Output
 );
 
-//reg [WIDTH_TRIANG-1:0] count; // contador de 12 bits
-reg direction;
+  reg direction_q; // 1 = Up, 0 = Down
 
-always @(posedge clk or posedge rst) begin
-    if (rst) begin
-        count <= 0;
-        direction <= 1;
-        XADC_Event <= 0;
-    end
-    else begin
-        if (direction) begin
-            if (count == 7'b1111111) begin // 127 en binario
-                direction <= 0;
-                XADC_Event <= 1;
-                count <= 7'b1111110 ; end 
-            else begin
-                count <= count + 1;
-                XADC_Event <= 0;
-            end
-        end
-        else begin
-            if (count == 7'b0000000) begin// 0 en binario
-                direction <= 1;
-                XADC_Event <= 1;
-                count <= 7'b0000001; end
-            else begin
-                count <= count - 1;
-                XADC_Event <= 0;
-            end
-                
-        end
-    end
-end
+  // Calculate Max/Min constants based on Width parameter
+  // This replaces hardcoded 7'b1111111
+  localparam [Width-1:0] MaxVal = {Width{1'b1}};
+  localparam [Width-1:0] MinVal = {Width{1'b0}};
 
-//assign triangular_out = count;
+  always @(posedge clk_i or negedge rst_ni) begin
+    if (!rst_ni) begin
+      count_o     <= MinVal;
+      direction_q <= 1'b1;
+      trigger_o   <= 1'b0;
+    end else begin
+      if (direction_q) begin
+        // ---------------------------------------------------------------------
+        // Counting Up
+        // ---------------------------------------------------------------------
+        if (count_o == MaxVal) begin
+          direction_q <= 1'b0;
+          trigger_o   <= 1'b1;
+          count_o     <= MaxVal - 1'b1; // Turn around
+        end else begin
+          count_o   <= count_o + 1'b1;
+          trigger_o <= 1'b0;
+        end
+      end else begin
+        // ---------------------------------------------------------------------
+        // Counting Down
+        // ---------------------------------------------------------------------
+        if (count_o == MinVal) begin
+          direction_q <= 1'b1;
+          trigger_o   <= 1'b1;
+          count_o     <= MinVal + 1'b1; // Turn around
+        end else begin
+          count_o   <= count_o - 1'b1;
+          trigger_o <= 1'b0;
+        end
+      end
+    end
+  end
 
 endmodule

@@ -1,37 +1,50 @@
 `timescale 1ns / 1ps
 
-module Signal_Generator_180phase #(parameter WIDTH_TRIANG = 7)(
-    input clk,        // Reloj de entrada
-    input rst,        // Señal de reinicio
-    output reg [WIDTH_TRIANG-1:0] count // Salida triangular de 12 bits
+module signal_generator_180phase #(
+  parameter integer Width = 7
+) (
+  input  wire             clk_i,    // Input Clock
+  input  wire             rst_ni,   // Active-Low Asynchronous Reset
+  output reg  [Width-1:0] count_o   // Triangular Wave Output
 );
 
-//reg [WIDTH_TRIANG-1:0] count; // contador de 12 bits
-reg direction;
+  reg direction_q; // 1 = Up, 0 = Down
 
-always @(posedge clk or posedge rst) begin
-    if (rst) begin
-        count <= 7'b1111111; 
-        direction <= 1;
-    end
-    else begin
-        if (direction) begin
-            if (count == 7'b1111111) begin // 63 en binario
-                direction <= 0;
-                count <= 7'b1111110 ; end 
-            else
-                count <= count + 1;
-        end
-        else begin
-            if (count == 7'b0000000) begin// 0 en binario
-                direction <= 1;
-                count <= 7'b0000001; end
-            else
-                count <= count - 1;
-        end
-    end
-end
+  // Calculate Max/Min constants based on Width parameter
+  // This ensures the module works for any bit width (e.g. 12-bit ADC range)
+  localparam [Width-1:0] MaxVal = {Width{1'b1}};
+  localparam [Width-1:0] MinVal = {Width{1'b0}};
 
-//assign triangular_out = count;
+  always @(posedge clk_i or negedge rst_ni) begin
+    if (!rst_ni) begin
+      // 180 phase shift: Start at the PEAK (Max Value)
+      count_o     <= MaxVal;
+      // Initialize direction to UP (1) so that in the very next cycle, 
+      // the "MaxVal" check catches it and flips it to DOWN.
+      direction_q <= 1'b1; 
+    end else begin
+      if (direction_q) begin
+        // ---------------------------------------------------------------------
+        // Counting Up
+        // ---------------------------------------------------------------------
+        if (count_o == MaxVal) begin
+          direction_q <= 1'b0;
+          count_o     <= MaxVal - 1'b1; // Turn around -> Down
+        end else begin
+          count_o <= count_o + 1'b1;
+        end
+      end else begin
+        // ---------------------------------------------------------------------
+        // Counting Down
+        // ---------------------------------------------------------------------
+        if (count_o == MinVal) begin
+          direction_q <= 1'b1;
+          count_o     <= MinVal + 1'b1; // Turn around -> Up
+        end else begin
+          count_o <= count_o - 1'b1;
+        end
+      end
+    end
+  end
 
 endmodule
