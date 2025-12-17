@@ -169,9 +169,9 @@ module top (
   // ---------------------------------------------------------------------------
 
   // ADC Wrapper (Driver)
-  adc_lushay_wrapper #(
+  adc #(
     .address (7'd72) // 0x48 ADS1115
-  ) u_adc_wrapper (
+  ) u_adc (
     .clk_i              (clk_i),
     .rst_ni             (rst_ni),
     .channel_i          (ch_idx_q),      // 0=AIN0, 1=AIN1, 2=AIN2
@@ -188,9 +188,9 @@ module top (
   );
 
   // I2C Master (Physical Layer)
-  i2c_master #(
+  i2c #(
     .DividerWidth (7) // 7 bits @ 27MHz = ~210kHz I2C Clock
-  ) u_i2c_master (
+  ) u_i2c (
     .clk_i           (clk_i),
     .rst_ni          (rst_ni),
     .sda_i           (sda_in_wire),

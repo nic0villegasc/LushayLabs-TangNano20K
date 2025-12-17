@@ -1198,9 +1198,9 @@
             "Y": [ 5 ]
           }
         },
-        "u_adc_wrapper": {
+        "u_adc": {
           "hide_name": 0,
-          "type": "adc_lushay_wrapper",
+          "type": "adc",
           "parameters": {
             "address": 72
           },
@@ -1246,9 +1246,9 @@
             "uv": [ ]
           }
         },
-        "u_i2c_master": {
+        "u_i2c": {
           "hide_name": 0,
-          "type": "i2c_master",
+          "type": "i2c",
           "parameters": {
             "DividerWidth": 7
           },
