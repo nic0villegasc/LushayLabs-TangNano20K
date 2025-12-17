@@ -2,73 +2,61 @@
 
 module top (
   // Clock and Reset
-  input  wire        clk_i,           // External Clock Input (27MHz)
-  input  wire        rst_i,           // External Reset (Assumed Active High SW3)
+  input  wire        clk_i,           // 27 MHz Tang Nano Clock
+  input  wire        rst_i,           // External Reset (Active High Button)
 
-  // Analog Inputs (ADC Channels)
-  input  wire        vauxp7_i,        // Channel 7 Positive
-  input  wire        vauxn7_i,        // Channel 7 Negative
-  input  wire        vauxp14_i,       // Channel 14 Positive
-  input  wire        vauxn14_i,       // Channel 14 Negative
-  input  wire        vauxp15_i,       // Channel 15 Positive
-  input  wire        vauxn15_i,       // Channel 15 Negative
+  // I2C Interface (ADS1115 ADC)
+  output wire        scl_o,           // Serial Clock
+  inout  wire        sda_io,          // Serial Data (Bidirectional)
 
   // PWM Outputs
-  output wire [7:0]  pwm_o
+  output wire [7:0]  pwm_o            // Mapped to JE pins
 );
 
   // ---------------------------------------------------------------------------
   // 1. Clock & Reset Management
   // ---------------------------------------------------------------------------
-  wire clk_100m;      // Main System Clock
   wire rst_ni;        // Internal Active-Low Reset
-  wire locked;        // PLL Lock Status
 
   // Normalize reset: User button (High) -> System Reset (Low)
   assign rst_ni = ~rst_i;
 
-  // FIXME: Temporary direct clock assignment for simulation/synthesis
-  // In actual implementation, replace with PLL generating from 27MHz.
-  // We have to consider that the TangNano 20K uses 27 MHz input clock.
-  assign clk_100m = clk_i;
-
-  /*
-  // Placeholder for PLL
-  gowin_rpll u_pll (
-    .clkout (clk_100m),
-    .lock   (locked),
-    .reset  (~rst_ni),
-    .clkin  (clk_i)
-  );
-  */
-
   // ---------------------------------------------------------------------------
-  // 2. ADC Signal Declarations & wrapper
+  // 2. ADC Subsystem Signals
   // ---------------------------------------------------------------------------
-  wire        adc_eoc;
+  // Wrapper <-> I2C Master connections
+  wire [1:0]  i2c_inst;
+  wire        i2c_en;
+  wire [7:0]  i2c_byte_tx;
+  wire [7:0]  i2c_byte_rx;
+  wire        i2c_done;
+  wire        i2c_busy;
+
+  // Tri-state buffer signals
+  wire        sda_out_wire;
+  wire        sda_in_wire;
+
+  // ADC Data signals
   wire        adc_drdy;
+  wire        adc_start_conv; // From Timer
   wire [15:0] adc_data_out;
-  reg  [6:0]  adc_channel_addr;
 
   // Storage for ADC measurements
-  reg  [15:0] v_meas_ch7_q;
-  reg  [15:0] v_meas_ch14_q;
-  reg  [15:0] v_meas_ch15_q;
+  reg  [15:0] v_meas_ch0_q; // Previously Ch7 (Flying Cap +)
+  reg  [15:0] v_meas_ch1_q; // Previously Ch14 (Vout)
+  reg  [15:0] v_meas_ch2_q; // Previously Ch15 (Flying Cap -)
 
-  // Channel Indexing State Machine
-  reg  [1:0]  ch_idx_q;
-
-  // ADC Trigger (Start Conversion)
-  wire        adc_start_conv;
+  // Channel Sequencer
+  reg  [1:0]  ch_idx_q;     // 0=AIN0, 1=AIN1, 2=AIN2
 
   // ---------------------------------------------------------------------------
   // 3. Control System Signals
   // ---------------------------------------------------------------------------
-  // Voltage References and Measurements
+  // Voltage Calculations
   reg  [15:0] v_fc_calc;    // Calculated Flying Cap Voltage
   reg  [15:0] v_out_meas;   // Measured Output Voltage
 
-  // Reference Sequencer Signals (Soft Start)
+  // Reference Sequencer (Soft Start)
   reg  [15:0] v_out_ref_q;
   reg  [20:0] tick_cnt_q;
   reg  [2:0]  seq_idx_q;
@@ -78,47 +66,38 @@ module top (
   wire [6:0]  duty_d1;
   wire [6:0]  duty_d2;
 
-  // Fixed-Point Controller Constants
+  // Constants
   localparam [15:0] VREF_0V0 = 16'h0000;
-  localparam [15:0] VREF_0V6 = 16'h2653; // ~0.6 V
-  localparam [15:0] VREF_1V2 = 16'h4CCE; // ~1.2 V
-  localparam [15:0] VREF_1V8 = 16'h733A; // ~1.8 V
+  localparam [15:0] VREF_0V6 = 16'h2653;
+  localparam [15:0] VREF_1V2 = 16'h4CCE;
+  localparam [15:0] VREF_1V8 = 16'h733A;
   localparam [15:0] V_FC_REF = 16'h6990;
 
+  // 1 Million cycles @ 27MHz is ~37ms per step (reasonable for soft start)
   localparam integer STEP_CYCLES = 1000000;
 
   // ---------------------------------------------------------------------------
   // 4. ADC Data Acquisition Logic
   // ---------------------------------------------------------------------------
 
-  // Simple channel sequencer: 7 -> 14 -> 15 -> 7
-  always @* begin
-    case (ch_idx_q)
-      2'd0:    adc_channel_addr = 7'h17; // Ch 7
-      2'd1:    adc_channel_addr = 7'h1E; // Ch 14
-      2'd2:    adc_channel_addr = 7'h1F; // Ch 15
-      default: adc_channel_addr = 7'h17;
-    endcase
-  end
-
-  // Capture data on data ready (drdy)
-  // Note: Original code had edge detection on drdy.
-  // Assuming simple synchronous capture here for clarity.
-  always @(posedge clk_100m or negedge rst_ni) begin
+  // Capture data when ADC reports "Data Ready"
+  always @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
-      v_meas_ch7_q  <= 16'd0;
-      v_meas_ch14_q <= 16'd0;
-      v_meas_ch15_q <= 16'd0;
+      v_meas_ch0_q  <= 16'd0;
+      v_meas_ch1_q  <= 16'd0;
+      v_meas_ch2_q  <= 16'd0;
       ch_idx_q      <= 2'd0;
     end else begin
       if (adc_drdy) begin
+        // Store data based on current channel
         case (ch_idx_q)
-          2'd0: v_meas_ch7_q  <= adc_data_out;
-          2'd1: v_meas_ch14_q <= adc_data_out;
-          2'd2: v_meas_ch15_q <= adc_data_out;
+          2'd0: v_meas_ch0_q <= adc_data_out;
+          2'd1: v_meas_ch1_q <= adc_data_out;
+          2'd2: v_meas_ch2_q <= adc_data_out;
+          default: ;
         endcase
 
-        // Advance channel index
+        // Advance channel index (Round Robin: 0 -> 1 -> 2 -> 0)
         if (ch_idx_q == 2'd2)
           ch_idx_q <= 2'd0;
         else
@@ -128,15 +107,16 @@ module top (
   end
 
   // Calculate System Voltages
-  always @(posedge clk_100m or negedge rst_ni) begin
+  always @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
       v_out_meas <= 16'd0;
       v_fc_calc  <= 16'd0;
     end else begin
-      v_out_meas <= v_meas_ch14_q;
+      v_out_meas <= v_meas_ch1_q; // Vout is AIN1
 
-      if (v_meas_ch7_q >= v_meas_ch15_q)
-        v_fc_calc <= v_meas_ch7_q - v_meas_ch15_q;
+      // Vfc = V_pos (AIN0) - V_neg (AIN2)
+      if (v_meas_ch0_q >= v_meas_ch2_q)
+        v_fc_calc <= v_meas_ch0_q - v_meas_ch2_q;
       else
         v_fc_calc <= 16'd0;
     end
@@ -145,34 +125,32 @@ module top (
   // ---------------------------------------------------------------------------
   // 5. Reference Sequencer (Soft Start FSM)
   // ---------------------------------------------------------------------------
-  always @(posedge clk_100m or negedge rst_ni) begin
+  always @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
       tick_cnt_q  <= 0;
       seq_idx_q   <= 0;
-      seq_dir_q   <= 1'b1; // Start moving UP
+      seq_dir_q   <= 1'b1;
       v_out_ref_q <= VREF_0V0;
     end else begin
       if (tick_cnt_q == STEP_CYCLES - 1) begin
         tick_cnt_q <= 0;
 
-        // Update Voltage Reference based on Index
         case (seq_idx_q)
           3'd0:    v_out_ref_q <= VREF_0V0;
           3'd1:    v_out_ref_q <= VREF_0V6;
           3'd2:    v_out_ref_q <= VREF_1V2;
           3'd3:    v_out_ref_q <= VREF_1V8;
-          // default: v_out_ref_q <= VREF_0V0;
+          default: v_out_ref_q <= VREF_0V0;
         endcase
 
-        // Update Index State
-        if (seq_dir_q) begin // Going Up
+        if (seq_dir_q) begin
           if (seq_idx_q == 3'd3) begin
             seq_dir_q <= 1'b0;
             seq_idx_q <= 3'd2;
           end else begin
             seq_idx_q <= seq_idx_q + 3'd1;
           end
-        end else begin // Going Down
+        end else begin
           if (seq_idx_q == 3'd0) begin
             seq_dir_q <= 1'b1;
             seq_idx_q <= 3'd1;
@@ -190,25 +168,61 @@ module top (
   // 6. Submodule Instantiations
   // ---------------------------------------------------------------------------
 
-  // TODO: Create/Instantiate ADC Lushay/Gowin Wrapper
-  // For now, signals are unconnected or driven to 0 to prevent synthesis error
-  assign adc_eoc      = 1'b0; // Temporary
-  assign adc_drdy     = 1'b0; // Temporary
-  assign adc_data_out = 16'd0; // Temporary
+  // ADC Wrapper (Driver)
+  adc_lushay_wrapper #(
+    .address (7'd72) // 0x48 ADS1115
+  ) u_adc_wrapper (
+    .clk_i              (clk_i),
+    .rst_ni             (rst_ni),
+    .channel_i          (ch_idx_q),      // 0=AIN0, 1=AIN1, 2=AIN2
+    .enable_i           (adc_start_conv),// Trigger from Timer
+    .data_o             (adc_data_out),
+    .data_ready_o       (adc_drdy),
+
+    // I2C Connections
+    .i2c_instruction_o  (i2c_inst),
+    .i2c_enable_o       (i2c_en),
+    .i2c_byte_to_send_o (i2c_byte_tx),
+    .i2c_byte_received_i(i2c_byte_rx),
+    .i2c_complete_i     (i2c_done)
+  );
+
+  // I2C Master (Physical Layer)
+  i2c_master #(
+    .DividerWidth (7) // 7 bits @ 27MHz = ~210kHz I2C Clock
+  ) u_i2c_master (
+    .clk_i           (clk_i),
+    .rst_ni          (rst_ni),
+    .sda_i           (sda_in_wire),
+    .sda_o           (sda_out_wire),
+    .scl_o           (scl_o),
+    .instruction_i   (i2c_inst),
+    .enable_i        (i2c_en),
+    .byte_to_send_i  (i2c_byte_tx),
+    .byte_received_o (i2c_byte_rx),
+    .complete_o      (i2c_done),
+    .is_sending_o    (i2c_busy)
+  );
+
+  // Tri-State Logic for I2C SDA
+  assign sda_io = (i2c_busy && !sda_out_wire) ? 1'b0 : 1'bz;
+  assign sda_in_wire = sda_io;
 
   // Timer Control
-  timer_control u_timer_ctrl (
-    .clk_i     (clk_100m),
+  // CountMax = 7.5us * 27MHz = 202.5 -> 202 ticks
+  timer_control #(
+    .CountMax (202)
+  ) u_timer_ctrl (
+    .clk_i     (clk_i),
     .rst_ni    (rst_ni),
-    .eoc_i     (adc_eoc),
+    .eoc_i     (adc_drdy),       // Sync next trigger to previous Done
     .trigger_o (adc_start_conv)
   );
 
   // Control Algorithm (MATLAB Generated)
-  // Mapping refactored names to original generated port names
   fcc_fixpt u_controller (
-    .clk        (clk_100m),
-    .reset      (~rst_ni),       // Active high reset for generated code
+    .clk        (clk_i),
+    .reset      (~rst_ni),       // Code expects Active High reset
     .clk_enable (1'b1),
     .Voutref    (v_out_ref_q),
     .Vout       (v_out_meas),
@@ -216,7 +230,6 @@ module top (
     .Vfc        (v_fc_calc),
     .D1         (duty_d1),
     .D2         (duty_d2),
-    // Unused outputs
     .ce_out     (),
     .ui         (),
     .uv         ()
@@ -226,20 +239,21 @@ module top (
   wire [3:0] pwm_signals;
 
   ps_pwm u_modulator (
-    .clk_i         (clk_100m),
+    .clk_i         (clk_i),
     .rst_ni        (rst_ni),
     .duty_d1_i     (duty_d1),
     .duty_d2_i     (duty_d2),
-    .adc_trigger_o (),            // FIXME:Currently unconnected (tie to ADC wrapper later)
+    .adc_trigger_o (),            // Not used, using Timer Control
     .pwm_o         (pwm_signals)
   );
 
   // ---------------------------------------------------------------------------
   // 7. Output Assignments
   // ---------------------------------------------------------------------------
-  // Mapping internal PWM signals to output ports
-  // Bits 0-3 are PWM, 4-7 are debug/static based on original code
+  // Bits 0-3: PWM Signals
   assign pwm_o[3:0] = pwm_signals;
+
+  // Bits 4-7: Debug / Static outputs (Keep original behavior)
   assign pwm_o[4]   = 1'b1;
   assign pwm_o[5]   = 1'b1;
   assign pwm_o[6]   = 1'b0;

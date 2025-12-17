@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-// TODO: Edit clock behavior to match Tang Nano 20K (27 MHz input)
+// FIXME: Edit clock behavior to match Tang Nano 20K (27 MHz input)
 
 module timer_control #(
   parameter [9:0] CountMax = 750 // 7.5us @ 100MHz (or 6us @ 125MHz)

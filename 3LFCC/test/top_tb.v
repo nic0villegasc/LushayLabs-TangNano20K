@@ -76,7 +76,7 @@ module test;
   end
 
   initial begin
-      $dumpfile("adc.vcd");
+      $dumpfile("3LFCC.vcd");
       $dumpvars(0,test);
   end
 endmodule
