@@ -10,7 +10,7 @@ module top (
   inout  wire        sda_io,          // Serial Data (Bidirectional)
 
   // PWM Outputs
-  output wire [7:0]  pwm_o            // Mapped to JE pins
+  output wire [7:0]  pwm_o
 );
   // ---------------------------------------------------------------------------
   // 2. ADC Subsystem Signals
