@@ -5,9 +5,13 @@ module top (
   input  wire        clk_i,           // 27 MHz Tang Nano Clock
   input  wire        rst_ni,           // External Reset (Active High Button)
 
-  // I2C Interface (ADS1115 ADC)
-  output wire        scl_o,           // Serial Clock
-  inout  wire        sda_io,          // Serial Data (Bidirectional)
+  // ADC 1 Interface (Differential - Flying Cap)
+  output wire       scl_1_o,
+  inout  wire       sda_1_io,
+
+  // ADC 2 Interface (Single Ended - Vout)
+  output wire       scl_2_o,
+  inout  wire       sda_2_io,
 
   // PWM Outputs
   output wire [7:0]  pwm_o
@@ -159,47 +163,76 @@ module top (
   // 6. Submodule Instantiations
   // ---------------------------------------------------------------------------
 
-  // ADC Wrapper (Driver)
-  adc #(
-    .address (7'd72) // 0x48 ADS1115
-  ) u_adc (
-    .clk_i              (clk_i),
-    .rst_ni             (rst_ni),
+  // ---------------------------------------------------------------------------
+  // CHAIN 1: Flying Capacitor (Differential Measurement)
+  // ---------------------------------------------------------------------------
+  wire [15:0] v_fc_raw;
+  wire        drdy_1;
+  wire        sda_1_in, sda_1_out, i2c_1_busy;
 
-    .channel_i          (ch_idx_q),      // 0=AIN0, 1=AIN1, 2=AIN2
-    .enable_i           (adc_start_conv),
+  // Internal I2C signals for Chain 1
+  wire [1:0] i2c_1_inst; wire i2c_1_en; wire [7:0] i2c_1_tx, i2c_1_rx; wire i2c_1_done;
 
-    .data_o             (adc_data_out),
-    .data_ready_o       (adc_drdy),
-
-    // I2C Connections
-    .i2c_instruction_o  (i2c_inst),
-    .i2c_enable_o       (i2c_en),
-    .i2c_byte_to_send_o (i2c_byte_tx),
-    .i2c_byte_received_i(i2c_byte_rx),
-    .i2c_complete_i     (i2c_done)
+  adc #(.address(7'd72)) u_adc_fc (
+    .clk_i(clk_sys), .rst_ni(rst_ni),
+    .mux_config_i(3'b000),      // <--- 000 = AIN0 - AIN1 (Differential)
+    .enable_i(adc_trigger),     // <--- PWM Trigger
+    .data_o(v_fc_raw),
+    .data_ready_o(drdy_1),
+    // I2C 1 Links
+    .i2c_instruction_o(i2c_1_inst), .i2c_enable_o(i2c_1_en),
+    .i2c_byte_to_send_o(i2c_1_tx), .i2c_byte_received_i(i2c_1_rx), .i2c_complete_i(i2c_1_done)
   );
 
-  // I2C Master (Physical Layer)
-  i2c #(
-    .DividerWidth (7) // 7 bits @ 27MHz = ~210kHz I2C Clock
-  ) u_i2c (
-    .clk_i           (clk_i),
-    .rst_ni          (rst_ni),
-    .sda_i           (sda_in_wire),
-    .sda_o           (sda_out_wire),
-    .scl_o           (scl_o),
-    .instruction_i   (i2c_inst),
-    .enable_i        (i2c_en),
-    .byte_to_send_i  (i2c_byte_tx),
-    .byte_received_o (i2c_byte_rx),
-    .complete_o      (i2c_done),
-    .is_sending_o    (i2c_busy)
+  i2c #(.DividerWidth(7)) u_i2c_1 (
+    .clk_i(clk_sys), .rst_ni(rst_ni),
+    .sda_i(sda_1_in), .sda_o(sda_1_out), .scl_o(scl_1_o),
+    .instruction_i(i2c_1_inst), .enable_i(i2c_1_en),
+    .byte_to_send_i(i2c_1_tx), .byte_received_o(i2c_1_rx),
+    .complete_o(i2c_1_done), .is_sending_o(i2c_1_busy)
   );
 
-  // Tri-State Logic for I2C SDA
-  assign sda_io = (i2c_busy && !sda_out_wire) ? 1'b0 : 1'bz;
-  assign sda_in_wire = sda_io;
+  assign sda_1_io = (i2c_1_busy && !sda_1_out) ? 1'b0 : 1'bz;
+  assign sda_1_in = sda_1_io;
+
+  // ---------------------------------------------------------------------------
+  // CHAIN 2: Output Voltage (Single-Ended Measurement)
+  // ---------------------------------------------------------------------------
+  wire [15:0] v_out_raw;
+  wire        drdy_2;
+  wire        sda_2_in, sda_2_out, i2c_2_busy;
+
+  // Internal I2C signals for Chain 2
+  wire [1:0] i2c_2_inst; wire i2c_2_en; wire [7:0] i2c_2_tx, i2c_2_rx; wire i2c_2_done;
+
+  adc #(.address(7'd72)) u_adc_out (
+    .clk_i(clk_sys), .rst_ni(rst_ni),
+    .mux_config_i(3'b100),      // <--- 100 = AIN0 - GND (Single Ended)
+    .enable_i(adc_trigger),     // <--- Same PWM Trigger
+    .data_o(v_out_raw),
+    .data_ready_o(drdy_2),
+    // I2C 2 Links
+    .i2c_instruction_o(i2c_2_inst), .i2c_enable_o(i2c_2_en),
+    .i2c_byte_to_send_o(i2c_2_tx), .i2c_byte_received_i(i2c_2_rx), .i2c_complete_i(i2c_2_done)
+  );
+
+  i2c #(.DividerWidth(7)) u_i2c_2 (
+    .clk_i(clk_sys), .rst_ni(rst_ni),
+    .sda_i(sda_2_in), .sda_o(sda_2_out), .scl_o(scl_2_o),
+    .instruction_i(i2c_2_inst), .enable_i(i2c_2_en),
+    .byte_to_send_i(i2c_2_tx), .byte_received_o(i2c_2_rx),
+    .complete_o(i2c_2_done), .is_sending_o(i2c_2_busy)
+  );
+
+  assign sda_2_io = (i2c_2_busy && !sda_2_out) ? 1'b0 : 1'bz;
+  assign sda_2_in = sda_2_io;
+
+  // ---------------------------------------------------------------------------
+  // Synchronization Logic
+  // ---------------------------------------------------------------------------
+  // Only run the controller when BOTH ADCs have finished
+  wire controller_en;
+  assign controller_en = drdy_1 && drdy_2;
 
   // Timer Control
   // CountMax = 7.5us * 27MHz = 202.5 -> 202 ticks
@@ -212,15 +245,17 @@ module top (
     .trigger_o (adc_start_conv)
   );*/
 
-  // Control Algorithm (MATLAB Generated)
+  /// ---------------------------------------------------------------------------
+  // Control Algorithm
+  // ---------------------------------------------------------------------------
   fcc_fixpt u_controller (
-    .clk        (clk_i),
-    .reset      (~rst_ni),       // Code expects Active High reset
-    .clk_enable (adc_drdy),
+    .clk        (clk_sys),
+    .reset      (~rst_ni),
+    .clk_enable (controller_en), // Waits for both ADCs
     .Voutref    (v_out_ref_q),
-    .Vout       (v_out_meas),
+    .Vout       (v_out_raw),     // Direct connection from ADC 2
     .Vfcref     (V_FC_REF),
-    .Vfc        (v_fc_calc),
+    .Vfc        (v_fc_raw),      // Direct connection from ADC 1
     .D1         (duty_d1),
     .D2         (duty_d2),
     .ce_out     (),

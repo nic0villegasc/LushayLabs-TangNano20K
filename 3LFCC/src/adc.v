@@ -1,16 +1,22 @@
 `default_nettype none
 
 module adc #(
-    parameter address = 7'd72 // Default ADS1115 Address (0x48)
+    parameter integer address = 7'd72
 ) (
     input  wire        clk_i,
-    input  wire        rst_ni,          // Added Reset for safety
-    input  wire [1:0]  channel_i,       // 0=AIN0, 1=AIN1, 2=AIN2, 3=AIN3
+    input  wire        rst_ni,
+
+    // Configuration
+    // 3-bit MUX code from Datasheet:
+    // 000 : AINP=AIN0, AINN=AIN1 (Differential Vfc)
+    // 100 : AINP=AIN0, AINN=GND  (Single-Ended Vout)
+    input  wire [2:0]  mux_config_i,
+
     input  wire        enable_i,        // Start Conversion
     output reg  [15:0] data_o,
     output reg         data_ready_o,
 
-    // I2C Interface connections (to i2c.v)
+    // I2C Interface connections
     output reg  [1:0]  i2c_instruction_o,
     output reg         i2c_enable_o,
     output reg  [7:0]  i2c_byte_to_send_o,
@@ -18,20 +24,8 @@ module adc #(
     input  wire        i2c_complete_i
 );
 
-    // MUX Configuration Logic
-    // Maps channel input (0-3) to MUX bits (14:12) for Single-Ended Mode
-    reg [2:0] mux_bits;
-    always @* begin
-        case (channel_i)
-            2'd0: mux_bits = 3'b100; // AIN0
-            2'd1: mux_bits = 3'b101; // AIN1
-            2'd2: mux_bits = 3'b110; // AIN2
-            2'd3: mux_bits = 3'b111; // AIN3
-        endcase
-    end
-
     // Config Register Template
-    // We only store the static parts here. The dynamic parts (OS and MUX) 
+    // We only store the static parts here. The dynamic parts (OS and MUX)
     // are injected during the state machine execution.
     // [15] OS = 1 (Start)
     // [14:12] MUX = DYNAMIC
@@ -137,8 +131,8 @@ module adc #(
                         // 5. Write Config MSB
                         {TASK_SETUP, 3'd3}: begin
                             i2c_instruction_o <= INST_WRITE_BYTE;
-                            // [15]=1, [14:12]=mux_bits, [11:8]=PGA/Mode
-                            i2c_byte_to_send_o <= {1'b1, mux_bits, 4'b0011};
+                            // [15]=1 (Start), [14:12]=mux_config_i, [11:8]=PGA/Mode
+                            i2c_byte_to_send_o <= {1'b1, mux_config_i, 4'b0011};
                             i2c_enable_o <= 1;
                             state <= STATE_WAIT_FOR_I2C;
                         end
