@@ -3,7 +3,7 @@
 module top (
   // Clock and Reset
   input  wire        clk_i,           // 27 MHz Tang Nano Clock
-  input  wire        rst_i,           // External Reset (Active High Button)
+  input  wire        rst_ni,           // External Reset (Active High Button)
 
   // I2C Interface (ADS1115 ADC)
   output wire        scl_o,           // Serial Clock
@@ -12,15 +12,6 @@ module top (
   // PWM Outputs
   output wire [7:0]  pwm_o            // Mapped to JE pins
 );
-
-  // ---------------------------------------------------------------------------
-  // 1. Clock & Reset Management
-  // ---------------------------------------------------------------------------
-  wire rst_ni;        // Internal Active-Low Reset
-
-  // Normalize reset: User button (High) -> System Reset (Low)
-  assign rst_ni = ~rst_i;
-
   // ---------------------------------------------------------------------------
   // 2. ADC Subsystem Signals
   // ---------------------------------------------------------------------------
