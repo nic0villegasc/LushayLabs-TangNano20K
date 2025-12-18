@@ -165,8 +165,10 @@ module top (
   ) u_adc (
     .clk_i              (clk_i),
     .rst_ni             (rst_ni),
+
     .channel_i          (ch_idx_q),      // 0=AIN0, 1=AIN1, 2=AIN2
-    .enable_i           (adc_start_conv),// Trigger from Timer
+    .enable_i           (adc_start_conv),
+
     .data_o             (adc_data_out),
     .data_ready_o       (adc_drdy),
 
@@ -201,20 +203,20 @@ module top (
 
   // Timer Control
   // CountMax = 7.5us * 27MHz = 202.5 -> 202 ticks
-  timer_control #(
+  /*timer_control #(
     .CountMax (202)
   ) u_timer_ctrl (
     .clk_i     (clk_i),
     .rst_ni    (rst_ni),
     .eoc_i     (adc_drdy),       // Sync next trigger to previous Done
     .trigger_o (adc_start_conv)
-  );
+  );*/
 
   // Control Algorithm (MATLAB Generated)
   fcc_fixpt u_controller (
     .clk        (clk_i),
     .reset      (~rst_ni),       // Code expects Active High reset
-    .clk_enable (1'b1),
+    .clk_enable (adc_drdy),
     .Voutref    (v_out_ref_q),
     .Vout       (v_out_meas),
     .Vfcref     (V_FC_REF),
@@ -234,7 +236,7 @@ module top (
     .rst_ni        (rst_ni),
     .duty_d1_i     (duty_d1),
     .duty_d2_i     (duty_d2),
-    .adc_trigger_o (),            // Not used, using Timer Control
+    .adc_trigger_o (adc_start_conv),
     .pwm_o         (pwm_signals)
   );
 
