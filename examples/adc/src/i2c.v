@@ -136,7 +136,7 @@ module i2c (
                 end
                 // else if (clockDivider == 7'b1000000) begin
                 //     sdaIn should be 0
-                // end 
+                // end
             end
             STATE_DONE: begin
                 complete <= 1;

@@ -1,11 +1,10 @@
 `default_nettype none
 
 module adc #(
-    parameter address = 7'd0
+    parameter address = 7'd0,
+    parameter [2:0] MUX_CONFIG = 3'd000
 ) (
     input clk,
-
-    input [1:0] channel,
 
     output reg [15:0] outputData = 0,
 
@@ -24,7 +23,7 @@ module adc #(
     // setup config
     reg [15:0] setupRegister = {
         1'b1, // Start Conversion
-        3'b100, // Channel 0 Single ended
+        3'b100, // Channel 0 Single ended (Not used, replaced by parameter)
         3'b001, // FSR +- 4.096v
         1'b1, // Single shot mode
         3'b111, // 128 SPS
@@ -90,8 +89,9 @@ module adc #(
                     {TASK_READ_VALUE,3'd1}: begin
                         instructionI2C <= INST_WRITE_BYTE;
                         byteToSendI2C <= {
-                            address, 
-                            (taskIndex == TASK_CHECK_DONE || taskIndex == TASK_READ_VALUE) ? 1'b1 : 1'b0
+                            address,
+                            (taskIndex == TASK_CHECK_DONE || taskIndex == TASK_READ_VALUE)
+                             ? 1'b1 : 1'b0
                         };
                         enableI2C <= 1;
                         state <= STATE_WAIT_FOR_I2C;
@@ -107,7 +107,7 @@ module adc #(
                     {TASK_SETUP,3'd2},
                     {TASK_CHANGE_REG,3'd3}: begin
                         instructionI2C <= INST_WRITE_BYTE;
-                        byteToSendI2C <= taskIndex == TASK_SETUP ? 
+                        byteToSendI2C <= taskIndex == TASK_SETUP ?
                             CONFIG_REGISTER : CONVERSION_REGISTER;
                         enableI2C <= 1;
                         state <= STATE_WAIT_FOR_I2C;
@@ -116,7 +116,7 @@ module adc #(
                         instructionI2C <= INST_WRITE_BYTE;
                         byteToSendI2C <= {
                             setupRegister[15] ? 1'b1 : 1'b0,
-                            3'b001, 
+                            MUX_CONFIG,
                             setupRegister[11:8]
                         };
                         enableI2C <= 1;
@@ -131,7 +131,7 @@ module adc #(
                     {TASK_CHECK_DONE,3'd0}: begin
                         state <= STATE_DELAY;
                     end
-                    {TASK_CHECK_DONE,3'd3}, 
+                    {TASK_CHECK_DONE,3'd3},
                     {TASK_READ_VALUE,3'd2}: begin
                         instructionI2C <= INST_READ_BYTE;
                         enableI2C <= 1;
@@ -192,6 +192,9 @@ module adc #(
                 dataReady <= 1;
                 if (~enable)
                     state <= STATE_IDLE;
+            end
+            default: begin
+                state <= STATE_IDLE;
             end
         endcase
     end
