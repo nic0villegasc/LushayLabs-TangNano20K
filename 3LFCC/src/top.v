@@ -32,7 +32,8 @@ module top (
   wire        sda_in_wire;
 
   // ADC Data signals
-  wire        adc_drdy;
+  wire        adc_drdy_1;
+  wire        adc_drdy_2;
   wire        adc_start_conv; // From Timer
   wire [15:0] adc_data_out;
 
@@ -74,7 +75,7 @@ module top (
   // ---------------------------------------------------------------------------
   // 4. ADC Data Acquisition Logic
   // ---------------------------------------------------------------------------
-
+/*
   // Capture data when ADC reports "Data Ready"
   always @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
@@ -83,7 +84,7 @@ module top (
       v_meas_ch2_q  <= 16'd0;
       ch_idx_q      <= 2'd0;
     end else begin
-      if (adc_drdy) begin
+      if (adc_drdy_1) begin
         // Store data based on current channel
         case (ch_idx_q)
           2'd0: v_meas_ch0_q <= adc_data_out;
@@ -115,7 +116,7 @@ module top (
       else
         v_fc_calc <= 16'd0;
     end
-  end
+  end*/
 
   // ---------------------------------------------------------------------------
   // 5. Reference Sequencer (Soft Start FSM)
@@ -166,39 +167,64 @@ module top (
   // ---------------------------------------------------------------------------
   // CHAIN 1: Flying Capacitor (Differential Measurement)
   // ---------------------------------------------------------------------------
-  wire [15:0] v_fc_raw;
-  wire        drdy_1;
-  wire        sda_1_in, sda_1_out, i2c_1_busy;
 
-  // Internal I2C signals for Chain 1
-  wire [1:0] i2c_1_inst; wire i2c_1_en; wire [7:0] i2c_1_tx, i2c_1_rx; wire i2c_1_done;
+  // Internal Wires for Chain 1
+  wire [1:0]  i2c_1_inst;
+  wire [7:0]  i2c_1_tx;
+  wire [7:0]  i2c_1_rx;
+  wire        i2c_1_done;
+  wire        i2c_1_en;
+  wire        i2c_1_busy;
 
-  adc #(.address(7'd72)) u_adc_fc (
-    .clk_i(clk_sys), .rst_ni(rst_ni),
-    .mux_config_i(3'b000),      // <--- 000 = AIN0 - AIN1 (Differential)
-    .enable_i(adc_trigger),     // <--- PWM Trigger
-    .data_o(v_fc_raw),
-    .data_ready_o(drdy_1),
-    // I2C 1 Links
-    .i2c_instruction_o(i2c_1_inst), .i2c_enable_o(i2c_1_en),
-    .i2c_byte_to_send_o(i2c_1_tx), .i2c_byte_received_i(i2c_1_rx), .i2c_complete_i(i2c_1_done)
+  wire        sda_1_in;
+  wire        sda_1_out;
+
+  // 1. I2C Module Instantiation
+  i2c u_i2c_1 (
+      .clk          (clk_i),
+
+      // I2C Physical Interface
+      .sdaIn        (sda_1_in),
+      .sdaOutReg    (sda_1_out),
+      .isSending    (i2c_1_busy),
+      .scl          (scl_1_o),
+
+      // Control Interface
+      .instruction  (i2c_1_inst),
+      .enable       (i2c_1_en),
+      .byteToSend   (i2c_1_tx),
+      .byteReceived (i2c_1_rx),
+      .complete     (i2c_1_done)
   );
 
-  i2c #(.DividerWidth(7)) u_i2c_1 (
-    .clk_i(clk_sys), .rst_ni(rst_ni),
-    .sda_i(sda_1_in), .sda_o(sda_1_out), .scl_o(scl_1_o),
-    .instruction_i(i2c_1_inst), .enable_i(i2c_1_en),
-    .byte_to_send_i(i2c_1_tx), .byte_received_o(i2c_1_rx),
-    .complete_o(i2c_1_done), .is_sending_o(i2c_1_busy)
+  // 2. ADC Module Instantiation
+  // Address 0x49 (1001001) for Flying Cap ADC
+  adc #(.address(7'b1001001)) u_adc_1 (
+      .clk             (clk_i),
+
+      // Control & Data
+      .channel         (ch_idx_q),       // Controlled by Section 4 logic (0,1,2)
+      .outputData      (adc_data_out),   // Feeds into Section 4 logic
+      .dataReady       (adc_drdy_1),       // Triggers Section 4 logic
+      .enable          (adc_start_conv), // Triggered by Timer/PWM
+
+      // I2C Interconnects
+      .instructionI2C  (i2c_1_inst),
+      .enableI2C       (i2c_1_en),
+      .byteToSendI2C   (i2c_1_tx),
+      .byteReceivedI2C (i2c_1_rx),
+      .completeI2C     (i2c_1_done)
   );
 
+  // 3. Tri-State Buffer Logic
+  // Connects the internal 1-bit wires to the bidirectional pad `sda_1_io`
   assign sda_1_io = (i2c_1_busy && !sda_1_out) ? 1'b0 : 1'bz;
   assign sda_1_in = sda_1_io;
 
   // ---------------------------------------------------------------------------
   // CHAIN 2: Output Voltage (Single-Ended Measurement)
   // ---------------------------------------------------------------------------
-  wire [15:0] v_out_raw;
+  /*wire [15:0] v_out_raw;
   wire        drdy_2;
   wire        sda_2_in, sda_2_out, i2c_2_busy;
 
@@ -225,14 +251,14 @@ module top (
   );
 
   assign sda_2_io = (i2c_2_busy && !sda_2_out) ? 1'b0 : 1'bz;
-  assign sda_2_in = sda_2_io;
+  assign sda_2_in = sda_2_io;*/
 
   // ---------------------------------------------------------------------------
   // Synchronization Logic
   // ---------------------------------------------------------------------------
   // Only run the controller when BOTH ADCs have finished
   wire controller_en;
-  assign controller_en = drdy_1 && drdy_2;
+  assign controller_en = adc_drdy_1 && adc_drdy_2;
 
   // Timer Control
   // CountMax = 7.5us * 27MHz = 202.5 -> 202 ticks
