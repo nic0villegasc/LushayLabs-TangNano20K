@@ -44,7 +44,7 @@ module top (
     generate
         for (i = 0; i < 4; i = i + 1) begin: g_hexValCh1
             wire [7:0] hexChar;
-            toHex converter(clk_i, adcOutputBufferCh1[{i,2'b0}+:4], hexChar);
+            toHex converter(clk_i, adc1_buffer_i[{i,2'b0}+:4], hexChar);
         end
     endgenerate
     
@@ -52,7 +52,7 @@ module top (
     generate
         for (i = 0; i < 4; i = i + 1) begin: g_hexValCh2
             wire [7:0] hexChar;
-            toHex converter(clk_i, adcOutputBufferCh2[{i,2'b0}+:4], hexChar);
+            toHex converter(clk_i, adc2_buffer_i[{i,2'b0}+:4], hexChar);
         end
     endgenerate
 
@@ -60,10 +60,10 @@ module top (
     wire [7:0] thousandsCh2, hundredsCh2, tensCh2, unitsCh2;
 
     toDec dec(
-        clk_i, voltageCh1, thousandsCh1, hundredsCh1, tensCh1, unitsCh1
+        clk_i, adc_voltage_fc_o, thousandsCh1, hundredsCh1, tensCh1, unitsCh1
     );
     toDec dec2(
-        clk_i, voltageCh2, thousandsCh2, hundredsCh2, tensCh2, unitsCh2
+        clk_i, adc_voltage_out_o, thousandsCh2, hundredsCh2, tensCh2, unitsCh2
     );
 
     // --- TEXT RENDERING ---
@@ -162,8 +162,8 @@ module top (
   reg         seq_dir_q;    // 1 = Up, 0 = Down
 
   // Controller Outputs
-  wire [6:0]  duty_d1;
-  wire [6:0]  duty_d2;
+  wire [6:0]  duty_d1_o;
+  wire [6:0]  duty_d2_o;
 
   // Constants
   localparam [15:0] VREF_0V0 = 16'h0000;
@@ -218,9 +218,9 @@ module top (
   end
 
   // --- I2C BUS 1 (ADC 1) ---
-    wire [1:0] i2cInstruction;
-    wire [7:0] i2cByteToSend, i2cByteReceived;
-    wire i2cComplete, i2cEnable;
+    wire [1:0] i2c1_instruction_i;
+    wire [7:0] i2c1_byte_to_send_i, i2c1_byte_received_o;
+    wire i2c1_complete_o, i2c1_enable_i;
     wire sdaIn_1, sdaOut_1, isSending_1;
 
     assign sda_1_io = (isSending_1 & ~sdaOut_1) ? 1'b0 : 1'bz;
@@ -228,13 +228,13 @@ module top (
 
     i2c c(
         clk_i, sdaIn_1, sdaOut_1, isSending_1, scl_1_o,
-        i2cInstruction, i2cEnable, i2cByteToSend, i2cByteReceived, i2cComplete
+        i2c1_instruction_i, i2c1_enable_i, i2c1_byte_to_send_i, i2c1_byte_received_o, i2c1_complete_o
     );
 
     // --- I2C BUS 2 (ADC 2) ---
-    wire [1:0] i2cInstruction_2;
-    wire [7:0] i2cByteToSend_2, i2cByteReceived_2;
-    wire i2cComplete_2, i2cEnable_2;
+    wire [1:0] i2c2_instruction_i;
+    wire [7:0] i2c2_byte_to_send_i, i2c2_byte_received_o;
+    wire i2c2_complete_o, i2c2_enable_i;
     wire sdaIn_2, sdaOut_2, isSending_2;
 
     // Tristate logic for Bus 2
@@ -243,38 +243,52 @@ module top (
 
     i2c c2(
         clk_i, sdaIn_2, sdaOut_2, isSending_2, scl_2_o,
-        i2cInstruction_2, i2cEnable_2, i2cByteToSend_2, i2cByteReceived_2, i2cComplete_2
+        i2c2_instruction_i, i2c2_enable_i, i2c2_byte_to_send_i, i2c2_byte_received_o, i2c2_complete_o
     );
 
     // --- ADC INSTANCES ---
 
     // ADC 1 Control Signals
-    reg adcEnable = 0;
-    wire [15:0] adcOutputData;
-    wire adcDataReady;
+    reg adc1_enable_i = 0;
+    wire [15:0] adc1_data_o;
+    wire adc1_ready_o;
     
     // ADC 2 Control Signals
-    reg adcEnable2 = 0;
-    wire [15:0] adcOutputData2;
-    wire adcDataReady2;
+    reg adc2_enable_i = 0;
+    wire [15:0] adc2_data_o;
+    wire adc2_ready_o;
 
     // ADC 1 Instance
-    adc #(.address(7'b1001001), .MUX_CONFIG(3'b000)) a(
-        clk_i, adcOutputData, adcDataReady, adcEnable,
-        i2cInstruction, i2cEnable, i2cByteToSend, i2cByteReceived, i2cComplete
+    adc #(.address(7'b1001001), .MUX_CONFIG(3'b000)) u_adc_1(
+        .clk_i(clk_i),
+        .data_o(adc1_data_o),
+        .data_ready_o(adc1_ready_o),
+        .enable_i(adc1_enable_i),
+        .i2c_instruction_o(i2c1_instruction_i),
+        .i2c_enable_o(i2c1_enable_i),
+        .i2c_byte_to_send_o(i2c1_byte_to_send_i),
+        .i2c_byte_received_i(i2c1_byte_received_o),
+        .i2c_complete_i(i2c1_complete_o)
     );
 
     // ADC 2 Instance (Same address, distinct I2C bus and Mux config)
-    adc #(.address(7'b1001001), .MUX_CONFIG(3'b100)) a2(
-        clk_i, adcOutputData2, adcDataReady2, adcEnable2,
-        i2cInstruction_2, i2cEnable_2, i2cByteToSend_2, i2cByteReceived_2, i2cComplete_2
+    adc #(.address(7'b1001001), .MUX_CONFIG(3'b100)) u_adc_2(
+        .clk_i(clk_i),
+        .data_o(adc2_data_o),
+        .data_ready_o(adc2_ready_o),
+        .enable_i(adc2_enable_i),
+        .i2c_instruction_o(i2c2_instruction_i),
+        .i2c_enable_o(i2c2_enable_i),
+        .i2c_byte_to_send_o(i2c2_byte_to_send_i),
+        .i2c_byte_received_i(i2c2_byte_received_o),
+        .i2c_complete_i(i2c2_complete_o)
     );
 
     // --- DATA BUFFERS ---
-    reg [15:0] adcOutputBufferCh1 = 0;
-    reg [15:0] adcOutputBufferCh2 = 0;
-    reg [11:0] voltageCh1 = 0;
-    reg [11:0] voltageCh2 = 0;
+    reg [15:0] adc1_buffer_i = 0;
+    reg [15:0] adc2_buffer_i = 0;
+    reg [11:0] adc_voltage_fc_o = 0;
+    reg [11:0] adc_voltage_out_o = 0;
 
     // --- FSM STATE MACHINE ---
     localparam STATE_TRIGGER_CONV = 0;
@@ -284,71 +298,52 @@ module top (
     reg [2:0] drawState = 0;
     
     // Flags to ensure we capture both channels before resetting
-    reg ch1_done = 0;
-    reg ch2_done = 0;
+    reg adc1_done_o = 0;
+    reg adc2_done_o = 0;
+    reg adc_eoc_o = 0;
+    wire adc_start_i;
 
-    // Button Debounce Logic
-    /*reg [1:0] btn_sync;
-    reg btn_prev;
-    reg [15:0] debounce_cnt;
-    reg trigger_pulse;
-
-    always @(posedge clk_i) begin
-        btn_sync <= {btn_sync[0], ~btn1};
-        if (btn_sync[1] != btn_prev) begin
-            if (&debounce_cnt) begin
-                btn_prev <= btn_sync[1];
-                debounce_cnt <= 0;
-            end else begin
-                debounce_cnt <= debounce_cnt + 1;
-            end
-        end else begin
-            debounce_cnt <= 0;
-        end
-        trigger_pulse <= (btn_sync[1] && !btn_prev && &debounce_cnt);
-    end*/
-
-    // Main ADC Control FSM
+    // fsm_adc: Main ADC Control FSM
     always @(posedge clk_i) begin
         case (drawState)
             STATE_TRIGGER_CONV: begin
-              controller_en <= 0;
-              if(adc_start_conv) begin
+              adc_eoc_o <= 0;
+              if(adc_start_i) begin
                 // Trigger both ADCs
-                adcEnable <= 1;
-                adcEnable2 <= 1;
-                ch1_done <= 0;
-                ch2_done <= 0;
+                adc1_enable_i <= 1;
+                adc2_enable_i <= 1;
+                adc1_done_o <= 0;
+                adc2_done_o <= 0;
                 drawState <= STATE_WAIT_FOR_START;
               end
             end
             STATE_WAIT_FOR_START: begin
                 // Wait for both to acknowledge (DataReady goes LOW when busy)
                 // We proceed only when both are busy to ensure we don't catch a stale "Ready"
-                if (~adcDataReady && ~adcDataReady2) begin
+                if (~adc1_ready_o && ~adc2_ready_o) begin
                     drawState <= STATE_SAVE_VALUE_WHEN_READY;
                 end
             end
             STATE_SAVE_VALUE_WHEN_READY: begin
                 // Capture Channel 1
-                if (adcDataReady && !ch1_done) begin
-                    adcOutputBufferCh1 <= adcOutputData;
-                    voltageCh1 <= adcOutputData[15] ? 12'd0 : adcOutputData[14:3];
-                    adcEnable <= 0; // Stop ADC 1
-                    ch1_done <= 1;
+                if (adc1_ready_o && !adc1_done_o) begin
+                    adc1_buffer_i <= adc1_data_o;
+                    adc_voltage_fc_o <= adc1_data_o[15] ? 12'd0 : adc1_data_o[14:3];
+                    adc1_enable_i <= 0; // Stop ADC 1
+                    adc1_done_o <= 1;
                 end
 
                 // Capture Channel 2
-                if (adcDataReady2 && !ch2_done) begin
-                    adcOutputBufferCh2 <= adcOutputData2;
-                    voltageCh2 <= adcOutputData2[15] ? 12'd0 : adcOutputData2[14:3];
-                    adcEnable2 <= 0; // Stop ADC 2
-                    ch2_done <= 1;
+                if (adc2_ready_o && !adc2_done_o) begin
+                    adc2_buffer_i <= adc2_data_o;
+                    adc_voltage_out_o <= adc2_data_o[15] ? 12'd0 : adc2_data_o[14:3];
+                    adc2_enable_i <= 0; // Stop ADC 2
+                    adc2_done_o <= 1;
                 end
 
                 // Go back only when both are done
-                if (ch1_done && ch2_done) begin
-                    controller_en <= 1;
+                if (adc1_done_o && adc2_done_o) begin
+                    adc_eoc_o <= 1;
                     drawState <= STATE_TRIGGER_CONV;
                 end
             end
@@ -358,23 +353,23 @@ module top (
         endcase
     end
 
+    reg enable_control_i;
+
   // ---------------------------------------------------------------------------
   // Synchronization Logic
   // ---------------------------------------------------------------------------
   // Only run the controller when BOTH ADCs have finished
-  wire controller_en;
-  assign controller_en = adc_drdy_1 && adc_drdy_2;
 
   // Timer Control
   // CountMax = 7.5us * 27MHz = 202.5 -> 202 ticks
-  /*timer_control #(
-    .CountMax (202)
+  timer_control #(
+    .CountMax (43200)
   ) u_timer_ctrl (
     .clk_i     (clk_i),
     .rst_ni    (rst_ni),
-    .eoc_i     (adc_drdy),       // Sync next trigger to previous Done
-    .trigger_o (adc_start_conv)
-  );*/
+    .eoc_i     (adc_eoc_o),
+    .trigger_o (enable_control_i)
+  );
 
   /// ---------------------------------------------------------------------------
   // Control Algorithm
@@ -382,35 +377,35 @@ module top (
   fcc_fixpt u_controller (
     .clk        (clk_i),
     .reset      (~rst_ni),
-    .clk_enable (controller_en), // Waits for both ADCs
+    .clk_enable (enable_control_i), // Waits for both ADCs
     .Voutref    (v_out_ref_q),
-    .Vout       (v_out_raw),     // Direct connection from ADC 2
+    .Vout       (adc_voltage_out_o),     // Direct connection from ADC 2
     .Vfcref     (V_FC_REF),
-    .Vfc        (v_fc_raw),      // Direct connection from ADC 1
-    .D1         (duty_d1),
-    .D2         (duty_d2),
+    .Vfc        (adc_voltage_fc_o),      // Direct connection from ADC 1
+    .D1         (duty_d1_o),
+    .D2         (duty_d2_o),
     .ce_out     (),
     .ui         (),
     .uv         ()
   );
 
   // PS-PWM Modulator
-  wire [3:0] pwm_signals;
+  wire [3:0] pwm_signals_o;
 
   ps_pwm u_modulator (
     .clk_i         (clk_i),
     .rst_ni        (rst_ni),
-    .duty_d1_i     (duty_d1),
-    .duty_d2_i     (duty_d2),
-    .adc_trigger_o (adc_start_conv),
-    .pwm_o         (pwm_signals)
+    .duty_d1_i     (duty_d1_o),
+    .duty_d2_i     (duty_d2_o),
+    .adc_trigger_o (adc_start_i),
+    .pwm_o         (pwm_signals_o)
   );
 
   // ---------------------------------------------------------------------------
   // 7. Output Assignments
   // ---------------------------------------------------------------------------
   // Bits 0-3: PWM Signals
-  assign pwm_o[3:0] = pwm_signals;
+  assign pwm_o[3:0] = pwm_signals_o;
 
   // Bits 4-7: Debug / Static outputs (Keep original behavior)
   assign pwm_o[4]   = 1'b1;

@@ -4,20 +4,20 @@ module adc #(
     parameter address = 7'd0,
     parameter [2:0] MUX_CONFIG = 3'd000
 ) (
-    input clk,
+    input clk_i,
 
-    output reg [15:0] outputData = 0,
+    output reg [15:0] data_o = 0,
 
-    output reg dataReady = 1,
-    input enable,
+    output reg data_ready_o = 1,
+    input enable_i,
 
-    output reg [1:0] instructionI2C = 0,
-    output reg enableI2C = 0,
+    output reg [1:0] i2c_instruction_o = 0,
+    output reg i2c_enable_o = 0,
 
-    output reg [7:0] byteToSendI2C = 0,
-    input [7:0] byteReceivedI2C,
+    output reg [7:0] i2c_byte_to_send_o = 0,
+    input [7:0] i2c_byte_received_i,
 
-    input completeI2C
+    input i2c_complete_i
 );
 
     // setup config
@@ -62,14 +62,14 @@ module adc #(
 
     reg processStarted = 0;
 
-    always @(posedge clk) begin
+    always @(posedge clk_i) begin
         case (state)
             STATE_IDLE: begin
-                if (enable) begin
+                if (enable_i) begin
                     state <= STATE_RUN_TASK;
                     taskIndex <= 0;
                     subTaskIndex <= 0;
-                    dataReady <= 0;
+                    data_ready_o <= 0;
                     counter <= 0;
                 end
             end
@@ -79,53 +79,53 @@ module adc #(
                     {TASK_CHECK_DONE,3'd1},
                     {TASK_CHANGE_REG,3'd1},
                     {TASK_READ_VALUE,3'd0}: begin
-                        instructionI2C <= INST_START_TX;
-                        enableI2C <= 1;
+                        i2c_instruction_o <= INST_START_TX;
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_SETUP,3'd1},
                     {TASK_CHANGE_REG,3'd2},
                     {TASK_CHECK_DONE,3'd2},
                     {TASK_READ_VALUE,3'd1}: begin
-                        instructionI2C <= INST_WRITE_BYTE;
-                        byteToSendI2C <= {
+                        i2c_instruction_o <= INST_WRITE_BYTE;
+                        i2c_byte_to_send_o <= {
                             address,
                             (taskIndex == TASK_CHECK_DONE || taskIndex == TASK_READ_VALUE)
                              ? 1'b1 : 1'b0
                         };
-                        enableI2C <= 1;
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_SETUP,3'd5},
                     {TASK_CHECK_DONE,3'd5},
                     {TASK_CHANGE_REG,3'd4},
                     {TASK_READ_VALUE,3'd5}: begin
-                        instructionI2C <= INST_STOP_TX;
-                        enableI2C <= 1;
+                        i2c_instruction_o <= INST_STOP_TX;
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_SETUP,3'd2},
                     {TASK_CHANGE_REG,3'd3}: begin
-                        instructionI2C <= INST_WRITE_BYTE;
-                        byteToSendI2C <= taskIndex == TASK_SETUP ?
+                        i2c_instruction_o <= INST_WRITE_BYTE;
+                        i2c_byte_to_send_o <= taskIndex == TASK_SETUP ?
                             CONFIG_REGISTER : CONVERSION_REGISTER;
-                        enableI2C <= 1;
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_SETUP,3'd3}: begin
-                        instructionI2C <= INST_WRITE_BYTE;
-                        byteToSendI2C <= {
+                        i2c_instruction_o <= INST_WRITE_BYTE;
+                        i2c_byte_to_send_o <= {
                             setupRegister[15] ? 1'b1 : 1'b0,
                             MUX_CONFIG,
                             setupRegister[11:8]
                         };
-                        enableI2C <= 1;
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_SETUP,3'd4}: begin
-                        instructionI2C <= INST_WRITE_BYTE;
-                        byteToSendI2C <= setupRegister[7:0];
-                        enableI2C <= 1;
+                        i2c_instruction_o <= INST_WRITE_BYTE;
+                        i2c_byte_to_send_o <= setupRegister[7:0];
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_CHECK_DONE,3'd0}: begin
@@ -133,19 +133,19 @@ module adc #(
                     end
                     {TASK_CHECK_DONE,3'd3},
                     {TASK_READ_VALUE,3'd2}: begin
-                        instructionI2C <= INST_READ_BYTE;
-                        enableI2C <= 1;
+                        i2c_instruction_o <= INST_READ_BYTE;
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_CHECK_DONE,3'd4},
                     {TASK_READ_VALUE,3'd3}: begin
-                        instructionI2C <= INST_READ_BYTE;
-                        outputData[15:8] <= byteReceivedI2C;
-                        enableI2C <= 1;
+                        i2c_instruction_o <= INST_READ_BYTE;
+                        data_o[15:8] <= i2c_byte_received_i;
+                        i2c_enable_o <= 1;
                         state <= STATE_WAIT_FOR_I2C;
                     end
                     {TASK_CHANGE_REG,3'd0}: begin
-                        if (outputData[15])
+                        if (data_o[15])
                             state <= STATE_INC_SUB_TASK;
                         else begin
                             subTaskIndex <= 0;
@@ -154,19 +154,19 @@ module adc #(
                     end
                     {TASK_READ_VALUE,3'd4}: begin
                         state <= STATE_INC_SUB_TASK;
-                        outputData[7:0] <= byteReceivedI2C;
+                        data_o[7:0] <= i2c_byte_received_i;
                     end
                     default:
                         state <= STATE_INC_SUB_TASK;
                 endcase
             end
             STATE_WAIT_FOR_I2C: begin
-                if (~processStarted && ~completeI2C)
+                if (~processStarted && ~i2c_complete_i)
                     processStarted <= 1;
-                else if (completeI2C && processStarted) begin
+                else if (i2c_complete_i && processStarted) begin
                     state <= STATE_INC_SUB_TASK;
                     processStarted <= 0;
-                    enableI2C <= 0;
+                    i2c_enable_o <= 0;
                 end
             end
             STATE_INC_SUB_TASK: begin
@@ -189,8 +189,8 @@ module adc #(
                 end
             end
             STATE_DONE: begin
-                dataReady <= 1;
-                if (~enable)
+                data_ready_o <= 1;
+                if (~enable_i)
                     state <= STATE_IDLE;
             end
             default: begin
