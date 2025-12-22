@@ -1,11 +1,10 @@
 `default_nettype none
 
 module adc #(
-    parameter address = 7'd0
+    parameter address = 7'd0,
+    parameter [2:0] MUX_CONFIG = 3'd000
 ) (
     input clk,
-
-    input [1:0] channel,
 
     output reg [15:0] outputData = 0,
 
@@ -24,7 +23,7 @@ module adc #(
     // setup config
     reg [15:0] setupRegister = {
         1'b1, // Start Conversion
-        3'b100, // Channel 0 Single ended
+        3'b100, // Channel 0 Single ended (Not used, replaced by parameter)
         3'b001, // FSR +- 4.096v
         1'b1, // Single shot mode
         3'b111, // 128 SPS
@@ -117,7 +116,7 @@ module adc #(
                         instructionI2C <= INST_WRITE_BYTE;
                         byteToSendI2C <= {
                             setupRegister[15] ? 1'b1 : 1'b0,
-                            3'b001,
+                            MUX_CONFIG,
                             setupRegister[11:8]
                         };
                         enableI2C <= 1;

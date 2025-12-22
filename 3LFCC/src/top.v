@@ -14,36 +14,139 @@ module top (
   inout  wire       sda_2_io,
 
   // PWM Outputs
-  output wire [7:0]  pwm_o
+  output wire [7:0]  pwm_o,
+
+  // Screen
+  output wire ioSclk,
+  output wire ioSdin,
+  output wire ioCs,
+  output wire ioDc,
+  output wire ioReset,
+  input wire btn1
 );
-  // ---------------------------------------------------------------------------
-  // 2. ADC Subsystem Signals
-  // ---------------------------------------------------------------------------
-  // Wrapper <-> I2C Master connections
-  wire [1:0]  i2c_inst;
-  wire        i2c_en;
-  wire [7:0]  i2c_byte_tx;
-  wire [7:0]  i2c_byte_rx;
-  wire        i2c_done;
-  wire        i2c_busy;
 
-  // Tri-state buffer signals
-  wire        sda_out_wire;
-  wire        sda_in_wire;
+  // --- SCREEN & TEXT ENGINE ---
+    wire [9:0] pixelAddress;
+    wire [7:0] textPixelData;
+    wire [5:0] charAddress;
+    reg [7:0] charOutput = "A";
 
-  // ADC Data signals
-  wire        adc_drdy_1;
-  wire        adc_drdy_2;
-  wire        adc_start_conv; // From Timer
-  wire [15:0] adc_data_out;
+    screen #(32'd10000000) scr(
+        clk_i, ioSclk, ioSdin, ioCs, ioDc, ioReset, pixelAddress, textPixelData
+    );
+    textEngine te(
+        clk_i, pixelAddress, textPixelData, charAddress, charOutput
+    );
 
-  // Storage for ADC measurements
-  reg  [15:0] v_meas_ch0_q; // Previously Ch7 (Flying Cap +)
-  reg  [15:0] v_meas_ch1_q; // Previously Ch14 (Vout)
-  reg  [15:0] v_meas_ch2_q; // Previously Ch15 (Flying Cap -)
+    // --- DISPLAY CONVERSION ---
+    genvar i;
+    // Channel 1 Hex
+    generate
+        for (i = 0; i < 4; i = i + 1) begin: g_hexValCh1
+            wire [7:0] hexChar;
+            toHex converter(clk_i, adcOutputBufferCh1[{i,2'b0}+:4], hexChar);
+        end
+    endgenerate
+    
+    // Channel 2 Hex
+    generate
+        for (i = 0; i < 4; i = i + 1) begin: g_hexValCh2
+            wire [7:0] hexChar;
+            toHex converter(clk_i, adcOutputBufferCh2[{i,2'b0}+:4], hexChar);
+        end
+    endgenerate
 
-  // Channel Sequencer
-  reg  [1:0]  ch_idx_q;     // 0=AIN0, 1=AIN1, 2=AIN2
+    wire [7:0] thousandsCh1, hundredsCh1, tensCh1, unitsCh1;
+    wire [7:0] thousandsCh2, hundredsCh2, tensCh2, unitsCh2;
+
+    toDec dec(
+        clk_i, voltageCh1, thousandsCh1, hundredsCh1, tensCh1, unitsCh1
+    );
+    toDec dec2(
+        clk_i, voltageCh2, thousandsCh2, hundredsCh2, tensCh2, unitsCh2
+    );
+
+    // --- TEXT RENDERING ---
+    wire [1:0] rowNumber;
+    assign rowNumber = charAddress[5:4];
+    
+    always @(posedge clk_i) begin
+        if (rowNumber == 2'd0) begin
+            // Row 0: Ch1 Raw Hex
+            case (charAddress[3:0])
+                0: charOutput <= "D"; // Dif
+                1: charOutput <= "i";
+                2: charOutput <= "f";
+                4: charOutput <= "r";
+                5: charOutput <= "a";
+                6: charOutput <= "w";
+                8: charOutput <= "0";
+                9: charOutput <= "x";
+                10: charOutput <= g_hexValCh1[3].hexChar;
+                11: charOutput <= g_hexValCh1[2].hexChar;
+                12: charOutput <= g_hexValCh1[1].hexChar;
+                13: charOutput <= g_hexValCh1[0].hexChar;
+                default: charOutput <= " ";
+            endcase
+        end
+        else if (rowNumber == 2'd1) begin
+            // Row 1: Ch1 Volts
+            case (charAddress[3:0])
+                0: charOutput <= "D";
+                1: charOutput <= "i";
+                2: charOutput <= "f";
+                4: charOutput <= thousandsCh1;
+                5: charOutput <= ".";
+                6: charOutput <= hundredsCh1;
+                7: charOutput <= tensCh1;
+                8: charOutput <= unitsCh1;
+                10: charOutput <= "V";
+                11: charOutput <= "o";
+                12: charOutput <= "l";
+                13: charOutput <= "t";
+                14: charOutput <= "s";
+                default: charOutput <= " ";
+            endcase
+        end
+        else if (rowNumber == 2'd2) begin
+            // Row 2: Ch2 Raw Hex
+            case (charAddress[3:0])
+                0: charOutput <= "O"; // Ch2
+                1: charOutput <= "u";
+                2: charOutput <= "t";
+                4: charOutput <= "r";
+                5: charOutput <= "a";
+                6: charOutput <= "w";
+                8: charOutput <= "0";
+                9: charOutput <= "x";
+                // Fixed: referencing g_hexValCh2
+                10: charOutput <= g_hexValCh2[3].hexChar;
+                11: charOutput <= g_hexValCh2[2].hexChar;
+                12: charOutput <= g_hexValCh2[1].hexChar;
+                13: charOutput <= g_hexValCh2[0].hexChar;
+                default: charOutput <= " ";
+            endcase
+        end
+        else if (rowNumber == 2'd3) begin
+            // Row 3: Ch2 Volts
+            case (charAddress[3:0])
+                0: charOutput <= "O"; // Ch2
+                1: charOutput <= "u";
+                2: charOutput <= "t";
+                4: charOutput <= thousandsCh2;
+                5: charOutput <= ".";
+                6: charOutput <= hundredsCh2;
+                7: charOutput <= tensCh2;
+                8: charOutput <= unitsCh2;
+                10: charOutput <= "V";
+                11: charOutput <= "o";
+                12: charOutput <= "l";
+                13: charOutput <= "t";
+                14: charOutput <= "s";
+                default: charOutput <= " ";
+            endcase
+        end
+    end
 
   // ---------------------------------------------------------------------------
   // 3. Control System Signals
@@ -71,52 +174,6 @@ module top (
 
   // 1 Million cycles @ 27MHz is ~37ms per step (reasonable for soft start)
   localparam integer STEP_CYCLES = 1000000;
-
-  // ---------------------------------------------------------------------------
-  // 4. ADC Data Acquisition Logic
-  // ---------------------------------------------------------------------------
-/*
-  // Capture data when ADC reports "Data Ready"
-  always @(posedge clk_i or negedge rst_ni) begin
-    if (!rst_ni) begin
-      v_meas_ch0_q  <= 16'd0;
-      v_meas_ch1_q  <= 16'd0;
-      v_meas_ch2_q  <= 16'd0;
-      ch_idx_q      <= 2'd0;
-    end else begin
-      if (adc_drdy_1) begin
-        // Store data based on current channel
-        case (ch_idx_q)
-          2'd0: v_meas_ch0_q <= adc_data_out;
-          2'd1: v_meas_ch1_q <= adc_data_out;
-          2'd2: v_meas_ch2_q <= adc_data_out;
-          default: ;
-        endcase
-
-        // Advance channel index (Round Robin: 0 -> 1 -> 2 -> 0)
-        if (ch_idx_q == 2'd2)
-          ch_idx_q <= 2'd0;
-        else
-          ch_idx_q <= ch_idx_q + 1;
-      end
-    end
-  end
-
-  // Calculate System Voltages
-  always @(posedge clk_i or negedge rst_ni) begin
-    if (!rst_ni) begin
-      v_out_meas <= 16'd0;
-      v_fc_calc  <= 16'd0;
-    end else begin
-      v_out_meas <= v_meas_ch1_q; // Vout is AIN1
-
-      // Vfc = V_pos (AIN0) - V_neg (AIN2)
-      if (v_meas_ch0_q >= v_meas_ch2_q)
-        v_fc_calc <= v_meas_ch0_q - v_meas_ch2_q;
-      else
-        v_fc_calc <= 16'd0;
-    end
-  end*/
 
   // ---------------------------------------------------------------------------
   // 5. Reference Sequencer (Soft Start FSM)
@@ -160,98 +217,146 @@ module top (
     end
   end
 
-  // ---------------------------------------------------------------------------
-  // 6. Submodule Instantiations
-  // ---------------------------------------------------------------------------
+  // --- I2C BUS 1 (ADC 1) ---
+    wire [1:0] i2cInstruction;
+    wire [7:0] i2cByteToSend, i2cByteReceived;
+    wire i2cComplete, i2cEnable;
+    wire sdaIn_1, sdaOut_1, isSending_1;
 
-  // ---------------------------------------------------------------------------
-  // CHAIN 1: Flying Capacitor (Differential Measurement)
-  // ---------------------------------------------------------------------------
+    assign sda_1_io = (isSending_1 & ~sdaOut_1) ? 1'b0 : 1'bz;
+    assign sdaIn_1 = sda_1_io ? 1'b1 : 1'b0;
 
-  // Internal Wires for Chain 1
-  wire [1:0]  i2c_1_inst;
-  wire [7:0]  i2c_1_tx;
-  wire [7:0]  i2c_1_rx;
-  wire        i2c_1_done;
-  wire        i2c_1_en;
-  wire        i2c_1_busy;
+    i2c c(
+        clk_i, sdaIn_1, sdaOut_1, isSending_1, scl_1_o,
+        i2cInstruction, i2cEnable, i2cByteToSend, i2cByteReceived, i2cComplete
+    );
 
-  wire        sda_1_in;
-  wire        sda_1_out;
+    // --- I2C BUS 2 (ADC 2) ---
+    wire [1:0] i2cInstruction_2;
+    wire [7:0] i2cByteToSend_2, i2cByteReceived_2;
+    wire i2cComplete_2, i2cEnable_2;
+    wire sdaIn_2, sdaOut_2, isSending_2;
 
-  // 1. I2C Module Instantiation
-  i2c u_i2c_1 (
-      .clk          (clk_i),
+    // Tristate logic for Bus 2
+    assign sda_2_io = (isSending_2 & ~sdaOut_2) ? 1'b0 : 1'bz;
+    assign sdaIn_2 = sda_2_io ? 1'b1 : 1'b0;
 
-      // I2C Physical Interface
-      .sdaIn        (sda_1_in),
-      .sdaOutReg    (sda_1_out),
-      .isSending    (i2c_1_busy),
-      .scl          (scl_1_o),
+    i2c c2(
+        clk_i, sdaIn_2, sdaOut_2, isSending_2, scl_2_o,
+        i2cInstruction_2, i2cEnable_2, i2cByteToSend_2, i2cByteReceived_2, i2cComplete_2
+    );
 
-      // Control Interface
-      .instruction  (i2c_1_inst),
-      .enable       (i2c_1_en),
-      .byteToSend   (i2c_1_tx),
-      .byteReceived (i2c_1_rx),
-      .complete     (i2c_1_done)
-  );
+    // --- ADC INSTANCES ---
 
-  // 2. ADC Module Instantiation
-  // Address 0x49 (1001001) for Flying Cap ADC
-  adc #(.address(7'b1001001)) u_adc_1 (
-      .clk             (clk_i),
+    // ADC 1 Control Signals
+    reg adcEnable = 0;
+    wire [15:0] adcOutputData;
+    wire adcDataReady;
+    
+    // ADC 2 Control Signals
+    reg adcEnable2 = 0;
+    wire [15:0] adcOutputData2;
+    wire adcDataReady2;
 
-      // Control & Data
-      .channel         (ch_idx_q),       // Controlled by Section 4 logic (0,1,2)
-      .outputData      (adc_data_out),   // Feeds into Section 4 logic
-      .dataReady       (adc_drdy_1),       // Triggers Section 4 logic
-      .enable          (adc_start_conv), // Triggered by Timer/PWM
+    // ADC 1 Instance
+    adc #(.address(7'b1001001), .MUX_CONFIG(3'b000)) a(
+        clk_i, adcOutputData, adcDataReady, adcEnable,
+        i2cInstruction, i2cEnable, i2cByteToSend, i2cByteReceived, i2cComplete
+    );
 
-      // I2C Interconnects
-      .instructionI2C  (i2c_1_inst),
-      .enableI2C       (i2c_1_en),
-      .byteToSendI2C   (i2c_1_tx),
-      .byteReceivedI2C (i2c_1_rx),
-      .completeI2C     (i2c_1_done)
-  );
+    // ADC 2 Instance (Same address, distinct I2C bus and Mux config)
+    adc #(.address(7'b1001001), .MUX_CONFIG(3'b100)) a2(
+        clk_i, adcOutputData2, adcDataReady2, adcEnable2,
+        i2cInstruction_2, i2cEnable_2, i2cByteToSend_2, i2cByteReceived_2, i2cComplete_2
+    );
 
-  // 3. Tri-State Buffer Logic
-  // Connects the internal 1-bit wires to the bidirectional pad `sda_1_io`
-  assign sda_1_io = (i2c_1_busy && !sda_1_out) ? 1'b0 : 1'bz;
-  assign sda_1_in = sda_1_io;
+    // --- DATA BUFFERS ---
+    reg [15:0] adcOutputBufferCh1 = 0;
+    reg [15:0] adcOutputBufferCh2 = 0;
+    reg [11:0] voltageCh1 = 0;
+    reg [11:0] voltageCh2 = 0;
 
-  // ---------------------------------------------------------------------------
-  // CHAIN 2: Output Voltage (Single-Ended Measurement)
-  // ---------------------------------------------------------------------------
-  /*wire [15:0] v_out_raw;
-  wire        drdy_2;
-  wire        sda_2_in, sda_2_out, i2c_2_busy;
+    // --- FSM STATE MACHINE ---
+    localparam STATE_TRIGGER_CONV = 0;
+    localparam STATE_WAIT_FOR_START = 1;
+    localparam STATE_SAVE_VALUE_WHEN_READY = 2;
 
-  // Internal I2C signals for Chain 2
-  wire [1:0] i2c_2_inst; wire i2c_2_en; wire [7:0] i2c_2_tx, i2c_2_rx; wire i2c_2_done;
+    reg [2:0] drawState = 0;
+    
+    // Flags to ensure we capture both channels before resetting
+    reg ch1_done = 0;
+    reg ch2_done = 0;
 
-  adc #(.address(7'd72)) u_adc_out (
-    .clk_i(clk_sys), .rst_ni(rst_ni),
-    .mux_config_i(3'b100),      // <--- 100 = AIN0 - GND (Single Ended)
-    .enable_i(adc_trigger),     // <--- Same PWM Trigger
-    .data_o(v_out_raw),
-    .data_ready_o(drdy_2),
-    // I2C 2 Links
-    .i2c_instruction_o(i2c_2_inst), .i2c_enable_o(i2c_2_en),
-    .i2c_byte_to_send_o(i2c_2_tx), .i2c_byte_received_i(i2c_2_rx), .i2c_complete_i(i2c_2_done)
-  );
+    // Button Debounce Logic
+    /*reg [1:0] btn_sync;
+    reg btn_prev;
+    reg [15:0] debounce_cnt;
+    reg trigger_pulse;
 
-  i2c #(.DividerWidth(7)) u_i2c_2 (
-    .clk_i(clk_sys), .rst_ni(rst_ni),
-    .sda_i(sda_2_in), .sda_o(sda_2_out), .scl_o(scl_2_o),
-    .instruction_i(i2c_2_inst), .enable_i(i2c_2_en),
-    .byte_to_send_i(i2c_2_tx), .byte_received_o(i2c_2_rx),
-    .complete_o(i2c_2_done), .is_sending_o(i2c_2_busy)
-  );
+    always @(posedge clk_i) begin
+        btn_sync <= {btn_sync[0], ~btn1};
+        if (btn_sync[1] != btn_prev) begin
+            if (&debounce_cnt) begin
+                btn_prev <= btn_sync[1];
+                debounce_cnt <= 0;
+            end else begin
+                debounce_cnt <= debounce_cnt + 1;
+            end
+        end else begin
+            debounce_cnt <= 0;
+        end
+        trigger_pulse <= (btn_sync[1] && !btn_prev && &debounce_cnt);
+    end*/
 
-  assign sda_2_io = (i2c_2_busy && !sda_2_out) ? 1'b0 : 1'bz;
-  assign sda_2_in = sda_2_io;*/
+    // Main ADC Control FSM
+    always @(posedge clk_i) begin
+        case (drawState)
+            STATE_TRIGGER_CONV: begin
+              controller_en <= 0;
+              if(adc_start_conv) begin
+                // Trigger both ADCs
+                adcEnable <= 1;
+                adcEnable2 <= 1;
+                ch1_done <= 0;
+                ch2_done <= 0;
+                drawState <= STATE_WAIT_FOR_START;
+              end
+            end
+            STATE_WAIT_FOR_START: begin
+                // Wait for both to acknowledge (DataReady goes LOW when busy)
+                // We proceed only when both are busy to ensure we don't catch a stale "Ready"
+                if (~adcDataReady && ~adcDataReady2) begin
+                    drawState <= STATE_SAVE_VALUE_WHEN_READY;
+                end
+            end
+            STATE_SAVE_VALUE_WHEN_READY: begin
+                // Capture Channel 1
+                if (adcDataReady && !ch1_done) begin
+                    adcOutputBufferCh1 <= adcOutputData;
+                    voltageCh1 <= adcOutputData[15] ? 12'd0 : adcOutputData[14:3];
+                    adcEnable <= 0; // Stop ADC 1
+                    ch1_done <= 1;
+                end
+
+                // Capture Channel 2
+                if (adcDataReady2 && !ch2_done) begin
+                    adcOutputBufferCh2 <= adcOutputData2;
+                    voltageCh2 <= adcOutputData2[15] ? 12'd0 : adcOutputData2[14:3];
+                    adcEnable2 <= 0; // Stop ADC 2
+                    ch2_done <= 1;
+                end
+
+                // Go back only when both are done
+                if (ch1_done && ch2_done) begin
+                    controller_en <= 1;
+                    drawState <= STATE_TRIGGER_CONV;
+                end
+            end
+            default: begin
+                drawState <= STATE_TRIGGER_CONV;
+            end
+        endcase
+    end
 
   // ---------------------------------------------------------------------------
   // Synchronization Logic
@@ -275,7 +380,7 @@ module top (
   // Control Algorithm
   // ---------------------------------------------------------------------------
   fcc_fixpt u_controller (
-    .clk        (clk_sys),
+    .clk        (clk_i),
     .reset      (~rst_ni),
     .clk_enable (controller_en), // Waits for both ADCs
     .Voutref    (v_out_ref_q),

@@ -143,7 +143,6 @@ module i2c (
                 if (~enable)
                     state <= STATE_IDLE;
             end
-            default: state <= STATE_IDLE;
         endcase
     end
 
