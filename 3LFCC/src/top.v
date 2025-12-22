@@ -72,25 +72,7 @@ module top (
     
     always @(posedge clk_i) begin
         if (rowNumber == 2'd0) begin
-            // Row 0: Ch1 Raw Hex
-            case (charAddress[3:0])
-                0: charOutput <= "D"; // Dif
-                1: charOutput <= "i";
-                2: charOutput <= "f";
-                4: charOutput <= "r";
-                5: charOutput <= "a";
-                6: charOutput <= "w";
-                8: charOutput <= "0";
-                9: charOutput <= "x";
-                10: charOutput <= g_hexValCh1[3].hexChar;
-                11: charOutput <= g_hexValCh1[2].hexChar;
-                12: charOutput <= g_hexValCh1[1].hexChar;
-                13: charOutput <= g_hexValCh1[0].hexChar;
-                default: charOutput <= " ";
-            endcase
-        end
-        else if (rowNumber == 2'd1) begin
-            // Row 1: Ch1 Volts
+            // Row 0: Ch1 Volts
             case (charAddress[3:0])
                 0: charOutput <= "D";
                 1: charOutput <= "i";
@@ -108,27 +90,8 @@ module top (
                 default: charOutput <= " ";
             endcase
         end
-        else if (rowNumber == 2'd2) begin
-            // Row 2: Ch2 Raw Hex
-            case (charAddress[3:0])
-                0: charOutput <= "O"; // Ch2
-                1: charOutput <= "u";
-                2: charOutput <= "t";
-                4: charOutput <= "r";
-                5: charOutput <= "a";
-                6: charOutput <= "w";
-                8: charOutput <= "0";
-                9: charOutput <= "x";
-                // Fixed: referencing g_hexValCh2
-                10: charOutput <= g_hexValCh2[3].hexChar;
-                11: charOutput <= g_hexValCh2[2].hexChar;
-                12: charOutput <= g_hexValCh2[1].hexChar;
-                13: charOutput <= g_hexValCh2[0].hexChar;
-                default: charOutput <= " ";
-            endcase
-        end
-        else if (rowNumber == 2'd3) begin
-            // Row 3: Ch2 Volts
+        else if (rowNumber == 2'd1) begin
+            // Row 1: Ch2 Volts
             case (charAddress[3:0])
                 0: charOutput <= "O"; // Ch2
                 1: charOutput <= "u";
@@ -146,6 +109,40 @@ module top (
                 default: charOutput <= " ";
             endcase
         end
+        else if (rowNumber == 2'd2) begin
+            // Row 3: Sampling Frequency
+            case (charAddress[3:0])
+                0: charOutput <= "F"; // Ch2
+                1: charOutput <= "s";
+                //4: charOutput <= thousands_counter;
+                //5: charOutput <= ".";
+                6: charOutput <= hundreds_counter;
+                7: charOutput <= tens_counter;
+                8: charOutput <= units_counter;
+                10: charOutput <= "H";
+                11: charOutput <= "z";
+                default: charOutput <= " ";
+            endcase
+        end
+        /*else if (rowNumber == 2'd3) begin
+            // Row 3: Ch2 Volts
+            case (charAddress[3:0])
+                0: charOutput <= "O"; // Ch2
+                1: charOutput <= "u";
+                2: charOutput <= "t";
+                4: charOutput <= thousandsCh2;
+                5: charOutput <= ".";
+                6: charOutput <= hundredsCh2;
+                7: charOutput <= tensCh2;
+                8: charOutput <= unitsCh2;
+                10: charOutput <= "V";
+                11: charOutput <= "o";
+                12: charOutput <= "l";
+                13: charOutput <= "t";
+                14: charOutput <= "s";
+                default: charOutput <= " ";
+            endcase
+        end*/
     end
 
   // ---------------------------------------------------------------------------
@@ -389,6 +386,65 @@ module top (
     .uv         ()
   );
 
+  /// ---------------------------------------------------------------------------
+  // Average Sampling Time Calculation
+  /// ---------------------------------------------------------------------------
+
+  /// ---------------------------------------------------------------------------
+  // Average Sampling Time Calculation (FIXED)
+  /// ---------------------------------------------------------------------------
+
+  reg [24:0] clk_counter;
+  reg [15:0] sample_count = 0;       // Increased to 16-bit to prevent overflow > 4095Hz
+  reg [15:0] freq_display_hold = 0;  // NEW: Holds the value to show on screen
+
+  always @(posedge clk_i) begin
+    if(!rst_ni) begin
+      clk_counter <= 0;
+      pwm_o[5] <= 1;
+      sample_count <= 0;
+      freq_display_hold <= 0;
+    end else begin
+      // 1. Count the samples
+      // The FSM ensures this condition is true for exactly 1 cycle per conversion
+      if (adc1_done_o && adc2_done_o) begin
+        sample_count <= sample_count + 1;
+      end
+
+      // 2. One Second Timer (27 MHz)
+      if(clk_counter == 25'd27000000) begin
+        clk_counter <= 0;
+        
+        // LATCH: Save the result to the display register
+        freq_display_hold <= sample_count; 
+        
+        // RESET: Clear the counter for the new second
+        sample_count <= 0;
+        
+        // Toggle Heartbeat LED
+        pwm_o[5] <= ~pwm_o[5]; 
+      end else begin
+        clk_counter <= clk_counter + 1;
+      end
+    end
+  end
+
+  wire [7:0] thousands_counter, hundreds_counter, tens_counter, units_counter;
+
+  // 3. Connect the HOLD register (Static Value) to the display, not the counter
+  toDec dec3(
+    clk_i, 
+    freq_display_hold,
+    thousands_counter, 
+    hundreds_counter, 
+    tens_counter, 
+    units_counter
+  );
+
+  /// ---------------------------------------------------------------------------
+  // PS-PWM MODULATOR
+  /// ---------------------------------------------------------------------------
+
   // PS-PWM Modulator
   wire [3:0] pwm_signals_o;
 
@@ -409,7 +465,6 @@ module top (
 
   // Bits 4-7: Debug / Static outputs (Keep original behavior)
   assign pwm_o[4]   = 1'b1;
-  assign pwm_o[5]   = 1'b1;
   assign pwm_o[6]   = 1'b0;
   assign pwm_o[7]   = 1'b0;
 
