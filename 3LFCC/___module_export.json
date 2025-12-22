@@ -4,7 +4,7 @@
     "top": {
       "attributes": {
         "cells_not_processed": 1,
-        "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:3.1-421.10"
+        "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:3.1-416.10"
       },
       "ports": {
         "clk_i": {
@@ -393,7 +393,7 @@
             "Y": [ 95 ]
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328$25": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323$25": {
           "hide_name": 1,
           "type": "$logic_and",
           "parameters": {
@@ -404,7 +404,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.21-328.52"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.21-323.51"
           },
           "port_directions": {
             "A": "input",
@@ -417,7 +417,7 @@
             "Y": [ 98 ]
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334$27": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329$27": {
           "hide_name": 1,
           "type": "$logic_and",
           "parameters": {
@@ -428,7 +428,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.21-334.46"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.21-329.49"
           },
           "port_directions": {
             "A": "input",
@@ -441,7 +441,7 @@
             "Y": [ 101 ]
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342$30": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337$30": {
           "hide_name": 1,
           "type": "$logic_and",
           "parameters": {
@@ -452,7 +452,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.21-342.47"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.21-337.49"
           },
           "port_directions": {
             "A": "input",
@@ -465,7 +465,7 @@
             "Y": [ 104 ]
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350$32": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345$32": {
           "hide_name": 1,
           "type": "$logic_and",
           "parameters": {
@@ -476,7 +476,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350.21-350.41"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345.21-345.47"
           },
           "port_directions": {
             "A": "input",
@@ -487,30 +487,6 @@
             "A": [ 105 ],
             "B": [ 106 ],
             "Y": [ 107 ]
-          }
-        },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:366$33": {
-          "hide_name": 1,
-          "type": "$logic_and",
-          "parameters": {
-            "A_SIGNED": 0,
-            "A_WIDTH": 1,
-            "B_SIGNED": 0,
-            "B_WIDTH": 1,
-            "Y_WIDTH": 1
-          },
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:366.26-366.50"
-          },
-          "port_directions": {
-            "A": "input",
-            "B": "input",
-            "Y": "output"
-          },
-          "connections": {
-            "A": [ 108 ],
-            "B": [ 109 ],
-            "Y": [ 110 ]
           }
         },
         "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:182$7": {
@@ -530,10 +506,10 @@
           },
           "connections": {
             "A": [ 3 ],
-            "Y": [ 111 ]
+            "Y": [ 108 ]
           }
         },
-        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334$26": {
+        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329$26": {
           "hide_name": 1,
           "type": "$logic_not",
           "parameters": {
@@ -542,7 +518,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.37-334.46"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.37-329.49"
           },
           "port_directions": {
             "A": "input",
@@ -553,7 +529,7 @@
             "Y": [ 100 ]
           }
         },
-        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342$29": {
+        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337$29": {
           "hide_name": 1,
           "type": "$logic_not",
           "parameters": {
@@ -562,7 +538,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.38-342.47"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.37-337.49"
           },
           "port_directions": {
             "A": "input",
@@ -589,7 +565,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 112 ],
+            "A": [ 109 ],
             "Y": [ 78 ]
           }
         },
@@ -609,11 +585,11 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 113 ],
+            "A": [ 110 ],
             "Y": [ 81 ]
           }
         },
-        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328$23": {
+        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323$23": {
           "hide_name": 1,
           "type": "$not",
           "parameters": {
@@ -622,7 +598,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.21-328.34"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.21-323.34"
           },
           "port_directions": {
             "A": "input",
@@ -633,7 +609,7 @@
             "Y": [ 96 ]
           }
         },
-        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328$24": {
+        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323$24": {
           "hide_name": 1,
           "type": "$not",
           "parameters": {
@@ -642,7 +618,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.38-328.52"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.38-323.51"
           },
           "port_directions": {
             "A": "input",
@@ -653,7 +629,7 @@
             "Y": [ 97 ]
           }
         },
-        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:384$34": {
+        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:379$33": {
           "hide_name": 1,
           "type": "$not",
           "parameters": {
@@ -662,7 +638,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:384.18-384.25"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:379.18-379.25"
           },
           "port_directions": {
             "A": "input",
@@ -670,7 +646,7 @@
           },
           "connections": {
             "A": [ 3 ],
-            "Y": [ 114 ]
+            "Y": [ 111 ]
           }
         },
         "$procdff$218": {
@@ -681,7 +657,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -690,8 +666,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 115 ],
-            "Q": [ 116 ]
+            "D": [ 112 ],
+            "Q": [ 113 ]
           }
         },
         "$procdff$219": {
@@ -702,7 +678,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -711,8 +687,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 117 ],
-            "Q": [ 118 ]
+            "D": [ 114 ],
+            "Q": [ 115 ]
           }
         },
         "$procdff$220": {
@@ -723,7 +699,7 @@
             "WIDTH": 16
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -732,8 +708,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134 ],
-            "Q": [ 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ]
+            "D": [ 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131 ],
+            "Q": [ 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147 ]
           }
         },
         "$procdff$221": {
@@ -744,7 +720,7 @@
             "WIDTH": 16
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -753,8 +729,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166 ],
-            "Q": [ 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182 ]
+            "D": [ 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163 ],
+            "Q": [ 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179 ]
           }
         },
         "$procdff$222": {
@@ -765,7 +741,7 @@
             "WIDTH": 12
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -774,8 +750,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194 ],
-            "Q": [ 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ]
+            "D": [ 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 ],
+            "Q": [ 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ]
           }
         },
         "$procdff$223": {
@@ -786,7 +762,7 @@
             "WIDTH": 12
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -795,8 +771,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218 ],
-            "Q": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230 ]
+            "D": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215 ],
+            "Q": [ 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227 ]
           }
         },
         "$procdff$224": {
@@ -807,7 +783,7 @@
             "WIDTH": 3
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -816,8 +792,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 231, 232, 233 ],
-            "Q": [ 234, 235, 236 ]
+            "D": [ 228, 229, 230 ],
+            "Q": [ 231, 232, 233 ]
           }
         },
         "$procdff$225": {
@@ -828,7 +804,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -837,7 +813,7 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 237 ],
+            "D": [ 234 ],
             "Q": [ 105 ]
           }
         },
@@ -849,7 +825,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -858,7 +834,7 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 238 ],
+            "D": [ 235 ],
             "Q": [ 106 ]
           }
         },
@@ -870,7 +846,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -879,8 +855,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 239 ],
-            "Q": [ 110 ]
+            "D": [ 236 ],
+            "Q": [ 237 ]
           }
         },
         "$procdff$232": {
@@ -904,8 +880,8 @@
           "connections": {
             "ARST": [ 3 ],
             "CLK": [ 2 ],
-            "D": [ 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255 ],
-            "Q": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271 ]
+            "D": [ 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253 ],
+            "Q": [ 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269 ]
           }
         },
         "$procdff$237": {
@@ -929,7 +905,7 @@
           "connections": {
             "ARST": [ 3 ],
             "CLK": [ 2 ],
-            "D": [ 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292 ],
+            "D": [ 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290 ],
             "Q": [ 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 ]
           }
         },
@@ -954,7 +930,7 @@
           "connections": {
             "ARST": [ 3 ],
             "CLK": [ 2 ],
-            "D": [ 293, 294, 295 ],
+            "D": [ 291, 292, 293 ],
             "Q": [ 18, 19, 20 ]
           }
         },
@@ -979,8 +955,8 @@
           "connections": {
             "ARST": [ 3 ],
             "CLK": [ 2 ],
-            "D": [ 296 ],
-            "Q": [ 297 ]
+            "D": [ 294 ],
+            "Q": [ 295 ]
           }
         },
         "$procdff$248": {
@@ -1000,8 +976,8 @@
           },
           "connections": {
             "CLK": [ 2 ],
-            "D": [ 298, 299, 300, 301, 302, 303, 304, 305 ],
-            "Q": [ 306, 307, 308, 309, 310, 311, 312, 313 ]
+            "D": [ 296, 297, 298, 299, 300, 301, 302, 303 ],
+            "Q": [ 304, 305, 306, 307, 308, 309, 310, 311 ]
           }
         },
         "$procmux$101": {
@@ -1013,7 +989,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -1022,10 +998,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 118 ],
-            "B": [ 314, 315 ],
-            "S": [ 316, 317 ],
-            "Y": [ 117 ]
+            "A": [ 115 ],
+            "B": [ 312, 313 ],
+            "S": [ 314, 315 ],
+            "Y": [ 114 ]
           }
         },
         "$procmux$102_CMP0": {
@@ -1040,7 +1016,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -1048,9 +1024,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 316 ]
+            "Y": [ 314 ]
           }
         },
         "$procmux$103": {
@@ -1060,7 +1036,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.18-316.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.15-323.18"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.18-311.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.15-318.18"
           },
           "port_directions": {
             "A": "input",
@@ -1069,10 +1045,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 118 ],
+            "A": [ 115 ],
             "B": [ "1" ],
-            "S": [ 318 ],
-            "Y": [ 315 ]
+            "S": [ 316 ],
+            "Y": [ 313 ]
           }
         },
         "$procmux$105_CMP0": {
@@ -1085,15 +1061,15 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.25-313.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.25-308.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
-            "Y": [ 317 ]
+            "A": [ 231, 232, 233 ],
+            "Y": [ 315 ]
           }
         },
         "$procmux$107": {
@@ -1103,7 +1079,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.21-334.46|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.17-339.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.21-329.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.17-334.20"
           },
           "port_directions": {
             "A": "input",
@@ -1112,10 +1088,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 116 ],
+            "A": [ 113 ],
             "B": [ "0" ],
             "S": [ 101 ],
-            "Y": [ 319 ]
+            "Y": [ 317 ]
           }
         },
         "$procmux$109": {
@@ -1127,7 +1103,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -1136,10 +1112,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 116 ],
-            "B": [ 319, 320 ],
-            "S": [ 321, 322 ],
-            "Y": [ 115 ]
+            "A": [ 113 ],
+            "B": [ 317, 318 ],
+            "S": [ 319, 320 ],
+            "Y": [ 112 ]
           }
         },
         "$procmux$110_CMP0": {
@@ -1154,7 +1130,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -1162,9 +1138,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 321 ]
+            "Y": [ 319 ]
           }
         },
         "$procmux$111": {
@@ -1174,7 +1150,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.18-316.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.15-323.18"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.18-311.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.15-318.18"
           },
           "port_directions": {
             "A": "input",
@@ -1183,10 +1159,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 116 ],
+            "A": [ 113 ],
             "B": [ "1" ],
-            "S": [ 318 ],
-            "Y": [ 320 ]
+            "S": [ 316 ],
+            "Y": [ 318 ]
           }
         },
         "$procmux$113_CMP0": {
@@ -1199,15 +1175,15 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.25-313.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.25-308.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
-            "Y": [ 322 ]
+            "A": [ 231, 232, 233 ],
+            "Y": [ 320 ]
           }
         },
         "$procmux$115": {
@@ -1230,7 +1206,7 @@
             "A": [ 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ],
             "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
             "S": [ 91 ],
-            "Y": [ 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292 ]
+            "Y": [ 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290 ]
           }
         },
         "$procmux$119": {
@@ -1250,10 +1226,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 297 ],
+            "A": [ 295 ],
             "B": [ "1" ],
             "S": [ 93 ],
-            "Y": [ 323 ]
+            "Y": [ 321 ]
           }
         },
         "$procmux$123": {
@@ -1273,10 +1249,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 297 ],
+            "A": [ 295 ],
             "B": [ "0" ],
             "S": [ 92 ],
-            "Y": [ 324 ]
+            "Y": [ 322 ]
           }
         },
         "$procmux$125": {
@@ -1296,10 +1272,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 323 ],
-            "B": [ 324 ],
-            "S": [ 297 ],
-            "Y": [ 325 ]
+            "A": [ 321 ],
+            "B": [ 322 ],
+            "S": [ 295 ],
+            "Y": [ 323 ]
           }
         },
         "$procmux$127": {
@@ -1319,10 +1295,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 297 ],
-            "B": [ 325 ],
+            "A": [ 295 ],
+            "B": [ 323 ],
             "S": [ 91 ],
-            "Y": [ 296 ]
+            "Y": [ 294 ]
           }
         },
         "$procmux$131": {
@@ -1342,10 +1318,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 326, 327, 328 ],
+            "A": [ 324, 325, 326 ],
             "B": [ "1", "0", "0" ],
             "S": [ 93 ],
-            "Y": [ 329, 330, 331 ]
+            "Y": [ 327, 328, 329 ]
           }
         },
         "$procmux$135": {
@@ -1368,7 +1344,7 @@
             "A": [ 21, 22, 23 ],
             "B": [ "0", "1", "0" ],
             "S": [ 92 ],
-            "Y": [ 332, 333, 334 ]
+            "Y": [ 330, 331, 332 ]
           }
         },
         "$procmux$137": {
@@ -1388,10 +1364,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 329, 330, 331 ],
-            "B": [ 332, 333, 334 ],
-            "S": [ 297 ],
-            "Y": [ 335, 336, 337 ]
+            "A": [ 327, 328, 329 ],
+            "B": [ 330, 331, 332 ],
+            "S": [ 295 ],
+            "Y": [ 333, 334, 335 ]
           }
         },
         "$procmux$139": {
@@ -1412,9 +1388,9 @@
           },
           "connections": {
             "A": [ 18, 19, 20 ],
-            "B": [ 335, 336, 337 ],
+            "B": [ 333, 334, 335 ],
             "S": [ 91 ],
-            "Y": [ 293, 294, 295 ]
+            "Y": [ 291, 292, 293 ]
           }
         },
         "$procmux$143": {
@@ -1437,8 +1413,8 @@
           "connections": {
             "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
             "B": [ "0", "1", "0", "1", "1", "1", "0", "0", "1", "1", "0", "0", "1", "1", "1", "0", "0", "1", "1", "1", "0", "0", "1", "1", "0", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0", "0", "1", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "0" ],
-            "S": [ 338, 339, 340 ],
-            "Y": [ 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356 ]
+            "S": [ 336, 337, 338 ],
+            "Y": [ 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354 ]
           }
         },
         "$procmux$144_CMP0": {
@@ -1463,7 +1439,7 @@
           "connections": {
             "A": [ 18, 19, 20 ],
             "B": [ "1", "1", "0" ],
-            "Y": [ 338 ]
+            "Y": [ 336 ]
           }
         },
         "$procmux$145_CMP0": {
@@ -1488,7 +1464,7 @@
           "connections": {
             "A": [ 18, 19, 20 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 339 ]
+            "Y": [ 337 ]
           }
         },
         "$procmux$146_CMP0": {
@@ -1513,7 +1489,7 @@
           "connections": {
             "A": [ 18, 19, 20 ],
             "B": [ "1", "0", "0" ],
-            "Y": [ 340 ]
+            "Y": [ 338 ]
           }
         },
         "$procmux$147": {
@@ -1533,10 +1509,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271 ],
-            "B": [ 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356 ],
+            "A": [ 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269 ],
+            "B": [ 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354 ],
             "S": [ 91 ],
-            "Y": [ 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255 ]
+            "Y": [ 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253 ]
           }
         },
         "$procmux$150": {
@@ -1558,9 +1534,9 @@
           },
           "connections": {
             "A": [ "0", "0", "0", "0", "0", "1", "0", "0" ],
-            "B": [ "1", "1", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1", "1", "0", "0", "0", "1", "1", "0", "1", "1", "0", "1", "1", "1", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "1", "0", 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, "0", "1", "1", "1", "0", "1", "0", "0", 381, 382, 383, 384, 385, 386, 387, 388, "0", "0", "1", "0", "1", "1", "1", "0", "1", "0", "1", "0", "1", "1", "1", "0", "1", "1", "1", "1", "0", "0", "1", "0" ],
-            "S": [ 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401 ],
-            "Y": [ 402, 403, 404, 405, 406, 407, 408, 409 ]
+            "B": [ "1", "1", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1", "1", "0", "0", "0", "1", "1", "0", "1", "1", "0", "1", "1", "1", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "1", "0", 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, "0", "1", "1", "1", "0", "1", "0", "0", 379, 380, 381, 382, 383, 384, 385, 386, "0", "0", "1", "0", "1", "1", "1", "0", "1", "0", "1", "0", "1", "1", "1", "0", "1", "1", "1", "1", "0", "0", "1", "0" ],
+            "S": [ 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399 ],
+            "Y": [ 400, 401, 402, 403, 404, 405, 406, 407 ]
           }
         },
         "$procmux$151_CMP0": {
@@ -1583,9 +1559,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "1", "1" ],
-            "Y": [ 389 ]
+            "Y": [ 387 ]
           }
         },
         "$procmux$152_CMP0": {
@@ -1608,9 +1584,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "1" ],
-            "Y": [ 390 ]
+            "Y": [ 388 ]
           }
         },
         "$procmux$153_CMP0": {
@@ -1633,9 +1609,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "1" ],
-            "Y": [ 391 ]
+            "Y": [ 389 ]
           }
         },
         "$procmux$154_CMP0": {
@@ -1658,9 +1634,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "1", "0", "1" ],
-            "Y": [ 392 ]
+            "Y": [ 390 ]
           }
         },
         "$procmux$155_CMP0": {
@@ -1683,9 +1659,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "1" ],
-            "Y": [ 393 ]
+            "Y": [ 391 ]
           }
         },
         "$procmux$156_CMP0": {
@@ -1708,9 +1684,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "0", "1" ],
-            "Y": [ 394 ]
+            "Y": [ 392 ]
           }
         },
         "$procmux$157_CMP0": {
@@ -1733,9 +1709,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "1", "1", "0" ],
-            "Y": [ 395 ]
+            "Y": [ 393 ]
           }
         },
         "$procmux$158_CMP0": {
@@ -1758,9 +1734,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "1", "0" ],
-            "Y": [ 396 ]
+            "Y": [ 394 ]
           }
         },
         "$procmux$159_CMP0": {
@@ -1783,9 +1759,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "0" ],
-            "Y": [ 397 ]
+            "Y": [ 395 ]
           }
         },
         "$procmux$160_CMP0": {
@@ -1808,9 +1784,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "0" ],
-            "Y": [ 398 ]
+            "Y": [ 396 ]
           }
         },
         "$procmux$161_CMP0": {
@@ -1833,9 +1809,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "0" ],
-            "Y": [ 399 ]
+            "Y": [ 397 ]
           }
         },
         "$procmux$162_CMP0": {
@@ -1858,9 +1834,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "0", "0" ],
-            "Y": [ 400 ]
+            "Y": [ 398 ]
           }
         },
         "$procmux$163_CMP0": {
@@ -1880,8 +1856,8 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
-            "Y": [ 401 ]
+            "A": [ 408, 409, 410, 411 ],
+            "Y": [ 399 ]
           }
         },
         "$procmux$164": {
@@ -1900,10 +1876,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 306, 307, 308, 309, 310, 311, 312, 313 ],
-            "B": [ 402, 403, 404, 405, 406, 407, 408, 409 ],
+            "A": [ 304, 305, 306, 307, 308, 309, 310, 311 ],
+            "B": [ 400, 401, 402, 403, 404, 405, 406, 407 ],
             "S": [ 90 ],
-            "Y": [ 414, 415, 416, 417, 418, 419, 420, 421 ]
+            "Y": [ 412, 413, 414, 415, 416, 417, 418, 419 ]
           }
         },
         "$procmux$168": {
@@ -1925,9 +1901,9 @@
           },
           "connections": {
             "A": [ "0", "0", "0", "0", "0", "1", "0", "0" ],
-            "B": [ 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, "0", "0", "0", "1", "1", "1", "1", "0", "0", "0", "0", "0", "1", "1", "0", "0", "1", "1", "1", "0", "1", "1", "1", "0", "1", "0", "0", "0", "0", "1", "1", "0", "0", "1", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1", "1", "0", "1", "0", "1", "0", "1", "1", "1", "0", "1", "1", "1", "1", "0", "0", "1", "0" ],
-            "S": [ 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465 ],
-            "Y": [ 466, 467, 468, 469, 470, 471, 472, 473 ]
+            "B": [ 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, "0", "0", "0", "1", "1", "1", "1", "0", "0", "0", "0", "0", "1", "1", "0", "0", "1", "1", "1", "0", "1", "1", "1", "0", "1", "0", "0", "0", "0", "1", "1", "0", "0", "1", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1", "1", "0", "1", "0", "1", "0", "1", "1", "1", "0", "1", "1", "1", "1", "0", "0", "1", "0" ],
+            "S": [ 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463 ],
+            "Y": [ 464, 465, 466, 467, 468, 469, 470, 471 ]
           }
         },
         "$procmux$169_CMP0": {
@@ -1950,9 +1926,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "1" ],
-            "Y": [ 454 ]
+            "Y": [ 452 ]
           }
         },
         "$procmux$170_CMP0": {
@@ -1975,9 +1951,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "1" ],
-            "Y": [ 455 ]
+            "Y": [ 453 ]
           }
         },
         "$procmux$171_CMP0": {
@@ -2000,9 +1976,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "1", "0", "1" ],
-            "Y": [ 456 ]
+            "Y": [ 454 ]
           }
         },
         "$procmux$172_CMP0": {
@@ -2025,9 +2001,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "1" ],
-            "Y": [ 457 ]
+            "Y": [ 455 ]
           }
         },
         "$procmux$173_CMP0": {
@@ -2050,9 +2026,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "0", "1" ],
-            "Y": [ 458 ]
+            "Y": [ 456 ]
           }
         },
         "$procmux$174_CMP0": {
@@ -2075,9 +2051,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "0", "1" ],
-            "Y": [ 459 ]
+            "Y": [ 457 ]
           }
         },
         "$procmux$175_CMP0": {
@@ -2100,9 +2076,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "1", "0" ],
-            "Y": [ 460 ]
+            "Y": [ 458 ]
           }
         },
         "$procmux$176_CMP0": {
@@ -2125,9 +2101,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "0" ],
-            "Y": [ 461 ]
+            "Y": [ 459 ]
           }
         },
         "$procmux$177_CMP0": {
@@ -2150,9 +2126,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "0" ],
-            "Y": [ 462 ]
+            "Y": [ 460 ]
           }
         },
         "$procmux$178_CMP0": {
@@ -2175,9 +2151,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "0" ],
-            "Y": [ 463 ]
+            "Y": [ 461 ]
           }
         },
         "$procmux$179_CMP0": {
@@ -2200,9 +2176,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "0", "0" ],
-            "Y": [ 464 ]
+            "Y": [ 462 ]
           }
         },
         "$procmux$180_CMP0": {
@@ -2222,8 +2198,8 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
-            "Y": [ 465 ]
+            "A": [ 408, 409, 410, 411 ],
+            "Y": [ 463 ]
           }
         },
         "$procmux$181": {
@@ -2243,10 +2219,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 414, 415, 416, 417, 418, 419, 420, 421 ],
-            "B": [ 466, 467, 468, 469, 470, 471, 472, 473 ],
+            "A": [ 412, 413, 414, 415, 416, 417, 418, 419 ],
+            "B": [ 464, 465, 466, 467, 468, 469, 470, 471 ],
             "S": [ 89 ],
-            "Y": [ 474, 475, 476, 477, 478, 479, 480, 481 ]
+            "Y": [ 472, 473, 474, 475, 476, 477, 478, 479 ]
           }
         },
         "$procmux$185": {
@@ -2268,9 +2244,9 @@
           },
           "connections": {
             "A": [ "0", "0", "0", "0", "0", "1", "0", "0" ],
-            "B": [ "1", "1", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1", "1", "0", "0", "0", "1", "1", "0", "1", "1", "0", "1", "1", "1", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "1", "0", 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, "0", "1", "1", "1", "0", "1", "0", "0", 506, 507, 508, 509, 510, 511, 512, 513, "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "0", "1", "0", "1", "1", "0", "0", "0", "1", "0", "0", "0", "1", "0" ],
-            "S": [ 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526 ],
-            "Y": [ 527, 528, 529, 530, 531, 532, 533, 534 ]
+            "B": [ "1", "1", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1", "1", "0", "0", "0", "1", "1", "0", "1", "1", "0", "1", "1", "1", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "1", "0", 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, "0", "1", "1", "1", "0", "1", "0", "0", 504, 505, 506, 507, 508, 509, 510, 511, "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "0", "1", "0", "1", "1", "0", "0", "0", "1", "0", "0", "0", "1", "0" ],
+            "S": [ 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524 ],
+            "Y": [ 525, 526, 527, 528, 529, 530, 531, 532 ]
           }
         },
         "$procmux$186_CMP0": {
@@ -2293,9 +2269,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "1", "1" ],
-            "Y": [ 514 ]
+            "Y": [ 512 ]
           }
         },
         "$procmux$187_CMP0": {
@@ -2318,9 +2294,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "1" ],
-            "Y": [ 515 ]
+            "Y": [ 513 ]
           }
         },
         "$procmux$188_CMP0": {
@@ -2343,9 +2319,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "1" ],
-            "Y": [ 516 ]
+            "Y": [ 514 ]
           }
         },
         "$procmux$189_CMP0": {
@@ -2368,9 +2344,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "1", "0", "1" ],
-            "Y": [ 517 ]
+            "Y": [ 515 ]
           }
         },
         "$procmux$190_CMP0": {
@@ -2393,9 +2369,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "1" ],
-            "Y": [ 518 ]
+            "Y": [ 516 ]
           }
         },
         "$procmux$191_CMP0": {
@@ -2418,9 +2394,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "0", "1" ],
-            "Y": [ 519 ]
+            "Y": [ 517 ]
           }
         },
         "$procmux$192_CMP0": {
@@ -2443,9 +2419,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "1", "1", "0" ],
-            "Y": [ 520 ]
+            "Y": [ 518 ]
           }
         },
         "$procmux$193_CMP0": {
@@ -2468,9 +2444,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "1", "0" ],
-            "Y": [ 521 ]
+            "Y": [ 519 ]
           }
         },
         "$procmux$194_CMP0": {
@@ -2493,9 +2469,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "0" ],
-            "Y": [ 522 ]
+            "Y": [ 520 ]
           }
         },
         "$procmux$195_CMP0": {
@@ -2518,9 +2494,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "0" ],
-            "Y": [ 523 ]
+            "Y": [ 521 ]
           }
         },
         "$procmux$196_CMP0": {
@@ -2543,9 +2519,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "0" ],
-            "Y": [ 524 ]
+            "Y": [ 522 ]
           }
         },
         "$procmux$197_CMP0": {
@@ -2568,9 +2544,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "0", "0" ],
-            "Y": [ 525 ]
+            "Y": [ 523 ]
           }
         },
         "$procmux$198_CMP0": {
@@ -2590,8 +2566,8 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
-            "Y": [ 526 ]
+            "A": [ 408, 409, 410, 411 ],
+            "Y": [ 524 ]
           }
         },
         "$procmux$199": {
@@ -2611,10 +2587,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 474, 475, 476, 477, 478, 479, 480, 481 ],
-            "B": [ 527, 528, 529, 530, 531, 532, 533, 534 ],
+            "A": [ 472, 473, 474, 475, 476, 477, 478, 479 ],
+            "B": [ 525, 526, 527, 528, 529, 530, 531, 532 ],
             "S": [ 95 ],
-            "Y": [ 535, 536, 537, 538, 539, 540, 541, 542 ]
+            "Y": [ 533, 534, 535, 536, 537, 538, 539, 540 ]
           }
         },
         "$procmux$203": {
@@ -2636,9 +2612,9 @@
           },
           "connections": {
             "A": [ "0", "0", "0", "0", "0", "1", "0", "0" ],
-            "B": [ 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, "0", "0", "0", "1", "1", "1", "1", "0", "0", "0", "0", "0", "1", "1", "0", "0", "1", "1", "1", "0", "1", "1", "1", "0", "1", "0", "0", "0", "0", "1", "1", "0", "0", "1", "0", "0", "1", "1", "1", "0", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "0", "1", "0", "1", "1", "0", "0", "0", "1", "0", "0", "0", "1", "0" ],
-            "S": [ 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586 ],
-            "Y": [ 587, 588, 589, 590, 591, 592, 593, 594 ]
+            "B": [ 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, "0", "0", "0", "1", "1", "1", "1", "0", "0", "0", "0", "0", "1", "1", "0", "0", "1", "1", "1", "0", "1", "1", "1", "0", "1", "0", "0", "0", "0", "1", "1", "0", "0", "1", "0", "0", "1", "1", "1", "0", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", "0", "1", "0", "1", "1", "0", "0", "0", "1", "0", "0", "0", "1", "0" ],
+            "S": [ 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584 ],
+            "Y": [ 585, 586, 587, 588, 589, 590, 591, 592 ]
           }
         },
         "$procmux$204_CMP0": {
@@ -2661,9 +2637,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "1" ],
-            "Y": [ 575 ]
+            "Y": [ 573 ]
           }
         },
         "$procmux$205_CMP0": {
@@ -2686,9 +2662,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "1" ],
-            "Y": [ 576 ]
+            "Y": [ 574 ]
           }
         },
         "$procmux$206_CMP0": {
@@ -2711,9 +2687,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "1", "0", "1" ],
-            "Y": [ 577 ]
+            "Y": [ 575 ]
           }
         },
         "$procmux$207_CMP0": {
@@ -2736,9 +2712,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "1" ],
-            "Y": [ 578 ]
+            "Y": [ 576 ]
           }
         },
         "$procmux$208_CMP0": {
@@ -2761,9 +2737,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "0", "1" ],
-            "Y": [ 579 ]
+            "Y": [ 577 ]
           }
         },
         "$procmux$209_CMP0": {
@@ -2786,9 +2762,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "0", "1" ],
-            "Y": [ 580 ]
+            "Y": [ 578 ]
           }
         },
         "$procmux$210_CMP0": {
@@ -2811,9 +2787,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "1", "0" ],
-            "Y": [ 581 ]
+            "Y": [ 579 ]
           }
         },
         "$procmux$211_CMP0": {
@@ -2836,9 +2812,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "1", "0" ],
-            "Y": [ 582 ]
+            "Y": [ 580 ]
           }
         },
         "$procmux$212_CMP0": {
@@ -2861,9 +2837,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "0", "1", "0" ],
-            "Y": [ 583 ]
+            "Y": [ 581 ]
           }
         },
         "$procmux$213_CMP0": {
@@ -2886,9 +2862,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "0", "1", "0", "0" ],
-            "Y": [ 584 ]
+            "Y": [ 582 ]
           }
         },
         "$procmux$214_CMP0": {
@@ -2911,9 +2887,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
+            "A": [ 408, 409, 410, 411 ],
             "B": [ "1", "0", "0", "0" ],
-            "Y": [ 585 ]
+            "Y": [ 583 ]
           }
         },
         "$procmux$215_CMP0": {
@@ -2933,8 +2909,8 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 410, 411, 412, 413 ],
-            "Y": [ 586 ]
+            "A": [ 408, 409, 410, 411 ],
+            "Y": [ 584 ]
           }
         },
         "$procmux$216": {
@@ -2954,10 +2930,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 535, 536, 537, 538, 539, 540, 541, 542 ],
-            "B": [ 587, 588, 589, 590, 591, 592, 593, 594 ],
+            "A": [ 533, 534, 535, 536, 537, 538, 539, 540 ],
+            "B": [ 585, 586, 587, 588, 589, 590, 591, 592 ],
             "S": [ 94 ],
-            "Y": [ 298, 299, 300, 301, 302, 303, 304, 305 ]
+            "Y": [ 296, 297, 298, 299, 300, 301, 302, 303 ]
           }
         },
         "$procmux$46": {
@@ -2967,7 +2943,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350.21-350.41|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350.17-353.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345.21-345.47|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345.17-348.20"
           },
           "port_directions": {
             "A": "input",
@@ -2976,10 +2952,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 110 ],
+            "A": [ 237 ],
             "B": [ "1" ],
             "S": [ 107 ],
-            "Y": [ 595 ]
+            "Y": [ 593 ]
           }
         },
         "$procmux$48": {
@@ -2991,7 +2967,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3000,10 +2976,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 110 ],
-            "B": [ 595, "0" ],
-            "S": [ 596, 597 ],
-            "Y": [ 239 ]
+            "A": [ 237 ],
+            "B": [ 593, "0" ],
+            "S": [ 594, 595 ],
+            "Y": [ 236 ]
           }
         },
         "$procmux$49_CMP0": {
@@ -3018,7 +2994,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3026,9 +3002,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 596 ]
+            "Y": [ 594 ]
           }
         },
         "$procmux$50_CMP0": {
@@ -3041,15 +3017,15 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.25-313.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.25-308.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
-            "Y": [ 597 ]
+            "A": [ 231, 232, 233 ],
+            "Y": [ 595 ]
           }
         },
         "$procmux$52": {
@@ -3059,7 +3035,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.21-342.47|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.17-347.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.21-337.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.17-342.20"
           },
           "port_directions": {
             "A": "input",
@@ -3071,7 +3047,7 @@
             "A": [ 106 ],
             "B": [ "1" ],
             "S": [ 104 ],
-            "Y": [ 598 ]
+            "Y": [ 596 ]
           }
         },
         "$procmux$54": {
@@ -3083,7 +3059,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3093,9 +3069,9 @@
           },
           "connections": {
             "A": [ 106 ],
-            "B": [ 598, 599 ],
-            "S": [ 600, 601 ],
-            "Y": [ 238 ]
+            "B": [ 596, 597 ],
+            "S": [ 598, 599 ],
+            "Y": [ 235 ]
           }
         },
         "$procmux$55_CMP0": {
@@ -3110,7 +3086,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3118,9 +3094,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 600 ]
+            "Y": [ 598 ]
           }
         },
         "$procmux$56": {
@@ -3130,7 +3106,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.18-316.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.15-323.18"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.18-311.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.15-318.18"
           },
           "port_directions": {
             "A": "input",
@@ -3141,8 +3117,8 @@
           "connections": {
             "A": [ 106 ],
             "B": [ "0" ],
-            "S": [ 318 ],
-            "Y": [ 599 ]
+            "S": [ 316 ],
+            "Y": [ 597 ]
           }
         },
         "$procmux$58_CMP0": {
@@ -3155,15 +3131,15 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.25-313.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.25-308.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
-            "Y": [ 601 ]
+            "A": [ 231, 232, 233 ],
+            "Y": [ 599 ]
           }
         },
         "$procmux$60": {
@@ -3173,7 +3149,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.21-334.46|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.17-339.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.21-329.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.17-334.20"
           },
           "port_directions": {
             "A": "input",
@@ -3185,7 +3161,7 @@
             "A": [ 105 ],
             "B": [ "1" ],
             "S": [ 101 ],
-            "Y": [ 602 ]
+            "Y": [ 600 ]
           }
         },
         "$procmux$62": {
@@ -3197,7 +3173,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3207,9 +3183,9 @@
           },
           "connections": {
             "A": [ 105 ],
-            "B": [ 602, 603 ],
-            "S": [ 604, 605 ],
-            "Y": [ 237 ]
+            "B": [ 600, 601 ],
+            "S": [ 602, 603 ],
+            "Y": [ 234 ]
           }
         },
         "$procmux$63_CMP0": {
@@ -3224,7 +3200,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3232,9 +3208,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 604 ]
+            "Y": [ 602 ]
           }
         },
         "$procmux$64": {
@@ -3244,7 +3220,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.18-316.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.15-323.18"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.18-311.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.15-318.18"
           },
           "port_directions": {
             "A": "input",
@@ -3255,8 +3231,8 @@
           "connections": {
             "A": [ 105 ],
             "B": [ "0" ],
-            "S": [ 318 ],
-            "Y": [ 603 ]
+            "S": [ 316 ],
+            "Y": [ 601 ]
           }
         },
         "$procmux$66_CMP0": {
@@ -3269,15 +3245,15 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.25-313.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.25-308.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
-            "Y": [ 605 ]
+            "A": [ 231, 232, 233 ],
+            "Y": [ 603 ]
           }
         },
         "$procmux$68": {
@@ -3287,7 +3263,7 @@
             "WIDTH": 3
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350.21-350.41|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350.17-353.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345.21-345.47|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345.17-348.20"
           },
           "port_directions": {
             "A": "input",
@@ -3296,10 +3272,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "0", "0" ],
             "S": [ 107 ],
-            "Y": [ 606, 607, 608 ]
+            "Y": [ 604, 605, 606 ]
           }
         },
         "$procmux$70": {
@@ -3311,7 +3287,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3321,9 +3297,9 @@
           },
           "connections": {
             "A": [ "0", "0", "0" ],
-            "B": [ 606, 607, 608, 609, 610, 611, 612, 613, 614 ],
-            "S": [ 615, 616, 617 ],
-            "Y": [ 231, 232, 233 ]
+            "B": [ 604, 605, 606, 607, 608, 609, 610, 611, 612 ],
+            "S": [ 613, 614, 615 ],
+            "Y": [ 228, 229, 230 ]
           }
         },
         "$procmux$71_CMP0": {
@@ -3338,7 +3314,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3346,9 +3322,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 615 ]
+            "Y": [ 613 ]
           }
         },
         "$procmux$72": {
@@ -3358,7 +3334,7 @@
             "WIDTH": 3
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.21-328.52|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.17-330.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.21-323.51|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.17-325.20"
           },
           "port_directions": {
             "A": "input",
@@ -3367,10 +3343,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
             "S": [ 98 ],
-            "Y": [ 609, 610, 611 ]
+            "Y": [ 607, 608, 609 ]
           }
         },
         "$procmux$74_CMP0": {
@@ -3385,7 +3361,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:324.16-324.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:319.16-319.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3393,9 +3369,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "1", "0", "0" ],
-            "Y": [ 616 ]
+            "Y": [ 614 ]
           }
         },
         "$procmux$75": {
@@ -3405,7 +3381,7 @@
             "WIDTH": 3
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.18-316.32|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.15-323.18"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.18-311.29|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:311.15-318.18"
           },
           "port_directions": {
             "A": "input",
@@ -3414,10 +3390,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "1", "0", "0" ],
-            "S": [ 318 ],
-            "Y": [ 612, 613, 614 ]
+            "S": [ 316 ],
+            "Y": [ 610, 611, 612 ]
           }
         },
         "$procmux$77_CMP0": {
@@ -3430,15 +3406,15 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.25-313.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.25-308.25|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
-            "Y": [ 617 ]
+            "A": [ 231, 232, 233 ],
+            "Y": [ 615 ]
           }
         },
         "$procmux$79": {
@@ -3448,7 +3424,7 @@
             "WIDTH": 12
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.21-342.47|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.17-347.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.21-337.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.17-342.20"
           },
           "port_directions": {
             "A": "input",
@@ -3457,10 +3433,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230 ],
-            "B": [ 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629 ],
+            "A": [ 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227 ],
+            "B": [ 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627 ],
             "S": [ 104 ],
-            "Y": [ 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641 ]
+            "Y": [ 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639 ]
           }
         },
         "$procmux$81": {
@@ -3471,7 +3447,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3480,10 +3456,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230 ],
-            "B": [ 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641 ],
-            "S": [ 642 ],
-            "Y": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218 ]
+            "A": [ 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227 ],
+            "B": [ 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639 ],
+            "S": [ 640 ],
+            "Y": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215 ]
           }
         },
         "$procmux$82_CMP0": {
@@ -3498,7 +3474,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3506,9 +3482,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 642 ]
+            "Y": [ 640 ]
           }
         },
         "$procmux$84": {
@@ -3518,7 +3494,7 @@
             "WIDTH": 12
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.21-334.46|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.17-339.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.21-329.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.17-334.20"
           },
           "port_directions": {
             "A": "input",
@@ -3527,10 +3503,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ],
-            "B": [ 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654 ],
+            "A": [ 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ],
+            "B": [ 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652 ],
             "S": [ 101 ],
-            "Y": [ 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666 ]
+            "Y": [ 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664 ]
           }
         },
         "$procmux$86": {
@@ -3541,7 +3517,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3550,10 +3526,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ],
-            "B": [ 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666 ],
-            "S": [ 667 ],
-            "Y": [ 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194 ]
+            "A": [ 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ],
+            "B": [ 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664 ],
+            "S": [ 665 ],
+            "Y": [ 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 ]
           }
         },
         "$procmux$87_CMP0": {
@@ -3568,7 +3544,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3576,9 +3552,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 667 ]
+            "Y": [ 665 ]
           }
         },
         "$procmux$89": {
@@ -3588,7 +3564,7 @@
             "WIDTH": 16
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.21-342.47|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.17-347.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.21-337.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.17-342.20"
           },
           "port_directions": {
             "A": "input",
@@ -3597,10 +3573,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182 ],
-            "B": [ 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683 ],
+            "A": [ 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179 ],
+            "B": [ 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681 ],
             "S": [ 104 ],
-            "Y": [ 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699 ]
+            "Y": [ 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697 ]
           }
         },
         "$procmux$91": {
@@ -3611,7 +3587,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3620,10 +3596,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182 ],
-            "B": [ 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699 ],
-            "S": [ 700 ],
-            "Y": [ 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166 ]
+            "A": [ 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179 ],
+            "B": [ 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697 ],
+            "S": [ 698 ],
+            "Y": [ 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163 ]
           }
         },
         "$procmux$92_CMP0": {
@@ -3638,7 +3614,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3646,9 +3622,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 700 ]
+            "Y": [ 698 ]
           }
         },
         "$procmux$94": {
@@ -3658,7 +3634,7 @@
             "WIDTH": 16
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.21-334.46|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.17-339.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.21-329.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.17-334.20"
           },
           "port_directions": {
             "A": "input",
@@ -3667,10 +3643,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ],
-            "B": [ 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716 ],
+            "A": [ 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147 ],
+            "B": [ 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714 ],
             "S": [ 101 ],
-            "Y": [ 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732 ]
+            "Y": [ 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730 ]
           }
         },
         "$procmux$96": {
@@ -3681,7 +3657,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3690,10 +3666,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ],
-            "B": [ 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732 ],
-            "S": [ 733 ],
-            "Y": [ 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134 ]
+            "A": [ 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147 ],
+            "B": [ 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730 ],
+            "S": [ 731 ],
+            "Y": [ 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131 ]
           }
         },
         "$procmux$97_CMP0": {
@@ -3708,7 +3684,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.16-331.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:313.9-358.16"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:326.16-326.16|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:308.9-353.16"
           },
           "port_directions": {
             "A": "input",
@@ -3716,9 +3692,9 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 234, 235, 236 ],
+            "A": [ 231, 232, 233 ],
             "B": [ "0", "1", "0" ],
-            "Y": [ 733 ]
+            "Y": [ 731 ]
           }
         },
         "$procmux$99": {
@@ -3728,7 +3704,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.21-342.47|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.17-347.20"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.21-337.49|/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.17-342.20"
           },
           "port_directions": {
             "A": "input",
@@ -3737,10 +3713,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 118 ],
+            "A": [ 115 ],
             "B": [ "0" ],
             "S": [ 104 ],
-            "Y": [ 314 ]
+            "Y": [ 312 ]
           }
         },
         "$sub$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:211$12": {
@@ -3764,7 +3740,7 @@
           "connections": {
             "A": [ 18, 19, 20 ],
             "B": [ "1", "0", "0" ],
-            "Y": [ 326, 327, 328 ]
+            "Y": [ 324, 325, 326 ]
           }
         },
         "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:226$16": {
@@ -3808,7 +3784,7 @@
             "A": [ "0" ],
             "B": [ "1" ],
             "S": [ 5 ],
-            "Y": [ 734 ]
+            "Y": [ 732 ]
           }
         },
         "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:241$20": {
@@ -3852,17 +3828,17 @@
             "A": [ "0" ],
             "B": [ "1" ],
             "S": [ 7 ],
-            "Y": [ 735 ]
+            "Y": [ 733 ]
           }
         },
-        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:336$28": {
+        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331$28": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 12
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:336.35-336.82"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.41-331.84"
           },
           "port_directions": {
             "A": "input",
@@ -3871,20 +3847,20 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715 ],
+            "A": [ 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713 ],
             "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-            "S": [ 716 ],
-            "Y": [ 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654 ]
+            "S": [ 714 ],
+            "Y": [ 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652 ]
           }
         },
-        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:344$31": {
+        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:339$31": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 12
           },
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:344.35-344.84"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:339.42-339.85"
           },
           "port_directions": {
             "A": "input",
@@ -3893,56 +3869,10 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682 ],
+            "A": [ 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680 ],
             "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-            "S": [ 683 ],
-            "Y": [ 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629 ]
-          }
-        },
-        "a": {
-          "hide_name": 0,
-          "type": "adc",
-          "parameters": {
-            "MUX_CONFIG": 0,
-            "address": 73
-          },
-          "attributes": {
-            "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:262.54-265.6"
-          },
-          "connections": {
-            "$1": [ 2 ],
-            "$2": [ 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716 ],
-            "$3": [ 99 ],
-            "$4": [ 116 ],
-            "$5": [ 736, 737 ],
-            "$6": [ 738 ],
-            "$7": [ 739, 740, 741, 742, 743, 744, 745, 746 ],
-            "$8": [ 747, 748, 749, 750, 751, 752, 753, 754 ],
-            "$9": [ 755 ]
-          }
-        },
-        "a2": {
-          "hide_name": 0,
-          "type": "adc",
-          "parameters": {
-            "MUX_CONFIG": 4,
-            "address": 73
-          },
-          "attributes": {
-            "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:268.54-271.6"
-          },
-          "connections": {
-            "$1": [ 2 ],
-            "$2": [ 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683 ],
-            "$3": [ 102 ],
-            "$4": [ 118 ],
-            "$5": [ 756, 757 ],
-            "$6": [ 758 ],
-            "$7": [ 759, 760, 761, 762, 763, 764, 765, 766 ],
-            "$8": [ 767, 768, 769, 770, 771, 772, 773, 774 ],
-            "$9": [ 775 ]
+            "S": [ 681 ],
+            "Y": [ 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627 ]
           }
         },
         "c": {
@@ -3956,15 +3886,15 @@
           },
           "connections": {
             "$1": [ 2 ],
-            "$10": [ 755 ],
-            "$2": [ 734 ],
-            "$3": [ 112 ],
+            "$10": [ 734 ],
+            "$2": [ 732 ],
+            "$3": [ 109 ],
             "$4": [ 77 ],
             "$5": [ 4 ],
-            "$6": [ 736, 737 ],
-            "$7": [ 738 ],
-            "$8": [ 739, 740, 741, 742, 743, 744, 745, 746 ],
-            "$9": [ 747, 748, 749, 750, 751, 752, 753, 754 ]
+            "$6": [ 735, 736 ],
+            "$7": [ 737 ],
+            "$8": [ 738, 739, 740, 741, 742, 743, 744, 745 ],
+            "$9": [ 746, 747, 748, 749, 750, 751, 752, 753 ]
           }
         },
         "c2": {
@@ -3978,15 +3908,15 @@
           },
           "connections": {
             "$1": [ 2 ],
-            "$10": [ 775 ],
-            "$2": [ 735 ],
-            "$3": [ 113 ],
+            "$10": [ 754 ],
+            "$2": [ 733 ],
+            "$3": [ 110 ],
             "$4": [ 80 ],
             "$5": [ 6 ],
-            "$6": [ 756, 757 ],
-            "$7": [ 758 ],
-            "$8": [ 759, 760, 761, 762, 763, 764, 765, 766 ],
-            "$9": [ 767, 768, 769, 770, 771, 772, 773, 774 ]
+            "$6": [ 755, 756 ],
+            "$7": [ 757 ],
+            "$8": [ 758, 759, 760, 761, 762, 763, 764, 765 ],
+            "$9": [ 766, 767, 768, 769, 770, 771, 772, 773 ]
           }
         },
         "dec": {
@@ -4000,11 +3930,11 @@
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ],
-            "$3": [ 506, 507, 508, 509, 510, 511, 512, 513 ],
-            "$4": [ 498, 499, 500, 501, 502, 503, 504, 505 ],
-            "$5": [ 490, 491, 492, 493, 494, 495, 496, 497 ],
-            "$6": [ 482, 483, 484, 485, 486, 487, 488, 489 ]
+            "$2": [ 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ],
+            "$3": [ 504, 505, 506, 507, 508, 509, 510, 511 ],
+            "$4": [ 496, 497, 498, 499, 500, 501, 502, 503 ],
+            "$5": [ 488, 489, 490, 491, 492, 493, 494, 495 ],
+            "$6": [ 480, 481, 482, 483, 484, 485, 486, 487 ]
           }
         },
         "dec2": {
@@ -4018,11 +3948,11 @@
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230 ],
-            "$3": [ 381, 382, 383, 384, 385, 386, 387, 388 ],
-            "$4": [ 373, 374, 375, 376, 377, 378, 379, 380 ],
-            "$5": [ 365, 366, 367, 368, 369, 370, 371, 372 ],
-            "$6": [ 357, 358, 359, 360, 361, 362, 363, 364 ]
+            "$2": [ 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227 ],
+            "$3": [ 379, 380, 381, 382, 383, 384, 385, 386 ],
+            "$4": [ 371, 372, 373, 374, 375, 376, 377, 378 ],
+            "$5": [ 363, 364, 365, 366, 367, 368, 369, 370 ],
+            "$6": [ 355, 356, 357, 358, 359, 360, 361, 362 ]
           }
         },
         "g_hexValCh1[0].converter": {
@@ -4032,12 +3962,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 135, 136, 137, 138 ],
-            "$3": [ 543, 544, 545, 546, 547, 548, 549, 550 ]
+            "$2": [ 132, 133, 134, 135 ],
+            "$3": [ 541, 542, 543, 544, 545, 546, 547, 548 ]
           }
         },
         "g_hexValCh1[1].converter": {
@@ -4047,12 +3977,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 139, 140, 141, 142 ],
-            "$3": [ 551, 552, 553, 554, 555, 556, 557, 558 ]
+            "$2": [ 136, 137, 138, 139 ],
+            "$3": [ 549, 550, 551, 552, 553, 554, 555, 556 ]
           }
         },
         "g_hexValCh1[2].converter": {
@@ -4062,12 +3992,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 143, 144, 145, 146 ],
-            "$3": [ 559, 560, 561, 562, 563, 564, 565, 566 ]
+            "$2": [ 140, 141, 142, 143 ],
+            "$3": [ 557, 558, 559, 560, 561, 562, 563, 564 ]
           }
         },
         "g_hexValCh1[3].converter": {
@@ -4077,12 +4007,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:47.19-47.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 147, 148, 149, 150 ],
-            "$3": [ 567, 568, 569, 570, 571, 572, 573, 574 ]
+            "$2": [ 144, 145, 146, 147 ],
+            "$3": [ 565, 566, 567, 568, 569, 570, 571, 572 ]
           }
         },
         "g_hexValCh2[0].converter": {
@@ -4092,12 +4022,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 167, 168, 169, 170 ],
-            "$3": [ 422, 423, 424, 425, 426, 427, 428, 429 ]
+            "$2": [ 164, 165, 166, 167 ],
+            "$3": [ 420, 421, 422, 423, 424, 425, 426, 427 ]
           }
         },
         "g_hexValCh2[1].converter": {
@@ -4107,12 +4037,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 171, 172, 173, 174 ],
-            "$3": [ 430, 431, 432, 433, 434, 435, 436, 437 ]
+            "$2": [ 168, 169, 170, 171 ],
+            "$3": [ 428, 429, 430, 431, 432, 433, 434, 435 ]
           }
         },
         "g_hexValCh2[2].converter": {
@@ -4122,12 +4052,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 175, 176, 177, 178 ],
-            "$3": [ 438, 439, 440, 441, 442, 443, 444, 445 ]
+            "$2": [ 172, 173, 174, 175 ],
+            "$3": [ 436, 437, 438, 439, 440, 441, 442, 443 ]
           }
         },
         "g_hexValCh2[3].converter": {
@@ -4137,12 +4067,12 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.77"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:55.19-55.72"
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 179, 180, 181, 182 ],
-            "$3": [ 446, 447, 448, 449, 450, 451, 452, 453 ]
+            "$2": [ 176, 177, 178, 179 ],
+            "$3": [ 444, 445, 446, 447, 448, 449, 450, 451 ]
           }
         },
         "scr": {
@@ -4162,8 +4092,8 @@
             "$4": [ 14 ],
             "$5": [ 15 ],
             "$6": [ 16 ],
-            "$7": [ 776, 777, 778, 779, 780, 781, 782, 783, 784, 785 ],
-            "$8": [ 786, 787, 788, 789, 790, 791, 792, 793 ]
+            "$7": [ 774, 775, 776, 777, 778, 779, 780, 781, 782, 783 ],
+            "$8": [ 784, 785, 786, 787, 788, 789, 790, 791 ]
           }
         },
         "te": {
@@ -4177,10 +4107,56 @@
           },
           "connections": {
             "$1": [ 2 ],
-            "$2": [ 776, 777, 778, 779, 780, 781, 782, 783, 784, 785 ],
-            "$3": [ 786, 787, 788, 789, 790, 791, 792, 793 ],
-            "$4": [ 410, 411, 412, 413, 87, 88 ],
-            "$5": [ 306, 307, 308, 309, 310, 311, 312, 313 ]
+            "$2": [ 774, 775, 776, 777, 778, 779, 780, 781, 782, 783 ],
+            "$3": [ 784, 785, 786, 787, 788, 789, 790, 791 ],
+            "$4": [ 408, 409, 410, 411, 87, 88 ],
+            "$5": [ 304, 305, 306, 307, 308, 309, 310, 311 ]
+          }
+        },
+        "u_adc_1": {
+          "hide_name": 0,
+          "type": "adc",
+          "parameters": {
+            "MUX_CONFIG": 0,
+            "address": 73
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:262.54-272.6"
+          },
+          "connections": {
+            "clk_i": [ 2 ],
+            "data_o": [ 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714 ],
+            "data_ready_o": [ 99 ],
+            "enable_i": [ 113 ],
+            "i2c_byte_received_i": [ 746, 747, 748, 749, 750, 751, 752, 753 ],
+            "i2c_byte_to_send_o": [ 738, 739, 740, 741, 742, 743, 744, 745 ],
+            "i2c_complete_i": [ 734 ],
+            "i2c_enable_o": [ 737 ],
+            "i2c_instruction_o": [ 735, 736 ]
+          }
+        },
+        "u_adc_2": {
+          "hide_name": 0,
+          "type": "adc",
+          "parameters": {
+            "MUX_CONFIG": 4,
+            "address": 73
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:275.54-285.6"
+          },
+          "connections": {
+            "clk_i": [ 2 ],
+            "data_o": [ 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681 ],
+            "data_ready_o": [ 102 ],
+            "enable_i": [ 115 ],
+            "i2c_byte_received_i": [ 766, 767, 768, 769, 770, 771, 772, 773 ],
+            "i2c_byte_to_send_o": [ 758, 759, 760, 761, 762, 763, 764, 765 ],
+            "i2c_complete_i": [ 754 ],
+            "i2c_enable_o": [ 757 ],
+            "i2c_instruction_o": [ 755, 756 ]
           }
         },
         "u_controller": {
@@ -4190,19 +4166,19 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:382.13-395.4"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:377.13-390.4"
           },
           "connections": {
-            "D1": [ 794, 795, 796, 797, 798, 799, 800 ],
-            "D2": [ 801, 802, 803, 804, 805, 806, 807 ],
-            "Vfc": [ 808 ],
+            "D1": [ 792, 793, 794, 795, 796, 797, 798 ],
+            "D2": [ 799, 800, 801, 802, 803, 804, 805 ],
+            "Vfc": [ 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ],
             "Vfcref": [ "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0" ],
-            "Vout": [ 809 ],
-            "Voutref": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271 ],
+            "Vout": [ 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227 ],
+            "Voutref": [ 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269 ],
             "ce_out": [ ],
             "clk": [ 2 ],
-            "clk_enable": [ 110 ],
-            "reset": [ 114 ],
+            "clk_enable": [ 806 ],
+            "reset": [ 111 ],
             "ui": [ ],
             "uv": [ ]
           }
@@ -4214,164 +4190,202 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:400.10-407.4"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:395.10-402.4"
           },
           "connections": {
-            "adc_trigger_o": [ 318 ],
+            "adc_trigger_o": [ 316 ],
             "clk_i": [ 2 ],
-            "duty_d1_i": [ 794, 795, 796, 797, 798, 799, 800 ],
-            "duty_d2_i": [ 801, 802, 803, 804, 805, 806, 807 ],
+            "duty_d1_i": [ 792, 793, 794, 795, 796, 797, 798 ],
+            "duty_d2_i": [ 799, 800, 801, 802, 803, 804, 805 ],
             "pwm_o": [ 8, 9, 10, 11 ],
             "rst_ni": [ 3 ]
+          }
+        },
+        "u_timer_ctrl": {
+          "hide_name": 0,
+          "type": "timer_control",
+          "parameters": {
+            "CountMax": 43200
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:367.5-372.4"
+          },
+          "connections": {
+            "clk_i": [ 2 ],
+            "eoc_i": [ 237 ],
+            "rst_ni": [ 3 ],
+            "trigger_o": [ 806 ]
           }
         }
       },
       "netnames": {
-        "$0\\adcEnable2[0:0]": {
+        "$0\\adc1_buffer_i[15:0]": {
           "hide_name": 1,
-          "bits": [ 117 ],
+          "bits": [ 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           }
         },
-        "$0\\adcEnable[0:0]": {
+        "$0\\adc1_done_o[0:0]": {
           "hide_name": 1,
-          "bits": [ 115 ],
+          "bits": [ 234 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           }
         },
-        "$0\\adcOutputBufferCh1[15:0]": {
+        "$0\\adc1_enable_i[0:0]": {
           "hide_name": 1,
-          "bits": [ 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134 ],
+          "bits": [ 112 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           }
         },
-        "$0\\adcOutputBufferCh2[15:0]": {
+        "$0\\adc2_buffer_i[15:0]": {
           "hide_name": 1,
-          "bits": [ 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166 ],
+          "bits": [ 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           }
         },
-        "$0\\ch1_done[0:0]": {
+        "$0\\adc2_done_o[0:0]": {
           "hide_name": 1,
-          "bits": [ 237 ],
+          "bits": [ 235 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           }
         },
-        "$0\\ch2_done[0:0]": {
+        "$0\\adc2_enable_i[0:0]": {
           "hide_name": 1,
-          "bits": [ 238 ],
+          "bits": [ 114 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
+          }
+        },
+        "$0\\adc_eoc_o[0:0]": {
+          "hide_name": 1,
+          "bits": [ 236 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
+          }
+        },
+        "$0\\adc_voltage_fc_o[11:0]": {
+          "hide_name": 1,
+          "bits": [ 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
+          }
+        },
+        "$0\\adc_voltage_out_o[11:0]": {
+          "hide_name": 1,
+          "bits": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           }
         },
         "$0\\charOutput[7:0]": {
           "hide_name": 1,
-          "bits": [ 298, 299, 300, 301, 302, 303, 304, 305 ],
+          "bits": [ 296, 297, 298, 299, 300, 301, 302, 303 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:73.5-149.8"
           }
         },
-        "$0\\controller_en[0:0]": {
-          "hide_name": 1,
-          "bits": [ 239 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
-          }
-        },
         "$0\\drawState[2:0]": {
           "hide_name": 1,
-          "bits": [ 231, 232, 233 ],
+          "bits": [ 228, 229, 230 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:307.5-354.8"
           }
         },
         "$0\\seq_dir_q[0:0]": {
           "hide_name": 1,
-          "bits": [ 296 ],
+          "bits": [ 294 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:181.3-218.6"
           }
         },
         "$0\\seq_idx_q[2:0]": {
           "hide_name": 1,
-          "bits": [ 293, 294, 295 ],
+          "bits": [ 291, 292, 293 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:181.3-218.6"
           }
         },
         "$0\\tick_cnt_q[20:0]": {
           "hide_name": 1,
-          "bits": [ 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292 ],
+          "bits": [ 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:181.3-218.6"
           }
         },
         "$0\\v_out_ref_q[15:0]": {
           "hide_name": 1,
-          "bits": [ 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255 ],
+          "bits": [ 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:181.3-218.6"
           }
         },
-        "$0\\voltageCh1[11:0]": {
-          "hide_name": 1,
-          "bits": [ 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
-          }
-        },
-        "$0\\voltageCh2[11:0]": {
-          "hide_name": 1,
-          "bits": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:312.5-359.8"
-          }
-        },
-        "$1\\adcEnable2[0:0]": {
-          "hide_name": 1,
-          "bits": [ "0" ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:257.9-257.23"
-          }
-        },
-        "$1\\adcEnable[0:0]": {
-          "hide_name": 1,
-          "bits": [ "0" ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:252.9-252.22"
-          }
-        },
-        "$1\\adcOutputBufferCh1[15:0]": {
+        "$1\\adc1_buffer_i[15:0]": {
           "hide_name": 1,
           "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:274.16-274.38"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:288.16-288.33"
           }
         },
-        "$1\\adcOutputBufferCh2[15:0]": {
+        "$1\\adc1_done_o[0:0]": {
+          "hide_name": 1,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:301.9-301.24"
+          }
+        },
+        "$1\\adc1_enable_i[0:0]": {
+          "hide_name": 1,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:252.9-252.26"
+          }
+        },
+        "$1\\adc2_buffer_i[15:0]": {
           "hide_name": 1,
           "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:275.16-275.38"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:289.16-289.33"
           }
         },
-        "$1\\ch1_done[0:0]": {
+        "$1\\adc2_done_o[0:0]": {
           "hide_name": 1,
           "bits": [ "0" ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:287.9-287.21"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:302.9-302.24"
           }
         },
-        "$1\\ch2_done[0:0]": {
+        "$1\\adc2_enable_i[0:0]": {
           "hide_name": 1,
           "bits": [ "0" ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:288.9-288.21"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:257.9-257.26"
+          }
+        },
+        "$1\\adc_eoc_o[0:0]": {
+          "hide_name": 1,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:303.9-303.22"
+          }
+        },
+        "$1\\adc_voltage_fc_o[11:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:290.16-290.36"
+          }
+        },
+        "$1\\adc_voltage_out_o[11:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:291.16-291.37"
           }
         },
         "$1\\charOutput[7:0]": {
@@ -4385,21 +4399,7 @@
           "hide_name": 1,
           "bits": [ "0", "0", "0" ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:284.15-284.28"
-          }
-        },
-        "$1\\voltageCh1[11:0]": {
-          "hide_name": 1,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:276.16-276.30"
-          }
-        },
-        "$1\\voltageCh2[11:0]": {
-          "hide_name": 1,
-          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:277.16-277.30"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:298.15-298.28"
           }
         },
         "$add$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:204$10_Y": {
@@ -4527,60 +4527,53 @@
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:92.18-92.35"
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328$25_Y": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323$25_Y": {
           "hide_name": 1,
           "bits": [ 98 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.21-328.52"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.21-323.51"
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334$27_Y": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329$27_Y": {
           "hide_name": 1,
           "bits": [ 101 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.21-334.46"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.21-329.49"
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342$30_Y": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337$30_Y": {
           "hide_name": 1,
           "bits": [ 104 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.21-342.47"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.21-337.49"
           }
         },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350$32_Y": {
+        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345$32_Y": {
           "hide_name": 1,
           "bits": [ 107 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:350.21-350.41"
-          }
-        },
-        "$logic_and$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:366$33_Y": {
-          "hide_name": 1,
-          "bits": [ 110 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:366.26-366.50"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:345.21-345.47"
           }
         },
         "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:182$7_Y": {
           "hide_name": 1,
-          "bits": [ 111 ],
+          "bits": [ 108 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:182.9-182.16"
           }
         },
-        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334$26_Y": {
+        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329$26_Y": {
           "hide_name": 1,
           "bits": [ 100 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:334.37-334.46"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:329.37-329.49"
           }
         },
-        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342$29_Y": {
+        "$logic_not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337$29_Y": {
           "hide_name": 1,
           "bits": [ 103 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:342.38-342.47"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:337.37-337.49"
           }
         },
         "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:226$14_Y": {
@@ -4597,25 +4590,25 @@
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:241.38-241.47"
           }
         },
-        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328$23_Y": {
+        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323$23_Y": {
           "hide_name": 1,
           "bits": [ 96 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.21-328.34"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.21-323.34"
           }
         },
-        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328$24_Y": {
+        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323$24_Y": {
           "hide_name": 1,
           "bits": [ 97 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:328.38-328.52"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:323.38-323.51"
           }
         },
-        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:384$34_Y": {
+        "$not$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:379$33_Y": {
           "hide_name": 1,
-          "bits": [ 114 ],
+          "bits": [ 111 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:384.18-384.25"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:379.18-379.25"
           }
         },
         "$procmux$100_CMP": {
@@ -4626,37 +4619,37 @@
         },
         "$procmux$101_Y": {
           "hide_name": 1,
-          "bits": [ 117 ],
+          "bits": [ 114 ],
           "attributes": {
           }
         },
         "$procmux$102_CMP": {
           "hide_name": 1,
-          "bits": [ 316 ],
+          "bits": [ 314 ],
           "attributes": {
           }
         },
         "$procmux$103_Y": {
           "hide_name": 1,
-          "bits": [ 315 ],
+          "bits": [ 313 ],
           "attributes": {
           }
         },
         "$procmux$104_CMP": {
           "hide_name": 1,
-          "bits": [ 318 ],
+          "bits": [ 316 ],
           "attributes": {
           }
         },
         "$procmux$105_CMP": {
           "hide_name": 1,
-          "bits": [ 317 ],
+          "bits": [ 315 ],
           "attributes": {
           }
         },
         "$procmux$107_Y": {
           "hide_name": 1,
-          "bits": [ 319 ],
+          "bits": [ 317 ],
           "attributes": {
           }
         },
@@ -4668,37 +4661,37 @@
         },
         "$procmux$109_Y": {
           "hide_name": 1,
-          "bits": [ 115 ],
+          "bits": [ 112 ],
           "attributes": {
           }
         },
         "$procmux$110_CMP": {
           "hide_name": 1,
-          "bits": [ 321 ],
+          "bits": [ 319 ],
           "attributes": {
           }
         },
         "$procmux$111_Y": {
           "hide_name": 1,
-          "bits": [ 320 ],
+          "bits": [ 318 ],
           "attributes": {
           }
         },
         "$procmux$112_CMP": {
           "hide_name": 1,
-          "bits": [ 318 ],
+          "bits": [ 316 ],
           "attributes": {
           }
         },
         "$procmux$113_CMP": {
           "hide_name": 1,
-          "bits": [ 322 ],
+          "bits": [ 320 ],
           "attributes": {
           }
         },
         "$procmux$115_Y": {
           "hide_name": 1,
-          "bits": [ 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292 ],
+          "bits": [ 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290 ],
           "attributes": {
           }
         },
@@ -4710,7 +4703,7 @@
         },
         "$procmux$119_Y": {
           "hide_name": 1,
-          "bits": [ 323 ],
+          "bits": [ 321 ],
           "attributes": {
           }
         },
@@ -4722,7 +4715,7 @@
         },
         "$procmux$123_Y": {
           "hide_name": 1,
-          "bits": [ 324 ],
+          "bits": [ 322 ],
           "attributes": {
           }
         },
@@ -4734,19 +4727,19 @@
         },
         "$procmux$125_Y": {
           "hide_name": 1,
-          "bits": [ 325 ],
+          "bits": [ 323 ],
           "attributes": {
           }
         },
         "$procmux$126_CMP": {
           "hide_name": 1,
-          "bits": [ 297 ],
+          "bits": [ 295 ],
           "attributes": {
           }
         },
         "$procmux$127_Y": {
           "hide_name": 1,
-          "bits": [ 296 ],
+          "bits": [ 294 ],
           "attributes": {
           }
         },
@@ -4758,7 +4751,7 @@
         },
         "$procmux$131_Y": {
           "hide_name": 1,
-          "bits": [ 329, 330, 331 ],
+          "bits": [ 327, 328, 329 ],
           "attributes": {
           }
         },
@@ -4770,7 +4763,7 @@
         },
         "$procmux$135_Y": {
           "hide_name": 1,
-          "bits": [ 332, 333, 334 ],
+          "bits": [ 330, 331, 332 ],
           "attributes": {
           }
         },
@@ -4782,19 +4775,19 @@
         },
         "$procmux$137_Y": {
           "hide_name": 1,
-          "bits": [ 335, 336, 337 ],
+          "bits": [ 333, 334, 335 ],
           "attributes": {
           }
         },
         "$procmux$138_CMP": {
           "hide_name": 1,
-          "bits": [ 297 ],
+          "bits": [ 295 ],
           "attributes": {
           }
         },
         "$procmux$139_Y": {
           "hide_name": 1,
-          "bits": [ 293, 294, 295 ],
+          "bits": [ 291, 292, 293 ],
           "attributes": {
           }
         },
@@ -4806,31 +4799,31 @@
         },
         "$procmux$143_Y": {
           "hide_name": 1,
-          "bits": [ 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356 ],
+          "bits": [ 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354 ],
           "attributes": {
           }
         },
         "$procmux$144_CMP": {
           "hide_name": 1,
-          "bits": [ 338 ],
+          "bits": [ 336 ],
           "attributes": {
           }
         },
         "$procmux$145_CMP": {
           "hide_name": 1,
-          "bits": [ 339 ],
+          "bits": [ 337 ],
           "attributes": {
           }
         },
         "$procmux$146_CMP": {
           "hide_name": 1,
-          "bits": [ 340 ],
+          "bits": [ 338 ],
           "attributes": {
           }
         },
         "$procmux$147_Y": {
           "hide_name": 1,
-          "bits": [ 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255 ],
+          "bits": [ 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253 ],
           "attributes": {
           }
         },
@@ -4842,91 +4835,91 @@
         },
         "$procmux$150_Y": {
           "hide_name": 1,
-          "bits": [ 402, 403, 404, 405, 406, 407, 408, 409 ],
+          "bits": [ 400, 401, 402, 403, 404, 405, 406, 407 ],
           "attributes": {
           }
         },
         "$procmux$151_CMP": {
           "hide_name": 1,
-          "bits": [ 389 ],
+          "bits": [ 387 ],
           "attributes": {
           }
         },
         "$procmux$152_CMP": {
           "hide_name": 1,
-          "bits": [ 390 ],
+          "bits": [ 388 ],
           "attributes": {
           }
         },
         "$procmux$153_CMP": {
           "hide_name": 1,
-          "bits": [ 391 ],
+          "bits": [ 389 ],
           "attributes": {
           }
         },
         "$procmux$154_CMP": {
           "hide_name": 1,
-          "bits": [ 392 ],
+          "bits": [ 390 ],
           "attributes": {
           }
         },
         "$procmux$155_CMP": {
           "hide_name": 1,
-          "bits": [ 393 ],
+          "bits": [ 391 ],
           "attributes": {
           }
         },
         "$procmux$156_CMP": {
           "hide_name": 1,
-          "bits": [ 394 ],
+          "bits": [ 392 ],
           "attributes": {
           }
         },
         "$procmux$157_CMP": {
           "hide_name": 1,
-          "bits": [ 395 ],
+          "bits": [ 393 ],
           "attributes": {
           }
         },
         "$procmux$158_CMP": {
           "hide_name": 1,
-          "bits": [ 396 ],
+          "bits": [ 394 ],
           "attributes": {
           }
         },
         "$procmux$159_CMP": {
           "hide_name": 1,
-          "bits": [ 397 ],
+          "bits": [ 395 ],
           "attributes": {
           }
         },
         "$procmux$160_CMP": {
           "hide_name": 1,
-          "bits": [ 398 ],
+          "bits": [ 396 ],
           "attributes": {
           }
         },
         "$procmux$161_CMP": {
           "hide_name": 1,
-          "bits": [ 399 ],
+          "bits": [ 397 ],
           "attributes": {
           }
         },
         "$procmux$162_CMP": {
           "hide_name": 1,
-          "bits": [ 400 ],
+          "bits": [ 398 ],
           "attributes": {
           }
         },
         "$procmux$163_CMP": {
           "hide_name": 1,
-          "bits": [ 401 ],
+          "bits": [ 399 ],
           "attributes": {
           }
         },
         "$procmux$164_Y": {
           "hide_name": 1,
-          "bits": [ 414, 415, 416, 417, 418, 419, 420, 421 ],
+          "bits": [ 412, 413, 414, 415, 416, 417, 418, 419 ],
           "attributes": {
           }
         },
@@ -4938,85 +4931,85 @@
         },
         "$procmux$168_Y": {
           "hide_name": 1,
-          "bits": [ 466, 467, 468, 469, 470, 471, 472, 473 ],
+          "bits": [ 464, 465, 466, 467, 468, 469, 470, 471 ],
           "attributes": {
           }
         },
         "$procmux$169_CMP": {
           "hide_name": 1,
-          "bits": [ 454 ],
+          "bits": [ 452 ],
           "attributes": {
           }
         },
         "$procmux$170_CMP": {
           "hide_name": 1,
-          "bits": [ 455 ],
+          "bits": [ 453 ],
           "attributes": {
           }
         },
         "$procmux$171_CMP": {
           "hide_name": 1,
-          "bits": [ 456 ],
+          "bits": [ 454 ],
           "attributes": {
           }
         },
         "$procmux$172_CMP": {
           "hide_name": 1,
-          "bits": [ 457 ],
+          "bits": [ 455 ],
           "attributes": {
           }
         },
         "$procmux$173_CMP": {
           "hide_name": 1,
-          "bits": [ 458 ],
+          "bits": [ 456 ],
           "attributes": {
           }
         },
         "$procmux$174_CMP": {
           "hide_name": 1,
-          "bits": [ 459 ],
+          "bits": [ 457 ],
           "attributes": {
           }
         },
         "$procmux$175_CMP": {
           "hide_name": 1,
-          "bits": [ 460 ],
+          "bits": [ 458 ],
           "attributes": {
           }
         },
         "$procmux$176_CMP": {
           "hide_name": 1,
-          "bits": [ 461 ],
+          "bits": [ 459 ],
           "attributes": {
           }
         },
         "$procmux$177_CMP": {
           "hide_name": 1,
-          "bits": [ 462 ],
+          "bits": [ 460 ],
           "attributes": {
           }
         },
         "$procmux$178_CMP": {
           "hide_name": 1,
-          "bits": [ 463 ],
+          "bits": [ 461 ],
           "attributes": {
           }
         },
         "$procmux$179_CMP": {
           "hide_name": 1,
-          "bits": [ 464 ],
+          "bits": [ 462 ],
           "attributes": {
           }
         },
         "$procmux$180_CMP": {
           "hide_name": 1,
-          "bits": [ 465 ],
+          "bits": [ 463 ],
           "attributes": {
           }
         },
         "$procmux$181_Y": {
           "hide_name": 1,
-          "bits": [ 474, 475, 476, 477, 478, 479, 480, 481 ],
+          "bits": [ 472, 473, 474, 475, 476, 477, 478, 479 ],
           "attributes": {
           }
         },
@@ -5028,91 +5021,91 @@
         },
         "$procmux$185_Y": {
           "hide_name": 1,
-          "bits": [ 527, 528, 529, 530, 531, 532, 533, 534 ],
+          "bits": [ 525, 526, 527, 528, 529, 530, 531, 532 ],
           "attributes": {
           }
         },
         "$procmux$186_CMP": {
           "hide_name": 1,
-          "bits": [ 514 ],
+          "bits": [ 512 ],
           "attributes": {
           }
         },
         "$procmux$187_CMP": {
           "hide_name": 1,
-          "bits": [ 515 ],
+          "bits": [ 513 ],
           "attributes": {
           }
         },
         "$procmux$188_CMP": {
           "hide_name": 1,
-          "bits": [ 516 ],
+          "bits": [ 514 ],
           "attributes": {
           }
         },
         "$procmux$189_CMP": {
           "hide_name": 1,
-          "bits": [ 517 ],
+          "bits": [ 515 ],
           "attributes": {
           }
         },
         "$procmux$190_CMP": {
           "hide_name": 1,
-          "bits": [ 518 ],
+          "bits": [ 516 ],
           "attributes": {
           }
         },
         "$procmux$191_CMP": {
           "hide_name": 1,
-          "bits": [ 519 ],
+          "bits": [ 517 ],
           "attributes": {
           }
         },
         "$procmux$192_CMP": {
           "hide_name": 1,
-          "bits": [ 520 ],
+          "bits": [ 518 ],
           "attributes": {
           }
         },
         "$procmux$193_CMP": {
           "hide_name": 1,
-          "bits": [ 521 ],
+          "bits": [ 519 ],
           "attributes": {
           }
         },
         "$procmux$194_CMP": {
           "hide_name": 1,
-          "bits": [ 522 ],
+          "bits": [ 520 ],
           "attributes": {
           }
         },
         "$procmux$195_CMP": {
           "hide_name": 1,
-          "bits": [ 523 ],
+          "bits": [ 521 ],
           "attributes": {
           }
         },
         "$procmux$196_CMP": {
           "hide_name": 1,
-          "bits": [ 524 ],
+          "bits": [ 522 ],
           "attributes": {
           }
         },
         "$procmux$197_CMP": {
           "hide_name": 1,
-          "bits": [ 525 ],
+          "bits": [ 523 ],
           "attributes": {
           }
         },
         "$procmux$198_CMP": {
           "hide_name": 1,
-          "bits": [ 526 ],
+          "bits": [ 524 ],
           "attributes": {
           }
         },
         "$procmux$199_Y": {
           "hide_name": 1,
-          "bits": [ 535, 536, 537, 538, 539, 540, 541, 542 ],
+          "bits": [ 533, 534, 535, 536, 537, 538, 539, 540 ],
           "attributes": {
           }
         },
@@ -5124,85 +5117,85 @@
         },
         "$procmux$203_Y": {
           "hide_name": 1,
-          "bits": [ 587, 588, 589, 590, 591, 592, 593, 594 ],
+          "bits": [ 585, 586, 587, 588, 589, 590, 591, 592 ],
           "attributes": {
           }
         },
         "$procmux$204_CMP": {
           "hide_name": 1,
-          "bits": [ 575 ],
+          "bits": [ 573 ],
           "attributes": {
           }
         },
         "$procmux$205_CMP": {
           "hide_name": 1,
-          "bits": [ 576 ],
+          "bits": [ 574 ],
           "attributes": {
           }
         },
         "$procmux$206_CMP": {
           "hide_name": 1,
-          "bits": [ 577 ],
+          "bits": [ 575 ],
           "attributes": {
           }
         },
         "$procmux$207_CMP": {
           "hide_name": 1,
-          "bits": [ 578 ],
+          "bits": [ 576 ],
           "attributes": {
           }
         },
         "$procmux$208_CMP": {
           "hide_name": 1,
-          "bits": [ 579 ],
+          "bits": [ 577 ],
           "attributes": {
           }
         },
         "$procmux$209_CMP": {
           "hide_name": 1,
-          "bits": [ 580 ],
+          "bits": [ 578 ],
           "attributes": {
           }
         },
         "$procmux$210_CMP": {
           "hide_name": 1,
-          "bits": [ 581 ],
+          "bits": [ 579 ],
           "attributes": {
           }
         },
         "$procmux$211_CMP": {
           "hide_name": 1,
-          "bits": [ 582 ],
+          "bits": [ 580 ],
           "attributes": {
           }
         },
         "$procmux$212_CMP": {
           "hide_name": 1,
-          "bits": [ 583 ],
+          "bits": [ 581 ],
           "attributes": {
           }
         },
         "$procmux$213_CMP": {
           "hide_name": 1,
-          "bits": [ 584 ],
+          "bits": [ 582 ],
           "attributes": {
           }
         },
         "$procmux$214_CMP": {
           "hide_name": 1,
-          "bits": [ 585 ],
+          "bits": [ 583 ],
           "attributes": {
           }
         },
         "$procmux$215_CMP": {
           "hide_name": 1,
-          "bits": [ 586 ],
+          "bits": [ 584 ],
           "attributes": {
           }
         },
         "$procmux$216_Y": {
           "hide_name": 1,
-          "bits": [ 298, 299, 300, 301, 302, 303, 304, 305 ],
+          "bits": [ 296, 297, 298, 299, 300, 301, 302, 303 ],
           "attributes": {
           }
         },
@@ -5214,7 +5207,7 @@
         },
         "$procmux$46_Y": {
           "hide_name": 1,
-          "bits": [ 595 ],
+          "bits": [ 593 ],
           "attributes": {
           }
         },
@@ -5226,25 +5219,25 @@
         },
         "$procmux$48_Y": {
           "hide_name": 1,
-          "bits": [ 239 ],
+          "bits": [ 236 ],
           "attributes": {
           }
         },
         "$procmux$49_CMP": {
           "hide_name": 1,
-          "bits": [ 596 ],
+          "bits": [ 594 ],
           "attributes": {
           }
         },
         "$procmux$50_CMP": {
           "hide_name": 1,
-          "bits": [ 597 ],
+          "bits": [ 595 ],
           "attributes": {
           }
         },
         "$procmux$52_Y": {
           "hide_name": 1,
-          "bits": [ 598 ],
+          "bits": [ 596 ],
           "attributes": {
           }
         },
@@ -5256,37 +5249,37 @@
         },
         "$procmux$54_Y": {
           "hide_name": 1,
-          "bits": [ 238 ],
+          "bits": [ 235 ],
           "attributes": {
           }
         },
         "$procmux$55_CMP": {
           "hide_name": 1,
-          "bits": [ 600 ],
+          "bits": [ 598 ],
           "attributes": {
           }
         },
         "$procmux$56_Y": {
           "hide_name": 1,
-          "bits": [ 599 ],
+          "bits": [ 597 ],
           "attributes": {
           }
         },
         "$procmux$57_CMP": {
           "hide_name": 1,
-          "bits": [ 318 ],
+          "bits": [ 316 ],
           "attributes": {
           }
         },
         "$procmux$58_CMP": {
           "hide_name": 1,
-          "bits": [ 601 ],
+          "bits": [ 599 ],
           "attributes": {
           }
         },
         "$procmux$60_Y": {
           "hide_name": 1,
-          "bits": [ 602 ],
+          "bits": [ 600 ],
           "attributes": {
           }
         },
@@ -5298,37 +5291,37 @@
         },
         "$procmux$62_Y": {
           "hide_name": 1,
-          "bits": [ 237 ],
+          "bits": [ 234 ],
           "attributes": {
           }
         },
         "$procmux$63_CMP": {
           "hide_name": 1,
-          "bits": [ 604 ],
+          "bits": [ 602 ],
           "attributes": {
           }
         },
         "$procmux$64_Y": {
           "hide_name": 1,
-          "bits": [ 603 ],
+          "bits": [ 601 ],
           "attributes": {
           }
         },
         "$procmux$65_CMP": {
           "hide_name": 1,
-          "bits": [ 318 ],
+          "bits": [ 316 ],
           "attributes": {
           }
         },
         "$procmux$66_CMP": {
           "hide_name": 1,
-          "bits": [ 605 ],
+          "bits": [ 603 ],
           "attributes": {
           }
         },
         "$procmux$68_Y": {
           "hide_name": 1,
-          "bits": [ 606, 607, 608 ],
+          "bits": [ 604, 605, 606 ],
           "attributes": {
           }
         },
@@ -5340,19 +5333,19 @@
         },
         "$procmux$70_Y": {
           "hide_name": 1,
-          "bits": [ 231, 232, 233 ],
+          "bits": [ 228, 229, 230 ],
           "attributes": {
           }
         },
         "$procmux$71_CMP": {
           "hide_name": 1,
-          "bits": [ 615 ],
+          "bits": [ 613 ],
           "attributes": {
           }
         },
         "$procmux$72_Y": {
           "hide_name": 1,
-          "bits": [ 609, 610, 611 ],
+          "bits": [ 607, 608, 609 ],
           "attributes": {
           }
         },
@@ -5364,31 +5357,31 @@
         },
         "$procmux$74_CMP": {
           "hide_name": 1,
-          "bits": [ 616 ],
+          "bits": [ 614 ],
           "attributes": {
           }
         },
         "$procmux$75_Y": {
           "hide_name": 1,
-          "bits": [ 612, 613, 614 ],
+          "bits": [ 610, 611, 612 ],
           "attributes": {
           }
         },
         "$procmux$76_CMP": {
           "hide_name": 1,
-          "bits": [ 318 ],
+          "bits": [ 316 ],
           "attributes": {
           }
         },
         "$procmux$77_CMP": {
           "hide_name": 1,
-          "bits": [ 617 ],
+          "bits": [ 615 ],
           "attributes": {
           }
         },
         "$procmux$79_Y": {
           "hide_name": 1,
-          "bits": [ 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641 ],
+          "bits": [ 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639 ],
           "attributes": {
           }
         },
@@ -5400,19 +5393,19 @@
         },
         "$procmux$81_Y": {
           "hide_name": 1,
-          "bits": [ 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218 ],
+          "bits": [ 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215 ],
           "attributes": {
           }
         },
         "$procmux$82_CMP": {
           "hide_name": 1,
-          "bits": [ 642 ],
+          "bits": [ 640 ],
           "attributes": {
           }
         },
         "$procmux$84_Y": {
           "hide_name": 1,
-          "bits": [ 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666 ],
+          "bits": [ 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664 ],
           "attributes": {
           }
         },
@@ -5424,19 +5417,19 @@
         },
         "$procmux$86_Y": {
           "hide_name": 1,
-          "bits": [ 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194 ],
+          "bits": [ 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191 ],
           "attributes": {
           }
         },
         "$procmux$87_CMP": {
           "hide_name": 1,
-          "bits": [ 667 ],
+          "bits": [ 665 ],
           "attributes": {
           }
         },
         "$procmux$89_Y": {
           "hide_name": 1,
-          "bits": [ 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699 ],
+          "bits": [ 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697 ],
           "attributes": {
           }
         },
@@ -5448,19 +5441,19 @@
         },
         "$procmux$91_Y": {
           "hide_name": 1,
-          "bits": [ 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166 ],
+          "bits": [ 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163 ],
           "attributes": {
           }
         },
         "$procmux$92_CMP": {
           "hide_name": 1,
-          "bits": [ 700 ],
+          "bits": [ 698 ],
           "attributes": {
           }
         },
         "$procmux$94_Y": {
           "hide_name": 1,
-          "bits": [ 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732 ],
+          "bits": [ 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730 ],
           "attributes": {
           }
         },
@@ -5472,25 +5465,25 @@
         },
         "$procmux$96_Y": {
           "hide_name": 1,
-          "bits": [ 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134 ],
+          "bits": [ 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131 ],
           "attributes": {
           }
         },
         "$procmux$97_CMP": {
           "hide_name": 1,
-          "bits": [ 733 ],
+          "bits": [ 731 ],
           "attributes": {
           }
         },
         "$procmux$99_Y": {
           "hide_name": 1,
-          "bits": [ 314 ],
+          "bits": [ 312 ],
           "attributes": {
           }
         },
         "$sub$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:211$12_Y": {
           "hide_name": 1,
-          "bits": [ 326, 327, 328 ],
+          "bits": [ 324, 325, 326 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:211.26-211.42"
           }
@@ -5504,7 +5497,7 @@
         },
         "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:227$17_Y": {
           "hide_name": 1,
-          "bits": [ 734 ],
+          "bits": [ 732 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:227.22-227.44"
           }
@@ -5518,104 +5511,130 @@
         },
         "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:242$21_Y": {
           "hide_name": 1,
-          "bits": [ 735 ],
+          "bits": [ 733 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:242.22-242.44"
           }
         },
-        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:336$28_Y": {
+        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331$28_Y": {
           "hide_name": 1,
-          "bits": [ 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654 ],
+          "bits": [ 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:336.35-336.82"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:331.41-331.84"
           }
         },
-        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:344$31_Y": {
+        "$ternary$/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:339$31_Y": {
           "hide_name": 1,
-          "bits": [ 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629 ],
+          "bits": [ 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:344.35-344.84"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:339.42-339.85"
           }
         },
-        "adcDataReady": {
+        "adc1_buffer_i": {
+          "hide_name": 0,
+          "bits": [ 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:288.16-288.29"
+          }
+        },
+        "adc1_data_o": {
+          "hide_name": 0,
+          "bits": [ 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:253.17-253.28"
+          }
+        },
+        "adc1_done_o": {
+          "hide_name": 0,
+          "bits": [ 105 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:301.9-301.20"
+          }
+        },
+        "adc1_enable_i": {
+          "hide_name": 0,
+          "bits": [ 113 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:252.9-252.22"
+          }
+        },
+        "adc1_ready_o": {
           "hide_name": 0,
           "bits": [ 99 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:254.10-254.22"
           }
         },
-        "adcDataReady2": {
+        "adc2_buffer_i": {
+          "hide_name": 0,
+          "bits": [ 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:289.16-289.29"
+          }
+        },
+        "adc2_data_o": {
+          "hide_name": 0,
+          "bits": [ 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:258.17-258.28"
+          }
+        },
+        "adc2_done_o": {
+          "hide_name": 0,
+          "bits": [ 106 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:302.9-302.20"
+          }
+        },
+        "adc2_enable_i": {
+          "hide_name": 0,
+          "bits": [ 115 ],
+          "attributes": {
+            "init": 0,
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:257.9-257.22"
+          }
+        },
+        "adc2_ready_o": {
           "hide_name": 0,
           "bits": [ 102 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:259.10-259.23"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:259.10-259.22"
           }
         },
-        "adcEnable": {
+        "adc_eoc_o": {
           "hide_name": 0,
-          "bits": [ 116 ],
+          "bits": [ 237 ],
           "attributes": {
             "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:252.9-252.18"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:303.9-303.18"
           }
         },
-        "adcEnable2": {
+        "adc_start_i": {
           "hide_name": 0,
-          "bits": [ 118 ],
+          "bits": [ 316 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:304.10-304.21"
+          }
+        },
+        "adc_voltage_fc_o": {
+          "hide_name": 0,
+          "bits": [ 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203 ],
           "attributes": {
             "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:257.9-257.19"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:290.16-290.32"
           }
         },
-        "adcOutputBufferCh1": {
+        "adc_voltage_out_o": {
           "hide_name": 0,
-          "bits": [ 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ],
+          "bits": [ 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227 ],
           "attributes": {
             "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:274.16-274.34"
-          }
-        },
-        "adcOutputBufferCh2": {
-          "hide_name": 0,
-          "bits": [ 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182 ],
-          "attributes": {
-            "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:275.16-275.34"
-          }
-        },
-        "adcOutputData": {
-          "hide_name": 0,
-          "bits": [ 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:253.17-253.30"
-          }
-        },
-        "adcOutputData2": {
-          "hide_name": 0,
-          "bits": [ 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:258.17-258.31"
-          }
-        },
-        "adc_drdy_1": {
-          "hide_name": 0,
-          "bits": [ 108 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:366.26-366.36"
-          }
-        },
-        "adc_drdy_2": {
-          "hide_name": 0,
-          "bits": [ 109 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:366.40-366.50"
-          }
-        },
-        "adc_start_conv": {
-          "hide_name": 0,
-          "bits": [ 318 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:316.18-316.32"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:291.16-291.33"
           }
         },
         "btn1": {
@@ -5625,32 +5644,16 @@
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:25.14-25.18"
           }
         },
-        "ch1_done": {
-          "hide_name": 0,
-          "bits": [ 105 ],
-          "attributes": {
-            "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:287.9-287.17"
-          }
-        },
-        "ch2_done": {
-          "hide_name": 0,
-          "bits": [ 106 ],
-          "attributes": {
-            "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:288.9-288.17"
-          }
-        },
         "charAddress": {
           "hide_name": 0,
-          "bits": [ 410, 411, 412, 413, 87, 88 ],
+          "bits": [ 408, 409, 410, 411, 87, 88 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:31.16-31.27"
           }
         },
         "charOutput": {
           "hide_name": 0,
-          "bits": [ 306, 307, 308, 309, 310, 311, 312, 313 ],
+          "bits": [ 304, 305, 306, 307, 308, 309, 310, 311 ],
           "attributes": {
             "init": 65,
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:32.15-32.25"
@@ -5663,173 +5666,173 @@
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:5.22-5.27"
           }
         },
-        "controller_en": {
-          "hide_name": 0,
-          "bits": [ 110 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:365.8-365.21"
-          }
-        },
         "drawState": {
           "hide_name": 0,
-          "bits": [ 234, 235, 236 ],
+          "bits": [ 231, 232, 233 ],
           "attributes": {
             "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:284.15-284.24"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:298.15-298.24"
           }
         },
-        "duty_d1": {
+        "duty_d1_o": {
           "hide_name": 0,
-          "bits": [ 794, 795, 796, 797, 798, 799, 800 ],
+          "bits": [ 792, 793, 794, 795, 796, 797, 798 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:165.15-165.22"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:165.15-165.24"
           }
         },
-        "duty_d2": {
+        "duty_d2_o": {
           "hide_name": 0,
-          "bits": [ 801, 802, 803, 804, 805, 806, 807 ],
+          "bits": [ 799, 800, 801, 802, 803, 804, 805 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:166.15-166.22"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:166.15-166.24"
+          }
+        },
+        "enable_control_i": {
+          "hide_name": 0,
+          "bits": [ 806 ],
+          "attributes": {
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:356.9-356.25"
           }
         },
         "g_hexValCh1[0].hexChar": {
           "hide_name": 0,
-          "bits": [ 543, 544, 545, 546, 547, 548, 549, 550 ],
+          "bits": [ 541, 542, 543, 544, 545, 546, 547, 548 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:46.24-46.31"
           }
         },
         "g_hexValCh1[1].hexChar": {
           "hide_name": 0,
-          "bits": [ 551, 552, 553, 554, 555, 556, 557, 558 ],
+          "bits": [ 549, 550, 551, 552, 553, 554, 555, 556 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:46.24-46.31"
           }
         },
         "g_hexValCh1[2].hexChar": {
           "hide_name": 0,
-          "bits": [ 559, 560, 561, 562, 563, 564, 565, 566 ],
+          "bits": [ 557, 558, 559, 560, 561, 562, 563, 564 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:46.24-46.31"
           }
         },
         "g_hexValCh1[3].hexChar": {
           "hide_name": 0,
-          "bits": [ 567, 568, 569, 570, 571, 572, 573, 574 ],
+          "bits": [ 565, 566, 567, 568, 569, 570, 571, 572 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:46.24-46.31"
           }
         },
         "g_hexValCh2[0].hexChar": {
           "hide_name": 0,
-          "bits": [ 422, 423, 424, 425, 426, 427, 428, 429 ],
+          "bits": [ 420, 421, 422, 423, 424, 425, 426, 427 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:54.24-54.31"
           }
         },
         "g_hexValCh2[1].hexChar": {
           "hide_name": 0,
-          "bits": [ 430, 431, 432, 433, 434, 435, 436, 437 ],
+          "bits": [ 428, 429, 430, 431, 432, 433, 434, 435 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:54.24-54.31"
           }
         },
         "g_hexValCh2[2].hexChar": {
           "hide_name": 0,
-          "bits": [ 438, 439, 440, 441, 442, 443, 444, 445 ],
+          "bits": [ 436, 437, 438, 439, 440, 441, 442, 443 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:54.24-54.31"
           }
         },
         "g_hexValCh2[3].hexChar": {
           "hide_name": 0,
-          "bits": [ 446, 447, 448, 449, 450, 451, 452, 453 ],
+          "bits": [ 444, 445, 446, 447, 448, 449, 450, 451 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:54.24-54.31"
           }
         },
         "hundredsCh1": {
           "hide_name": 0,
-          "bits": [ 498, 499, 500, 501, 502, 503, 504, 505 ],
+          "bits": [ 496, 497, 498, 499, 500, 501, 502, 503 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:59.30-59.41"
           }
         },
         "hundredsCh2": {
           "hide_name": 0,
-          "bits": [ 373, 374, 375, 376, 377, 378, 379, 380 ],
+          "bits": [ 371, 372, 373, 374, 375, 376, 377, 378 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:60.30-60.41"
           }
         },
-        "i2cByteReceived": {
+        "i2c1_byte_received_o": {
           "hide_name": 0,
-          "bits": [ 747, 748, 749, 750, 751, 752, 753, 754 ],
+          "bits": [ 746, 747, 748, 749, 750, 751, 752, 753 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:222.31-222.46"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:222.37-222.57"
           }
         },
-        "i2cByteReceived_2": {
+        "i2c1_byte_to_send_i": {
           "hide_name": 0,
-          "bits": [ 767, 768, 769, 770, 771, 772, 773, 774 ],
+          "bits": [ 738, 739, 740, 741, 742, 743, 744, 745 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:236.33-236.50"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:222.16-222.35"
           }
         },
-        "i2cByteToSend": {
+        "i2c1_complete_o": {
           "hide_name": 0,
-          "bits": [ 739, 740, 741, 742, 743, 744, 745, 746 ],
+          "bits": [ 734 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:222.16-222.29"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:223.10-223.25"
           }
         },
-        "i2cByteToSend_2": {
+        "i2c1_enable_i": {
           "hide_name": 0,
-          "bits": [ 759, 760, 761, 762, 763, 764, 765, 766 ],
+          "bits": [ 737 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:236.16-236.31"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:223.27-223.40"
           }
         },
-        "i2cComplete": {
+        "i2c1_instruction_i": {
           "hide_name": 0,
-          "bits": [ 755 ],
+          "bits": [ 735, 736 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:223.10-223.21"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:221.16-221.34"
           }
         },
-        "i2cComplete_2": {
+        "i2c2_byte_received_o": {
           "hide_name": 0,
-          "bits": [ 775 ],
+          "bits": [ 766, 767, 768, 769, 770, 771, 772, 773 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:237.10-237.23"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:236.37-236.57"
           }
         },
-        "i2cEnable": {
+        "i2c2_byte_to_send_i": {
           "hide_name": 0,
-          "bits": [ 738 ],
+          "bits": [ 758, 759, 760, 761, 762, 763, 764, 765 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:223.23-223.32"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:236.16-236.35"
           }
         },
-        "i2cEnable_2": {
+        "i2c2_complete_o": {
           "hide_name": 0,
-          "bits": [ 758 ],
+          "bits": [ 754 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:237.25-237.36"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:237.10-237.25"
           }
         },
-        "i2cInstruction": {
+        "i2c2_enable_i": {
           "hide_name": 0,
-          "bits": [ 736, 737 ],
+          "bits": [ 757 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:221.16-221.30"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:237.27-237.40"
           }
         },
-        "i2cInstruction_2": {
+        "i2c2_instruction_i": {
           "hide_name": 0,
-          "bits": [ 756, 757 ],
+          "bits": [ 755, 756 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:235.16-235.32"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:235.16-235.34"
           }
         },
         "ioCs": {
@@ -5883,7 +5886,7 @@
         },
         "pixelAddress": {
           "hide_name": 0,
-          "bits": [ 776, 777, 778, 779, 780, 781, 782, 783, 784, 785 ],
+          "bits": [ 774, 775, 776, 777, 778, 779, 780, 781, 782, 783 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:29.16-29.28"
           }
@@ -5895,11 +5898,11 @@
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:17.22-17.27"
           }
         },
-        "pwm_signals": {
+        "pwm_signals_o": {
           "hide_name": 0,
           "bits": [ 8, 9, 10, 11 ],
           "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:398.14-398.25"
+            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:393.14-393.27"
           }
         },
         "rowNumber": {
@@ -5932,28 +5935,28 @@
         },
         "sdaIn_1": {
           "hide_name": 0,
-          "bits": [ 734 ],
+          "bits": [ 732 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:224.10-224.17"
           }
         },
         "sdaIn_2": {
           "hide_name": 0,
-          "bits": [ 735 ],
+          "bits": [ 733 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:238.10-238.17"
           }
         },
         "sdaOut_1": {
           "hide_name": 0,
-          "bits": [ 112 ],
+          "bits": [ 109 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:224.19-224.27"
           }
         },
         "sdaOut_2": {
           "hide_name": 0,
-          "bits": [ 113 ],
+          "bits": [ 110 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:238.19-238.27"
           }
@@ -5974,7 +5977,7 @@
         },
         "seq_dir_q": {
           "hide_name": 0,
-          "bits": [ 297 ],
+          "bits": [ 295 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:162.15-162.24"
           }
@@ -5988,35 +5991,35 @@
         },
         "tensCh1": {
           "hide_name": 0,
-          "bits": [ 490, 491, 492, 493, 494, 495, 496, 497 ],
+          "bits": [ 488, 489, 490, 491, 492, 493, 494, 495 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:59.43-59.50"
           }
         },
         "tensCh2": {
           "hide_name": 0,
-          "bits": [ 365, 366, 367, 368, 369, 370, 371, 372 ],
+          "bits": [ 363, 364, 365, 366, 367, 368, 369, 370 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:60.43-60.50"
           }
         },
         "textPixelData": {
           "hide_name": 0,
-          "bits": [ 786, 787, 788, 789, 790, 791, 792, 793 ],
+          "bits": [ 784, 785, 786, 787, 788, 789, 790, 791 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:30.16-30.29"
           }
         },
         "thousandsCh1": {
           "hide_name": 0,
-          "bits": [ 506, 507, 508, 509, 510, 511, 512, 513 ],
+          "bits": [ 504, 505, 506, 507, 508, 509, 510, 511 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:59.16-59.28"
           }
         },
         "thousandsCh2": {
           "hide_name": 0,
-          "bits": [ 381, 382, 383, 384, 385, 386, 387, 388 ],
+          "bits": [ 379, 380, 381, 382, 383, 384, 385, 386 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:60.16-60.28"
           }
@@ -6030,67 +6033,37 @@
         },
         "unitsCh1": {
           "hide_name": 0,
-          "bits": [ 482, 483, 484, 485, 486, 487, 488, 489 ],
+          "bits": [ 480, 481, 482, 483, 484, 485, 486, 487 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:59.52-59.60"
           }
         },
         "unitsCh2": {
           "hide_name": 0,
-          "bits": [ 357, 358, 359, 360, 361, 362, 363, 364 ],
+          "bits": [ 355, 356, 357, 358, 359, 360, 361, 362 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:60.52-60.60"
           }
         },
         "v_fc_calc": {
           "hide_name": 0,
-          "bits": [ 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825 ],
+          "bits": [ 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:155.15-155.24"
           }
         },
-        "v_fc_raw": {
-          "hide_name": 0,
-          "bits": [ 808 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:389.18-389.26"
-          }
-        },
         "v_out_meas": {
           "hide_name": 0,
-          "bits": [ 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841 ],
+          "bits": [ 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:156.15-156.25"
           }
         },
-        "v_out_raw": {
-          "hide_name": 0,
-          "bits": [ 809 ],
-          "attributes": {
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:387.18-387.27"
-          }
-        },
         "v_out_ref_q": {
           "hide_name": 0,
-          "bits": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271 ],
+          "bits": [ 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269 ],
           "attributes": {
             "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:159.15-159.26"
-          }
-        },
-        "voltageCh1": {
-          "hide_name": 0,
-          "bits": [ 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206 ],
-          "attributes": {
-            "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:276.16-276.26"
-          }
-        },
-        "voltageCh2": {
-          "hide_name": 0,
-          "bits": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230 ],
-          "attributes": {
-            "init": 0,
-            "src": "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/src/top.v:277.16-277.26"
           }
         }
       }
