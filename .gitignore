@@ -1,2 +1,8 @@
 node_modules/
 .DS_Store
+3LFCC/3LFCC.fs
+3LFCC/3LFCC.json
+3LFCC/3LFCC.vcd
+3LFCC/3LFCC_pnr.json
+3LFCC/___module_export.json
+3LFCC/top_tb.o
