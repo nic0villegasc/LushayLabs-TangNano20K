@@ -26,121 +26,112 @@ module top (
 );
 
   // --- SCREEN & TEXT ENGINE ---
-    wire [9:0] pixelAddress;
-    wire [7:0] textPixelData;
-    wire [5:0] charAddress;
-    reg [7:0] charOutput = "A";
+    wire [9:0] pixel_address_i;
+    wire [7:0] pixel_data_o;
+    wire [5:0] text_char_address_i;
+    reg [7:0] text_char_o = "A";
 
-    screen #(32'd10000000) scr(
-        clk_i, ioSclk, ioSdin, ioCs, ioDc, ioReset, pixelAddress, textPixelData
+    screen #(32'd10000000) u_scr(
+        .clk_i(clk_i),
+        .sclk_o(ioSclk),
+        .sdin_o(ioSdin),
+        .cs_o(ioCs),
+        .dc_o(ioDc),
+        .reset_o(ioReset),
+        .pixel_address_o(pixel_address_i),
+        .pixel_data_i(pixel_data_o)
     );
-    textEngine te(
-        clk_i, pixelAddress, textPixelData, charAddress, charOutput
+    textEngine u_text(
+        clk_i, pixel_address_i, pixel_data_o, text_char_address_i, text_char_o
     );
 
     // --- DISPLAY CONVERSION ---
-    genvar i;
-    // Channel 1 Hex
-    generate
-        for (i = 0; i < 4; i = i + 1) begin: g_hexValCh1
-            wire [7:0] hexChar;
-            toHex converter(clk_i, adc1_buffer_i[{i,2'b0}+:4], hexChar);
-        end
-    endgenerate
-    
-    // Channel 2 Hex
-    generate
-        for (i = 0; i < 4; i = i + 1) begin: g_hexValCh2
-            wire [7:0] hexChar;
-            toHex converter(clk_i, adc2_buffer_i[{i,2'b0}+:4], hexChar);
-        end
-    endgenerate
 
-    wire [7:0] thousandsCh1, hundredsCh1, tensCh1, unitsCh1;
-    wire [7:0] thousandsCh2, hundredsCh2, tensCh2, unitsCh2;
+    wire [7:0] voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o;
+    wire [7:0] voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o;
 
     toDec dec(
-        clk_i, adc_voltage_fc_o, thousandsCh1, hundredsCh1, tensCh1, unitsCh1
+        clk_i, adc_voltage_fc_o, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
     );
     toDec dec2(
-        clk_i, adc_voltage_out_o, thousandsCh2, hundredsCh2, tensCh2, unitsCh2
+        clk_i, adc_voltage_out_o, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
     );
 
     // --- TEXT RENDERING ---
-    wire [1:0] rowNumber;
-    assign rowNumber = charAddress[5:4];
+    wire [1:0] row_number;
+    assign row_number = text_char_address_i[5:4];
     
     always @(posedge clk_i) begin
-        if (rowNumber == 2'd0) begin
+        if (row_number == 2'd0) begin
             // Row 0: Ch1 Volts
-            case (charAddress[3:0])
-                0: charOutput <= "D";
-                1: charOutput <= "i";
-                2: charOutput <= "f";
-                4: charOutput <= thousandsCh1;
-                5: charOutput <= ".";
-                6: charOutput <= hundredsCh1;
-                7: charOutput <= tensCh1;
-                8: charOutput <= unitsCh1;
-                10: charOutput <= "V";
-                11: charOutput <= "o";
-                12: charOutput <= "l";
-                13: charOutput <= "t";
-                14: charOutput <= "s";
-                default: charOutput <= " ";
+            case (text_char_address_i[3:0])
+                0: text_char_o <= "D";
+                1: text_char_o <= "i";
+                2: text_char_o <= "f";
+                4: text_char_o <= voltage_fc_thousands_o;
+                5: text_char_o <= ".";
+                6: text_char_o <= voltage_fc_hundreds_o;
+                7: text_char_o <= voltage_fc_tens_o;
+                8: text_char_o <= voltage_fc_units_o;
+                10: text_char_o <= "V";
+                11: text_char_o <= "o";
+                12: text_char_o <= "l";
+                13: text_char_o <= "t";
+                14: text_char_o <= "s";
+                default: text_char_o <= " ";
             endcase
         end
-        else if (rowNumber == 2'd1) begin
+        else if (row_number == 2'd1) begin
             // Row 1: Ch2 Volts
-            case (charAddress[3:0])
-                0: charOutput <= "O"; // Ch2
-                1: charOutput <= "u";
-                2: charOutput <= "t";
-                4: charOutput <= thousandsCh2;
-                5: charOutput <= ".";
-                6: charOutput <= hundredsCh2;
-                7: charOutput <= tensCh2;
-                8: charOutput <= unitsCh2;
-                10: charOutput <= "V";
-                11: charOutput <= "o";
-                12: charOutput <= "l";
-                13: charOutput <= "t";
-                14: charOutput <= "s";
-                default: charOutput <= " ";
+            case (text_char_address_i[3:0])
+                0: text_char_o <= "O"; // Ch2
+                1: text_char_o <= "u";
+                2: text_char_o <= "t";
+                4: text_char_o <= voltage_out_thousands_o;
+                5: text_char_o <= ".";
+                6: text_char_o <= voltage_out_hundreds_o;
+                7: text_char_o <= voltage_out_tens_o;
+                8: text_char_o <= voltage_out_units_o;
+                10: text_char_o <= "V";
+                11: text_char_o <= "o";
+                12: text_char_o <= "l";
+                13: text_char_o <= "t";
+                14: text_char_o <= "s";
+                default: text_char_o <= " ";
             endcase
         end
-        else if (rowNumber == 2'd2) begin
+        else if (row_number == 2'd2) begin
             // Row 3: Sampling Frequency
-            case (charAddress[3:0])
-                0: charOutput <= "F"; // Ch2
-                1: charOutput <= "s";
-                //4: charOutput <= thousands_counter;
-                //5: charOutput <= ".";
-                6: charOutput <= hundreds_counter;
-                7: charOutput <= tens_counter;
-                8: charOutput <= units_counter;
-                10: charOutput <= "H";
-                11: charOutput <= "z";
-                default: charOutput <= " ";
+            case (text_char_address_i[3:0])
+                0: text_char_o <= "F"; // Ch2
+                1: text_char_o <= "s";
+                //4: text_char_o <= thousands_counter;
+                //5: text_char_o <= ".";
+                6: text_char_o <= hundreds_counter;
+                7: text_char_o <= tens_counter;
+                8: text_char_o <= units_counter;
+                10: text_char_o <= "H";
+                11: text_char_o <= "z";
+                default: text_char_o <= " ";
             endcase
         end
-        /*else if (rowNumber == 2'd3) begin
+        /*else if (row_number == 2'd3) begin
             // Row 3: Ch2 Volts
-            case (charAddress[3:0])
-                0: charOutput <= "O"; // Ch2
-                1: charOutput <= "u";
-                2: charOutput <= "t";
-                4: charOutput <= thousandsCh2;
-                5: charOutput <= ".";
-                6: charOutput <= hundredsCh2;
-                7: charOutput <= tensCh2;
-                8: charOutput <= unitsCh2;
-                10: charOutput <= "V";
-                11: charOutput <= "o";
-                12: charOutput <= "l";
-                13: charOutput <= "t";
-                14: charOutput <= "s";
-                default: charOutput <= " ";
+            case (text_char_address_i[3:0])
+                0: text_char_o <= "O"; // Ch2
+                1: text_char_o <= "u";
+                2: text_char_o <= "t";
+                4: text_char_o <= voltage_out_thousands_o;
+                5: text_char_o <= ".";
+                6: text_char_o <= voltage_out_hundreds_o;
+                7: text_char_o <= voltage_out_tens_o;
+                8: text_char_o <= voltage_out_units_o;
+                10: text_char_o <= "V";
+                11: text_char_o <= "o";
+                12: text_char_o <= "l";
+                13: text_char_o <= "t";
+                14: text_char_o <= "s";
+                default: text_char_o <= " ";
             endcase
         end*/
     end
@@ -388,10 +379,6 @@ module top (
 
   /// ---------------------------------------------------------------------------
   // Average Sampling Time Calculation
-  /// ---------------------------------------------------------------------------
-
-  /// ---------------------------------------------------------------------------
-  // Average Sampling Time Calculation (FIXED)
   /// ---------------------------------------------------------------------------
 
   reg [24:0] clk_counter;

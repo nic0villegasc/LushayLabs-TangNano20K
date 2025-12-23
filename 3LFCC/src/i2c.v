@@ -18,7 +18,7 @@ module i2c (
 
     output reg complete
 );
-    
+
     localparam INST_START_TX = 0;
     localparam INST_STOP_TX = 1;
     localparam INST_READ_BYTE = 2;

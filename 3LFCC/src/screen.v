@@ -3,14 +3,14 @@ module screen
   parameter STARTUP_WAIT = 32'd10000000
 )
 (
-    input clk,
-    output io_sclk,
-    output io_sdin,
-    output io_cs,
-    output io_dc,
-    output io_reset,
-    output [9:0] pixelAddress,
-    input [7:0] pixelData
+    input clk_i,
+    output sclk_o,
+    output sdin_o,
+    output cs_o,
+    output dc_o,
+    output reset_o,
+    output [9:0] pixel_address_o,
+    input [7:0] pixel_data_i
 );
     localparam STATE_INIT_POWER = 8'd0;
     localparam STATE_LOAD_INIT_CMD = 8'd1;
@@ -18,7 +18,7 @@ module screen
     localparam STATE_CHECK_FINISHED_INIT = 8'd3;
     localparam STATE_LOAD_DATA = 8'd4;
 
-    assign pixelAddress = pixelCounter;
+    assign pixel_address_o = pixelCounter;
     
     reg [32:0] counter = 0;
     reg [2:0] state = 0;
@@ -29,11 +29,11 @@ module screen
     reg reset = 1;
     reg cs = 0;
 
-    assign io_sclk = sclk;
-    assign io_sdin = sdin;
-    assign io_dc = dc;
-    assign io_reset = reset;
-    assign io_cs = cs;
+    assign sclk_o = sclk;
+    assign sdin_o = sdin;
+    assign dc_o = dc;
+    assign reset_o = reset;
+    assign cs_o = cs;
     
     reg [7:0] dataToSend = 0;
     reg [3:0] bitNumber = 0;  
@@ -84,7 +84,7 @@ module screen
     };
     reg [7:0] commandIndex = SETUP_INSTRUCTIONS * 8;
 
-    always @(posedge clk) begin
+    always @(posedge clk_i) begin
         case (state)
             STATE_INIT_POWER: begin
                 counter <= counter + 1;
@@ -135,7 +135,7 @@ module screen
                 dc <= 1;
                 bitNumber <= 3'd7;
                 state <= STATE_SEND;
-                dataToSend <= pixelData;
+                dataToSend <= pixel_data_i;
             end
         endcase
     end
