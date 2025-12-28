@@ -26,8 +26,8 @@ module top (
 );
 
   // --- SCREEN & TEXT ENGINE ---
-    wire [9:0] pixel_address_i;
-    wire [7:0] pixel_data_o;
+    wire [9:0] pixel_address;
+    wire [7:0] pixel_data;
     wire [5:0] text_char_address_i;
     reg [7:0] text_char_o = "A";
 
@@ -38,11 +38,15 @@ module top (
         .cs_o(ioCs),
         .dc_o(ioDc),
         .reset_o(ioReset),
-        .pixel_address_o(pixel_address_i),
-        .pixel_data_i(pixel_data_o)
+        .pixel_address_o(pixel_address),
+        .pixel_data_i(pixel_data)
     );
     textEngine u_text(
-        clk_i, pixel_address_i, pixel_data_o, text_char_address_i, text_char_o
+        .clk_i(clk_i),
+        .pixel_address_i(pixel_address),
+        .pixel_data_o(pixel_data),
+        .char_address_o(text_char_address_i),
+        .char_data_i(text_char_o)
     );
 
     // --- DISPLAY CONVERSION ---
