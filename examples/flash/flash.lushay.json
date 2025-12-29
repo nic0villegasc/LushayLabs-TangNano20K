@@ -1,5 +1,6 @@
 {
      "board": "tangnano20k",
      "testBenches": "all",
-     "top": "top"
+     "top": "top",
+     "externalFlashFiles": ["./binaries/numbers.bin"]
 }
