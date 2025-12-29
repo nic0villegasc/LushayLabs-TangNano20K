@@ -1,0 +1,56 @@
+[*]
+[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
+[*] Mon Dec 29 15:17:42 2025
+[*]
+[dumpfile] "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/3LFCC.vcd"
+[dumpfile_mtime] "Mon Dec 29 14:37:37 2025"
+[dumpfile_size] 5679127
+[savefile] "/Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/test/testbench.gtkw"
+[timestart] 4555000
+[size] 1440 757
+[pos] 214 1079
+*-17.700001 4902500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] test.
+[treeopen] test.dut.
+[sst_width] 255
+[signals_width] 300
+[sst_expanded] 1
+[sst_vpaned_height] 212
+@28
+test.clk_i
+test.rst_ni
+@200
+-
+-FSM_adc
+@2024
+^2 /Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/test/fsm_adc_states.txt
+test.dut.drawState[2:0]
+@28
+test.dut.adc1_ready_o
+test.dut.adc2_ready_o
+@200
+-
+@22
+test.dut.adc1_data_o[15:0]
+test.dut.adc2_data_o[15:0]
+@200
+-
+@28
+test.dut.adc1_done_o
+test.dut.adc2_done_o
+@200
+-
+-FSM_i2c
+@2024
+^3 /Users/nico/Documents/LushayLabs-TangNano20K/3LFCC/test/fsm_i2c_states.txt
+test.dut.c.state[2:0]
+@200
+-
+-ps_pwm
+-sig_gen_0ph
+@24
+test.dut.u_modulator.u_sig_gen_0.count_o[6:0]
+@28
+test.dut.u_modulator.u_sig_gen_0.trigger_o
+[pattern_trace] 1
+[pattern_trace] 0

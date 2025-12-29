@@ -57,7 +57,7 @@ module top (
   // ---------------------------------------------------------------------------
   // 5. Reference Sequencer (Soft Start FSM)
   // ---------------------------------------------------------------------------
-  always @(posedge clk_i or negedge rst_ni) begin
+  /*always @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
       tick_cnt_q  <= 0;
       seq_idx_q   <= 0;
@@ -94,7 +94,7 @@ module top (
         tick_cnt_q <= tick_cnt_q + 1;
       end
     end
-  end
+  end*/
 
   // --- I2C BUS 1 (ADC 1) ---
     wire [1:0] i2c1_instruction_i;

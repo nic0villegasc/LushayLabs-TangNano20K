@@ -9,6 +9,13 @@ module test();
     // Bus Interfaces
     wire scl_1, sda_1;
     wire scl_2, sda_2;
+
+    pullup(sda_1);
+    pullup(scl_1);
+
+    pullup(sda_2);
+    pullup(scl_2);
+
     wire [7:0] pwm_o;
 
     // 27 MHz Clock Generation
@@ -26,13 +33,33 @@ module test();
         .btn1(btn1)
     );
 
+    reg [15:0] fake_analog_val = 16'h41234; // Example: 1.024V approx
+    reg [15:0] fake_analog_val2 = 16'h4321; // Example: 1.024V approx
+
+    ads1115_model #(
+    .I2C_ADDR(7'b1001001) // Matches the testbench/PDF address
+    ) slave_device_1 (
+        .sda(sda_1),
+        .scl(scl_1),
+        .analog_input(fake_analog_val)
+    );
+
+    ads1115_model #(
+    .I2C_ADDR(7'b1001001) // Matches the testbench/PDF address
+    ) slave_device_2 (
+        .sda(sda_2),
+        .scl(scl_2),
+        .analog_input(fake_analog_val2)
+    );
+
     initial begin
         $dumpfile("3LFCC.vcd");
         $dumpvars(0, test);
 
         // System Startup
         #100 rst_ni = 1;
-        #1000000
+
+        #5000000
         $finish;
     end
 endmodule

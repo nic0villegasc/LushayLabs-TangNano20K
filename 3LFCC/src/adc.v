@@ -78,11 +78,8 @@ module adc #(
                       subTaskIndex <= 0;
 
                       if (config_done == 0) begin
-                          // First time ever? Run Setup.
                           taskIndex <= TASK_SETUP;
                       end else begin
-                          // Already configured? JUMP STRAIGHT TO READING.
-                          // This skips the setup and pointer write, saving ~0.8ms!
                           taskIndex <= TASK_READ_VALUE;
                       end
                   end
@@ -150,7 +147,6 @@ module adc #(
                           i2c_enable_o <= 1;
                           state <= STATE_WAIT_FOR_I2C;
                       end
-                      // (Note: I removed the 3'd0 check logic you had here, it's not needed)
                       {TASK_CHANGE_REG,3'd0}: state <= STATE_INC_SUB_TASK;
 
                       // --- TASK_READ_VALUE SPECIFIC STEPS ---
