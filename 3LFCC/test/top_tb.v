@@ -33,11 +33,11 @@ module test();
         .btn1(btn1)
     );
 
-    reg [15:0] fake_analog_val = 16'h41234; // Example: 1.024V approx
-    reg [15:0] fake_analog_val2 = 16'h4321; // Example: 1.024V approx
+    reg [15:0] fake_analog_val = 16'h41234;
+    reg [15:0] fake_analog_val2 = 16'h4321;
 
     ads1115_model #(
-    .I2C_ADDR(7'b1001001) // Matches the testbench/PDF address
+    .I2C_ADDR(7'b1001001)
     ) slave_device_1 (
         .sda(sda_1),
         .scl(scl_1),
@@ -45,7 +45,7 @@ module test();
     );
 
     ads1115_model #(
-    .I2C_ADDR(7'b1001001) // Matches the testbench/PDF address
+    .I2C_ADDR(7'b1001001)
     ) slave_device_2 (
         .sda(sda_2),
         .scl(scl_2),
