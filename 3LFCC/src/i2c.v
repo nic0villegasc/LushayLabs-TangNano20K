@@ -4,20 +4,20 @@ module i2c (
     input clk_i,
     input rst_ni,
 
-    input sdaIn,
-    output reg sdaOutReg = 1,
-    output reg isSending = 0,
+    input sda_i,
+    output reg sda_o = 1,
+    output reg is_sending_o = 0,
 
-    output reg scl = 1,
+    output reg scl_o = 1,
 
-    input [1:0] instruction, // 00 = start, 01 = stop, 10 = read + ACK, 11 = write + ACK
+    input [1:0] instruction_i, // 00 = start, 01 = stop, 10 = read + ACK, 11 = write + ACK
 
-    input enable,
+    input enable_i,
 
-    input [7:0] byteToSend,
-    output reg [7:0] byteReceived = 0,
+    input [7:0] byte_to_send_i,
+    output reg [7:0] byte_received_o = 0,
 
-    output reg complete
+    output reg complete_o
 );
 
     localparam INST_START_TX = 0;
@@ -37,62 +37,62 @@ module i2c (
     always @(posedge clk_i or negedge rst_ni) begin
         if (!rst_ni) begin
             state <= STATE_IDLE;
-            scl <= 1;
-            sdaOutReg <= 1;
-            isSending <= 0;
-            complete <= 0;
+            scl_o <= 1;
+            sda_o <= 1;
+            is_sending_o <= 0;
+            complete_o <= 0;
             clockDivider <= 0;
             bitToSend <= 0;
-            byteReceived <= 0;
+            byte_received_o <= 0;
         end else begin
           case (state)
               STATE_IDLE: begin
-                  if (enable) begin
-                      complete <= 0;
+                  if (enable_i) begin
+                      complete_o <= 0;
                       clockDivider <= 0;
                       bitToSend <= 0;
-                      state <= {1'b0,instruction};
+                      state <= {1'b0,instruction_i};
                   end
               end
               INST_START_TX: begin
-                  isSending <= 1;
+                  is_sending_o <= 1;
                   clockDivider <= clockDivider + 1;
                   if (clockDivider[6:5] == 2'b00) begin
-                      scl <= 1;
-                      sdaOutReg <= 1;
+                      scl_o <= 1;
+                      sda_o <= 1;
                   end else if (clockDivider[6:5] == 2'b01) begin
-                      sdaOutReg <= 0;
+                      sda_o <= 0;
                   end else if (clockDivider[6:5] == 2'b10) begin
-                      scl <= 0;
+                      scl_o <= 0;
                   end else if (clockDivider[6:5] == 2'b11) begin
                       state <= STATE_DONE;
                   end
               end
               INST_STOP_TX: begin
-                  isSending <= 1;
+                  is_sending_o <= 1;
                   clockDivider <= clockDivider + 1;
                   if (clockDivider[6:5] == 2'b00) begin // Clock low period
-                      scl <= 0;
-                      sdaOutReg <= 0;
+                      scl_o <= 0;
+                      sda_o <= 0;
                   end else if (clockDivider[6:5] == 2'b01) begin // Clock rising edge
-                      scl <= 1;
+                      scl_o <= 1;
                   end else if (clockDivider[6:5] == 2'b10) begin // Clock high period
-                      sdaOutReg <= 1;
+                      sda_o <= 1;
                   end else if (clockDivider[6:5] == 2'b11) begin // Clock falling edge
                       state <= STATE_DONE;
                   end
               end
               INST_READ_BYTE: begin
-                  isSending <= 0;
+                  is_sending_o <= 0;
                   clockDivider <= clockDivider + 1;
                   if (clockDivider[6:5] == 2'b00) begin // Clock low period
-                      scl <= 0;
+                      scl_o <= 0;
 
                   end else if (clockDivider[6:5] == 2'b01) begin // Clock rising edge
-                      scl <= 1;
+                      scl_o <= 1;
 
                   end else if (clockDivider == 7'b1000000) begin // Mid clock high period
-                      byteReceived <= {byteReceived[6:0], sdaIn ? 1'b1 : 1'b0};
+                      byte_received_o <= {byte_received_o[6:0], sda_i ? 1'b1 : 1'b0};
 
                   end else if (clockDivider == 7'b1111111) begin // Mid clock low period
                       bitToSend <= bitToSend + 1;
@@ -101,57 +101,57 @@ module i2c (
                       end
 
                   end else if (clockDivider[6:5] == 2'b11) begin // Clock falling edge
-                      scl <= 0;
+                      scl_o <= 0;
                   end
               end
               STATE_SEND_ACK: begin
-                  isSending <= 1;
-                  sdaOutReg <= 0;
+                  is_sending_o <= 1;
+                  sda_o <= 0;
                   clockDivider <= clockDivider + 1;
                   if (clockDivider[6:5] == 2'b01) begin
-                      scl <= 1;
+                      scl_o <= 1;
                   end else if (clockDivider == 7'b1111111) begin
                       state <= STATE_DONE;
                   end else if (clockDivider[6:5] == 2'b11) begin
-                      scl <= 0;
+                      scl_o <= 0;
                   end
               end
               INST_WRITE_BYTE: begin
-                  isSending <= 1;
+                  is_sending_o <= 1;
                   clockDivider <= clockDivider + 1;
-                  sdaOutReg <= byteToSend[3'd7-bitToSend] ? 1'b1 : 1'b0;
+                  sda_o <= byte_to_send_i[3'd7-bitToSend] ? 1'b1 : 1'b0;
 
                   if (clockDivider[6:5] == 2'b00) begin
-                      scl <= 0;
+                      scl_o <= 0;
                   end else if (clockDivider[6:5] == 2'b01) begin
-                      scl <= 1;
+                      scl_o <= 1;
                   end else if (clockDivider == 7'b1111111) begin
                       bitToSend <= bitToSend + 1;
                       if (bitToSend == 3'b111) begin
                           state <= STATE_RCV_ACK;
                       end
                   end else if (clockDivider[6:5] == 2'b11) begin
-                      scl <= 0;
+                      scl_o <= 0;
                   end
               end
               STATE_RCV_ACK: begin
-                  isSending <= 0;
+                  is_sending_o <= 0;
                   clockDivider <= clockDivider + 1;
 
                   if (clockDivider[6:5] == 2'b01) begin
-                      scl <= 1;
+                      scl_o <= 1;
                   end else if (clockDivider == 7'b1111111) begin
                       state <= STATE_DONE;
                   end else if (clockDivider[6:5] == 2'b11) begin
-                      scl <= 0;
+                      scl_o <= 0;
                   end
                   // else if (clockDivider == 7'b1000000) begin
-                  //     sdaIn should be 0
+                  //     sda_i should be 0
                   // end
               end
               STATE_DONE: begin
-                  complete <= 1;
-                  if (~enable)
+                  complete_o <= 1;
+                  if (~enable_i)
                       state <= STATE_IDLE;
               end
           endcase
