@@ -17,8 +17,6 @@ module screen
     localparam STATE_SEND = 8'd2;
     localparam STATE_CHECK_FINISHED_INIT = 8'd3;
     localparam STATE_LOAD_DATA = 8'd4;
-
-    assign pixel_address_o = pixelCounter;
     
     reg [32:0] counter = 0;
     reg [2:0] state = 0;
@@ -38,6 +36,8 @@ module screen
     reg [7:0] dataToSend = 0;
     reg [3:0] bitNumber = 0;  
     reg [9:0] pixelCounter = 0;
+
+    assign pixel_address_o = pixelCounter;
 
     // reg [7:0] screenBuffer [1023:0];
     // initial $readmemh("image.hex", screenBuffer);

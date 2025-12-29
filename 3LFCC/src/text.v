@@ -7,8 +7,8 @@ module textEngine (
     output [5:0] char_address_o,
     input [7:0] char_data_i
 );
-    reg [7:0] fontBuffer [1519:0];
-    initial $readmemh("../binaries/font.hex", fontBuffer);
+    reg [7:0] fontBuffer [0:1519];
+    initial $readmemh("./binaries/font.hex", fontBuffer);
 
     wire [2:0] columnAddress;
     wire topRow;

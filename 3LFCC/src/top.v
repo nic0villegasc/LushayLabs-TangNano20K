@@ -25,121 +25,6 @@ module top (
   input wire btn1
 );
 
-  // --- SCREEN & TEXT ENGINE ---
-    wire [9:0] pixel_address;
-    wire [7:0] pixel_data;
-    wire [5:0] text_char_address_i;
-    reg [7:0] text_char_o = "A";
-
-    screen #(32'd10000000) u_scr(
-        .clk_i(clk_i),
-        .sclk_o(ioSclk),
-        .sdin_o(ioSdin),
-        .cs_o(ioCs),
-        .dc_o(ioDc),
-        .reset_o(ioReset),
-        .pixel_address_o(pixel_address),
-        .pixel_data_i(pixel_data)
-    );
-    textEngine u_text(
-        .clk_i(clk_i),
-        .pixel_address_i(pixel_address),
-        .pixel_data_o(pixel_data),
-        .char_address_o(text_char_address_i),
-        .char_data_i(text_char_o)
-    );
-
-    // --- DISPLAY CONVERSION ---
-
-    wire [7:0] voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o;
-    wire [7:0] voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o;
-
-    toDec dec(
-        clk_i, adc_voltage_fc_o, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
-    );
-    toDec dec2(
-        clk_i, adc_voltage_out_o, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
-    );
-
-    // --- TEXT RENDERING ---
-    wire [1:0] row_number;
-    assign row_number = text_char_address_i[5:4];
-    
-    always @(posedge clk_i) begin
-        if (row_number == 2'd0) begin
-            // Row 0: Ch1 Volts
-            case (text_char_address_i[3:0])
-                0: text_char_o <= "D";
-                1: text_char_o <= "i";
-                2: text_char_o <= "f";
-                4: text_char_o <= voltage_fc_thousands_o;
-                5: text_char_o <= ".";
-                6: text_char_o <= voltage_fc_hundreds_o;
-                7: text_char_o <= voltage_fc_tens_o;
-                8: text_char_o <= voltage_fc_units_o;
-                10: text_char_o <= "V";
-                11: text_char_o <= "o";
-                12: text_char_o <= "l";
-                13: text_char_o <= "t";
-                14: text_char_o <= "s";
-                default: text_char_o <= " ";
-            endcase
-        end
-        else if (row_number == 2'd1) begin
-            // Row 1: Ch2 Volts
-            case (text_char_address_i[3:0])
-                0: text_char_o <= "O"; // Ch2
-                1: text_char_o <= "u";
-                2: text_char_o <= "t";
-                4: text_char_o <= voltage_out_thousands_o;
-                5: text_char_o <= ".";
-                6: text_char_o <= voltage_out_hundreds_o;
-                7: text_char_o <= voltage_out_tens_o;
-                8: text_char_o <= voltage_out_units_o;
-                10: text_char_o <= "V";
-                11: text_char_o <= "o";
-                12: text_char_o <= "l";
-                13: text_char_o <= "t";
-                14: text_char_o <= "s";
-                default: text_char_o <= " ";
-            endcase
-        end
-        else if (row_number == 2'd2) begin
-            // Row 3: Sampling Frequency
-            case (text_char_address_i[3:0])
-                0: text_char_o <= "F"; // Ch2
-                1: text_char_o <= "s";
-                //4: text_char_o <= thousands_counter;
-                //5: text_char_o <= ".";
-                6: text_char_o <= hundreds_counter;
-                7: text_char_o <= tens_counter;
-                8: text_char_o <= units_counter;
-                10: text_char_o <= "H";
-                11: text_char_o <= "z";
-                default: text_char_o <= " ";
-            endcase
-        end
-        /*else if (row_number == 2'd3) begin
-            // Row 3: Ch2 Volts
-            case (text_char_address_i[3:0])
-                0: text_char_o <= "O"; // Ch2
-                1: text_char_o <= "u";
-                2: text_char_o <= "t";
-                4: text_char_o <= voltage_out_thousands_o;
-                5: text_char_o <= ".";
-                6: text_char_o <= voltage_out_hundreds_o;
-                7: text_char_o <= voltage_out_tens_o;
-                8: text_char_o <= voltage_out_units_o;
-                10: text_char_o <= "V";
-                11: text_char_o <= "o";
-                12: text_char_o <= "l";
-                13: text_char_o <= "t";
-                14: text_char_o <= "s";
-                default: text_char_o <= " ";
-            endcase
-        end*/
-    end
-
   // ---------------------------------------------------------------------------
   // 3. Control System Signals
   // ---------------------------------------------------------------------------
@@ -156,6 +41,8 @@ module top (
   // Controller Outputs
   wire [6:0]  duty_d1_o;
   wire [6:0]  duty_d2_o;
+
+  reg heartbeat_led = 0;
 
   // Constants
   localparam [15:0] VREF_0V0 = 16'h0000;
@@ -345,7 +232,7 @@ module top (
         endcase
     end
 
-    reg enable_control_i;
+    wire enable_control_i;
 
   // ---------------------------------------------------------------------------
   // Synchronization Logic
@@ -371,9 +258,9 @@ module top (
     .reset      (~rst_ni),
     .clk_enable (enable_control_i), // Waits for both ADCs
     .Voutref    (v_out_ref_q),
-    .Vout       (adc_voltage_out_o),     // Direct connection from ADC 2
+    .Vout       ({4'b0, adc_voltage_out_o}),     // Direct connection from ADC 2
     .Vfcref     (V_FC_REF),
-    .Vfc        (adc_voltage_fc_o),      // Direct connection from ADC 1
+    .Vfc        ({4'b0, adc_voltage_fc_o}),      // Direct connection from ADC 1
     .D1         (duty_d1_o),
     .D2         (duty_d2_o),
     .ce_out     (),
@@ -392,7 +279,7 @@ module top (
   always @(posedge clk_i) begin
     if(!rst_ni) begin
       clk_counter <= 0;
-      pwm_o[5] <= 1;
+      heartbeat_led <= 1;
       sample_count <= 0;
       freq_display_hold <= 0;
     end else begin
@@ -413,24 +300,141 @@ module top (
         sample_count <= 0;
         
         // Toggle Heartbeat LED
-        pwm_o[5] <= ~pwm_o[5]; 
+        heartbeat_led <= ~heartbeat_led; 
       end else begin
         clk_counter <= clk_counter + 1;
       end
     end
   end
 
+  assign pwm_o[5] = heartbeat_led;
+
   wire [7:0] thousands_counter, hundreds_counter, tens_counter, units_counter;
 
   // 3. Connect the HOLD register (Static Value) to the display, not the counter
   toDec dec3(
     clk_i, 
-    freq_display_hold,
+    freq_display_hold[11:0],
     thousands_counter, 
     hundreds_counter, 
     tens_counter, 
     units_counter
   );
+
+  // --- DISPLAY CONVERSION ---
+
+  wire [7:0] voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o;
+  wire [7:0] voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o;
+
+  toDec dec(
+      clk_i, adc_voltage_fc_o, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
+  );
+  toDec dec2(
+      clk_i, adc_voltage_out_o, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
+  );
+
+  // --- SCREEN & TEXT ENGINE ---
+  wire [9:0] pixel_address;
+  wire [7:0] pixel_data;
+  wire [5:0] text_char_address_i;
+  reg [7:0] text_char_o = "A";
+
+  screen #(32'd10000000) u_scr(
+      .clk_i(clk_i),
+      .sclk_o(ioSclk),
+      .sdin_o(ioSdin),
+      .cs_o(ioCs),
+      .dc_o(ioDc),
+      .reset_o(ioReset),
+      .pixel_address_o(pixel_address),
+      .pixel_data_i(pixel_data)
+  );
+  textEngine u_text(
+      .clk_i(clk_i),
+      .pixel_address_i(pixel_address),
+      .pixel_data_o(pixel_data),
+      .char_address_o(text_char_address_i),
+      .char_data_i(text_char_o)
+  );
+
+  // --- TEXT RENDERING ---
+  wire [1:0] row_number;
+  assign row_number = text_char_address_i[5:4];
+  
+  always @(posedge clk_i) begin
+      if (row_number == 2'd0) begin
+          // Row 0: Ch1 Volts
+          case (text_char_address_i[3:0])
+              0: text_char_o <= "D";
+              1: text_char_o <= "i";
+              2: text_char_o <= "f";
+              4: text_char_o <= voltage_fc_thousands_o;
+              5: text_char_o <= ".";
+              6: text_char_o <= voltage_fc_hundreds_o;
+              7: text_char_o <= voltage_fc_tens_o;
+              8: text_char_o <= voltage_fc_units_o;
+              10: text_char_o <= "V";
+              11: text_char_o <= "o";
+              12: text_char_o <= "l";
+              13: text_char_o <= "t";
+              14: text_char_o <= "s";
+              default: text_char_o <= " ";
+          endcase
+      end
+      else if (row_number == 2'd1) begin
+          // Row 1: Ch2 Volts
+          case (text_char_address_i[3:0])
+              0: text_char_o <= "O"; // Ch2
+              1: text_char_o <= "u";
+              2: text_char_o <= "t";
+              4: text_char_o <= voltage_out_thousands_o;
+              5: text_char_o <= ".";
+              6: text_char_o <= voltage_out_hundreds_o;
+              7: text_char_o <= voltage_out_tens_o;
+              8: text_char_o <= voltage_out_units_o;
+              10: text_char_o <= "V";
+              11: text_char_o <= "o";
+              12: text_char_o <= "l";
+              13: text_char_o <= "t";
+              14: text_char_o <= "s";
+              default: text_char_o <= " ";
+          endcase
+      end
+      else if (row_number == 2'd2) begin
+          // Row 3: Sampling Frequency
+          case (text_char_address_i[3:0])
+              0: text_char_o <= "F"; // Ch2
+              1: text_char_o <= "s";
+              //4: text_char_o <= thousands_counter;
+              //5: text_char_o <= ".";
+              6: text_char_o <= hundreds_counter;
+              7: text_char_o <= tens_counter;
+              8: text_char_o <= units_counter;
+              10: text_char_o <= "H";
+              11: text_char_o <= "z";
+              default: text_char_o <= " ";
+          endcase
+      end
+      /*else if (row_number == 2'd3) begin
+          // Row 3: Ch2 Volts
+          case (text_char_address_i[3:0])
+              0: text_char_o <= "O"; // Ch2
+              1: text_char_o <= "u";
+              2: text_char_o <= "t";
+              4: text_char_o <= voltage_out_thousands_o;
+              5: text_char_o <= ".";
+              6: text_char_o <= voltage_out_hundreds_o;
+              7: text_char_o <= voltage_out_tens_o;
+              8: text_char_o <= voltage_out_units_o;
+              10: text_char_o <= "V";
+              11: text_char_o <= "o";
+              12: text_char_o <= "l";
+              13: text_char_o <= "t";
+              14: text_char_o <= "s";
+              default: text_char_o <= " ";
+          endcase
+      end*/
+  end
 
   /// ---------------------------------------------------------------------------
   // PS-PWM MODULATOR
