@@ -5,6 +5,8 @@ module adc #(
     parameter [2:0] MUX_CONFIG = 3'd000
 ) (
     input clk_i,
+    input rst_ni,
+
     output reg [15:0] data_o = 0,
     output reg data_ready_o = 1,
     input enable_i,
@@ -55,161 +57,171 @@ module adc #(
     // NEW: Flag to remember if we have configured the ADC yet
     reg config_done = 0;
 
-    always @(posedge clk_i) begin
-        case (state)
-            // -----------------------------------------------------------------
-            // 1. IDLE STATE (Smart Logic)
-            // -----------------------------------------------------------------
-            STATE_IDLE: begin
-                if (enable_i) begin
-                    state <= STATE_RUN_TASK;
-                    data_ready_o <= 0;
-                    subTaskIndex <= 0;
+    always @(posedge clk_i or negedge rst_ni) begin
+        if (!rst_ni) begin
+            state <= STATE_IDLE;
+            data_ready_o <= 1;
+            taskIndex <= 0;
+            subTaskIndex <= 0;
+            processStarted <= 0;
+            i2c_enable_o <= 0;
+            config_done <= 0;
+        end else begin
+          case (state)
+              // -----------------------------------------------------------------
+              // 1. IDLE STATE (Smart Logic)
+              // -----------------------------------------------------------------
+              STATE_IDLE: begin
+                  if (enable_i) begin
+                      state <= STATE_RUN_TASK;
+                      data_ready_o <= 0;
+                      subTaskIndex <= 0;
 
-                    if (config_done == 0) begin
-                        // First time ever? Run Setup.
-                        taskIndex <= TASK_SETUP;
-                    end else begin
-                        // Already configured? JUMP STRAIGHT TO READING.
-                        // This skips the setup and pointer write, saving ~0.8ms!
-                        taskIndex <= TASK_READ_VALUE;
-                    end
-                end
-            end
+                      if (config_done == 0) begin
+                          // First time ever? Run Setup.
+                          taskIndex <= TASK_SETUP;
+                      end else begin
+                          // Already configured? JUMP STRAIGHT TO READING.
+                          // This skips the setup and pointer write, saving ~0.8ms!
+                          taskIndex <= TASK_READ_VALUE;
+                      end
+                  end
+              end
 
-            // -----------------------------------------------------------------
-            // 2. RUN TASK (Simplified Case)
-            // -----------------------------------------------------------------
-            STATE_RUN_TASK: begin
-                case ({taskIndex,subTaskIndex})
-                    // --- I2C START CONDITION ---
-                    {TASK_SETUP,3'd0},
-                    {TASK_CHANGE_REG,3'd1},
-                    {TASK_READ_VALUE,3'd0}: begin
-                        i2c_instruction_o <= INST_START_TX;
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
+              // -----------------------------------------------------------------
+              // 2. RUN TASK (Simplified Case)
+              // -----------------------------------------------------------------
+              STATE_RUN_TASK: begin
+                  case ({taskIndex,subTaskIndex})
+                      // --- I2C START CONDITION ---
+                      {TASK_SETUP,3'd0},
+                      {TASK_CHANGE_REG,3'd1},
+                      {TASK_READ_VALUE,3'd0}: begin
+                          i2c_instruction_o <= INST_START_TX;
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
 
-                    // --- I2C ADDRESS WRITE ---
-                    {TASK_SETUP,3'd1},
-                    {TASK_CHANGE_REG,3'd2},
-                    {TASK_READ_VALUE,3'd1}: begin
-                        i2c_instruction_o <= INST_WRITE_BYTE;
-                        // If Reading, bit 0 is '1' (Read), else '0' (Write)
-                        i2c_byte_to_send_o <= {address, (taskIndex == TASK_READ_VALUE) ? 1'b1 : 1'b0};
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
+                      // --- I2C ADDRESS WRITE ---
+                      {TASK_SETUP,3'd1},
+                      {TASK_CHANGE_REG,3'd2},
+                      {TASK_READ_VALUE,3'd1}: begin
+                          i2c_instruction_o <= INST_WRITE_BYTE;
+                          // If Reading, bit 0 is '1' (Read), else '0' (Write)
+                          i2c_byte_to_send_o <= {address, (taskIndex == TASK_READ_VALUE) ? 1'b1 : 1'b0};
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
 
-                    // --- I2C STOP CONDITION ---
-                    {TASK_SETUP,3'd5},
-                    {TASK_CHANGE_REG,3'd4},
-                    {TASK_READ_VALUE,3'd5}: begin
-                        i2c_instruction_o <= INST_STOP_TX;
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
+                      // --- I2C STOP CONDITION ---
+                      {TASK_SETUP,3'd5},
+                      {TASK_CHANGE_REG,3'd4},
+                      {TASK_READ_VALUE,3'd5}: begin
+                          i2c_instruction_o <= INST_STOP_TX;
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
 
-                    // --- TASK_SETUP SPECIFIC STEPS ---
-                    {TASK_SETUP,3'd2}: begin // Target Config Reg
-                        i2c_instruction_o <= INST_WRITE_BYTE;
-                        i2c_byte_to_send_o <= CONFIG_REGISTER;
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
-                    {TASK_SETUP,3'd3}: begin // Write MSB
-                        i2c_instruction_o <= INST_WRITE_BYTE;
-                        i2c_byte_to_send_o <= setupRegister[15:8];
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
-                    {TASK_SETUP,3'd4}: begin // Write LSB
-                        i2c_instruction_o <= INST_WRITE_BYTE;
-                        i2c_byte_to_send_o <= setupRegister[7:0];
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
+                      // --- TASK_SETUP SPECIFIC STEPS ---
+                      {TASK_SETUP,3'd2}: begin // Target Config Reg
+                          i2c_instruction_o <= INST_WRITE_BYTE;
+                          i2c_byte_to_send_o <= CONFIG_REGISTER;
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
+                      {TASK_SETUP,3'd3}: begin // Write MSB
+                          i2c_instruction_o <= INST_WRITE_BYTE;
+                          i2c_byte_to_send_o <= setupRegister[15:8];
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
+                      {TASK_SETUP,3'd4}: begin // Write LSB
+                          i2c_instruction_o <= INST_WRITE_BYTE;
+                          i2c_byte_to_send_o <= setupRegister[7:0];
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
 
-                    // --- TASK_CHANGE_REG SPECIFIC STEPS ---
-                    // This points the internal pointer back to the Conversion (Data) Register
-                    {TASK_CHANGE_REG,3'd3}: begin
-                        i2c_instruction_o <= INST_WRITE_BYTE;
-                        i2c_byte_to_send_o <= CONVERSION_REGISTER;
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
-                    // (Note: I removed the 3'd0 check logic you had here, it's not needed)
-                    {TASK_CHANGE_REG,3'd0}: state <= STATE_INC_SUB_TASK;
+                      // --- TASK_CHANGE_REG SPECIFIC STEPS ---
+                      // This points the internal pointer back to the Conversion (Data) Register
+                      {TASK_CHANGE_REG,3'd3}: begin
+                          i2c_instruction_o <= INST_WRITE_BYTE;
+                          i2c_byte_to_send_o <= CONVERSION_REGISTER;
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
+                      // (Note: I removed the 3'd0 check logic you had here, it's not needed)
+                      {TASK_CHANGE_REG,3'd0}: state <= STATE_INC_SUB_TASK;
 
-                    // --- TASK_READ_VALUE SPECIFIC STEPS ---
-                    {TASK_READ_VALUE,3'd2}: begin // Read MSB
-                        i2c_instruction_o <= INST_READ_BYTE;
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
-                    {TASK_READ_VALUE,3'd3}: begin // Save MSB
-                        i2c_instruction_o <= INST_READ_BYTE; // Read LSB now
-                        data_o[15:8] <= i2c_byte_received_i; // Store MSB
-                        i2c_enable_o <= 1;
-                        state <= STATE_WAIT_FOR_I2C;
-                    end
-                    {TASK_READ_VALUE,3'd4}: begin // Save LSB
-                        data_o[7:0] <= i2c_byte_received_i;
-                        state <= STATE_INC_SUB_TASK;
-                    end
+                      // --- TASK_READ_VALUE SPECIFIC STEPS ---
+                      {TASK_READ_VALUE,3'd2}: begin // Read MSB
+                          i2c_instruction_o <= INST_READ_BYTE;
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
+                      {TASK_READ_VALUE,3'd3}: begin // Save MSB
+                          i2c_instruction_o <= INST_READ_BYTE; // Read LSB now
+                          data_o[15:8] <= i2c_byte_received_i; // Store MSB
+                          i2c_enable_o <= 1;
+                          state <= STATE_WAIT_FOR_I2C;
+                      end
+                      {TASK_READ_VALUE,3'd4}: begin // Save LSB
+                          data_o[7:0] <= i2c_byte_received_i;
+                          state <= STATE_INC_SUB_TASK;
+                      end
 
-                    default: state <= STATE_INC_SUB_TASK;
-                endcase
-            end
+                      default: state <= STATE_INC_SUB_TASK;
+                  endcase
+              end
 
-            // -----------------------------------------------------------------
-            // 3. I2C WAIT HELPER
-            // -----------------------------------------------------------------
-            STATE_WAIT_FOR_I2C: begin
-                if (~processStarted && ~i2c_complete_i)
-                    processStarted <= 1;
-                else if (i2c_complete_i && processStarted) begin
-                    state <= STATE_INC_SUB_TASK;
-                    processStarted <= 0;
-                    i2c_enable_o <= 0;
-                end
-            end
+              // -----------------------------------------------------------------
+              // 3. I2C WAIT HELPER
+              // -----------------------------------------------------------------
+              STATE_WAIT_FOR_I2C: begin
+                  if (~processStarted && ~i2c_complete_i)
+                      processStarted <= 1;
+                  else if (i2c_complete_i && processStarted) begin
+                      state <= STATE_INC_SUB_TASK;
+                      processStarted <= 0;
+                      i2c_enable_o <= 0;
+                  end
+              end
 
-            // -----------------------------------------------------------------
-            // 4. TASK FLOW CONTROLLER (The Logic Fix)
-            // -----------------------------------------------------------------
-            STATE_INC_SUB_TASK: begin
-                state <= STATE_RUN_TASK;
-                
-                // If sub-task chain is finished (reached 5)
-                if (subTaskIndex == 3'd5) begin 
-                    subTaskIndex <= 0;
+              // -----------------------------------------------------------------
+              // 4. TASK FLOW CONTROLLER (The Logic Fix)
+              // -----------------------------------------------------------------
+              STATE_INC_SUB_TASK: begin
+                  state <= STATE_RUN_TASK;
+                  
+                  // If sub-task chain is finished (reached 5)
+                  if (subTaskIndex == 3'd5) begin 
+                      subTaskIndex <= 0;
 
-                    // FLOW CONTROL
-                    if (taskIndex == TASK_SETUP) begin
-                        // Setup done -> Now reset pointer
-                        taskIndex <= TASK_CHANGE_REG; 
-                    end
-                    else if (taskIndex == TASK_CHANGE_REG) begin
-                        // Pointer reset done -> Now Read
-                        taskIndex <= TASK_READ_VALUE; 
-                        config_done <= 1; // Mark as initialized!
-                    end
-                    else if (taskIndex == TASK_READ_VALUE) begin
-                        // Reading done -> Finish
-                        state <= STATE_DONE;
-                    end
-                end 
-                else begin
-                    subTaskIndex <= subTaskIndex + 1;
-                end
-            end
+                      // FLOW CONTROL
+                      if (taskIndex == TASK_SETUP) begin
+                          // Setup done -> Now reset pointer
+                          taskIndex <= TASK_CHANGE_REG; 
+                      end
+                      else if (taskIndex == TASK_CHANGE_REG) begin
+                          // Pointer reset done -> Now Read
+                          taskIndex <= TASK_READ_VALUE; 
+                          config_done <= 1; // Mark as initialized!
+                      end
+                      else if (taskIndex == TASK_READ_VALUE) begin
+                          // Reading done -> Finish
+                          state <= STATE_DONE;
+                      end
+                  end 
+                  else begin
+                      subTaskIndex <= subTaskIndex + 1;
+                  end
+              end
 
-            STATE_DONE: begin
-                data_ready_o <= 1;
-                if (~enable_i) state <= STATE_IDLE;
-            end
-        endcase
+              STATE_DONE: begin
+                  data_ready_o <= 1;
+                  if (~enable_i) state <= STATE_IDLE;
+              end
+          endcase
+        end
     end
 endmodule

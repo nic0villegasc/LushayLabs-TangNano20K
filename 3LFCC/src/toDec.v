@@ -1,5 +1,6 @@
 module toDec(
     input clk,
+    input rst_ni,
     input [11:0] value,
     output reg [7:0] thousands = "0",
     output reg [7:0] hundreds = "0",
@@ -16,7 +17,15 @@ module toDec(
     localparam SHIFT_STATE = 2;
     localparam DONE_STATE = 3;
 
-    always @(posedge clk) begin
+    always @(posedge clk or negedge rst_ni) begin
+      if (!rst_ni) begin
+          state <= START_STATE;
+          thousands <= "0";
+          hundreds <= "0";
+          tens <= "0";
+          units <= "0";
+          digits <= 0;
+      end else begin
         case (state)
             START_STATE: begin
                 cachedValue <= value;
@@ -50,5 +59,6 @@ module toDec(
                 state <= START_STATE;
             end
         endcase
+      end
     end
 endmodule

@@ -106,7 +106,7 @@ module top (
     assign sdaIn_1 = sda_1_io ? 1'b1 : 1'b0;
 
     i2c c(
-        clk_i, sdaIn_1, sdaOut_1, isSending_1, scl_1_o,
+        clk_i, rst_ni, sdaIn_1, sdaOut_1, isSending_1, scl_1_o,
         i2c1_instruction_i, i2c1_enable_i, i2c1_byte_to_send_i, i2c1_byte_received_o, i2c1_complete_o
     );
 
@@ -121,7 +121,7 @@ module top (
     assign sdaIn_2 = sda_2_io ? 1'b1 : 1'b0;
 
     i2c c2(
-        clk_i, sdaIn_2, sdaOut_2, isSending_2, scl_2_o,
+        clk_i, rst_ni, sdaIn_2, sdaOut_2, isSending_2, scl_2_o,
         i2c2_instruction_i, i2c2_enable_i, i2c2_byte_to_send_i, i2c2_byte_received_o, i2c2_complete_o
     );
 
@@ -140,6 +140,7 @@ module top (
     // ADC 1 Instance
     adc #(.address(7'b1001001), .MUX_CONFIG(3'b000)) u_adc_1(
         .clk_i(clk_i),
+        .rst_ni(rst_ni),
         .data_o(adc1_data_o),
         .data_ready_o(adc1_ready_o),
         .enable_i(adc1_enable_i),
@@ -153,6 +154,7 @@ module top (
     // ADC 2 Instance (Same address, distinct I2C bus and Mux config)
     adc #(.address(7'b1001001), .MUX_CONFIG(3'b100)) u_adc_2(
         .clk_i(clk_i),
+        .rst_ni(rst_ni),
         .data_o(adc2_data_o),
         .data_ready_o(adc2_ready_o),
         .enable_i(adc2_enable_i),
@@ -183,7 +185,13 @@ module top (
     wire adc_start_i;
 
     // fsm_adc: Main ADC Control FSM
-    always @(posedge clk_i) begin
+    always @(posedge clk_i or negedge rst_ni) begin
+      if (!rst_ni) begin
+        drawState <= STATE_TRIGGER_CONV;
+        adc_eoc_o <= 0;
+        adc1_enable_i <= 0;
+        adc2_enable_i <= 0;
+      end else begin
         case (drawState)
             STATE_TRIGGER_CONV: begin
               adc_eoc_o <= 0;
@@ -230,6 +238,7 @@ module top (
                 drawState <= STATE_TRIGGER_CONV;
             end
         endcase
+      end
     end
 
     wire enable_control_i;
@@ -313,7 +322,8 @@ module top (
 
   // 3. Connect the HOLD register (Static Value) to the display, not the counter
   toDec dec3(
-    clk_i, 
+    clk_i,
+    rst_ni,
     freq_display_hold[11:0],
     thousands_counter, 
     hundreds_counter, 
@@ -327,10 +337,10 @@ module top (
   wire [7:0] voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o;
 
   toDec dec(
-      clk_i, adc_voltage_fc_o, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
+      clk_i, rst_ni, adc_voltage_fc_o, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
   );
   toDec dec2(
-      clk_i, adc_voltage_out_o, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
+      clk_i, rst_ni, adc_voltage_out_o, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
   );
 
   // --- SCREEN & TEXT ENGINE ---
