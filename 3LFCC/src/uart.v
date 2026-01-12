@@ -66,12 +66,27 @@ module uart
                     rxCounter <= 0;
                     byteReady <= 1;
 
-                    if (dataIn == "u" || dataIn == "U") begin
-                        valueCounter <= valueCounter + 16'd100;
-                    end 
-                    else if (dataIn == "d" || dataIn == "D") begin
-                        valueCounter <= valueCounter - 16'd100;
-                    end
+                    // Expanded Control Map
+                    case (dataIn)
+                        // Relative Adjustments
+                        "u", "U": valueCounter <= valueCounter + 16'd1569;
+                        "d", "D": valueCounter <= valueCounter - 16'd1569;
+
+                        // Absolute Setpoints
+                        "0": valueCounter <= 16'd0;
+                        "1": valueCounter <= 16'd4287;
+                        "2": valueCounter <= 16'd8604;
+                        "3": valueCounter <= 16'd12921;
+                        "4": valueCounter <= 16'd17239;
+                        "5": valueCounter <= 16'd21556;
+                        "6": valueCounter <= 16'd25873;
+                        "7": valueCounter <= 16'd30190;
+                        "8": valueCounter <= 16'd34508;
+                        "9": valueCounter <= 16'd38825;
+                        
+                        // Safety: Do nothing for undefined keys
+                        default:  valueCounter <= valueCounter; 
+                    endcase
                 end
             end
         endcase

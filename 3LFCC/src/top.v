@@ -262,6 +262,9 @@ module top (
         sum_out <= sum_out + adc_voltage_out_o; // Add current Out sample
       end
 
+      duty_d1_disp <= duty_d1_o;
+      duty_d2_disp <= duty_d2_o;
+
       // 2. One Second Timer (27 MHz)
       if(clk_counter == 25'd27000000) begin
         clk_counter <= 0;
@@ -302,6 +305,7 @@ module top (
     clk_i,
     rst_ni,
     freq_display_hold[11:0],
+    ,
     thousands_counter, 
     hundreds_counter, 
     tens_counter, 
@@ -314,24 +318,31 @@ module top (
   wire [7:0] voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o;
 
   // Wires for Decimal Converter Outputs
-  wire [7:0] d1_th, d1_hu, d1_te, d1_un; 
-  wire [7:0] d2_th, d2_hu, d2_te, d2_un;
+  wire [7:0] d1_tth, d1_th, d1_hu, d1_te, d1_un;
 
   toDec dec(
-      clk_i, rst_ni, avg_fc_disp, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
+      clk_i, rst_ni, avg_fc_disp, , voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
   );
   toDec dec2(
-      clk_i, rst_ni, avg_out_disp, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
+      clk_i, rst_ni, avg_out_disp, , voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
   );
 
-  toDec dec_d1(
-      clk_i, rst_ni, {5'b0, duty_d1_disp}, 
+  // --- TRANSFORMATION LOGIC ---
+  // Scale by 4099/65536 to approx 0.06254, then add 2 (approx 1.9 rounded)
+  wire [31:0] v_calc_temp;
+  wire [15:0] v_ref_display;
+  
+  // High-performance fixed-point multiplication
+  assign v_calc_temp = duty_counter_o * 32'd4099;
+  
+  // Right shift by 16 (divide by 65536) and add offset
+  assign v_ref_display = v_calc_temp[31:16] + 16'd2;
+
+  toDec dec_vout_ref(
+      clk_i, rst_ni, 
+      v_ref_display, // CHANGED: Pass the transformed value here
+      d1_tth,
       d1_th, d1_hu, d1_te, d1_un
-  );
-
-  toDec dec_d2(
-      clk_i, rst_ni, {5'b0, duty_d2_disp}, 
-      d2_th, d2_hu, d2_te, d2_un
   );
 
   // --- SCREEN & TEXT ENGINE ---
@@ -419,25 +430,23 @@ module top (
       else if (row_number == 2'd3) begin
           // Row 3: Duty Cycles
           case (text_char_address_i[3:0])
-              // "D1: "
-              0: text_char_o <= "D";
-              1: text_char_o <= "1";
-              2: text_char_o <= ":";
+              // Label "Vref:"
+              0: text_char_o <= "V";
+              1: text_char_o <= "r";
+              2: text_char_o <= "e";
+              3: text_char_o <= "f";
+              4: text_char_o <= ":";
               
-              // Value D1 (Hundreds, Tens, Units)
-              4: text_char_o <= d1_hu;
-              5: text_char_o <= d1_te;
-              6: text_char_o <= d1_un;
-
-              // " D2: "
-              8: text_char_o <= "D";
-              9: text_char_o <= "2";
-              10: text_char_o <= ":";
-
-              // Value D2 (Hundreds, Tens, Units)
-              12: text_char_o <= d2_hu;
-              13: text_char_o <= d2_te;
-              14: text_char_o <= d2_un;
+              // Value Display: #.### format
+              6: text_char_o <= d1_th;  // Integer part (Thousands place of 1234 -> 1)
+              7: text_char_o <= ".";    // Decimal Point
+              8: text_char_o <= d1_hu;  // Tenths
+              9: text_char_o <= d1_te;  // Hundredths
+              10: text_char_o <= d1_un; // Thousandths
+              
+              // Unit "V"
+              11: text_char_o <= " ";   // Spacer
+              12: text_char_o <= "V";
               
               default: text_char_o <= " ";
           endcase
