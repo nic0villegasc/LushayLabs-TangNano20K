@@ -25,13 +25,13 @@ IO_PORT "pwm_o[4]" IO_TYPE=LVCMOS33;
 IO_LOC  "pwm_o[3]" 17;
 IO_PORT "pwm_o[3]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "pwm_o[2]" 18;
+IO_LOC  "pwm_o[2]" 20;
 IO_PORT "pwm_o[2]" IO_TYPE=LVCMOS33;
 
 IO_LOC  "pwm_o[1]" 19;
 IO_PORT "pwm_o[1]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "pwm_o[0]" 20;
+IO_LOC  "pwm_o[0]" 18;
 IO_PORT "pwm_o[0]" IO_TYPE=LVCMOS33;
 
 IO_LOC  "clk_i" 4;
@@ -57,3 +57,6 @@ IO_PORT "btn1" IO_TYPE=LVCMOS33;
 
 IO_LOC  "rst_ni" 42;
 IO_PORT "rst_ni" IO_TYPE=LVCMOS33;
+
+IO_LOC  "uart_rx_i" 70;
+IO_PORT "uart_rx_i" IO_TYPE=LVCMOS33 PULL_MODE=UP;

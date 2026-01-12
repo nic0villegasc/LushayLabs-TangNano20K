@@ -59,7 +59,7 @@ module test();
         // System Startup
         #100 rst_ni = 1;
 
-        #5000000
+        #10000000
         $finish;
     end
 endmodule

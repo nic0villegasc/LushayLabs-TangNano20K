@@ -22,79 +22,33 @@ module top (
   output wire ioCs,
   output wire ioDc,
   output wire ioReset,
-  input wire btn1
+  input wire btn1,
+
+  // UART
+  input wire uart_rx_i
 );
 
   // ---------------------------------------------------------------------------
   // 3. Control System Signals
   // ---------------------------------------------------------------------------
-  // Voltage Calculations
-  reg  [15:0] v_fc_calc;    // Calculated Flying Cap Voltage
-  reg  [15:0] v_out_meas;   // Measured Output Voltage
-
-  // Reference Sequencer (Soft Start)
-  reg  [15:0] v_out_ref_q;
-  reg  [20:0] tick_cnt_q;
-  reg  [2:0]  seq_idx_q;
-  reg         seq_dir_q;    // 1 = Up, 0 = Down
-
   // Controller Outputs
   wire [6:0]  duty_d1_o;
   wire [6:0]  duty_d2_o;
 
-  reg heartbeat_led = 0;
+  wire [15:0] duty_counter_o;
+
+  reg heartbeat_led;
 
   // Constants
-  localparam [15:0] VREF_0V0 = 16'h0000;
-  localparam [15:0] VREF_0V6 = 16'h2653;
-  localparam [15:0] VREF_1V2 = 16'h4CCE;
-  localparam [15:0] VREF_1V8 = 16'h733A;
   localparam [15:0] V_FC_REF = 16'h6990;
 
-  // 1 Million cycles @ 27MHz is ~37ms per step (reasonable for soft start)
-  localparam integer STEP_CYCLES = 1000000;
-
-  // ---------------------------------------------------------------------------
-  // 5. Reference Sequencer (Soft Start FSM)
-  // ---------------------------------------------------------------------------
-  /*always @(posedge clk_i or negedge rst_ni) begin
-    if (!rst_ni) begin
-      tick_cnt_q  <= 0;
-      seq_idx_q   <= 0;
-      seq_dir_q   <= 1'b1;
-      v_out_ref_q <= VREF_0V0;
-    end else begin
-      if (tick_cnt_q == STEP_CYCLES - 1) begin
-        tick_cnt_q <= 0;
-
-        case (seq_idx_q)
-          3'd0:    v_out_ref_q <= VREF_0V0;
-          3'd1:    v_out_ref_q <= VREF_0V6;
-          3'd2:    v_out_ref_q <= VREF_1V2;
-          3'd3:    v_out_ref_q <= VREF_1V8;
-          default: v_out_ref_q <= VREF_0V0;
-        endcase
-
-        if (seq_dir_q) begin
-          if (seq_idx_q == 3'd3) begin
-            seq_dir_q <= 1'b0;
-            seq_idx_q <= 3'd2;
-          end else begin
-            seq_idx_q <= seq_idx_q + 3'd1;
-          end
-        end else begin
-          if (seq_idx_q == 3'd0) begin
-            seq_dir_q <= 1'b1;
-            seq_idx_q <= 3'd1;
-          end else begin
-            seq_idx_q <= seq_idx_q - 3'd1;
-          end
-        end
-      end else begin
-        tick_cnt_q <= tick_cnt_q + 1;
-      end
-    end
-  end*/
+  // --- Averaging Logic ---
+  reg [31:0] sum_fc;       // Accumulator for Flying Cap Voltage
+  reg [31:0] sum_out;      // Accumulator for Output Voltage
+  reg [11:0] avg_fc_disp;  // Final averaged value for Display
+  reg [11:0] avg_out_disp; // Final averaged value for Display
+  reg [6:0] duty_d1_disp;  // Holds value for screen
+  reg [6:0] duty_d2_disp;  // Holds value for screen
 
   // --- I2C BUS 1 (ADC 1) ---
     wire [1:0] i2c1_instruction_i;
@@ -128,12 +82,12 @@ module top (
     // --- ADC INSTANCES ---
 
     // ADC 1 Control Signals
-    reg adc1_enable_i = 0;
+    reg adc1_enable_i;
     wire [15:0] adc1_data_o;
     wire adc1_ready_o;
     
     // ADC 2 Control Signals
-    reg adc2_enable_i = 0;
+    reg adc2_enable_i;
     wire [15:0] adc2_data_o;
     wire adc2_ready_o;
 
@@ -168,8 +122,8 @@ module top (
     // --- DATA BUFFERS ---
     reg [15:0] adc1_buffer_i = 0;
     reg [15:0] adc2_buffer_i = 0;
-    reg [11:0] adc_voltage_fc_o = 0;
-    reg [11:0] adc_voltage_out_o = 0;
+    reg [15:0] adc_voltage_fc_o = 0;
+    reg [15:0] adc_voltage_out_o = 0;
 
     // --- FSM STATE MACHINE ---
     localparam STATE_TRIGGER_CONV = 0;
@@ -215,7 +169,7 @@ module top (
                 // Capture Channel 1
                 if (adc1_ready_o && !adc1_done_o) begin
                     adc1_buffer_i <= adc1_data_o;
-                    adc_voltage_fc_o <= adc1_data_o[15] ? 12'd0 : adc1_data_o[14:3];
+                    adc_voltage_fc_o <= adc1_data_o[15] ? 16'd0 : {adc1_data_o[14:0], 1'b0};
                     adc1_enable_i <= 0; // Stop ADC 1
                     adc1_done_o <= 1;
                 end
@@ -223,7 +177,7 @@ module top (
                 // Capture Channel 2
                 if (adc2_ready_o && !adc2_done_o) begin
                     adc2_buffer_i <= adc2_data_o;
-                    adc_voltage_out_o <= adc2_data_o[15] ? 12'd0 : adc2_data_o[14:3];
+                    adc_voltage_out_o <= adc2_data_o[15] ? 16'd0 : {adc2_data_o[14:0], 1'b0};
                     adc2_enable_i <= 0; // Stop ADC 2
                     adc2_done_o <= 1;
                 end
@@ -249,7 +203,6 @@ module top (
   // Only run the controller when BOTH ADCs have finished
 
   // Timer Control
-  // CountMax = 7.5us * 27MHz = 202.5 -> 202 ticks
   timer_control #(
     .CountMax (43200)
   ) u_timer_ctrl (
@@ -259,17 +212,17 @@ module top (
     .trigger_o (enable_control_i)
   );
 
-  /// ---------------------------------------------------------------------------
+  /// --------------------------------------------------------------------------
   // Control Algorithm
   // ---------------------------------------------------------------------------
   fcc_fixpt u_controller (
     .clk        (clk_i),
     .reset      (~rst_ni),
     .clk_enable (enable_control_i), // Waits for both ADCs
-    .Voutref    (v_out_ref_q),
-    .Vout       ({4'b0, adc_voltage_out_o}),     // Direct connection from ADC 2
+    .Voutref    (duty_counter_o),
+    .Vout       (adc_voltage_out_o),     // Direct connection from ADC 2
     .Vfcref     (V_FC_REF),
-    .Vfc        ({4'b0, adc_voltage_fc_o}),      // Direct connection from ADC 1
+    .Vfc        (adc_voltage_fc_o),      // Direct connection from ADC 1
     .D1         (duty_d1_o),
     .D2         (duty_d2_o),
     .ce_out     (),
@@ -285,31 +238,55 @@ module top (
   reg [15:0] sample_count = 0;       // Increased to 16-bit to prevent overflow > 4095Hz
   reg [15:0] freq_display_hold = 0;  // NEW: Holds the value to show on screen
 
-  always @(posedge clk_i) begin
+  always @(posedge clk_i or negedge rst_ni) begin
     if(!rst_ni) begin
       clk_counter <= 0;
       heartbeat_led <= 1;
       sample_count <= 0;
       freq_display_hold <= 0;
+
+      // Reset Averaging
+      sum_fc <= 0;
+      sum_out <= 0;
+      avg_fc_disp <= 0;
+      avg_out_disp <= 0;
+      duty_d1_disp <= 0;
+      duty_d2_disp <= 0;
+
+
     end else begin
-      // 1. Count the samples
-      // The FSM ensures this condition is true for exactly 1 cycle per conversion
+      // 1. Accumulate Samples
       if (adc1_done_o && adc2_done_o) begin
         sample_count <= sample_count + 1;
+        sum_fc <= sum_fc + adc_voltage_fc_o;   // Add current FC sample
+        sum_out <= sum_out + adc_voltage_out_o; // Add current Out sample
       end
 
       // 2. One Second Timer (27 MHz)
       if(clk_counter == 25'd27000000) begin
         clk_counter <= 0;
-        
-        // LATCH: Save the result to the display register
-        freq_display_hold <= sample_count; 
-        
-        // RESET: Clear the counter for the new second
+
+        // LATCH: Save Frequency
+        freq_display_hold <= sample_count;
+
+        // LATCH: Calculate Average for Display
+        // Avoid divide-by-zero if system is paused
+        if (sample_count > 0) begin
+            avg_fc_disp  <= (sum_fc / sample_count) >> 4; 
+            avg_out_disp <= (sum_out / sample_count) >> 4;
+        end else begin
+            avg_fc_disp <= 0;
+            avg_out_disp <= 0;
+        end
+
+        // RESET: Clear counters for the new second
         sample_count <= 0;
+        sum_fc <= 0;
+        sum_out <= 0;
+
+        // Toggle Heartbeat
+        heartbeat_led <= ~heartbeat_led;
         
-        // Toggle Heartbeat LED
-        heartbeat_led <= ~heartbeat_led; 
       end else begin
         clk_counter <= clk_counter + 1;
       end
@@ -336,11 +313,25 @@ module top (
   wire [7:0] voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o;
   wire [7:0] voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o;
 
+  // Wires for Decimal Converter Outputs
+  wire [7:0] d1_th, d1_hu, d1_te, d1_un; 
+  wire [7:0] d2_th, d2_hu, d2_te, d2_un;
+
   toDec dec(
-      clk_i, rst_ni, adc_voltage_fc_o, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
+      clk_i, rst_ni, avg_fc_disp, voltage_fc_thousands_o, voltage_fc_hundreds_o, voltage_fc_tens_o, voltage_fc_units_o
   );
   toDec dec2(
-      clk_i, rst_ni, adc_voltage_out_o, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
+      clk_i, rst_ni, avg_out_disp, voltage_out_thousands_o, voltage_out_hundreds_o, voltage_out_tens_o, voltage_out_units_o
+  );
+
+  toDec dec_d1(
+      clk_i, rst_ni, {5'b0, duty_d1_disp}, 
+      d1_th, d1_hu, d1_te, d1_un
+  );
+
+  toDec dec_d2(
+      clk_i, rst_ni, {5'b0, duty_d2_disp}, 
+      d2_th, d2_hu, d2_te, d2_un
   );
 
   // --- SCREEN & TEXT ENGINE ---
@@ -425,26 +416,43 @@ module top (
               default: text_char_o <= " ";
           endcase
       end
-      /*else if (row_number == 2'd3) begin
-          // Row 3: Ch2 Volts
+      else if (row_number == 2'd3) begin
+          // Row 3: Duty Cycles
           case (text_char_address_i[3:0])
-              0: text_char_o <= "O"; // Ch2
-              1: text_char_o <= "u";
-              2: text_char_o <= "t";
-              4: text_char_o <= voltage_out_thousands_o;
-              5: text_char_o <= ".";
-              6: text_char_o <= voltage_out_hundreds_o;
-              7: text_char_o <= voltage_out_tens_o;
-              8: text_char_o <= voltage_out_units_o;
-              10: text_char_o <= "V";
-              11: text_char_o <= "o";
-              12: text_char_o <= "l";
-              13: text_char_o <= "t";
-              14: text_char_o <= "s";
+              // "D1: "
+              0: text_char_o <= "D";
+              1: text_char_o <= "1";
+              2: text_char_o <= ":";
+              
+              // Value D1 (Hundreds, Tens, Units)
+              4: text_char_o <= d1_hu;
+              5: text_char_o <= d1_te;
+              6: text_char_o <= d1_un;
+
+              // " D2: "
+              8: text_char_o <= "D";
+              9: text_char_o <= "2";
+              10: text_char_o <= ":";
+
+              // Value D2 (Hundreds, Tens, Units)
+              12: text_char_o <= d2_hu;
+              13: text_char_o <= d2_te;
+              14: text_char_o <= d2_un;
+              
               default: text_char_o <= " ";
           endcase
-      end*/
+      end
   end
+
+  /// ---------------------------------------------------------------------------
+  // UART
+  /// ---------------------------------------------------------------------------
+
+  uart u_uart (
+    .clk_i     (clk_i),
+    .rx_i      (uart_rx_i),
+    .counter_o (duty_counter_o)
+  );
 
   /// ---------------------------------------------------------------------------
   // PS-PWM MODULATOR

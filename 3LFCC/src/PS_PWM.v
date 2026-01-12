@@ -12,7 +12,7 @@ module ps_pwm (
 );
 
   // Configuration
-  localparam [4:0] DeadTime = 5'd2;
+  localparam [4:0] DeadTime = 5'd4;
 
   // ---------------------------------------------------------------------------
   // 1. Triangular Carrier Generation
