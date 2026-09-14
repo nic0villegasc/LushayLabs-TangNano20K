@@ -3,7 +3,7 @@
 module top (
   // Clock and Reset
   input  wire        clk_i,           // 27 MHz Tang Nano Clock
-  input  wire        rst_ni,           // External Reset (Active High Button)
+  input  wire        rst_ni,           // External Reset (Active-Low: asserted when pulled to 0)
 
   // ADC 1 Interface (Differential - Flying Cap)
   output wire       scl_1_o,
@@ -22,7 +22,6 @@ module top (
   output wire ioCs,
   output wire ioDc,
   output wire ioReset,
-  input wire btn1,
 
   // UART
   input wire uart_rx_i
@@ -47,8 +46,6 @@ module top (
   reg [31:0] sum_out;      // Accumulator for Output Voltage
   reg [11:0] avg_fc_disp;  // Final averaged value for Display
   reg [11:0] avg_out_disp; // Final averaged value for Display
-  reg [6:0] duty_d1_disp;  // Holds value for screen
-  reg [6:0] duty_d2_disp;  // Holds value for screen
 
   // --- I2C BUS 1 (ADC 1) ---
     wire [1:0] i2c1_instruction_i;
@@ -120,22 +117,20 @@ module top (
     );
 
     // --- DATA BUFFERS ---
-    reg [15:0] adc1_buffer_i = 0;
-    reg [15:0] adc2_buffer_i = 0;
-    reg [15:0] adc_voltage_fc_o = 0;
-    reg [15:0] adc_voltage_out_o = 0;
+    reg [15:0] adc_voltage_fc_o;
+    reg [15:0] adc_voltage_out_o;
 
     // --- FSM STATE MACHINE ---
     localparam STATE_TRIGGER_CONV = 0;
     localparam STATE_WAIT_FOR_START = 1;
     localparam STATE_SAVE_VALUE_WHEN_READY = 2;
 
-    reg [2:0] drawState = 0;
+    reg [2:0] drawState;
     
     // Flags to ensure we capture both channels before resetting
-    reg adc1_done_o = 0;
-    reg adc2_done_o = 0;
-    reg adc_eoc_o = 0;
+    reg adc1_done_o;
+    reg adc2_done_o;
+    reg adc_eoc_o;
     wire adc_start_i;
 
     // fsm_adc: Main ADC Control FSM
@@ -145,6 +140,10 @@ module top (
         adc_eoc_o <= 0;
         adc1_enable_i <= 0;
         adc2_enable_i <= 0;
+        adc_voltage_fc_o <= 0;
+        adc_voltage_out_o <= 0;
+        adc1_done_o <= 0;
+        adc2_done_o <= 0;
       end else begin
         case (drawState)
             STATE_TRIGGER_CONV: begin
@@ -168,7 +167,6 @@ module top (
             STATE_SAVE_VALUE_WHEN_READY: begin
                 // Capture Channel 1
                 if (adc1_ready_o && !adc1_done_o) begin
-                    adc1_buffer_i <= adc1_data_o;
                     adc_voltage_fc_o <= adc1_data_o[15] ? 16'd0 : {adc1_data_o[14:0], 1'b0};
                     adc1_enable_i <= 0; // Stop ADC 1
                     adc1_done_o <= 1;
@@ -176,7 +174,6 @@ module top (
 
                 // Capture Channel 2
                 if (adc2_ready_o && !adc2_done_o) begin
-                    adc2_buffer_i <= adc2_data_o;
                     adc_voltage_out_o <= adc2_data_o[15] ? 16'd0 : {adc2_data_o[14:0], 1'b0};
                     adc2_enable_i <= 0; // Stop ADC 2
                     adc2_done_o <= 1;
@@ -224,10 +221,7 @@ module top (
     .Vfcref     (V_FC_REF),
     .Vfc        (adc_voltage_fc_o),      // Direct connection from ADC 1
     .D1         (duty_d1_o),
-    .D2         (duty_d2_o),
-    .ce_out     (),
-    .ui         (),
-    .uv         ()
+    .D2         (duty_d2_o)
   );
 
   /// ---------------------------------------------------------------------------
@@ -235,8 +229,8 @@ module top (
   /// ---------------------------------------------------------------------------
 
   reg [24:0] clk_counter;
-  reg [15:0] sample_count = 0;       // Increased to 16-bit to prevent overflow > 4095Hz
-  reg [15:0] freq_display_hold = 0;  // NEW: Holds the value to show on screen
+  reg [15:0] sample_count;       // Increased to 16-bit to prevent overflow > 4095Hz
+  reg [15:0] freq_display_hold;  // NEW: Holds the value to show on screen
 
   always @(posedge clk_i or negedge rst_ni) begin
     if(!rst_ni) begin
@@ -250,9 +244,6 @@ module top (
       sum_out <= 0;
       avg_fc_disp <= 0;
       avg_out_disp <= 0;
-      duty_d1_disp <= 0;
-      duty_d2_disp <= 0;
-
 
     end else begin
       // 1. Accumulate Samples
@@ -261,9 +252,6 @@ module top (
         sum_fc <= sum_fc + adc_voltage_fc_o;   // Add current FC sample
         sum_out <= sum_out + adc_voltage_out_o; // Add current Out sample
       end
-
-      duty_d1_disp <= duty_d1_o;
-      duty_d2_disp <= duty_d2_o;
 
       // 2. One Second Timer (27 MHz)
       if(clk_counter == 25'd27000000) begin
@@ -349,7 +337,7 @@ module top (
   wire [9:0] pixel_address;
   wire [7:0] pixel_data;
   wire [5:0] text_char_address_i;
-  reg [7:0] text_char_o = "A";
+  reg [7:0] text_char_o;
 
   screen #(32'd10000000) u_scr(
       .clk_i(clk_i),
@@ -373,7 +361,11 @@ module top (
   wire [1:0] row_number;
   assign row_number = text_char_address_i[5:4];
   
-  always @(posedge clk_i) begin
+  always @(posedge clk_i or negedge rst_ni) begin
+    if(!rst_ni) begin
+      text_char_o <= 8'd0;
+    end
+    else
       if (row_number == 2'd0) begin
           // Row 0: Ch1 Volts
           case (text_char_address_i[3:0])
